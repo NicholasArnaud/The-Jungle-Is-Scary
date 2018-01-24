@@ -27,7 +27,7 @@ public class WeaponBehaviour : MonoBehaviour, IDamager
             hinge.connectedBody = i == 0 ? this.RBody : this.transform.GetChild(i - 1).GetComponent<Rigidbody>();
 
             hinge.useSpring = true;
-            hinge.enableCollision = true;
+            //hinge.enableCollision = true;
         }
     }
 
@@ -35,7 +35,7 @@ public class WeaponBehaviour : MonoBehaviour, IDamager
     void Update()
     {
         if (Input.GetButton("Fire1"))
-            transform.Rotate(new Vector3(0, 0, 1), 10);
+            transform.Rotate(new Vector3(0,0,1), 10);
 
     }
 }
