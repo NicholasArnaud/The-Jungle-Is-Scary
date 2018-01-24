@@ -13,6 +13,7 @@ public class WeaponBehaviour : MonoBehaviour, IDamager
     }
 
     internal Rigidbody RBody;
+
     internal void Start()
     {
         this.RBody = this.gameObject.GetComponent<Rigidbody>();
@@ -35,7 +36,6 @@ public class WeaponBehaviour : MonoBehaviour, IDamager
     void Update()
     {
         if (Input.GetButton("Fire1"))
-            transform.Rotate(new Vector3(0,0,1), 10);
-
+            transform.Rotate(new Vector3(0, 0, 1), 10);
     }
 }
