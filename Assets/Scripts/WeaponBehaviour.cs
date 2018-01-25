@@ -24,11 +24,11 @@ public class WeaponBehaviour : MonoBehaviour, IDamager
 
             Transform t = this.transform.GetChild(i);
 
-            HingeJoint hinge = t.gameObject.GetComponent<HingeJoint>();
-            hinge.connectedBody = i == 0 ? this.RBody : this.transform.GetChild(i - 1).GetComponent<Rigidbody>();
+            //HingeJoint hinge = t.gameObject.GetComponent<HingeJoint>();
+            //hinge.connectedBody = i == 0 ? this.RBody : this.transform.GetChild(i - 1).GetComponent<Rigidbody>();
 
-            hinge.useSpring = true;
-            hinge.enableCollision = true;
+            //hinge.useSpring = true;
+            //hinge.enableCollision = true;
         }
     }
 
