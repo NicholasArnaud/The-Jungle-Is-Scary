@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class WeaponBehaviour : MonoBehaviour, IDamager
 {
-
+    public GameObject o;
     public void DoDamage(float f)
     {
         throw new NotImplementedException();
@@ -28,14 +28,15 @@ public class WeaponBehaviour : MonoBehaviour, IDamager
             hinge.connectedBody = i == 0 ? this.RBody : this.transform.GetChild(i - 1).GetComponent<Rigidbody>();
 
             hinge.useSpring = true;
-            //hinge.enableCollision = true;
+            hinge.enableCollision = true;
         }
     }
 
 
     void Update()
     {
+        //transform.RotateAround(o.transform.position, new Vector3(0, 1, 0), 5);
         if (Input.GetButton("Fire1"))
-            transform.Rotate(new Vector3(0, 0, 1), 10);
+            transform.Rotate(new Vector3(0, 0, 1), 5);
     }
 }
