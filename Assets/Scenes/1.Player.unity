@@ -580,14 +580,13 @@ GameObject:
   - component: {fileID: 889340686}
   - component: {fileID: 889340689}
   - component: {fileID: 889340690}
-  - component: {fileID: 889340691}
   m_Layer: 0
   m_Name: (Weapon)Snake (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &889340685
 Transform:
   m_ObjectHideFlags: 0
@@ -703,19 +702,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &889340691
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 889340684}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.57
-  m_Height: 1.0000002
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.00000047683716}
 --- !u!1 &925192486
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,14 +960,13 @@ GameObject:
   - component: {fileID: 1049864664}
   - component: {fileID: 1049864667}
   - component: {fileID: 1049864668}
-  - component: {fileID: 1049864669}
   m_Layer: 0
   m_Name: (Weapon)Snake (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1049864663
 Transform:
   m_ObjectHideFlags: 0
@@ -1097,19 +1082,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1049864669
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1049864662}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.57
-  m_Height: 1.0000002
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.0000009536743}
 --- !u!1 &1068712243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,14 +1095,13 @@ GameObject:
   - component: {fileID: 1068712245}
   - component: {fileID: 1068712248}
   - component: {fileID: 1068712249}
-  - component: {fileID: 1068712250}
   m_Layer: 0
   m_Name: (Weapon)Snake (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1068712244
 Transform:
   m_ObjectHideFlags: 0
@@ -1246,19 +1217,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1068712250
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1068712243}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.57
-  m_Height: 1.0000002
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.00000017881393}
 --- !u!1 &1137778027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,14 +1491,13 @@ GameObject:
   - component: {fileID: 1220747985}
   - component: {fileID: 1220747988}
   - component: {fileID: 1220747989}
-  - component: {fileID: 1220747990}
   m_Layer: 0
   m_Name: (Weapon)Snake (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1220747984
 Transform:
   m_ObjectHideFlags: 0
@@ -1656,19 +1613,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1220747990
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1220747983}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.57
-  m_Height: 1.0000002
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.00000059604645}
 --- !u!1 &1276239756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,14 +1869,13 @@ GameObject:
   - component: {fileID: 1469323284}
   - component: {fileID: 1469323287}
   - component: {fileID: 1469323288}
-  - component: {fileID: 1469323289}
   m_Layer: 0
   m_Name: (Weapon)Snake (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1469323283
 Transform:
   m_ObjectHideFlags: 0
@@ -2048,19 +1991,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1469323289
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1469323282}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.57
-  m_Height: 1.0000002
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.0000009536743}
 --- !u!1 &1729323939
 GameObject:
   m_ObjectHideFlags: 0
