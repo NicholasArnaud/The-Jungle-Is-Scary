@@ -1,13 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Globalization;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class UIBehaviour : MonoBehaviour
 {
     public GameObject[] PanelList;
-    private GameObject activePanel;
-    private GameObject prevPanel;
+    private GameObject _activePanel;
+    private GameObject _prevPanel;
     public Slider MusicVolumeSlider;
-    public Text musicValue;
+    public Slider SfxVolumeSlider;
+    public Text SfxValue;
+    public Text MusicValue;
 
     void Start()
     {
@@ -17,8 +20,8 @@ public class UIBehaviour : MonoBehaviour
             o.SetActive(false);
             if (o.name == "MenuPanel")
             {
-                activePanel = o;
-                activePanel.SetActive(true);
+                _activePanel = o;
+                _activePanel.SetActive(true);
             }
         }
     }
@@ -28,18 +31,18 @@ public class UIBehaviour : MonoBehaviour
         CheckForActivePanel();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (activePanel !=null && activePanel.name == "PausePanel" && activePanel.activeInHierarchy)
+            if (_activePanel !=null && _activePanel.name == "PausePanel" && _activePanel.activeInHierarchy)
             {
                 SwapActivePanel("");
             }
-            else if(activePanel == null)
+            else if(_activePanel == null)
             {
                 foreach (var o in PanelList)
                 {
                     if (o.name == "PausePanel")
                     {
-                        activePanel = o;
-                        activePanel.SetActive(true);
+                        _activePanel = o;
+                        _activePanel.SetActive(true);
                     }
                 }
             }
@@ -48,7 +51,12 @@ public class UIBehaviour : MonoBehaviour
 
     public void MusicVolumeUpdate()
     {
-        musicValue.text = MusicVolumeSlider.value.ToString();
+        MusicValue.text = MusicVolumeSlider.value.ToString();
+    }
+
+    public void SfxVolumeUpdate()
+    {
+        SfxValue.text = SfxVolumeSlider.value.ToString();
     }
     
     public void PlayButtonTrigger()
@@ -64,10 +72,7 @@ public class UIBehaviour : MonoBehaviour
     public void BackButtonTrigger()
     {
         CheckForActivePanel();
-        activePanel.SetActive(false);
-        activePanel = prevPanel;
-        activePanel.SetActive(true);
-        prevPanel = activePanel;
+        SwapActivePanel("Back");
     }
 
     public void ResumeButtonTrigger()
@@ -85,9 +90,16 @@ public class UIBehaviour : MonoBehaviour
         CheckForActivePanel();
         if (panelName == "")
         {
-            prevPanel = activePanel;
-            activePanel.SetActive(false);
-            activePanel = null;
+            _prevPanel = _activePanel;
+            _activePanel.SetActive(false);
+            _activePanel = null;
+        }
+        else if (panelName == "Back")
+        {
+            if (_activePanel != null) _activePanel.SetActive(false);
+            _activePanel = _prevPanel;
+            _activePanel.SetActive(true);
+            _prevPanel = _activePanel;
         }
         else
         {
@@ -95,10 +107,10 @@ public class UIBehaviour : MonoBehaviour
             {
                 if (o.name == panelName)
                 {
-                    activePanel.SetActive(false);
-                    prevPanel = activePanel;
-                    activePanel = o;
-                    activePanel.SetActive(true);
+                    _activePanel.SetActive(false);
+                    _prevPanel = _activePanel;
+                    _activePanel = o;
+                    _activePanel.SetActive(true);
                 }
             }
         }
@@ -110,8 +122,8 @@ public class UIBehaviour : MonoBehaviour
             Debug.LogError("No Panels Found");
         foreach (var o in PanelList)
         {
-            if (activePanel != o && o.activeInHierarchy)
-                activePanel = o;
+            if (_activePanel != o && o.activeInHierarchy)
+                _activePanel = o;
         }
     }
 }
