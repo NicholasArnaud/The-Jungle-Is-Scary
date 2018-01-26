@@ -9,6 +9,7 @@ public class Enemy_Behaviour : MonoBehaviour, IDamager, IDamageable
     GameObject target;
     Vector3 startPos;
     public Enemy_Data data;
+    public GameEvent takeDamageEvent;
 
     // Use this for initialization
     void Start()
@@ -34,7 +35,12 @@ public class Enemy_Behaviour : MonoBehaviour, IDamager, IDamageable
     public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
+        {
             DoDamage(other.gameObject.GetComponent<Player_Behaviour>());
+            takeDamageEvent.Raise();
+           
+        }
+            
 
     }
 

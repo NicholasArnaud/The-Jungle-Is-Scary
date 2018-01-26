@@ -7,7 +7,7 @@ public class Player_Behaviour : MonoBehaviour,IDamageable {
 
     public Player_Data data;
     Vector3 startPos;
-
+    public GameEvent giveHealth;
     // Use this for initialization
     void Start () {
         startPos = transform.position;
@@ -16,18 +16,16 @@ public class Player_Behaviour : MonoBehaviour,IDamageable {
 	
 	// Update is called once per frame
 	void Update () {
-        if (data.health <= 0)
+        if (data.lives <= 0)
         {
             transform.position = startPos;
-            data.health = 100;
-        }
-            
+            giveHealth.Raise();
+            data.lives = 4;
+        }         
     }
 
     public void TakeDamage(int f)
     {
-        data.health -= f;
-    }
-
-    
+        data.lives -= f;
+    } 
 }

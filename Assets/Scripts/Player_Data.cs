@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player_Data : ScriptableObject {
 
-    public int health = 100;
+    public int lives = 4;
     public int mana;
     public int level;
     public int levelCap;

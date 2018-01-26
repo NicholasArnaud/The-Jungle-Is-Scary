@@ -26,10 +26,5 @@ public class ConnectRopes : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        //transform.RotateAround(o.transform.position, new Vector3(0, 1, 0), 5);
-        if (Input.GetButton("Fire1"))
-            transform.Rotate(new Vector3(0, 0, 1), 5);
-    }
+
 }
