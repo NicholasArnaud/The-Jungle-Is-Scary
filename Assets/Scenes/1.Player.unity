@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 378759658}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2374,7 +2374,7 @@ GameObject:
   - component: {fileID: 2050983008}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
