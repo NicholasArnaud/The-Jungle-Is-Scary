@@ -113,6 +113,79 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &173417512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 173417514}
+  - component: {fileID: 173417513}
+  - component: {fileID: 173417515}
+  - component: {fileID: 173417516}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &173417513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 173417512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84ca3480487f141b7830bee9305e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &173417514
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 173417512}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.815, y: 0, z: -0}
+  m_LocalScale: {x: 0.100000136, y: 0.1, z: 0.5000005}
+  m_Children:
+  - {fileID: 1068712244}
+  - {fileID: 1220747984}
+  - {fileID: 889340685}
+  - {fileID: 1469323283}
+  - {fileID: 1049864663}
+  m_Father: {fileID: 1971016779}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &173417515
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 173417512}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &173417516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 173417512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb919d04e4a68e4d93d4df551f098e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &378759657
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,12 +199,12 @@ GameObject:
   - component: {fileID: 378759659}
   - component: {fileID: 378759658}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Enemy
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &378759658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dea83436d54609408c31c6cc00a6d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!23 &378759659
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -202,12 +276,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378759657}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3084048, y: 0.50227535, z: 9.475}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3084048, y: 0.50227535, z: 9.475001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &623286260
 GameObject:
@@ -227,7 +301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &623286261
 Transform:
   m_ObjectHideFlags: 0
@@ -239,15 +313,10 @@ Transform:
   m_LocalScale: {x: 0.10000002, y: 0.100000046, z: 0.5}
   m_Children:
   - {fileID: 799720719}
-  - {fileID: 1068712244}
-  - {fileID: 1220747984}
-  - {fileID: 889340685}
-  - {fileID: 1469323283}
-  - {fileID: 1049864663}
   - {fileID: 925192487}
   - {fileID: 1137778028}
   m_Father: {fileID: 1971016779}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &623286262
 MeshRenderer:
@@ -294,7 +363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db84ca3480487f141b7830bee9305e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  o: {fileID: 1971016775}
 --- !u!33 &623286264
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -580,13 +648,14 @@ GameObject:
   - component: {fileID: 889340686}
   - component: {fileID: 889340689}
   - component: {fileID: 889340690}
+  - component: {fileID: 889340691}
   m_Layer: 0
   m_Name: (Weapon)Snake (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &889340685
 Transform:
   m_ObjectHideFlags: 0
@@ -594,11 +663,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 889340684}
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -15.57, y: 0, z: 0.41600034}
-  m_LocalScale: {x: 1, y: 0.2, z: 5}
+  m_LocalPosition: {x: -15.5700035, y: 0, z: -0.394}
+  m_LocalScale: {x: 1, y: 0.20000012, z: 5}
   m_Children: []
-  m_Father: {fileID: 623286261}
-  m_RootOrder: 3
+  m_Father: {fileID: 173417514}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: -90}
 --- !u!54 &889340686
 Rigidbody:
@@ -666,7 +735,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.01, z: -0.61}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.9240003, y: 1, z: 1.2520003}
+  m_ConnectedAnchor: {x: 0.61899996, y: 1, z: 1.2520022}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -698,10 +767,21 @@ BoxCollider:
   m_GameObject: {fileID: 889340684}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &889340691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 889340684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84ca3480487f141b7830bee9305e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &925192486
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +812,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 623286261}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!120 &925192488
 LineRenderer:
@@ -960,13 +1040,14 @@ GameObject:
   - component: {fileID: 1049864664}
   - component: {fileID: 1049864667}
   - component: {fileID: 1049864668}
+  - component: {fileID: 1049864669}
   m_Layer: 0
   m_Name: (Weapon)Snake (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1049864663
 Transform:
   m_ObjectHideFlags: 0
@@ -974,11 +1055,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1049864662}
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -27.570032, y: 0, z: 0.42000005}
-  m_LocalScale: {x: 1, y: 0.2, z: 5}
+  m_LocalPosition: {x: -27.570034, y: 0, z: -0.39000028}
+  m_LocalScale: {x: 1, y: 0.20000012, z: 5}
   m_Children: []
-  m_Father: {fileID: 623286261}
-  m_RootOrder: 5
+  m_Father: {fileID: 173417514}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: -90}
 --- !u!54 &1049864664
 Rigidbody:
@@ -1046,7 +1127,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.01, z: -0.61}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.9260003, y: 1, z: 2.4520035}
+  m_ConnectedAnchor: {x: 0.62099993, y: 1, z: 2.452007}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1078,10 +1159,21 @@ BoxCollider:
   m_GameObject: {fileID: 1049864662}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1049864669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1049864662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84ca3480487f141b7830bee9305e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1068712243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,13 +1187,14 @@ GameObject:
   - component: {fileID: 1068712245}
   - component: {fileID: 1068712248}
   - component: {fileID: 1068712249}
+  - component: {fileID: 1068712250}
   m_Layer: 0
   m_Name: (Weapon)Snake (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1068712244
 Transform:
   m_ObjectHideFlags: 0
@@ -1109,11 +1202,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1068712243}
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -3.57, y: 0, z: 0.42}
-  m_LocalScale: {x: 1, y: 0.2, z: 5}
+  m_LocalPosition: {x: -3.57, y: 0, z: -0.39}
+  m_LocalScale: {x: 1, y: 0.20000012, z: 5}
   m_Children: []
-  m_Father: {fileID: 623286261}
-  m_RootOrder: 1
+  m_Father: {fileID: 173417514}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: -90}
 --- !u!54 &1068712245
 Rigidbody:
@@ -1181,7 +1274,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.01, z: -0.61}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.92600006, y: 1, z: 0.05199997}
+  m_ConnectedAnchor: {x: 0.6209998, y: 1, z: 0.052000076}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1213,10 +1306,21 @@ BoxCollider:
   m_GameObject: {fileID: 1068712243}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1068712250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1068712243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84ca3480487f141b7830bee9305e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1137778027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1352,7 @@ Transform:
   m_LocalScale: {x: 0.9999999, y: 0.2000001, z: 4.9999995}
   m_Children: []
   m_Father: {fileID: 623286261}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: -90}
 --- !u!114 &1137778029
 MonoBehaviour:
@@ -1491,13 +1595,14 @@ GameObject:
   - component: {fileID: 1220747985}
   - component: {fileID: 1220747988}
   - component: {fileID: 1220747989}
+  - component: {fileID: 1220747990}
   m_Layer: 0
   m_Name: (Weapon)Snake (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1220747984
 Transform:
   m_ObjectHideFlags: 0
@@ -1505,11 +1610,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1220747983}
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -9.57, y: 0, z: 0.4199991}
-  m_LocalScale: {x: 1, y: 0.2, z: 5}
+  m_LocalPosition: {x: -9.570001, y: 0, z: -0.39000124}
+  m_LocalScale: {x: 1, y: 0.20000012, z: 5}
   m_Children: []
-  m_Father: {fileID: 623286261}
-  m_RootOrder: 2
+  m_Father: {fileID: 173417514}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: -90}
 --- !u!54 &1220747985
 Rigidbody:
@@ -1577,7 +1682,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.01, z: -0.61}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.92599964, y: 1, z: 0.6520001}
+  m_ConnectedAnchor: {x: 0.6209993, y: 1, z: 0.652001}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1609,10 +1714,21 @@ BoxCollider:
   m_GameObject: {fileID: 1220747983}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1220747990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1220747983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84ca3480487f141b7830bee9305e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1276239756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,7 +1869,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1279651474}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -8.55, y: 17.35, z: 14.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1789,7 +1905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db84ca3480487f141b7830bee9305e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  o: {fileID: 1971016775}
 --- !u!23 &1418469842
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1869,13 +1984,14 @@ GameObject:
   - component: {fileID: 1469323284}
   - component: {fileID: 1469323287}
   - component: {fileID: 1469323288}
+  - component: {fileID: 1469323289}
   m_Layer: 0
   m_Name: (Weapon)Snake (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1469323283
 Transform:
   m_ObjectHideFlags: 0
@@ -1883,11 +1999,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1469323282}
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -21.570024, y: 0, z: 0.41999814}
-  m_LocalScale: {x: 1, y: 0.2, z: 5}
+  m_LocalPosition: {x: -21.570028, y: 0, z: -0.3900022}
+  m_LocalScale: {x: 1, y: 0.20000012, z: 5}
   m_Children: []
-  m_Father: {fileID: 623286261}
-  m_RootOrder: 4
+  m_Father: {fileID: 173417514}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: -90}
 --- !u!54 &1469323284
 Rigidbody:
@@ -1955,7 +2071,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.01, z: -0.61}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.92599934, y: 1, z: 1.8520027}
+  m_ConnectedAnchor: {x: 0.620999, y: 1, z: 1.8520055}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1987,10 +2103,21 @@ BoxCollider:
   m_GameObject: {fileID: 1469323282}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1469323289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1469323282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84ca3480487f141b7830bee9305e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1729323939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,7 +2133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1729323940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2056,6 +2183,7 @@ GameObject:
   - component: {fileID: 1971016776}
   - component: {fileID: 1971016780}
   - component: {fileID: 1971016781}
+  - component: {fileID: 1971016782}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2128,9 +2256,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1276239760}
+  - {fileID: 173417514}
   - {fileID: 623286261}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1971016780
 MonoBehaviour:
@@ -2161,6 +2290,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1971016782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971016775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c6ffda447b5a14baeba87f06a99bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!1001 &1983015183
 Prefab:
   m_ObjectHideFlags: 0
@@ -2205,6 +2346,14 @@ Prefab:
       value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 1222651061738804, guid: 37f693a9e1c49344a87218b96c25c4e4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885691507197192, guid: 37f693a9e1c49344a87218b96c25c4e4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084745273076378, guid: 37f693a9e1c49344a87218b96c25c4e4, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
