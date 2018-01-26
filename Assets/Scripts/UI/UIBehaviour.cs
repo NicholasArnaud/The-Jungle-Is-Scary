@@ -1,20 +1,27 @@
-﻿using System.Globalization;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UIBehaviour : MonoBehaviour
 {
+    #region Variables
     public GameObject[] PanelList;
-    private GameObject _activePanel;
-    private GameObject _prevPanel;
+    public GameObject[] HealthBar;
     public Slider MusicVolumeSlider;
     public Slider SfxVolumeSlider;
     public Text SfxValue;
     public Text MusicValue;
+    public Sprite FullHeart;
+    public Sprite EmptyHeart;
+    private GameObject _activePanel;
+    private GameObject _prevPanel;
+    private int _curHealth;
+    #endregion
 
     void Start()
     {
         PanelList = GameObject.FindGameObjectsWithTag("Panel");
+        HealthBar = GameObject.FindGameObjectsWithTag("Health");
+        _curHealth = HealthBar.Length;
         foreach (var o in PanelList)
         {
             o.SetActive(false);
@@ -31,24 +38,18 @@ public class UIBehaviour : MonoBehaviour
         CheckForActivePanel();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_activePanel !=null && _activePanel.name == "PausePanel" && _activePanel.activeInHierarchy)
+            if (_activePanel.name == "HudPanel")
             {
-                SwapActivePanel("");
+                SwapActivePanel("PausePanel");
             }
-            else if(_activePanel == null)
+            else if (_activePanel.name == "PausePanel")
             {
-                foreach (var o in PanelList)
-                {
-                    if (o.name == "PausePanel")
-                    {
-                        _activePanel = o;
-                        _activePanel.SetActive(true);
-                    }
-                }
+                SwapActivePanel("HudPanel");
             }
         }
     }
 
+    #region SettingUpdates
     public void MusicVolumeUpdate()
     {
         MusicValue.text = MusicVolumeSlider.value.ToString();
@@ -58,10 +59,11 @@ public class UIBehaviour : MonoBehaviour
     {
         SfxValue.text = SfxVolumeSlider.value.ToString();
     }
-    
+    #endregion
+    #region MenuNavigation
     public void PlayButtonTrigger()
     {
-        SwapActivePanel("");
+        SwapActivePanel("HudPanel");
     }
 
     public void OptionButtonTrigger()
@@ -77,24 +79,17 @@ public class UIBehaviour : MonoBehaviour
 
     public void ResumeButtonTrigger()
     {
-        SwapActivePanel("");
+        SwapActivePanel("HudPanel");
     }
 
     public void QuitButtonTrigger()
     {
         SwapActivePanel("MenuPanel");
     }
-    
+
     void SwapActivePanel(string panelName)
     {
-        CheckForActivePanel();
-        if (panelName == "")
-        {
-            _prevPanel = _activePanel;
-            _activePanel.SetActive(false);
-            _activePanel = null;
-        }
-        else if (panelName == "Back")
+        if (panelName == "Back")
         {
             if (_activePanel != null) _activePanel.SetActive(false);
             _activePanel = _prevPanel;
@@ -105,13 +100,11 @@ public class UIBehaviour : MonoBehaviour
         {
             foreach (var o in PanelList)
             {
-                if (o.name == panelName)
-                {
-                    _activePanel.SetActive(false);
-                    _prevPanel = _activePanel;
-                    _activePanel = o;
-                    _activePanel.SetActive(true);
-                }
+                if (o.name != panelName) continue;
+                _activePanel.SetActive(false);
+                _prevPanel = _activePanel;
+                _activePanel = o;
+                _activePanel.SetActive(true);
             }
         }
     }
@@ -120,10 +113,31 @@ public class UIBehaviour : MonoBehaviour
     {
         if (PanelList == null)
             Debug.LogError("No Panels Found");
-        foreach (var o in PanelList)
+        else
+            foreach (var o in PanelList)
+            {
+                if (_activePanel != o && o.activeInHierarchy)
+                    _activePanel = o;
+            }
+    }
+    #endregion
+    #region UpdatingHealth
+    public void DamageHealthTrigger()
+    {
+        if (_curHealth > 0)
         {
-            if (_activePanel != o && o.activeInHierarchy)
-                _activePanel = o;
+            _curHealth--;
+            HealthBar[_curHealth].GetComponent<Image>().sprite = EmptyHeart;
         }
     }
+
+    public void HealedHealthTrigger()
+    {
+        if (_curHealth > 0 && _curHealth < HealthBar.Length)
+        {
+            _curHealth++;
+            HealthBar[_curHealth - 1].GetComponent<Image>().sprite = FullHeart;
+        }
+    }
+    #endregion
 }
