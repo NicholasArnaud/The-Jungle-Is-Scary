@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - floor
+  - Panel
+  - Health
+  - Enemy
+  - Floor
   layers:
   - Default
   - TransparentFX
