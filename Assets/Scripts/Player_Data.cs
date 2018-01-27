@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player_Data : ScriptableObject {
 
-    public float health;
+    public int lives = 4;
     public int mana;
     public int level;
     public int levelCap;
     public int experience;
     public int coins;
-    public float lightDamage;
-    public float heavyDamage;
+    public int lightDamage = 20;
+    public int heavyDamage;
 }

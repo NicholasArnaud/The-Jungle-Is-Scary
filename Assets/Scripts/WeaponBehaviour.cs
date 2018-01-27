@@ -6,37 +6,26 @@ using UnityEngine.UI;
 
 public class WeaponBehaviour : MonoBehaviour, IDamager
 {
-    public GameObject o;
-    public void DoDamage(float f)
+    Transform _base;
+    void Start()
     {
-        throw new NotImplementedException();
+        _base = GetComponentInParent<Transform>();
+    }
+    public void DoDamage(IDamageable defender)
+    {
+        defender.TakeDamage(GetComponentInParent<Player_Behaviour>().data.lightDamage);
     }
 
-    internal Rigidbody RBody;
-
-    internal void Start()
+    public void OnCollisionEnter(Collision other)
     {
-        this.RBody = this.gameObject.GetComponent<Rigidbody>();
-        this.RBody.isKinematic = true;
-        int childCount = this.transform.childCount;
-        for (int i = 0; i < childCount; i++)
-        {
-
-            Transform t = this.transform.GetChild(i);
-
-            HingeJoint hinge = t.gameObject.GetComponent<HingeJoint>();
-            hinge.connectedBody = i == 0 ? this.RBody : this.transform.GetChild(i - 1).GetComponent<Rigidbody>();
-
-            hinge.useSpring = true;
-            hinge.enableCollision = true;
-        }
+        if (other.gameObject.tag == "enemy")
+            DoDamage(other.gameObject.GetComponent<Enemy_Behaviour>());
     }
-
 
     void Update()
     {
         //transform.RotateAround(o.transform.position, new Vector3(0, 1, 0), 5);
         if (Input.GetButton("Fire1"))
-            transform.Rotate(new Vector3(0, 0, 1), 5);
+            _base.transform.Rotate(new Vector3(0, 0, 1), 1);
     }
 }
