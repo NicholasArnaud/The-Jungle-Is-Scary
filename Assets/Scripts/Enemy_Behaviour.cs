@@ -37,8 +37,7 @@ public class Enemy_Behaviour : MonoBehaviour, IDamager, IDamageable
         if (other.gameObject.tag == "Player")
         {
             DoDamage(other.gameObject.GetComponent<Player_Behaviour>());
-            takeDamageEvent.Raise();
-           
+            takeDamageEvent.Raise();    
         }
             
 

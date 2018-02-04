@@ -35,7 +35,7 @@ public class Player_Movement : MonoBehaviour {
     public void OnTriggerEnter(Collider collider)
     {
         // check if player if on
-        if (collider.tag == "floor")
+        if (collider.tag == "Floor")
             onFloor = true;
     }
 
