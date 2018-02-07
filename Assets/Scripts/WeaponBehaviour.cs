@@ -5,20 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WeaponBehaviour : MonoBehaviour, IDamager
-{ 
-    Transform _base;
-
-    void Start() 
+{
+    public Transform Player;
+    public void Update()
     {
-        _base = GetComponentInParent<Transform>();
+        transform.position = Player.transform.position + new Vector3(1, 1, 0);
     }
-     
-    void Update() 
-    {
-        if (Input.GetButton("Fire1")) 
-            _base.transform.Rotate(new Vector3(0, 0, 1), 1); 
-    }
-
     public void DoDamage(IDamageable defender)
     {
         defender.TakeDamage(GetComponentInParent<Player_Behaviour>().data.lightDamage);
