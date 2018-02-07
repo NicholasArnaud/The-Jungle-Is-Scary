@@ -17,5 +17,6 @@ public class RopeSwing : MonoBehaviour
     {
         hinge.connectedBody = other.gameObject.GetComponent<Rigidbody>();
         other.gameObject.GetComponentInParent<Rigidbody>().useGravity = false;
+        other.gameObject.transform.SetParent(transform);
     }
 }
