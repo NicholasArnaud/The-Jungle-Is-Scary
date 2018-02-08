@@ -1,29 +1,38 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIBehaviour : MonoBehaviour
 {
-    public GameObject[] PanelList;
-    private GameObject _activePanel;
-    private GameObject _prevPanel;
+    #region Variables
+
+    public GameObject MenuPanelObject;
+    public GameObject PausePanelObject;
+    public GameObject OptionsPanelObject;
+    public GameObject HudPanelObject;
+
+    public GameObject[] HealthBar;
     public Slider MusicVolumeSlider;
     public Slider SfxVolumeSlider;
     public Text SfxValue;
     public Text MusicValue;
+    public Sprite FullHeart;
+    public Sprite EmptyHeart;
+    private int _curHealth;
+    private GameObject _prevPanelObject;
+    private GameObject _activePanelObject;
+    private List<GameObject> _panels;
+
+    #endregion
 
     void Start()
     {
-        PanelList = GameObject.FindGameObjectsWithTag("Panel");
-        foreach (var o in PanelList)
-        {
-            o.SetActive(false);
-            if (o.name == "MenuPanel")
-            {
-                _activePanel = o;
-                _activePanel.SetActive(true);
-            }
-        }
+        _panels = new List<GameObject> { HudPanelObject, MenuPanelObject, OptionsPanelObject, PausePanelObject };
+        _panels.ForEach(x=>x.SetActive(false));
+        _curHealth = HealthBar.Length;
+        MenuPanelObject.SetActive(true);
+        _activePanelObject = MenuPanelObject;
     }
 
     void Update()
@@ -31,24 +40,20 @@ public class UIBehaviour : MonoBehaviour
         CheckForActivePanel();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_activePanel !=null && _activePanel.name == "PausePanel" && _activePanel.activeInHierarchy)
+            if (HudPanelObject.activeSelf)
             {
-                SwapActivePanel("");
+                HudPanelObject.SetActive(false);
+                PausePanelObject.SetActive(true);
             }
-            else if(_activePanel == null)
+            else if (PausePanelObject.activeSelf)
             {
-                foreach (var o in PanelList)
-                {
-                    if (o.name == "PausePanel")
-                    {
-                        _activePanel = o;
-                        _activePanel.SetActive(true);
-                    }
-                }
+                PausePanelObject.SetActive(false);
+                HudPanelObject.SetActive(true);
             }
         }
     }
 
+    #region SettingUpdates
     public void MusicVolumeUpdate()
     {
         MusicValue.text = MusicVolumeSlider.value.ToString();
@@ -58,72 +63,81 @@ public class UIBehaviour : MonoBehaviour
     {
         SfxValue.text = SfxVolumeSlider.value.ToString();
     }
-    
+    #endregion
+    #region MenuNavigation
     public void PlayButtonTrigger()
     {
-        SwapActivePanel("");
+        CheckForActivePanel();
+        _activePanelObject.SetActive(false);
+        _prevPanelObject = _activePanelObject;
+        HudPanelObject.SetActive(true);
     }
 
     public void OptionButtonTrigger()
     {
-        SwapActivePanel("OptionsPanel");
+        CheckForActivePanel();
+        _activePanelObject.SetActive(false);
+        _prevPanelObject = _activePanelObject;
+        OptionsPanelObject.SetActive(true);
     }
 
     public void BackButtonTrigger()
     {
         CheckForActivePanel();
-        SwapActivePanel("Back");
+        _activePanelObject.SetActive(false);
+        _prevPanelObject.SetActive(true);
+        _prevPanelObject = _activePanelObject;
     }
 
     public void ResumeButtonTrigger()
     {
-        SwapActivePanel("");
+        CheckForActivePanel();
+        _activePanelObject.SetActive(false);
+        _prevPanelObject =_activePanelObject;
+        HudPanelObject.SetActive(true);
     }
 
     public void QuitButtonTrigger()
     {
-        SwapActivePanel("MenuPanel");
-    }
-    
-    void SwapActivePanel(string panelName)
-    {
         CheckForActivePanel();
-        if (panelName == "")
+        if (_activePanelObject == PausePanelObject)
         {
-            _prevPanel = _activePanel;
-            _activePanel.SetActive(false);
-            _activePanel = null;
+            _activePanelObject.SetActive(false);
+            _prevPanelObject = _activePanelObject;
+            MenuPanelObject.SetActive(true);
         }
-        else if (panelName == "Back")
+        else if (_activePanelObject == MenuPanelObject)
         {
-            if (_activePanel != null) _activePanel.SetActive(false);
-            _activePanel = _prevPanel;
-            _activePanel.SetActive(true);
-            _prevPanel = _activePanel;
-        }
-        else
-        {
-            foreach (var o in PanelList)
-            {
-                if (o.name == panelName)
-                {
-                    _activePanel.SetActive(false);
-                    _prevPanel = _activePanel;
-                    _activePanel = o;
-                    _activePanel.SetActive(true);
-                }
-            }
+            Application.Quit();
         }
     }
 
     void CheckForActivePanel()
     {
-        if (PanelList == null)
-            Debug.LogError("No Panels Found");
-        foreach (var o in PanelList)
+        foreach (var panel in _panels)
         {
-            if (_activePanel != o && o.activeInHierarchy)
-                _activePanel = o;
+            if (panel.activeSelf)
+                _activePanelObject = panel;
         }
     }
+    #endregion
+    #region UpdatingHealth
+    public void DamageHealthTrigger()
+    {
+        if (_curHealth > 0)
+        {
+            _curHealth--;
+            HealthBar[_curHealth].GetComponent<Image>().sprite = EmptyHeart;
+        }
+    }
+
+    public void HealedHealthTrigger()
+    {
+        if (_curHealth > 0 && _curHealth < HealthBar.Length)
+        {
+            _curHealth++;
+            HealthBar[_curHealth - 1].GetComponent<Image>().sprite = FullHeart;
+        }
+    }
+    #endregion
 }
