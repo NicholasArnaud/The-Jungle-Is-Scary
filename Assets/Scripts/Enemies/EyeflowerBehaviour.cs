@@ -16,18 +16,25 @@ public class EyeflowerBehaviour : MonoBehaviour
     private bool _foundPlayer;
     private GameObject playerGameObject;
     private Rigidbody rBody;
-
+    private LineRenderer laserRenderer;
+    public float LaserDistance;
     private EyeState _currentState;
     [Range(1, 4)]
     public float cooldown = 4;
 
     private float timer;
 
-    [Range(0, 20)] public float DetectionRadius;
+    [Range(0, 20)]
+    public float DetectionRadius;
 
     void Start()
     {
         _foundPlayer = false;
+        rBody = GetComponent<Rigidbody>();
+        laserRenderer = GetComponentInChildren<LineRenderer>();
+        laserRenderer.startWidth = 0.0f;
+        laserRenderer.endWidth = 0.3f;
+        laserRenderer.SetPosition(0, transform.position);
         playerGameObject = GameObject.FindWithTag("Player");
     }
 
@@ -38,6 +45,7 @@ public class EyeflowerBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
+        var dir = (playerGameObject.transform.position - transform.position).normalized;
 
         if (_currentState == EyeState.IDLE)
         {
@@ -49,19 +57,21 @@ public class EyeflowerBehaviour : MonoBehaviour
         if (_currentState == EyeState.FIRING)
         {
             Debug.Log("FIRE!!");
+            laserRenderer.SetPosition(1, Vector3.forward * LaserDistance);
             _currentState = EyeState.LOOKING;
         }
 
         if (_currentState == EyeState.LOOKING)
         {
             timer -= Time.fixedDeltaTime;
-
+            if (timer <= cooldown - 1.0f)
+                rBody.MoveRotation(Quaternion.LookRotation(playerGameObject.transform.position - transform.position));
             if (timer <= 0)
             {
                 timer = cooldown;
                 _currentState = EyeState.FIRING;
             }
-            
+
         }
     }
 
