@@ -66,8 +66,9 @@ public class FrogEnemyBehaviour : MonoBehaviour
             timer -= Time.fixedDeltaTime;
             if (timer <= 3)
             {
-                rBody.rotation = Quaternion.Slerp(rBody.rotation,Quaternion.LookRotation(dir),timer);
+                rBody.rotation = Quaternion.Slerp(rBody.rotation, Quaternion.LookRotation(dir), timer);
                 rBody.isKinematic = true;
+
             }
             if (timer <= 0)
             {
