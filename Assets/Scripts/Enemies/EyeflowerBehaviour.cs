@@ -32,8 +32,7 @@ public class EyeflowerBehaviour : MonoBehaviour
         _foundPlayer = false;
         rBody = GetComponent<Rigidbody>();
         laserRenderer = GetComponentInChildren<LineRenderer>();
-        laserRenderer.startWidth = 0.0f;
-        laserRenderer.endWidth = 0.3f;
+        laserRenderer.enabled = false;
         laserRenderer.SetPosition(0, transform.position);
         playerGameObject = GameObject.FindWithTag("Player");
     }
@@ -58,6 +57,8 @@ public class EyeflowerBehaviour : MonoBehaviour
         {
             Debug.Log("FIRE!!");
             laserRenderer.SetPosition(1, Vector3.forward * LaserDistance);
+
+            StartCoroutine("LaserFireLength");
             _currentState = EyeState.LOOKING;
         }
 
@@ -74,7 +75,22 @@ public class EyeflowerBehaviour : MonoBehaviour
 
         }
     }
-
+    IEnumerator LaserFireLength()
+    {
+        laserRenderer.enabled = true;
+        RaycastHit hit;
+        Ray ray = new Ray();
+        Vector3 laserrange = new Vector3(100, 0, 100);
+        ray.direction = Vector3.forward;
+        if (Physics.Raycast(ray, out hit))
+        {
+            laserrange = hit.point;
+        }
+        laserRenderer.SetPosition(0, ray.origin);
+        laserRenderer.SetPosition(1, ray.GetPoint(100));
+        yield return new WaitForSeconds(cooldown/2);
+        laserRenderer.enabled = false;
+    }
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, .5f, 0, .5f);
