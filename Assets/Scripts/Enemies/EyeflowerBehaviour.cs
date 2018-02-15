@@ -44,7 +44,7 @@ public class EyeflowerBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        var dir = (playerGameObject.transform.position - transform.position).normalized;
+        var dir = playerGameObject.transform.position - transform.position;
 
         if (_currentState == EyeState.IDLE)
         {
@@ -56,8 +56,6 @@ public class EyeflowerBehaviour : MonoBehaviour
         if (_currentState == EyeState.FIRING)
         {
             Debug.Log("FIRE!!");
-            laserRenderer.SetPosition(1, Vector3.forward * LaserDistance);
-
             StartCoroutine("LaserFireLength");
             _currentState = EyeState.LOOKING;
         }
@@ -66,7 +64,7 @@ public class EyeflowerBehaviour : MonoBehaviour
         {
             timer -= Time.fixedDeltaTime;
             if (timer <= cooldown - 1.0f)
-                rBody.MoveRotation(Quaternion.LookRotation(playerGameObject.transform.position - transform.position));
+                rBody.MoveRotation(Quaternion.LookRotation(dir));
             if (timer <= 0)
             {
                 timer = cooldown;
@@ -79,15 +77,17 @@ public class EyeflowerBehaviour : MonoBehaviour
     {
         laserRenderer.enabled = true;
         RaycastHit hit;
-        Ray ray = new Ray();
+        Ray ray = new Ray(GetComponent<Transform>().position, GetComponent<Transform>().forward);
         Vector3 laserrange = new Vector3(100, 0, 100);
-        ray.direction = Vector3.forward;
-        if (Physics.Raycast(ray, out hit))
+        laserRenderer.SetPosition(0, GetComponent<Renderer>().bounds.center);
+        laserRenderer.SetPosition(1, GetComponent<Transform>().forward * LaserDistance);
+        Debug.DrawRay(GetComponent<Transform>().position, GetComponent<Transform>().forward, Color.black);
+        if (Physics.Raycast(ray, out hit, LaserDistance))
         {
             laserrange = hit.point;
+            laserRenderer.SetPosition(1, laserrange);
         }
-        laserRenderer.SetPosition(0, ray.origin);
-        laserRenderer.SetPosition(1, ray.GetPoint(100));
+
         yield return new WaitForSeconds(cooldown/2);
         laserRenderer.enabled = false;
     }
