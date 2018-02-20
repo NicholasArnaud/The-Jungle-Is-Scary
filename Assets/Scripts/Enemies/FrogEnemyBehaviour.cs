@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
+﻿using System.Linq;
 using UnityEngine;
 
 public class FrogEnemyBehaviour : MonoBehaviour
