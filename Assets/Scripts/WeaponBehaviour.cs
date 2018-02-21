@@ -9,7 +9,7 @@ public class WeaponBehaviour : MonoBehaviour, IDamager
     public Transform Player;
     public void Update()
     {
-        transform.position = Player.transform.position + new Vector3(1, 0, 0);
+        transform.position = Player.transform.position + new Vector3(.5f, 0, 0);
     }
     public void DoDamage(IDamageable defender)
     {
