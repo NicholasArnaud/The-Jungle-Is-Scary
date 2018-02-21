@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
+﻿using System.Linq;
 using UnityEngine;
 
 public class FrogEnemyBehaviour : MonoBehaviour
@@ -66,8 +63,9 @@ public class FrogEnemyBehaviour : MonoBehaviour
             timer -= Time.fixedDeltaTime;
             if (timer <= 3)
             {
-                rBody.rotation = Quaternion.Slerp(rBody.rotation,Quaternion.LookRotation(dir),timer);
+                rBody.rotation = Quaternion.Slerp(rBody.rotation, Quaternion.LookRotation(dir), timer);
                 rBody.isKinematic = true;
+
             }
             if (timer <= 0)
             {
