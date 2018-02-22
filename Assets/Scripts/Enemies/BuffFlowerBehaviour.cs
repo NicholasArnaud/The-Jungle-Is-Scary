@@ -4,13 +4,13 @@ using UnityEngine;
 public class BuffFlowerBehaviour : MonoBehaviour
 {
 
-    private GameObject playerGameObject;
+    private GameObject _playerGameObject;
     [Range(1, 20)]
-    public float detectionRadius;
+    public float DetectionRadius;
     [Range(0.2f, 5f)]
-    public float attackRadius;
-    private bool foundPlayer;
-    private float timer;
+    public float AttackRadius;
+    private bool _foundPlayer;
+    private float _timer;
 
     public enum BuffState
     {
@@ -20,75 +20,75 @@ public class BuffFlowerBehaviour : MonoBehaviour
     }
 
     [SerializeField]
-    private BuffState currentState;
+    private BuffState _currentState;
     [Range(0, 4)]
-    public float attackCooldown = 4;
-    public Vector3 smoothvelocity = Vector3.zero;
+    public float AttackCooldown = 4;
+    public Vector3 Smoothvelocity = Vector3.zero;
     [SerializeField]
-    bool attackedOnInstant = true;
+    private bool _attackedOnInstant = true;
 
     // Use this for initialization
     void Start()
     {
-        foundPlayer = false;
-        playerGameObject = GameObject.FindWithTag("Player");
-        timer = attackCooldown;
+        _foundPlayer = false;
+        _playerGameObject = GameObject.FindWithTag("Player");
+        _timer = AttackCooldown;
     }
 
     void Update()
     {
-        foundPlayer = EnableBehaviour(transform.position, detectionRadius);
+        _foundPlayer = EnableBehaviour(transform.position, DetectionRadius);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float distanceBetween = Vector3.Distance(playerGameObject.transform.position, gameObject.transform.position);
-        
-        if (currentState == BuffState.IDLE)
+        float distanceBetween = Vector3.Distance(_playerGameObject.transform.position, gameObject.transform.position);
+
+        if (_currentState == BuffState.IDLE)
         {
-            if (foundPlayer)
-                currentState = BuffState.CHASING;
+            if (_foundPlayer)
+                _currentState = BuffState.CHASING;
         }
         else
         {
-            transform.LookAt(playerGameObject.transform);
+            transform.LookAt(_playerGameObject.transform);
         }
 
-        if (currentState == BuffState.ATTACKING)
+        if (_currentState == BuffState.ATTACKING)
         {
-            if (attackedOnInstant == false)
+            if (_attackedOnInstant == false)
             {
-                timer -= Time.deltaTime;
-                if (distanceBetween >= attackRadius)
+                _timer -= Time.deltaTime;
+                if (distanceBetween >= AttackRadius)
                 {
-                    attackedOnInstant = true;
-                    currentState = BuffState.CHASING;
+                    _attackedOnInstant = true;
+                    _currentState = BuffState.CHASING;
                 }
-                if (timer <= 0)
+                if (_timer <= 0)
                 {
                     Debug.Log("Attack");
-                    timer = attackCooldown;
+                    _timer = AttackCooldown;
                 }
             }
             else
             {
                 Debug.Log("Attack");
-                attackedOnInstant = false;
+                _attackedOnInstant = false;
             }
-            
+
         }
 
-        if (currentState == BuffState.CHASING)
+        if (_currentState == BuffState.CHASING)
         {
-            if (distanceBetween <= attackRadius)
+            if (distanceBetween <= AttackRadius)
             {
-                currentState = BuffState.ATTACKING;
+                _currentState = BuffState.ATTACKING;
             }
             else
             {
                 Debug.Log("Chasing");
-                transform.position = Vector3.SmoothDamp(transform.position, playerGameObject.transform.position, ref smoothvelocity, 10.0f);
+                transform.position = Vector3.SmoothDamp(transform.position, _playerGameObject.transform.position, ref Smoothvelocity, 10.0f);
             }
         }
     }
@@ -96,9 +96,9 @@ public class BuffFlowerBehaviour : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, .5f, 0, .5f);
-        Gizmos.DrawSphere(transform.position, detectionRadius);
+        Gizmos.DrawSphere(transform.position, DetectionRadius);
         Gizmos.color = new Color(1, .5f, 0, .5f);
-        Gizmos.DrawSphere(transform.position, attackRadius);
+        Gizmos.DrawSphere(transform.position, AttackRadius);
     }
 
     bool EnableBehaviour(Vector3 center, float radius)
@@ -106,7 +106,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         var playerfound = false;
         var hitColliders = Physics.OverlapSphere(center, radius);
         var collidedObjects = hitColliders.ToList();
-        var playercollider = playerGameObject.GetComponent<Collider>();
+        var playercollider = _playerGameObject.GetComponent<Collider>();
         if (collidedObjects.Contains(playercollider))
             playerfound = true;
         return playerfound;
