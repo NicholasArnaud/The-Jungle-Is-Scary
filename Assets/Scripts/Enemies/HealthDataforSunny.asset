@@ -11,3 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6338b5e8f734e943bcc87b80aeae4f1, type: 3}
   m_Name: HealthDataforSunny
   m_EditorClassIdentifier: 
+  Health: 6
+  Alive: 1

@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114732122239728156}
   - component: {fileID: 54598137274731984}
   m_Layer: 0
+  m_Name: Beamie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
