@@ -24,6 +24,8 @@ public class BuffFlowerBehaviour : MonoBehaviour
     [Range(0, 4)]
     public float attackCooldown = 4;
     public Vector3 smoothvelocity = Vector3.zero;
+    [SerializeField]
+    bool attackedOnInstant = true;
 
     // Use this for initialization
     void Start()
@@ -42,6 +44,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         float distanceBetween = Vector3.Distance(playerGameObject.transform.position, gameObject.transform.position);
+        
         if (currentState == BuffState.IDLE)
         {
             if (foundPlayer)
@@ -54,16 +57,26 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
         if (currentState == BuffState.ATTACKING)
         {
-            timer -= Time.deltaTime;
-            if (distanceBetween >= attackRadius)
+            if (attackedOnInstant == false)
             {
-                currentState = BuffState.CHASING;
+                timer -= Time.deltaTime;
+                if (distanceBetween >= attackRadius)
+                {
+                    attackedOnInstant = true;
+                    currentState = BuffState.CHASING;
+                }
+                if (timer <= 0)
+                {
+                    Debug.Log("Attack");
+                    timer = attackCooldown;
+                }
             }
-            if (timer <= 0)
+            else
             {
                 Debug.Log("Attack");
-                timer = attackCooldown;
+                attackedOnInstant = false;
             }
+            
         }
 
         if (currentState == BuffState.CHASING)
