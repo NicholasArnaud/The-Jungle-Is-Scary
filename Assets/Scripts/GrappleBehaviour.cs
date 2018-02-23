@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrappleBehaviour : MonoBehaviour {
 
-    public AnimationCurve ac;
+    
     public GameObject branch;
     public enum SwingState
     {
@@ -31,13 +31,14 @@ public class GrappleBehaviour : MonoBehaviour {
                 break;
         }
         if (currentState == SwingState.SWINGING)
-            return;
+            Swing();
         
 	} 
 
     void Swing()
     {
-
+        transform.LookAt(branch.transform.position);
+        Vector3.MoveTowards(transform.position, branch.transform.position, 5);
     }
 
 
