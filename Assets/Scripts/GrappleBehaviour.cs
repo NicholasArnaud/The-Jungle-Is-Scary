@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class GrappleBehaviour : MonoBehaviour {
 
+    public AnimationCurve ac;
+    public GameObject branch;
     public enum SwingState
     {
         IDLE,
         SWINGING,
     }
-
     public SwingState currentState;
 
 	// Use this for initialization
@@ -20,7 +21,7 @@ public class GrappleBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        switch (Input.GetMouseButtonDown(0))
+        switch (Input.GetButtonDown("Fire1"))
         {
             case true:
                 if (currentState == SwingState.SWINGING)
@@ -29,5 +30,16 @@ public class GrappleBehaviour : MonoBehaviour {
                     currentState = SwingState.SWINGING;
                 break;
         }
-	}
+        if (currentState == SwingState.SWINGING)
+            return;
+        
+	} 
+
+    void Swing()
+    {
+
+    }
+
+
+
 }
