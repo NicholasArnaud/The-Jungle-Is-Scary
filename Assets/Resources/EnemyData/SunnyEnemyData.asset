@@ -9,7 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6338b5e8f734e943bcc87b80aeae4f1, type: 3}
-  m_Name: HealthDataforSunny
+  m_Name: SunnyEnemyData
   m_EditorClassIdentifier: 
+  PlayerGameObject: {fileID: 0}
+  FoundPlayer: 1
   Health: 6
   Alive: 1
+  DetectionRadius: 20
+  AttackRadius: 5
+  IdleAnimation: {fileID: 0}
+  ChasingAnimation: {fileID: 0}
+  DeathAnimation: {fileID: 0}
