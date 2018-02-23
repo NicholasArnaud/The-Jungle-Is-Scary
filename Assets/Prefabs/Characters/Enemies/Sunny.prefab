@@ -107,8 +107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbcbe5805dcba342b7149dabb9e9a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 20
-  attackRadius: 5
-  currentState: 0
-  attackCooldown: 1.81
-  smoothvelocity: {x: 0, y: 0, z: 0}
+  Data: {fileID: 11400000, guid: e2ad0e9c10274184686f951d2ce4fe38, type: 2}
+  _quickAttackReady: 1
+  _currentState: 0
+  _attackState: 0
+  AttackCooldown: 4
+  RiseTime: 2
+  Smoothvelocity: {x: 0, y: 0, z: 0}

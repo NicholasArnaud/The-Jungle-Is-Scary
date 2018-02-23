@@ -1,16 +1,27 @@
 ﻿using System.Linq;
+using TreeEditor;
 using UnityEngine;
 
 public class BuffFlowerBehaviour : MonoBehaviour
 {
+    //General enemy variables located here
+    public EnemyDataScriptable Data;
+    [SerializeField]
+    private bool _quickAttackReady = true;
+    private float _timer;
+    private float _secondTimer;
+    private float _deathTimer;
+    private bool _inGround;
+    [SerializeField]
+    private BuffState _currentState;
+    [SerializeField]
+    private AttackState _attackState;
+    [Range(0, 4)]
+    public float AttackCooldown;
+    public float RiseTime;
+    
 
-    private GameObject playerGameObject;
-    [Range(1, 20)]
-    public float detectionRadius;
-    [Range(0.2f, 5f)]
-    public float attackRadius;
-    private bool foundPlayer;
-    private float timer;
+    public Vector3 Smoothvelocity = Vector3.zero;
 
     public enum BuffState
     {
@@ -19,86 +30,162 @@ public class BuffFlowerBehaviour : MonoBehaviour
         ATTACKING,
     }
 
-    [SerializeField]
-    private BuffState currentState;
-    [Range(0, 4)]
-    public float attackCooldown = 4;
-    public Vector3 smoothvelocity = Vector3.zero;
-    [SerializeField]
-    bool attackedOnInstant = true;
+    public enum AttackState
+    {
+        QUICK,
+        HEAVY,
+    }
 
     // Use this for initialization
     void Start()
     {
-        foundPlayer = false;
-        playerGameObject = GameObject.FindWithTag("Player");
-        timer = attackCooldown;
+        _inGround = true;
+        Data.FoundPlayer = false;
+        Data.PlayerGameObject = GameObject.FindWithTag("Player");
+        _timer = AttackCooldown;
     }
 
     void Update()
     {
-        foundPlayer = EnableBehaviour(transform.position, detectionRadius);
+        if (!Data.Alive)
+        {
+            //play Death animation
+            Debug.Log("Running Death Animation");
+            Data.Alive = false;
+            _deathTimer += Time.deltaTime;
+            if (_deathTimer >= 4)
+                Destroy(gameObject);
+            return;
+        }
+        Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float distanceBetween = Vector3.Distance(playerGameObject.transform.position, gameObject.transform.position);
-        
-        if (currentState == BuffState.IDLE)
+        if (Data.Health <= 0)
         {
-            if (foundPlayer)
-                currentState = BuffState.CHASING;
+            Data.Alive = false;
+            return;
+        }
+
+        float distanceBetween = Vector3.Distance(Data.PlayerGameObject.transform.position, gameObject.transform.position);
+        if (_currentState == BuffState.IDLE)
+        {
+            if (_inGround == false)
+            {
+                //if the player enters the sight radius
+                if (Data.FoundPlayer)
+                    _currentState = BuffState.CHASING;
+                else
+                {
+                    //Run above ground idle
+                    Debug.Log("Running Above-Idle Animation");
+                }
+            }
+            else
+            {
+
+                if (Data.FoundPlayer)
+                {
+                    //Run rising animation
+                    Debug.Log("Running Rise Animation");
+
+                    _secondTimer += Time.deltaTime;
+                    if (_secondTimer >= RiseTime)
+                        _inGround = false;
+                }
+                else
+                {
+                    //Run below ground idle animation
+                    Debug.Log("Running Below-Idle Animation");
+                }
+            }
+
         }
         else
         {
-            transform.LookAt(playerGameObject.transform);
+            transform.LookAt(Data.PlayerGameObject.transform.position);
         }
 
-        if (currentState == BuffState.ATTACKING)
+        if (_currentState == BuffState.ATTACKING)
         {
-            if (attackedOnInstant == false)
+            //If the player is in the attack range
+            if (!_quickAttackReady)
             {
-                timer -= Time.deltaTime;
-                if (distanceBetween >= attackRadius)
+                _timer -= Time.deltaTime;
+                //If player is still in the attack range
+                if (distanceBetween >= Data.AttackRadius)
                 {
-                    attackedOnInstant = true;
-                    currentState = BuffState.CHASING;
+                    _quickAttackReady = true;
+                    _currentState = BuffState.CHASING;
                 }
-                if (timer <= 0)
+                //If the player stays counttimer for his heavier attack
+                if (_timer <= 0)
                 {
-                    Debug.Log("Attack");
-                    timer = attackCooldown;
+                    _attackState = AttackState.HEAVY;
+                    _timer = AttackCooldown;
+                    RunAttackStateMachine(_attackState);
                 }
+            }
+            //If the player just entered the attack range
+            else
+            {
+                _attackState = AttackState.QUICK;
+            }
+            //Run attack
+            if (_quickAttackReady && _attackState == AttackState.QUICK)
+            {
+                RunAttackStateMachine(_attackState);
+                _quickAttackReady = false;
+            }
+        }
+
+        //While the enemy is chasing the player
+        if (_currentState == BuffState.CHASING)
+        {
+            //If the player enters the attack radius
+            if (distanceBetween <= Data.AttackRadius)
+            {
+                _currentState = BuffState.ATTACKING;
+            }
+            //Still chasing player
+            else if (distanceBetween <= Data.DetectionRadius)
+            {
+                Debug.Log("Running Chasing Animation");
+                Vector3 tarPos = Data.PlayerGameObject.transform.position;
+                tarPos.y = transform.position.y;
+                transform.position = Vector3.SmoothDamp(transform.position, tarPos, ref Smoothvelocity, 10.0f);
             }
             else
             {
-                Debug.Log("Attack");
-                attackedOnInstant = false;
+                _currentState = BuffState.IDLE;
             }
-            
         }
+    }
 
-        if (currentState == BuffState.CHASING)
+    void RunAttackStateMachine(AttackState attack)
+    {
+        //Quick is used when the player first enters the attack radius
+        if (attack == AttackState.QUICK)
         {
-            if (distanceBetween <= attackRadius)
-            {
-                currentState = BuffState.ATTACKING;
-            }
-            else
-            {
-                Debug.Log("Chasing");
-                transform.position = Vector3.SmoothDamp(transform.position, playerGameObject.transform.position, ref smoothvelocity, 10.0f);
-            }
+            Debug.Log("Used a quick attack");
+            //Run quick attack animation
+        }
+        //essentially a charge up attack
+        else if (attack == AttackState.HEAVY)
+        {
+            Debug.Log("Used a heavy attack");
+            //Run Heavy attack animation
         }
     }
 
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, .5f, 0, .5f);
-        Gizmos.DrawSphere(transform.position, detectionRadius);
+        Gizmos.DrawSphere(transform.position, Data.DetectionRadius);
         Gizmos.color = new Color(1, .5f, 0, .5f);
-        Gizmos.DrawSphere(transform.position, attackRadius);
+        Gizmos.DrawSphere(transform.position, Data.AttackRadius);
     }
 
     bool EnableBehaviour(Vector3 center, float radius)
@@ -106,7 +193,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         var playerfound = false;
         var hitColliders = Physics.OverlapSphere(center, radius);
         var collidedObjects = hitColliders.ToList();
-        var playercollider = playerGameObject.GetComponent<Collider>();
+        var playercollider = Data.PlayerGameObject.GetComponent<Collider>();
         if (collidedObjects.Contains(playercollider))
             playerfound = true;
         return playerfound;
