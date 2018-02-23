@@ -111,7 +111,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         if (_currentState == BuffState.ATTACKING)
         {
             //If the player is in the attack range
-            if (_quickAttackReady == false)
+            if (!_quickAttackReady)
             {
                 _timer -= Time.deltaTime;
                 //If player is still in the attack range

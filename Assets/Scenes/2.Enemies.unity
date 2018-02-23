@@ -485,6 +485,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114088844146656752, guid: a683e76d1293fb44fb80abe18079a0ea,
+        type: 2}
+      propertyPath: AttackCooldown
+      value: 2.94
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a683e76d1293fb44fb80abe18079a0ea, type: 2}
   m_IsPrefabParent: 0
