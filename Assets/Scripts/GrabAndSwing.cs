@@ -5,12 +5,7 @@ using UnityEngine;
 public class GrabAndSwing : MonoBehaviour {
 
     public GameObject player;
-    public AnimationCurve ac;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-	// Use this for initialization
-	void Start () {
-        
-	}
-
+    public AnimationCurve ac;
     // Update is called once per frame
     void Update()
     {
@@ -20,8 +15,6 @@ public class GrabAndSwing : MonoBehaviour {
             player.GetComponent<Rigidbody>().useGravity = true;
             player.GetComponent<Player_Movement>().enabled = true;
         }
-
-
     }	
 	
     void OnTriggerEnter(Collider other)
