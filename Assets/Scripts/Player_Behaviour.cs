@@ -32,10 +32,5 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     {
         Data.lives -= f;
     }
-    void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(0, .5f, 0, .5f);
-        Gizmos.DrawSphere(transform.position, Data.DetectionRadius);
-    }
 }
  
