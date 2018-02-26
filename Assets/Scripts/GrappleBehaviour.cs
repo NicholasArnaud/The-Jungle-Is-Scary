@@ -31,15 +31,21 @@ public class GrappleBehaviour : MonoBehaviour
         if (objects.Contains(GameObject.FindGameObjectWithTag("Branch").GetComponent<Collider>()))
             canSwing = true;
         else
+        {
             canSwing = false;
+            currentState = SwingState.IDLE;
+        }
+            
 
         switch (Input.GetButtonDown("Fire1"))
         {
             case true:
                 if (currentState == SwingState.SWINGING)
                     currentState = SwingState.IDLE;
-                else if(canSwing)
+                else if (canSwing)
                     currentState = SwingState.SWINGING;
+                else
+                    currentState = SwingState.IDLE;
                 break;
         }
      //   if (currentState == SwingState.SWINGING)
