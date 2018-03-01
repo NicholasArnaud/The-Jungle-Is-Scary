@@ -6,17 +6,19 @@ using UnityEngine;
 public class GrappleBehaviour : MonoBehaviour
 {
 
-
     public GameObject branch;
     public enum SwingState
     {
         IDLE,
+        THROWING,
         SWINGING,
     }
-    public bool canSwing;
+    public bool canThrow;
+    public bool attached;
     public SwingState currentState;
     public float DetectionRadius;
     public List<Collider> objects;
+    AnimationCurve ac;
     // Use this for initialization
     void Start()
     {
@@ -26,44 +28,44 @@ public class GrappleBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var col = Physics.OverlapSphere(transform.position, 5);
+        var col = Physics.OverlapSphere(transform.position, DetectionRadius);
         objects = col.ToList();
         if (objects.Contains(GameObject.FindGameObjectWithTag("Branch").GetComponent<Collider>()))
-            canSwing = true;
+            canThrow = true;
         else
         {
-            canSwing = false;
+            canThrow = false;
             currentState = SwingState.IDLE;
         }
-            
+
 
         switch (Input.GetButtonDown("Fire1"))
         {
             case true:
                 if (currentState == SwingState.SWINGING)
                     currentState = SwingState.IDLE;
-                else if (canSwing)
+                else if (canThrow)
                     currentState = SwingState.SWINGING;
                 else
                     currentState = SwingState.IDLE;
                 break;
         }
-     //   if (currentState == SwingState.SWINGING)
-            //Swing();
-
     }
-
-    void Swing()
-    {
-        transform.LookAt(branch.transform.position);
-        Vector3.MoveTowards(transform.position, branch.transform.position, 5);
-    }
-
 
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, .5f, 0, .5f);
-        Gizmos.DrawSphere(transform.position, DetectionRadius);
+        Gizmos.DrawWireSphere(transform.position, DetectionRadius);
+    }
+
+    void Swing()
+    {
+
+    }
+    
+    void OnTriggerEnter(Collider other)
+    {
+
     }
 
 }
