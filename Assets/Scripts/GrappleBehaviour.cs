@@ -18,7 +18,7 @@ public class GrappleBehaviour : MonoBehaviour
     public SwingState currentState;
     public float DetectionRadius;
     public List<Collider> objects;
-    AnimationCurve ac;
+
     // Use this for initialization
     void Start()
     {

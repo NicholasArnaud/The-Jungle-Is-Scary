@@ -22,20 +22,19 @@ public class Player_Movement : MonoBehaviour {
         float v = Input.GetAxis("Vertical");
         Vector3 move = new Vector3(h, 0, v);
         transform.localPosition += move * speed * Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             FindObjectOfType<BranchSwingTestBehaviour>().AttachAndSwing(GetComponent<Rigidbody>());
         }
-            
+
         //Jumping
         //checks if player is on the floor to avoid infinite jumping
-        //if (onFloor && Input.GetKeyDown(KeyCode.Space))
-        //{
-
-        //    //GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpHeight, 0));
-        //    onFloor = !onFloor;
-        //}
-	}
+        if (onFloor && Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpHeight, 0));
+            onFloor = !onFloor;
+        }
+    }
 
     public void OnTriggerEnter(Collider collider)
     {
