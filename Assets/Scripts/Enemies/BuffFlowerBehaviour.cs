@@ -26,14 +26,18 @@ public class BuffFlowerBehaviour : MonoBehaviour
     public EnemyDataScriptable Data;
 
     //Specific values to Buff Flower
-    [SerializeField] private bool _quickAttackReady = true;
+    [SerializeField]
+    private bool _quickAttackReady = true;
     private float _timer;
     private float _secondTimer;
     private float _deathTimer = 4;
     private bool _inGround;
-    [SerializeField] private BuffState _currentState = BuffState.NONE;
-    [SerializeField] private AttackState _attackState;
-    [Range(0, 4)] public float AttackCooldown;
+    [SerializeField]
+    private BuffState _currentState = BuffState.NONE;
+    [SerializeField]
+    private AttackState _attackState;
+    [Range(0, 4)]
+    public float AttackCooldown;
     public float RiseTime;
 
     public Vector3 Smoothvelocity = Vector3.zero;
@@ -41,8 +45,6 @@ public class BuffFlowerBehaviour : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        ChangeState(BuffState.AGGRESSIVE);
-
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
         _timer = AttackCooldown;
     }
@@ -50,7 +52,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private void Update()
     {
         //must have checks per frame
-        Data.Alive = (Data.Health <= 0);
+        Data.Alive = (Data.Health >= 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
         //anystate check for being dead 
         var distanceBetween = Vector3.Distance(Data.PlayerGameObject.transform.position, transform.position);
@@ -78,7 +80,75 @@ public class BuffFlowerBehaviour : MonoBehaviour
         }
     }
 
-    void AttackStateHandler(float distance)
+
+    private void NoneStateHandler()
+    {
+        if (CurrentState == BuffState.NONE)
+            ChangeState(BuffState.PASSIVE);
+    }
+
+    private void PassiveStateHandler()
+    {
+        if (!Data.Alive)
+        {
+            ChangeState(BuffState.DEAD);
+            return;
+        }
+
+        if (Data.FoundPlayer)
+        {
+            _secondTimer += Time.deltaTime;
+            _inGround = _secondTimer <= RiseTime;
+            if (!_inGround)
+                ChangeState(BuffState.AGGRESSIVE);
+        }
+    }
+
+    private void AggressiveStateHandler()
+    {
+        transform.LookAt(Data.PlayerGameObject.transform
+            .position); //if the enemy doesn't see the player it's not gonna stare at him
+
+        if (!Data.Alive)
+        {
+            ChangeState(BuffState.DEAD);
+            return;
+        }
+
+        //found player and not waiting to come out of ground
+        if (Data.FoundPlayer)
+        {
+            ChangeState(BuffState.CHASING);
+        }
+    }
+
+    private void ChaseStateHandler(float distance)
+    {
+        transform.LookAt(Data.PlayerGameObject.transform.position);
+
+        if (!Data.Alive)
+        {
+            ChangeState(BuffState.DEAD);
+            return;
+        }
+        //If the player enters the attack radius
+
+        bool stillChasingPlayer = distance <= Data.DetectionRadius && distance >= Data.AttackRadius;
+        if (stillChasingPlayer)
+        {
+            var tarPos = Data.PlayerGameObject.transform.position;
+            tarPos.y = transform.position.y;
+            transform.position = Vector3.SmoothDamp(transform.position, tarPos, ref Smoothvelocity, 10.0f);
+            return;
+        }
+        if (distance <= Data.AttackRadius)
+        {
+            ChangeState(BuffState.ATTACKING);
+            return;
+        }
+        ChangeState(BuffState.AGGRESSIVE);
+    }
+    private void AttackStateHandler(float distance)
     {
         if (_currentState == BuffState.ATTACKING)
         {
@@ -116,70 +186,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         }
     }
 
-    void NoneStateHandler()
-    {
-        if (CurrentState == BuffState.NONE)
-            ChangeState(BuffState.NONE);
-    }
-
-    void PassiveStateHandler()
-    {
-        if (!Data.Alive)
-        {
-            ChangeState(BuffState.DEAD);
-            return;
-        }
-
-
-        _secondTimer += Time.deltaTime;
-        _inGround = _secondTimer <= RiseTime;
-        ChangeState(BuffState.AGGRESSIVE);
-    }
-
-    void AggressiveStateHandler()
-    {
-        transform.LookAt(Data.PlayerGameObject.transform
-            .position); //if the enemy doesn't see the player it's not gonna stare at him
-
-        if (!Data.Alive)
-        {
-            ChangeState(BuffState.DEAD);
-            return;
-        }
-
-        //found player and not waiting to come out of ground
-        if (Data.FoundPlayer)
-        {
-            ChangeState(BuffState.CHASING);
-        }
-    }
-
-    void ChaseStateHandler(float distance)
-    {
-        transform.LookAt(Data.PlayerGameObject.transform.position);
-
-        if (!Data.Alive)
-        {
-            ChangeState(BuffState.DEAD);
-            return;
-        }
-        //If the player enters the attack radius
-
-        bool stillChasingPlayer = distance <= Data.DetectionRadius;
-        if (stillChasingPlayer)
-        {
-            Debug.Log("Running Chasing Animation");
-            var tarPos = Data.PlayerGameObject.transform.position;
-            tarPos.y = transform.position.y;
-            transform.position = Vector3.SmoothDamp(transform.position, tarPos, ref Smoothvelocity, 10.0f);
-            return;
-        }
-
-
-        ChangeState(BuffState.ATTACKING);
-    }
-
-    void DeathStateHandler()
+    private void DeathStateHandler()
     {
         if (Data.Alive)
             return;
@@ -194,19 +201,20 @@ public class BuffFlowerBehaviour : MonoBehaviour
         get { return _currentState; }
         set
         {
-            Debug.Log("Change state to " + value + "From " + _currentState);
+            Debug.Log("Change state to " + value + " From " + _currentState);
             _currentState = value;
         }
     }
-    
-    void ChangeState(BuffState state)
+
+    private void ChangeState(BuffState state)
     {
         //ToDo:: Check for valid state transitions
         CurrentState = state;
     }
 
     #region No
-    void RunAttackStateMachine(AttackState attack)
+
+    private void RunAttackStateMachine(AttackState attack)
     {
         //Quick is used when the player first enters the attack radius
         if (attack == AttackState.QUICK)
@@ -222,7 +230,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, .5f, 0, .5f);
         Gizmos.DrawSphere(transform.position, Data.DetectionRadius);
@@ -230,7 +238,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         Gizmos.DrawSphere(transform.position, Data.AttackRadius);
     }
 
-    bool EnableBehaviour(Vector3 center, float radius)
+    private bool EnableBehaviour(Vector3 center, float radius)
     {
         var playerfound = false;
         var hitColliders = Physics.OverlapSphere(center, radius);
