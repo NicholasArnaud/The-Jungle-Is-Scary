@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0734dc9a267fdad468bc7059d0219d52
-timeCreated: 1520009705
+guid: 955d4c899c4094d4785427ca8911a6e1
+timeCreated: 1520026492
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -66,15 +66,14 @@ ModelImporter:
     100116: r_Thumb_01_03SHJnt
     100118: r_Thumb_01_04SHJnt
     100120: ROOTSHJnt
-    100122: SHJntGrp
-    100124: Spine_01SHJnt
-    100126: Spine_02SHJnt
-    100128: Spine_03SHJnt
-    100130: Spine_04SHJnt
-    100132: Spine_TopSHJnt
-    100134: //RootNode
-    100136: SunnyBody
-    100138: SunnyPetals
+    100122: Spine_01SHJnt
+    100124: Spine_02SHJnt
+    100126: Spine_03SHJnt
+    100128: Spine_04SHJnt
+    100130: Spine_TopSHJnt
+    100132: //RootNode
+    100134: SunnyBody
+    100136: SunnyPetals
     400000: Head_TopSHJnt
     400002: l_Arm_ClavicleSHJnt
     400004: l_Arm_ElbowSHJnt
@@ -136,19 +135,18 @@ ModelImporter:
     400116: r_Thumb_01_03SHJnt
     400118: r_Thumb_01_04SHJnt
     400120: ROOTSHJnt
-    400122: SHJntGrp
-    400124: Spine_01SHJnt
-    400126: Spine_02SHJnt
-    400128: Spine_03SHJnt
-    400130: Spine_04SHJnt
-    400132: Spine_TopSHJnt
-    400134: //RootNode
-    400136: SunnyBody
-    400138: SunnyPetals
+    400122: Spine_01SHJnt
+    400124: Spine_02SHJnt
+    400126: Spine_03SHJnt
+    400128: Spine_04SHJnt
+    400130: Spine_TopSHJnt
+    400132: //RootNode
+    400134: SunnyBody
+    400136: SunnyPetals
     2100000: SunnyShader
     4300000: SunnyBody
     4300002: SunnyPetals
-    7400000: OnGroundIdle
+    7400000: Take 001
     9500000: //RootNode
     13700000: SunnyBody
     13700002: SunnyPetals
@@ -165,7 +163,10 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
+      rotation in copied configuration does not match rotation in animation file:\n\t'l_Leg_BallSHJnt'
+      : rotation error = 14.586268 deg\n\t'r_Leg_BallSHJnt' : rotation error = 23.999456
+      deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar to
@@ -175,9 +176,9 @@ ModelImporter:
       has translation animation that will be discarded.\n\t'Spine_04SHJnt' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'Spine_TopSHJnt'
       has translation animation that will be discarded.\n\t'Spine_TopSHJnt' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'l_Arm_ClavicleSHJnt'
-      has translation animation that will be discarded.\n\t'r_Arm_ClavicleSHJnt' has
-      translation animation that will be discarded.\n"
+      humanoid transforms and has rotation animation that will be discarded.\n\t'l_Leg_BallSHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'r_Leg_BallSHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -188,35 +189,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: OnGroundIdle
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 76
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -246,7 +219,7 @@ ModelImporter:
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 2
     human:
@@ -1019,7 +992,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 002d46aa85f0f7d4bb47046ffd0f80ea,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 0734dc9a267fdad468bc7059d0219d52,
     type: 3}
   animationType: 3
   humanoidOversampling: 1
