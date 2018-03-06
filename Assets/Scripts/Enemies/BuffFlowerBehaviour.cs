@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using TreeEditor;
+﻿using System.Linq;
 using UnityEngine;
 
 public enum BuffState
@@ -24,7 +22,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
 {
     //General enemy variables located within scriptable
     public EnemyDataScriptable Data;
-
+    public Animator animatorController;
     //Specific values to Buff Flower
     [SerializeField]
     private bool _quickAttackReady = true;
@@ -46,6 +44,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private void Start()
     {
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
+        animatorController = GetComponent<Animator>();
         _timer = AttackCooldown;
     }
 
@@ -83,8 +82,17 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     private void NoneStateHandler()
     {
-        if (CurrentState == BuffState.NONE)
-            ChangeState(BuffState.PASSIVE);
+        if (Data.FoundPlayer)
+        {
+            if (_secondTimer <= 0)
+                animatorController.SetTrigger("Rising");
+            _secondTimer += Time.deltaTime;
+            _inGround = _secondTimer <= RiseTime;
+            if (!_inGround)
+                ChangeState(BuffState.PASSIVE);
+            return;
+        }
+        animatorController.SetBool("Init", true);
     }
 
     private void PassiveStateHandler()
@@ -97,15 +105,14 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
         if (Data.FoundPlayer)
         {
-            _secondTimer += Time.deltaTime;
-            _inGround = _secondTimer <= RiseTime;
-            if (!_inGround)
-                ChangeState(BuffState.AGGRESSIVE);
+            ChangeState(BuffState.AGGRESSIVE);
+            return;
         }
     }
 
     private void AggressiveStateHandler()
     {
+        animatorController.SetBool("Noticed Player", true);
         transform.LookAt(Data.PlayerGameObject.transform
             .position); //if the enemy doesn't see the player it's not gonna stare at him
 
@@ -119,11 +126,15 @@ public class BuffFlowerBehaviour : MonoBehaviour
         if (Data.FoundPlayer)
         {
             ChangeState(BuffState.CHASING);
+            return;
         }
+        animatorController.SetBool("Noticed Player", false);
+        ChangeState(BuffState.PASSIVE);
     }
 
     private void ChaseStateHandler(float distance)
     {
+        animatorController.SetBool("Sees Player", true);
         transform.LookAt(Data.PlayerGameObject.transform.position);
 
         if (!Data.Alive)
@@ -146,6 +157,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(BuffState.ATTACKING);
             return;
         }
+        animatorController.SetBool("Sees Player", false);
         ChangeState(BuffState.AGGRESSIVE);
     }
     private void AttackStateHandler(float distance)
@@ -161,6 +173,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
                 {
                     _quickAttackReady = true;
                     ChangeState(BuffState.CHASING);
+                    return;
                 }
 
                 //If the player stays counttimer for his heavier attack
@@ -191,7 +204,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         if (Data.Alive)
             return;
         //play Death animation
-        Debug.Log("Running Death Animation");
+        animatorController.SetBool("Alive", false);
 
         Destroy(gameObject, _deathTimer);
     }
