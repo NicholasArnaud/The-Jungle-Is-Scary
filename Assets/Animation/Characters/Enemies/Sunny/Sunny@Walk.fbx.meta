@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 367cb3523fe650e4da9b59658a38752d
-timeCreated: 1520454375
+guid: 2c67679c0eda9fc4da2b29f5dfe9bb5d
+timeCreated: 1520454382
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -163,11 +163,24 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
+      rotation in copied configuration does not match rotation in animation file:\n\t'l_Leg_BallSHJnt'
+      : rotation error = 15.392523 deg\n\t'r_Leg_BallSHJnt' : rotation error = 25.000010
+      deg\n"
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Spine_01SHJnt' has translation animation that
+      will be discarded.\n\t'Spine_02SHJnt' has translation animation that will be
+      discarded.\n\t'Spine_03SHJnt' has translation animation that will be discarded.\n\t'Spine_04SHJnt'
+      has translation animation that will be discarded.\n\t'Spine_04SHJnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Spine_TopSHJnt'
+      has translation animation that will be discarded.\n\t'Spine_TopSHJnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'l_Leg_BallSHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'r_Leg_BallSHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
-    animationDoRetargetingWarnings: 0
+    animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5

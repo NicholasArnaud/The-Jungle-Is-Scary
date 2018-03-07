@@ -302,6 +302,11 @@ Prefab:
       propertyPath: m_Name
       value: Sunny
       objectReference: {fileID: 0}
+    - target: {fileID: 95164063731045822, guid: dd5061628b4b360419a063967578489b,
+        type: 2}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 67754837e53cd284aad79b127f9154c4, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd5061628b4b360419a063967578489b, type: 2}
   m_IsPrefabParent: 0
