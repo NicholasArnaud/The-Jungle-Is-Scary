@@ -10,6 +10,12 @@ public class GrappleBehaviour : MonoBehaviour
     public bool attached;
     public float DetectionRadius;
     public List<Collider> objects;
+    Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,13 +31,13 @@ public class GrappleBehaviour : MonoBehaviour
         {
             if (attached)
             {
-                FindObjectOfType<BranchSwingTestBehaviour>().AttachAndSwing(GetComponent<Rigidbody>());
-                GetComponent<Rigidbody>().AddForce(0, 0, 200);
+                FindObjectOfType<BranchSwingTestBehaviour>().AttachAndSwing(rb);
+                rb.AddForce(0, 0, 200);
                 attached = false;
             }
             else if (canThrow)
             {
-                FindObjectOfType<BranchSwingTestBehaviour>().AttachAndSwing(GetComponent<Rigidbody>());
+                FindObjectOfType<BranchSwingTestBehaviour>().AttachAndSwing(rb);
                 attached = true;
             }
         }

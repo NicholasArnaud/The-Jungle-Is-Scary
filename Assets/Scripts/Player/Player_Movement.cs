@@ -8,12 +8,13 @@ public class Player_Movement : MonoBehaviour {
     public int speed;
     public float jumpHeight;
     public bool onFloor;
-    
+    Rigidbody rb;
 	// Use this for initialization
 	void Start ()
     {
-        onFloor = true;      
-	}
+        onFloor = true;
+        rb = GetComponent<Rigidbody>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -28,7 +29,7 @@ public class Player_Movement : MonoBehaviour {
         //checks if player is on the floor to avoid infinite jumping
         if (onFloor && Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpHeight, 0));
+            rb.AddForce(new Vector3(0, jumpHeight, 0));
             onFloor = !onFloor;
         }
     }
