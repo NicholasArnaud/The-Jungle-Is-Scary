@@ -151,7 +151,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         }
         //If the player enters the attack radius
 
-        bool stillChasingPlayer = distance <= Data.DetectionRadius && distance >= Data.AttackRadius;
+        var stillChasingPlayer = distance <= Data.DetectionRadius && distance >= Data.AttackRadius;
         if (stillChasingPlayer)
         {
             var tarPos = Data.PlayerGameObject.transform.position;

@@ -146,7 +146,7 @@ ModelImporter:
     2100000: SunnyShader
     4300000: SunnyBody
     4300002: SunnyPetals
-    7400000: Take 001
+    7400000: Walk
     9500000: //RootNode
     13700000: SunnyBody
     13700002: SunnyPetals
@@ -179,7 +179,17 @@ ModelImporter:
       humanoid transforms and has rotation animation that will be discarded.\n\t'l_Leg_BallSHJnt'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'r_Leg_BallSHJnt'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
-    animationRetargetingWarnings: 
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftUpperArm
+      average position error 20.5 mm and maximum position error 63.9 mm at time 0:16
+      (20.0%) Frame 16\n\tLeftLowerArm average position error 19.3 mm and maximum
+      position error 65.1 mm at time 0:16 (20.0%) Frame 16\n\tLeftHand average position
+      error 20.5 mm and maximum position error 65.3 mm at time 0:16 (20.0%) Frame
+      16\n\tRightUpperArm average position error 21.5 mm and maximum position error
+      65.1 mm at time 0: 4 (4.0%) Frame 4\n\tRightLowerArm average position error
+      20.5 mm and maximum position error 64.1 mm at time 0: 4 (4.0%) Frame 4\n\tRightHand
+      average position error 19.3 mm and maximum position error 64.4 mm at time 0:
+      4 (4.0%) Frame 4\n\tHead average position error 18.4 mm and maximum position
+      error 51.0 mm at time 0: 4 (4.0%) Frame 4\n"
     animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
     animationCompression: 1
@@ -189,7 +199,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
