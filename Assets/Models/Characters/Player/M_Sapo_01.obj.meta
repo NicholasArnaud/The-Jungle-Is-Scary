@@ -1,0 +1,233 @@
+fileFormatVersion: 2
+guid: f6acadda768e2d24c8ac92a9a043217a
+timeCreated: 1520459131
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Sapo_Boot_Cuff_L_Boot_Cuffs
+    100004: Sapo_Boot_Cuffs_Boot_Cuff_R
+    100006: Sapo_Eye_Lid_R_Sapo_Eyes
+    100008: Sapo_HairTuft6_Sapo_Hair
+    100010: Sapo_Headband_Sapo
+    100012: Sapo_Sapo_Belt
+    100014: Sapo_Sapo_Eyes_Eye_Ball_L
+    100016: Sapo_Sapo_Eyes_Eye_Ball_R
+    100018: Sapo_Sapo_Eyes_Eye_Lid_L
+    100020: Sapo_Sapo_Eyes_Eye_Pupil_L
+    100022: Sapo_Sapo_Eyes_Eye_Pupil_R
+    100024: Sapo_Sapo_Gloves_L
+    100026: Sapo_Sapo_Gloves_R
+    100028: Sapo_Sapo_Hair_HairTuft1
+    100030: Sapo_Sapo_Hair_HairTuft2
+    100032: Sapo_Sapo_Hair_HairTuft3
+    100034: Sapo_Sapo_Hair_HairTuft4
+    100036: Sapo_Sapo_Hair_HairTuft5
+    100038: Sapo_Sapo_Hair_HairTuft7
+    100040: Sapo_Sapo_Hair_HairTuft8
+    100042: Sapo_Sapo_Hair_HairTuft9
+    100044: Sapo_Sapo_Headpiece
+    100046: Sapo_Sapo_MainBody
+    100048: Sapo_Sapo_Shirt
+    400000: //RootNode
+    400002: Sapo_Boot_Cuff_L_Boot_Cuffs
+    400004: Sapo_Boot_Cuffs_Boot_Cuff_R
+    400006: Sapo_Eye_Lid_R_Sapo_Eyes
+    400008: Sapo_HairTuft6_Sapo_Hair
+    400010: Sapo_Headband_Sapo
+    400012: Sapo_Sapo_Belt
+    400014: Sapo_Sapo_Eyes_Eye_Ball_L
+    400016: Sapo_Sapo_Eyes_Eye_Ball_R
+    400018: Sapo_Sapo_Eyes_Eye_Lid_L
+    400020: Sapo_Sapo_Eyes_Eye_Pupil_L
+    400022: Sapo_Sapo_Eyes_Eye_Pupil_R
+    400024: Sapo_Sapo_Gloves_L
+    400026: Sapo_Sapo_Gloves_R
+    400028: Sapo_Sapo_Hair_HairTuft1
+    400030: Sapo_Sapo_Hair_HairTuft2
+    400032: Sapo_Sapo_Hair_HairTuft3
+    400034: Sapo_Sapo_Hair_HairTuft4
+    400036: Sapo_Sapo_Hair_HairTuft5
+    400038: Sapo_Sapo_Hair_HairTuft7
+    400040: Sapo_Sapo_Hair_HairTuft8
+    400042: Sapo_Sapo_Hair_HairTuft9
+    400044: Sapo_Sapo_Headpiece
+    400046: Sapo_Sapo_MainBody
+    400048: Sapo_Sapo_Shirt
+    2100000: Sapo_Boot_Cuff_L_Boot_CuffsMat
+    2100002: Sapo_Boot_Cuffs_Boot_Cuff_RMat
+    2100004: Sapo_Eye_Lid_R_Sapo_EyesMat
+    2100006: Sapo_HairTuft6_Sapo_HairMat
+    2100008: Sapo_Headband_SapoMat
+    2100010: Sapo_Sapo_BeltMat
+    2100012: Sapo_Sapo_Eyes_Eye_Ball_LMat
+    2100014: Sapo_Sapo_Eyes_Eye_Ball_RMat
+    2100016: Sapo_Sapo_Eyes_Eye_Lid_LMat
+    2100018: Sapo_Sapo_Eyes_Eye_Pupil_LMat
+    2100020: Sapo_Sapo_Eyes_Eye_Pupil_RMat
+    2100022: Sapo_Sapo_Gloves_LMat
+    2100024: Sapo_Sapo_Gloves_RMat
+    2100026: Sapo_Sapo_Hair_HairTuft1Mat
+    2100028: Sapo_Sapo_Hair_HairTuft2Mat
+    2100030: Sapo_Sapo_Hair_HairTuft3Mat
+    2100032: Sapo_Sapo_Hair_HairTuft4Mat
+    2100034: Sapo_Sapo_Hair_HairTuft5Mat
+    2100036: Sapo_Sapo_Hair_HairTuft7Mat
+    2100038: Sapo_Sapo_Hair_HairTuft8Mat
+    2100040: Sapo_Sapo_Hair_HairTuft9Mat
+    2100042: Sapo_Sapo_HeadpieceMat
+    2100044: Sapo_Sapo_MainBodyMat
+    2100046: Sapo_Sapo_ShirtMat
+    2300000: Sapo_Boot_Cuff_L_Boot_Cuffs
+    2300002: Sapo_Boot_Cuffs_Boot_Cuff_R
+    2300004: Sapo_Eye_Lid_R_Sapo_Eyes
+    2300006: Sapo_HairTuft6_Sapo_Hair
+    2300008: Sapo_Headband_Sapo
+    2300010: Sapo_Sapo_Belt
+    2300012: Sapo_Sapo_Eyes_Eye_Ball_L
+    2300014: Sapo_Sapo_Eyes_Eye_Ball_R
+    2300016: Sapo_Sapo_Eyes_Eye_Lid_L
+    2300018: Sapo_Sapo_Eyes_Eye_Pupil_L
+    2300020: Sapo_Sapo_Eyes_Eye_Pupil_R
+    2300022: Sapo_Sapo_Gloves_L
+    2300024: Sapo_Sapo_Gloves_R
+    2300026: Sapo_Sapo_Hair_HairTuft1
+    2300028: Sapo_Sapo_Hair_HairTuft2
+    2300030: Sapo_Sapo_Hair_HairTuft3
+    2300032: Sapo_Sapo_Hair_HairTuft4
+    2300034: Sapo_Sapo_Hair_HairTuft5
+    2300036: Sapo_Sapo_Hair_HairTuft7
+    2300038: Sapo_Sapo_Hair_HairTuft8
+    2300040: Sapo_Sapo_Hair_HairTuft9
+    2300042: Sapo_Sapo_Headpiece
+    2300044: Sapo_Sapo_MainBody
+    2300046: Sapo_Sapo_Shirt
+    3300000: Sapo_Boot_Cuff_L_Boot_Cuffs
+    3300002: Sapo_Boot_Cuffs_Boot_Cuff_R
+    3300004: Sapo_Eye_Lid_R_Sapo_Eyes
+    3300006: Sapo_HairTuft6_Sapo_Hair
+    3300008: Sapo_Headband_Sapo
+    3300010: Sapo_Sapo_Belt
+    3300012: Sapo_Sapo_Eyes_Eye_Ball_L
+    3300014: Sapo_Sapo_Eyes_Eye_Ball_R
+    3300016: Sapo_Sapo_Eyes_Eye_Lid_L
+    3300018: Sapo_Sapo_Eyes_Eye_Pupil_L
+    3300020: Sapo_Sapo_Eyes_Eye_Pupil_R
+    3300022: Sapo_Sapo_Gloves_L
+    3300024: Sapo_Sapo_Gloves_R
+    3300026: Sapo_Sapo_Hair_HairTuft1
+    3300028: Sapo_Sapo_Hair_HairTuft2
+    3300030: Sapo_Sapo_Hair_HairTuft3
+    3300032: Sapo_Sapo_Hair_HairTuft4
+    3300034: Sapo_Sapo_Hair_HairTuft5
+    3300036: Sapo_Sapo_Hair_HairTuft7
+    3300038: Sapo_Sapo_Hair_HairTuft8
+    3300040: Sapo_Sapo_Hair_HairTuft9
+    3300042: Sapo_Sapo_Headpiece
+    3300044: Sapo_Sapo_MainBody
+    3300046: Sapo_Sapo_Shirt
+    4300000: Sapo_Boot_Cuff_L_Boot_Cuffs
+    4300002: Sapo_Boot_Cuffs_Boot_Cuff_R
+    4300004: Sapo_Eye_Lid_R_Sapo_Eyes
+    4300006: Sapo_HairTuft6_Sapo_Hair
+    4300008: Sapo_Headband_Sapo
+    4300010: Sapo_Sapo_Belt
+    4300012: Sapo_Sapo_Eyes_Eye_Ball_L
+    4300014: Sapo_Sapo_Eyes_Eye_Ball_R
+    4300016: Sapo_Sapo_Eyes_Eye_Lid_L
+    4300018: Sapo_Sapo_Eyes_Eye_Pupil_L
+    4300020: Sapo_Sapo_Eyes_Eye_Pupil_R
+    4300022: Sapo_Sapo_Gloves_L
+    4300024: Sapo_Sapo_Gloves_R
+    4300026: Sapo_Sapo_Hair_HairTuft1
+    4300028: Sapo_Sapo_Hair_HairTuft2
+    4300030: Sapo_Sapo_Hair_HairTuft3
+    4300032: Sapo_Sapo_Hair_HairTuft4
+    4300034: Sapo_Sapo_Hair_HairTuft5
+    4300036: Sapo_Sapo_Hair_HairTuft7
+    4300038: Sapo_Sapo_Hair_HairTuft8
+    4300040: Sapo_Sapo_Hair_HairTuft9
+    4300042: Sapo_Sapo_Headpiece
+    4300044: Sapo_Sapo_MainBody
+    4300046: Sapo_Sapo_Shirt
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
