@@ -6,24 +6,10 @@ using UnityEngine;
 public class GrappleBehaviour : MonoBehaviour
 {
 
-    public GameObject branch;
-    public enum SwingState
-    {
-        IDLE,
-        THROWING,
-        SWINGING,
-    }
     public bool canThrow;
     public bool attached;
-    public SwingState currentState;
     public float DetectionRadius;
     public List<Collider> objects;
-
-    // Use this for initialization
-    void Start()
-    {
-        currentState = SwingState.IDLE;
-    }
 
     // Update is called once per frame
     void Update()
@@ -31,24 +17,23 @@ public class GrappleBehaviour : MonoBehaviour
         var col = Physics.OverlapSphere(transform.position, DetectionRadius);
         objects = col.ToList();
         if (objects.Contains(GameObject.FindGameObjectWithTag("Branch").GetComponent<Collider>()))
-            canThrow = true;
+            canThrow = true;          
         else
-        {
             canThrow = false;
-            currentState = SwingState.IDLE;
-        }
-
-
-        switch (Input.GetButtonDown("Fire1"))
+        
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            case true:
-                if (currentState == SwingState.SWINGING)
-                    currentState = SwingState.IDLE;
-                else if (canThrow)
-                    currentState = SwingState.SWINGING;
-                else
-                    currentState = SwingState.IDLE;
-                break;
+            if (attached)
+            {
+                FindObjectOfType<BranchSwingTestBehaviour>().AttachAndSwing(GetComponent<Rigidbody>());
+                GetComponent<Rigidbody>().AddForce(0, 0, 200);
+                attached = false;
+            }
+            else if (canThrow)
+            {
+                FindObjectOfType<BranchSwingTestBehaviour>().AttachAndSwing(GetComponent<Rigidbody>());
+                attached = true;
+            }
         }
     }
 
@@ -56,16 +41,6 @@ public class GrappleBehaviour : MonoBehaviour
     {
         Gizmos.color = new Color(0, .5f, 0, .5f);
         Gizmos.DrawWireSphere(transform.position, DetectionRadius);
-    }
-
-    void Swing()
-    {
-
-    }
-    
-    void OnTriggerEnter(Collider other)
-    {
-
     }
 
 }

@@ -8,25 +8,22 @@ public class Player_Movement : MonoBehaviour {
     public int speed;
     public float jumpHeight;
     public bool onFloor;
-
+    
 	// Use this for initialization
-	void Start () {
-        onFloor = true;
+	void Start ()
+    {
+        onFloor = true;      
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         //Movement
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Vector3 move = new Vector3(h, 0, v);
         transform.localPosition += move * speed * Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            FindObjectOfType<BranchSwingTestBehaviour>().AttachAndSwing(GetComponent<Rigidbody>());
-        }
-
+       
         //Jumping
         //checks if player is on the floor to avoid infinite jumping
         if (onFloor && Input.GetKeyDown(KeyCode.Space))
@@ -42,5 +39,4 @@ public class Player_Movement : MonoBehaviour {
         if (collider.tag == "Floor")
             onFloor = true;
     }
-
 }
