@@ -22,14 +22,15 @@ public class BuffFlowerBehaviour : MonoBehaviour
 {
     //General enemy variables located within scriptable
     public EnemyDataScriptable Data;
-    public Animator animatorController;
+    private Animator _animatorController;
+    
     //Specific values to Buff Flower
     [SerializeField]
     private bool _quickAttackReady = true;
     private float _timer;
     private float _secondTimer;
     private float _deathTimer = 4;
-    private bool _inGround;
+    private bool _inGround = true;
     [SerializeField]
     private BuffState _currentState = BuffState.NONE;
     [SerializeField]
@@ -37,14 +38,14 @@ public class BuffFlowerBehaviour : MonoBehaviour
     [Range(0, 4)]
     public float AttackCooldown;
     public float RiseTime;
-
     public Vector3 Smoothvelocity = Vector3.zero;
-
+    private bool _activated;
+    private float _distanceBetween;
     // Use this for initialization
     private void Start()
     {
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
-        animatorController = GetComponent<Animator>();
+        _animatorController = GetComponent<Animator>();
         _timer = AttackCooldown;
     }
 
@@ -53,8 +54,10 @@ public class BuffFlowerBehaviour : MonoBehaviour
         //must have checks per frame
         Data.Alive = (Data.Health >= 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
+        
         //anystate check for being dead 
-        var distanceBetween = Vector3.Distance(Data.PlayerGameObject.transform.position, transform.position);
+        _distanceBetween = Vector3.Distance(Data.PlayerGameObject.transform.position, transform.position);
+        _animatorController.SetFloat("Player Dist",_distanceBetween);
 
         switch (_currentState)
         {
@@ -68,10 +71,10 @@ public class BuffFlowerBehaviour : MonoBehaviour
                 AggressiveStateHandler();
                 break;
             case BuffState.CHASING:
-                ChaseStateHandler(distanceBetween);
+                ChaseStateHandler(_distanceBetween);
                 break;
             case BuffState.ATTACKING:
-                AttackStateHandler(distanceBetween);
+                AttackStateHandler(_distanceBetween);
                 break;
             case BuffState.DEAD:
                 DeathStateHandler();
@@ -79,20 +82,28 @@ public class BuffFlowerBehaviour : MonoBehaviour
         }
     }
 
-
     private void NoneStateHandler()
     {
-        if (Data.FoundPlayer)
+        if (!Data.Alive)
         {
-            if (_secondTimer <= 0)
-                animatorController.SetTrigger("Rising");
-            _secondTimer += Time.deltaTime;
-            _inGround = _secondTimer <= RiseTime;
-            if (!_inGround)
-                ChangeState(BuffState.PASSIVE);
+            ChangeState(BuffState.DEAD);
             return;
         }
-        animatorController.SetBool("Init", true);
+
+        if (_distanceBetween <= 2)
+        {
+            _activated = true;
+        }
+
+        if (!_activated) return;
+
+        if (_secondTimer <= 0)
+            _animatorController.SetTrigger("Rising");
+        _secondTimer += Time.deltaTime;
+        _inGround = _secondTimer <= RiseTime;
+        if (!_inGround)
+            ChangeState(BuffState.PASSIVE);
+
     }
 
     private void PassiveStateHandler()
@@ -106,13 +117,11 @@ public class BuffFlowerBehaviour : MonoBehaviour
         if (Data.FoundPlayer)
         {
             ChangeState(BuffState.AGGRESSIVE);
-            return;
         }
     }
 
     private void AggressiveStateHandler()
     {
-        animatorController.SetBool("Noticed Player", true);
         transform.LookAt(Data.PlayerGameObject.transform
             .position); //if the enemy doesn't see the player it's not gonna stare at him
 
@@ -128,13 +137,11 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(BuffState.CHASING);
             return;
         }
-        animatorController.SetBool("Noticed Player", false);
         ChangeState(BuffState.PASSIVE);
     }
 
     private void ChaseStateHandler(float distance)
     {
-        animatorController.SetBool("Sees Player", true);
         transform.LookAt(Data.PlayerGameObject.transform.position);
 
         if (!Data.Alive)
@@ -157,9 +164,9 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(BuffState.ATTACKING);
             return;
         }
-        animatorController.SetBool("Sees Player", false);
         ChangeState(BuffState.AGGRESSIVE);
     }
+
     private void AttackStateHandler(float distance)
     {
         if (_currentState == BuffState.ATTACKING)
@@ -204,7 +211,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         if (Data.Alive)
             return;
         //play Death animation
-        animatorController.SetBool("Alive", false);
+        _animatorController.SetBool("Alive", false);
 
         Destroy(gameObject, _deathTimer);
     }

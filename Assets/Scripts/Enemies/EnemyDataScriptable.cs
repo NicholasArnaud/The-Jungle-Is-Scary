@@ -14,10 +14,4 @@ public class EnemyDataScriptable : ScriptableObject
 
     [Range(0.5f, 15f)]
     public float AttackRadius;
-
-    //Animations that will come with all enemies
-    public Animation IdleAnimation;
-    public Animation ChasingAnimation;
-    public Animation DeathAnimation;
-    public Animation CurrentAnimation;
 }
