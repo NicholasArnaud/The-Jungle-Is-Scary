@@ -1,186 +1,213 @@
-﻿using System.Linq;
-using TreeEditor;
+﻿using System;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
+
+// ReSharper disable UnusedMember.Local
+// ReSharper disable once CheckNamespace
+public enum MovementState
+{
+    NONE = 0,
+    PASSIVE = 1,
+    AGGRESSIVE = 2,
+    CHASING = 3,
+    ATTACKING = 4,
+    DEAD = 5,
+}
 
 public class BuffFlowerBehaviour : MonoBehaviour
 {
-    //General enemy variables located here
+    //General enemy variables located within scriptable
     public EnemyDataScriptable Data;
-    [SerializeField]
-    private bool _quickAttackReady = true;
-    private float _timer;
-    private float _secondTimer;
-    private float _deathTimer;
-    private bool _inGround;
-    [SerializeField]
-    private BuffState _currentState;
-    [SerializeField]
-    private AttackState _attackState;
+
+    //Specific values to Buff Flower
     [Range(0, 4)]
     public float AttackCooldown;
     public float RiseTime;
+
+    private const float DeathTimer = 4;
+    private float _secondTimer;
+    private float _distanceBetween;
+    private bool _inGround = true;
+    private bool _activated;
     
+    private Animator _animatorController;
+    private NavMeshAgent _nav;
+    [SerializeField]
+    private MovementState _currentState = MovementState.NONE;
 
-    public Vector3 Smoothvelocity = Vector3.zero;
 
-    public enum BuffState
+    private void Start()
     {
-        IDLE,
-        CHASING,
-        ATTACKING,
-    }
-
-    public enum AttackState
-    {
-        QUICK,
-        HEAVY,
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-        _inGround = true;
-        Data.FoundPlayer = false;
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
-        _timer = AttackCooldown;
+        _animatorController = GetComponent<Animator>();
+        _nav = GetComponent<NavMeshAgent>();
     }
 
-    void Update()
+    private void Update()
+    {
+        //must have checks per frame
+        Data.Alive = (Data.Health >= 0);
+        Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
+        
+        //anystate check for being dead 
+        _distanceBetween = Vector3.Distance(Data.PlayerGameObject.transform.position, transform.position);
+        _animatorController.SetFloat("Player Dist",_distanceBetween);
+
+        switch (_currentState)
+        {
+            case MovementState.NONE:
+                NoneStateHandler();
+                break;
+            case MovementState.PASSIVE:
+                PassiveStateHandler();
+                break;
+            case MovementState.AGGRESSIVE:
+                AggressiveStateHandler();
+                break;
+            case MovementState.CHASING:
+                ChaseStateHandler();
+                break;
+            case MovementState.ATTACKING:
+                AttackStateHandler();
+                break;
+            case MovementState.DEAD:
+                DeathStateHandler();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    public MovementState CurrentState
+    {
+        get { return _currentState; }
+        set { _currentState = value; }
+    }
+
+    private void ChangeState(MovementState state)
+    {
+        CurrentState = state;
+    }
+
+    private void NoneStateHandler()
     {
         if (!Data.Alive)
         {
-            //play Death animation
-            Debug.Log("Running Death Animation");
-            Data.Alive = false;
-            _deathTimer += Time.deltaTime;
-            if (_deathTimer >= 4)
-                Destroy(gameObject);
-            return;
-        }
-        Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (Data.Health <= 0)
-        {
-            Data.Alive = false;
+            ChangeState(MovementState.DEAD);
             return;
         }
 
-        float distanceBetween = Vector3.Distance(Data.PlayerGameObject.transform.position, gameObject.transform.position);
-        if (_currentState == BuffState.IDLE)
+        if (_distanceBetween <= 3)
         {
-            if (_inGround == false)
-            {
-                //if the player enters the sight radius
-                if (Data.FoundPlayer)
-                    _currentState = BuffState.CHASING;
-                else
-                {
-                    //Run above ground idle
-                    Debug.Log("Running Above-Idle Animation");
-                }
-            }
-            else
-            {
-
-                if (Data.FoundPlayer)
-                {
-                    //Run rising animation
-                    Debug.Log("Running Rise Animation");
-
-                    _secondTimer += Time.deltaTime;
-                    if (_secondTimer >= RiseTime)
-                        _inGround = false;
-                }
-                else
-                {
-                    //Run below ground idle animation
-                    Debug.Log("Running Below-Idle Animation");
-                }
-            }
-
-        }
-        else
-        {
-            transform.LookAt(Data.PlayerGameObject.transform.position);
+            _activated = true;
         }
 
-        if (_currentState == BuffState.ATTACKING)
-        {
-            //If the player is in the attack range
-            if (!_quickAttackReady)
-            {
-                _timer -= Time.deltaTime;
-                //If player is still in the attack range
-                if (distanceBetween >= Data.AttackRadius)
-                {
-                    _quickAttackReady = true;
-                    _currentState = BuffState.CHASING;
-                }
-                //If the player stays counttimer for his heavier attack
-                if (_timer <= 0)
-                {
-                    _attackState = AttackState.HEAVY;
-                    _timer = AttackCooldown;
-                    RunAttackStateMachine(_attackState);
-                }
-            }
-            //If the player just entered the attack range
-            else
-            {
-                _attackState = AttackState.QUICK;
-            }
-            //Run attack
-            if (_quickAttackReady && _attackState == AttackState.QUICK)
-            {
-                RunAttackStateMachine(_attackState);
-                _quickAttackReady = false;
-            }
-        }
+        if (!_activated) return;
 
-        //While the enemy is chasing the player
-        if (_currentState == BuffState.CHASING)
-        {
-            //If the player enters the attack radius
-            if (distanceBetween <= Data.AttackRadius)
-            {
-                _currentState = BuffState.ATTACKING;
-            }
-            //Still chasing player
-            else if (distanceBetween <= Data.DetectionRadius)
-            {
-                Debug.Log("Running Chasing Animation");
-                Vector3 tarPos = Data.PlayerGameObject.transform.position;
-                tarPos.y = transform.position.y;
-                transform.position = Vector3.SmoothDamp(transform.position, tarPos, ref Smoothvelocity, 10.0f);
-            }
-            else
-            {
-                _currentState = BuffState.IDLE;
-            }
-        }
+        if (_secondTimer <= 0)
+            _animatorController.SetTrigger("Rising");
+        _secondTimer += Time.deltaTime;
+        _inGround = _secondTimer <= RiseTime + 0.5f;
+        if (!_inGround)
+            ChangeState(MovementState.PASSIVE);
+
     }
 
-    void RunAttackStateMachine(AttackState attack)
+    private void PassiveStateHandler()
     {
-        //Quick is used when the player first enters the attack radius
-        if (attack == AttackState.QUICK)
+        if (!Data.Alive)
         {
-            Debug.Log("Used a quick attack");
-            //Run quick attack animation
+            ChangeState(MovementState.DEAD);
+            return;
         }
-        //essentially a charge up attack
-        else if (attack == AttackState.HEAVY)
+
+        if (Data.FoundPlayer)
         {
-            Debug.Log("Used a heavy attack");
-            //Run Heavy attack animation
+            ChangeState(MovementState.AGGRESSIVE);
+            return;
         }
+        _nav.SetDestination(transform.position);
     }
 
-    void OnDrawGizmos()
+    private void AggressiveStateHandler()
+    {
+        transform.LookAt(Data.PlayerGameObject.transform
+            .position); //if the enemy doesn't see the player it's not gonna stare at him
+
+        if (!Data.Alive)
+        {
+            ChangeState(MovementState.DEAD);
+            return;
+        }
+        
+        if (_distanceBetween < 10)
+        {
+            ChangeState(MovementState.CHASING);
+            return;
+        }
+
+        if (_distanceBetween > 15)
+        {
+            ChangeState(MovementState.PASSIVE);
+            return;
+        }
+        _nav.speed = 1.5f;
+        _nav.SetDestination(Data.PlayerGameObject.transform.position);
+    }
+
+    private void ChaseStateHandler()
+    {
+        transform.LookAt(Data.PlayerGameObject.transform.position);
+
+        if (!Data.Alive)
+        {
+            ChangeState(MovementState.DEAD);
+            return;
+        }
+
+        if (_distanceBetween > 10)
+        {
+            ChangeState(MovementState.AGGRESSIVE);
+            return;
+        }
+         
+        if (_distanceBetween <= Data.AttackRadius)
+        {
+            _nav.SetDestination(transform.position);
+            ChangeState(MovementState.ATTACKING);
+            return;
+        }
+
+        _nav.speed = 4.0f;
+        _nav.SetDestination(Data.PlayerGameObject.transform.position);
+    }
+
+    private void AttackStateHandler()
+    {
+        if (!Data.Alive)
+        {
+            ChangeState(MovementState.DEAD);
+            return;
+        }
+
+        if (!(_distanceBetween > Data.AttackRadius)) return;
+        ChangeState(MovementState.CHASING);
+    }
+
+    private void DeathStateHandler()
+    {
+        if (Data.Alive)
+            return;
+        _nav.enabled = false;
+        _animatorController.SetBool("Alive", false);
+
+        Destroy(gameObject, DeathTimer);
+    }
+
+
+    
+    private void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, .5f, 0, .5f);
         Gizmos.DrawSphere(transform.position, Data.DetectionRadius);
@@ -188,7 +215,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         Gizmos.DrawSphere(transform.position, Data.AttackRadius);
     }
 
-    bool EnableBehaviour(Vector3 center, float radius)
+    private bool EnableBehaviour(Vector3 center, float radius)
     {
         var playerfound = false;
         var hitColliders = Physics.OverlapSphere(center, radius);
