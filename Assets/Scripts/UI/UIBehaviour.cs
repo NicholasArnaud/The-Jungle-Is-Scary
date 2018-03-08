@@ -140,4 +140,10 @@ public class UIBehaviour : MonoBehaviour
         }
     }
     #endregion
+    #region UpdatingGems
+    public void GainGem()
+    {
+      
+    }
+    #endregion
 }
