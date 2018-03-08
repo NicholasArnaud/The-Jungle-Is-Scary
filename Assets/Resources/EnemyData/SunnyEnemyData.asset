@@ -15,8 +15,5 @@ MonoBehaviour:
   FoundPlayer: 1
   Health: 6
   Alive: 1
-  DetectionRadius: 20
-  AttackRadius: 5
-  IdleAnimation: {fileID: 0}
-  ChasingAnimation: {fileID: 0}
-  DeathAnimation: {fileID: 0}
+  DetectionRadius: 15
+  AttackRadius: 2
