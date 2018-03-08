@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 952609756}
   - component: {fileID: 952609761}
   - component: {fileID: 952609762}
-  - component: {fileID: 952609763}
+  - component: {fileID: 952609758}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -468,6 +468,23 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!143 &952609758
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952609755}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &952609759
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -518,23 +535,6 @@ MonoBehaviour:
   attached: 0
   DetectionRadius: 27
   objects: []
---- !u!143 &952609763
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952609755}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1108816739
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +560,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1108816739}
-  m_LocalRotation: {x: 0.17328009, y: 0.0109238345, z: -0.0019220586, w: 0.9848102}
+  m_LocalRotation: {x: 0.17328298, y: 0.010924082, z: -0.0019221619, w: 0.98480964}
   m_LocalPosition: {x: -19.8, y: 15.79, z: -79.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -694,7 +694,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1200605306}
-  m_LocalRotation: {x: 0.17328009, y: 0.0109238345, z: -0.0019220586, w: 0.9848102}
+  m_LocalRotation: {x: 0.17328298, y: 0.010924082, z: -0.0019221619, w: 0.98480964}
   m_LocalPosition: {x: -19.8, y: 15.79, z: -79.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
