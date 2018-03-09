@@ -35,7 +35,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         if (Input.GetMouseButtonDown(0))
         {
             attacked = true;
-            if (comboTimer < 0)
+
            
                      
         }
