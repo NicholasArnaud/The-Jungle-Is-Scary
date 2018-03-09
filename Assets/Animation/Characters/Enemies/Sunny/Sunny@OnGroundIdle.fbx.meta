@@ -150,7 +150,12 @@ ModelImporter:
     9500000: //RootNode
     13700000: SunnyBody
     13700002: SunnyPetals
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SunnyShader
+    second: {fileID: 2100000, guid: 805ef550d4f668649a2b3138f2c3ad40, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
