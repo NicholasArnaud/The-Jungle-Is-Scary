@@ -6,10 +6,10 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
 
-    public float speed = 6.0F;
-    public float jumpSpeed = 8.0F;
-    public float gravity = 20.0F;
-    public float rotateSpeed = 1.0F;
+    public float speed;
+    public float jumpSpeed;
+    public float gravity;
+    public float rotateSpeed;
     private Vector3 moveDirection = Vector3.zero;
 
     // Update is called once per frame
