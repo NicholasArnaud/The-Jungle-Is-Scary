@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,7 +28,7 @@ public class UIBehaviour : MonoBehaviour
     void Start()
     {
         _panels = new List<GameObject> { HudPanelObject, MenuPanelObject, OptionsPanelObject, PausePanelObject };
-        _panels.ForEach(x=>x.SetActive(false));
+        _panels.ForEach(x => x.SetActive(false));
         _curHealth = HealthBar.Length;
         MenuPanelObject.SetActive(true);
         _activePanelObject = MenuPanelObject;
@@ -93,7 +92,7 @@ public class UIBehaviour : MonoBehaviour
     {
         CheckForActivePanel();
         _activePanelObject.SetActive(false);
-        _prevPanelObject =_activePanelObject;
+        _prevPanelObject = _activePanelObject;
         HudPanelObject.SetActive(true);
     }
 
@@ -141,9 +140,45 @@ public class UIBehaviour : MonoBehaviour
     }
     #endregion
     #region UpdatingGems
-    public void GainGem()
+    public void GainGemFrag(Object[] args)
     {
-      
+        var gemTexts = HudPanelObject.GetComponentsInChildren<Text>();
+        var indexvalue = 0;
+
+        if (args[0].name.Contains("GemFrag"))
+        {
+            if (gemTexts[0].name.Contains("GemFrag"))
+                indexvalue = 0;
+
+            if (int.Parse(gemTexts[indexvalue].text) >= 99)
+            {
+                gemTexts[indexvalue].text = "0";
+                IncrementGemText(gemTexts[indexvalue == 0 ? 1 : 0]);
+            }
+            else
+                IncrementGemText(gemTexts[indexvalue]);
+        }
+
+        else if (args[0].name.Contains("Gem"))
+        {
+
+            if (gemTexts[0].name.Contains("GemFrag"))
+                indexvalue = 1;
+
+            if (int.Parse(gemTexts[indexvalue].text) >= 99)
+            {
+                gemTexts[indexvalue].text = "0";
+                IncrementGemText(gemTexts[indexvalue == 0 ? 1 : 0]);
+            }
+            else
+                IncrementGemText(gemTexts[indexvalue]);
+        }
+    }
+
+
+    public void IncrementGemText(Text textToUpdate)
+    {
+        textToUpdate.text = (int.Parse(textToUpdate.text) + 1).ToString();
     }
     #endregion
 }
