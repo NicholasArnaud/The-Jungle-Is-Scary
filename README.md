@@ -1,5 +1,5 @@
-# The-Jungle-Is-Scary
-End of Year Game
+# The Jungle Is Scary
+ The player must venture into the jungle with the help of his mysterious snake companion, and is used as a whip-like weapon. As he progresses through the jungle he has to overcome various obstacles such as pitfalls, quicksand, and puzzles to reach the ancient ruins that reside deep in the jungle to retrieve a very powerful magical gem.
 
 ## Built With
 
@@ -20,4 +20,4 @@ Please read [CONTRIBUTING.md](https://github.com/NicholasArnaud/The-Jungle-Is-Sc
   * Chase Vinny
   
 ## Acknowledgments
-* Thanks to Matthew Williamson, and Donald Gremillion for the education to create this.
+* Thanks to Matthew Williamson, and Donald Gremillion for giving us the education to create this.
