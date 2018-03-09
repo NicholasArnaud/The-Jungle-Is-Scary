@@ -4,6 +4,7 @@
 ## Built With
 
 * [Unity.2017.3.0f3](https://unity3d.com/get-unity/download/archive?_ga=2.16856240.869838989.1520466756-485344397.1507214877) - Game Engine
+* [Maya 2017](https://www.autodesk.com/products/maya/overview) - Game Art/Animation Software
 
 ## Contributing
 
