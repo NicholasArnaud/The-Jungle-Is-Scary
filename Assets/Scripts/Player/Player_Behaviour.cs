@@ -8,9 +8,10 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
 
     public enum ComboState
     {
-        Light,
-        Medium,
-        Heavy,
+        NONE,
+        LIGHT,
+        MEDIUM,
+        HEAVY,
     }
 
     public Player_Data Data;
@@ -23,39 +24,45 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     // Use this for initialization
     void Start()
     {
-        currentComboState = ComboState.Light;
+        currentComboState = ComboState.NONE;
         startPos = transform.position;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-
-        if(Input.GetMouseButtonDown(0))
+        int i = 0;
+        if (Input.GetMouseButtonDown(0))
         {
             attacked = true;
-            Attack();
-            if (comboTimer > 0 && currentComboState == ComboState.Light)
-            {
-                currentComboState = ComboState.Medium;
-                comboTimer = 5;
-            }
-            if (comboTimer > 0 && currentComboState == ComboState.Medium)
-            {
-                currentComboState = ComboState.Heavy;
-                comboTimer = 5;
-            }
-        }
-        if(comboTimer <= 0)
-        {
-            attacked = false;
-            comboTimer = 100;
-            currentComboState = ComboState.Light;
+            if (comboTimer < 0)
+           
+                     
         }
 
-        if (attacked)        
-            comboTimer -= .001f;
-        
+        switch (currentComboState)
+        {
+            case ComboState.LIGHT:
+                LightAttack();
+                break;
+            case ComboState.MEDIUM:
+                MediumAtack();
+                break;
+            case ComboState.HEAVY:
+                HeavyAttack();
+                break;
+        }
+
+        if (comboTimer <= 0)
+        {
+            attacked = false;
+            comboTimer = 5;
+            currentComboState = ComboState.LIGHT;
+        }
+
+        if (attacked)
+            comboTimer -= .01f;
+
 
         if (Data.lives <= 0)
         {
@@ -70,14 +77,16 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         Data.lives -= f;
     }
 
-    void Attack()
+    void LightAttack()
     {
-        if (currentComboState == ComboState.Light)
-            Debug.Log("Light");
-        if (currentComboState == ComboState.Medium)
-            Debug.Log("Medium");
-        if (currentComboState == ComboState.Heavy)
-            Debug.Log("Heavy");
+        Debug.Log("Light");
+    }
+    void MediumAtack()
+    {
+        Debug.Log("Medium");
+    }
+    void HeavyAttack()
+    {
+        Debug.Log("Heavy");
     }
 }
- 
