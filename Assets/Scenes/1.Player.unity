@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -409,10 +409,9 @@ GameObject:
   - component: {fileID: 952609759}
   - component: {fileID: 952609757}
   - component: {fileID: 952609756}
-  - component: {fileID: 952609761}
   - component: {fileID: 952609762}
   - component: {fileID: 952609758}
-  - component: {fileID: 952609763}
+  - component: {fileID: 952609761}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -514,13 +513,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 952609755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72d8f3b32c2b4ac45b83e3bde403d1eb, type: 3}
+  m_Script: {fileID: 11500000, guid: a850539e273944244bed339589502f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
-  jumpSpeed: 10
-  gravity: 10
-  rotateSpeed: 3
+  position: {fileID: 11400000, guid: d3e3a90572bf3bb41929b100367a0620, type: 2}
+  Horizontal: {fileID: 11400000, guid: a263a7ee669360e428ed1e1c0bb7a45c, type: 2}
+  Vertical: {fileID: 11400000, guid: 28577c5505b44794f9f4f26492a382d4, type: 2}
+  Jump: {fileID: 11400000, guid: be77a56f9c20e624184e922b3c406270, type: 2}
+  Speed: {fileID: 11400000, guid: 68551e620bc7d1a4b963875e4989a250, type: 2}
+  _currentSpeed: {fileID: 11400000, guid: 7ea215bee95dd384f96261b8d2fe4b0d, type: 2}
+  gravity: 20
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!114 &952609762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,21 +539,6 @@ MonoBehaviour:
   attached: 0
   DetectionRadius: 25
   objects: []
---- !u!114 &952609763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952609755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16c6ffda447b5a14baeba87f06a99bf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: d6b5f8cb4ed48294b99f276eea86cc94, type: 2}
-  giveHealth: {fileID: 11400000, guid: df2960321231daa498fb3bcf3f72b286, type: 2}
-  currentComboState: 0
-  comboTimer: 5
 --- !u!1 &1108816739
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,8 +552,8 @@ GameObject:
   - component: {fileID: 1108816741}
   - component: {fileID: 1108816744}
   m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
+  m_Name: Main Camera
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -576,7 +564,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1108816739}
-  m_LocalRotation: {x: 0.17327422, y: 0.014006228, z: -0.0024645166, w: 0.98477095}
+  m_LocalRotation: {x: 0.17328201, y: 0.0108608715, z: -0.0019110929, w: 0.98481053}
   m_LocalPosition: {x: -19.8, y: 14.59, z: -79.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -710,7 +698,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1200605306}
-  m_LocalRotation: {x: 0.17327422, y: 0.014006228, z: -0.0024645166, w: 0.98477095}
+  m_LocalRotation: {x: 0.17328201, y: 0.0108608715, z: -0.0019110929, w: 0.98481053}
   m_LocalPosition: {x: -19.8, y: 14.59, z: -79.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
