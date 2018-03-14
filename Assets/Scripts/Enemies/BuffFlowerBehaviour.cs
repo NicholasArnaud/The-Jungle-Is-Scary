@@ -132,8 +132,10 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     private void AggressiveStateHandler()
     {
-        transform.LookAt(Data.PlayerGameObject.transform
-            .position);
+         var targetPoint = new Vector3(Data.PlayerGameObject.transform.position.x, transform.position.y, Data.PlayerGameObject.transform.position.z) - transform.position;
+        var targetRotation = Quaternion.LookRotation(-targetPoint, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+        transform.LookAt(Data.PlayerGameObject.transform.position);
 
         if (!Data.Alive)
         {
