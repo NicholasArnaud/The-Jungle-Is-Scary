@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Floor
   - Branch
+  - Item
   layers:
   - Default
   - TransparentFX
