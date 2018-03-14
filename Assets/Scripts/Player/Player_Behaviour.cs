@@ -27,17 +27,22 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         currentComboState = ComboState.NONE;
         startPos = transform.position;
     }
-    
+
+    int i = 1;
     // Update is called once per frame
     void Update()
     {
-        int i = 0;
+
         if (Input.GetMouseButtonDown(0))
         {
             attacked = true;
+            currentComboState = ComboState.LIGHT;
+            if (comboTimer > 0)
+            {
+                comboTimer = 5;
+                currentComboState = ComboState.MEDIUM;
 
-           
-                     
+            }
         }
 
         switch (currentComboState)
@@ -57,7 +62,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         {
             attacked = false;
             comboTimer = 5;
-            currentComboState = ComboState.LIGHT;
+            currentComboState = ComboState.NONE;
         }
 
         if (attacked)

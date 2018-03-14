@@ -16,13 +16,12 @@ public class BranchSwingTestBehaviour : MonoBehaviour
         if (swinging)
         {
             sj.connectedBody = null;
-            rb.gameObject.GetComponent<Player_Movement>().speed = 5;
         }
             
         else
         {
             sj.connectedBody = rb;
-            rb.gameObject.GetComponent<Player_Movement>().speed = 0;
+
         }
             
         swinging = !swinging;
