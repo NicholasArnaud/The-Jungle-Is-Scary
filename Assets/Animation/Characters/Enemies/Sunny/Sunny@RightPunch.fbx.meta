@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 528b11b2aca142a40a69441669873f91
-timeCreated: 1520464398
+guid: 48b6e55fe0cdbf44a8a79c543cb974c1
+timeCreated: 1520628423
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -146,7 +146,7 @@ ModelImporter:
     2100000: SunnyShader
     4300000: SunnyBody
     4300002: SunnyPetals
-    7400000: Chase
+    7400000: Punch
     9500000: //RootNode
     13700000: SunnyBody
     13700002: SunnyPetals
@@ -172,7 +172,7 @@ ModelImporter:
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
-    animationDoRetargetingWarnings: 0
+    animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
     animationCompression: 3
     animationRotationError: 0.5
@@ -183,19 +183,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Chase
+      name: Punch
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 18
+      lastFrame: 27
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
