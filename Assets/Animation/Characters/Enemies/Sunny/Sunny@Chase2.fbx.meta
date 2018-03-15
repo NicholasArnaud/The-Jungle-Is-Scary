@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 528b11b2aca142a40a69441669873f91
-timeCreated: 1520464398
+guid: 8dbe355fc8bf8ae4faa13e502a97a6f2
+timeCreated: 1521064005
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -146,7 +146,7 @@ ModelImporter:
     2100000: SunnyShader
     4300000: SunnyBody
     4300002: SunnyPetals
-    7400000: Chase
+    7400000: Chase2
     9500000: //RootNode
     13700000: SunnyBody
     13700002: SunnyPetals
@@ -183,10 +183,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Chase
+      name: Chase2
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 18
+      lastFrame: 21
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
