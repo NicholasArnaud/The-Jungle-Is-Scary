@@ -21,8 +21,6 @@ public class BuffFlowerBehaviour : MonoBehaviour
     public EnemyDataScriptable Data;
 
     //Specific values to Buff Flower
-    [Range(0.0f, 4.0f)]
-    public float AttackCooldown;
     public float RiseTime;
 
     private const float DeathTimer = 4;
@@ -98,7 +96,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             return;
         }
 
-        if (_distanceBetween <= 3)
+        if (_distanceBetween <= 4)
         {
             _activated = true;
         }
