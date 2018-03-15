@@ -17,27 +17,47 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public Player_Data Data;
     Vector3 startPos;
     public GameEvent giveHealth;
+
     public ComboState currentComboState;
     public float comboTimer;
     bool attacked;
-
+    public int clickNum;
     // Use this for initialization
     void Start()
     {
         currentComboState = ComboState.NONE;
         startPos = transform.position;
+        clickNum = 0;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        int i = 0;
+        
         if (Input.GetMouseButtonDown(0))
         {
+            clickNum += 1;
             attacked = true;
-
-           
-                     
+            switch (clickNum)
+            {
+                case 1:
+                    currentComboState = ComboState.LIGHT;
+                    comboTimer = 2;
+                    break;
+                case 2:
+                    currentComboState = ComboState.MEDIUM;
+                    comboTimer = 2;
+                    break;
+                case 3:
+                    currentComboState = ComboState.HEAVY;
+                    clickNum = 0;
+                    break;
+                default:
+                    currentComboState = ComboState.NONE;
+                    comboTimer = 2;
+                    clickNum = 0;
+                    break;
+            }
         }
 
         switch (currentComboState)
@@ -56,8 +76,9 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         if (comboTimer <= 0)
         {
             attacked = false;
-            comboTimer = 5;
-            currentComboState = ComboState.LIGHT;
+            comboTimer = 2;
+            clickNum = 0;
+            currentComboState = ComboState.NONE;
         }
 
         if (attacked)

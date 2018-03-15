@@ -9,6 +9,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e924bda98acd134895d805192f68a7c, type: 3}
-  m_Name: PlayerCurrentSpeed
+  m_Name: PlayerJumpForce
   m_EditorClassIdentifier: 
-  Value: 3
+  Value: 10
