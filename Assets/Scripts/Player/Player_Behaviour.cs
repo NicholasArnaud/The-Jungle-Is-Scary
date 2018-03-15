@@ -33,7 +33,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             clickNum += 1;
