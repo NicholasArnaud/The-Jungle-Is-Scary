@@ -25,3 +25,8 @@ Please note we have a code of conduct, please follow it in all your interactions
 ### Scenes
 
 * Name each new scene with what your task following the # of scenes you created so far with a period starting at zero.
+
+### NavMesh Baking
+
+* Each time you bake a new scene for Navmesh; you must move the newly created folder in the "Scenes" folder to the "NavMeshes" folder located within the "Scenes" folder.
+* If updating the bake layer of an already baked scene, most likely a newly created folder will be within the "Scenes" folder; please replace the old Navmesh folder with the new one within the "Navmeshes" folder.
