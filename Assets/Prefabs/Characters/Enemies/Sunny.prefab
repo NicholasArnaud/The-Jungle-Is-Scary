@@ -2061,7 +2061,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: e2ad0e9c10274184686f951d2ce4fe38, type: 2}
-  AttackCooldown: 1.25
   RiseTime: 2
   _currentState: 0
 --- !u!137 &137233310571315004
