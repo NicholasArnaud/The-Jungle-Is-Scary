@@ -8,6 +8,9 @@ TagManager:
   - Health
   - Enemy
   - Floor
+  - Branch
+  - Item
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
