@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player_Behaviour : MonoBehaviour, IDamageable
 {
 
@@ -22,7 +23,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public float comboTimer;
     bool attacked;
     public int clickNum;
-
+    public Transform checkpoint;
     private Rigidbody rb;
     // Use this for initialization
     void Start()
@@ -36,8 +37,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.X))
-            TakeDamage(1);
+
         if (Input.GetMouseButtonDown(0))
         {
             clickNum += 1;
@@ -63,6 +63,12 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
                     break;
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.Z))
+            transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z);
+
+        if (Input.GetKeyDown(KeyCode.X))
+            TakeDamage(1);
 
         switch (currentComboState)
         {
@@ -114,4 +120,11 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     {
         Debug.Log("Heavy");
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Checkpoint")
+            checkpoint = other.transform;
+    }
+
 }
