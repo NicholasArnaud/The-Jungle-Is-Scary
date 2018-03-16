@@ -22,18 +22,22 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public float comboTimer;
     bool attacked;
     public int clickNum;
+
+    private Rigidbody rb;
     // Use this for initialization
     void Start()
     {
         currentComboState = ComboState.NONE;
         startPos = transform.position;
         clickNum = 0;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.X))
+            TakeDamage(1);
         if (Input.GetMouseButtonDown(0))
         {
             clickNum += 1;
@@ -95,7 +99,8 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
 
     public void TakeDamage(int f)
     {
-        Data.lives -= f;
+        Data.hp -= f;
+        rb.AddForce(new Vector3(0,10,-50));
     }
 
     void LightAttack()
