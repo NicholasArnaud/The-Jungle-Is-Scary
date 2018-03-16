@@ -25,9 +25,10 @@ GameObject:
   - component: {fileID: 114671353182409048}
   - component: {fileID: 114480705078535786}
   - component: {fileID: 114603843826530524}
+  - component: {fileID: 54170555054373422}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1225964931601918}
   m_LocalRotation: {x: -0, y: -0.17688726, z: -0, w: 0.9842311}
-  m_LocalPosition: {x: 15.4, y: 2.034, z: 17}
+  m_LocalPosition: {x: 39.2, y: 5.3, z: -47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4769583389776126}
@@ -99,8 +100,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1959176429831304}
-  m_LocalRotation: {x: -0.08855514, y: 0.6394252, z: -0.074476674, w: -0.7600965}
-  m_LocalPosition: {x: 5.842511, y: 1.4000001, z: -1.0148636}
+  m_LocalRotation: {x: -0.08860901, y: 0.6394176, z: -0.07452076, w: -0.7600923}
+  m_LocalPosition: {x: 5.842512, y: 1.3999996, z: -1.0148618}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4313874536076838}
@@ -148,6 +149,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1225964931601918}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54170555054373422
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225964931601918}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &114060781459615664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,7 +207,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 4185259392228072}
   m_Follow: {fileID: 4185259392228072}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -219,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c6ffda447b5a14baeba87f06a99bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 2662f07a2f9e09d4ebfd194750e95afe, type: 2}
+  Data: {fileID: 11400000, guid: bab9d63a63d0ba4449a591479d9792b9, type: 2}
   giveHealth: {fileID: 11400000, guid: df2960321231daa498fb3bcf3f72b286, type: 2}
   currentComboState: 0
   comboTimer: 5
