@@ -21,8 +21,6 @@ public class BuffFlowerBehaviour : MonoBehaviour
     public EnemyDataScriptable Data;
 
     //Specific values to Buff Flower
-    [Range(0.0f, 4.0f)]
-    public float AttackCooldown;
     public float RiseTime;
 
     private const float DeathTimer = 4;
@@ -30,7 +28,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private float _distanceBetween;
     private bool _inGround = true;
     private bool _activated;
-    
+
     private Animator _animatorController;
     private NavMeshAgent _nav;
     [SerializeField]
@@ -42,6 +40,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
+        CurrentState = MovementState.NONE;
     }
 
     private void Update()
@@ -49,10 +48,10 @@ public class BuffFlowerBehaviour : MonoBehaviour
         //must have checks per frame
         Data.Alive = (Data.Health >= 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
-        
+
         //anystate check for being dead 
         _distanceBetween = Vector3.Distance(Data.PlayerGameObject.transform.position, transform.position);
-        _animatorController.SetFloat("Player Dist",_distanceBetween);
+        _animatorController.SetFloat("Player Dist", _distanceBetween);
 
         switch (_currentState)
         {
@@ -98,7 +97,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             return;
         }
 
-        if (_distanceBetween <= 3)
+        if (_distanceBetween <= 4)
         {
             _activated = true;
         }
@@ -132,15 +131,12 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     private void AggressiveStateHandler()
     {
-        transform.LookAt(Data.PlayerGameObject.transform
-            .position);
-
         if (!Data.Alive)
         {
             ChangeState(MovementState.DEAD);
             return;
         }
-        
+
         if (_distanceBetween < 10)
         {
             ChangeState(MovementState.CHASING);
@@ -158,8 +154,6 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     private void ChaseStateHandler()
     {
-        transform.LookAt(Data.PlayerGameObject.transform.position);
-
         if (!Data.Alive)
         {
             ChangeState(MovementState.DEAD);
@@ -171,7 +165,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.AGGRESSIVE);
             return;
         }
-         
+
         if (_distanceBetween <= Data.AttackRadius)
         {
             _nav.SetDestination(transform.position);
