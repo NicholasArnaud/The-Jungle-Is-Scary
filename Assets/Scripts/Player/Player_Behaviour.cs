@@ -25,7 +25,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public int clickNum;
 
     public Transform checkpoint;
-    public float damageTimer = 1;
+    public float immunityTimer = 1;
     public bool canTakeDamage;
     // Use this for initialization
     void Start()
@@ -66,10 +66,6 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             }
         }
 
-        if (canTakeDamage == true)
-            if (Input.GetKeyDown(KeyCode.X))
-                TakeDamage(1);
-
         switch (currentComboState)
         {
             case ComboState.LIGHT:
@@ -94,13 +90,21 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         if (attacked)
             comboTimer -= .01f;
 
+        if (canTakeDamage == true)
+            if (Input.GetKeyDown(KeyCode.X))
+                TakeDamage(1);
+
+        if (canTakeDamage == false)
+            immunityTimer -= .015f;
+
+        if (immunityTimer <= 0)
+            canTakeDamage = true;
+
         if (Data.hp <= 0)
         {
             Data.lifeGems -= 1;
             Data.hp = 4;
-            if (checkpoint == null)
-                transform.position = startPos;
-            transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z); ;
+            MoveToCheckpoint();
         }
 
         if (Data.lifeGems <= 0)
@@ -109,16 +113,25 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             Data.lifeGems = 3;
         }
     }
+    public void TakeDamage(int f)
+    {
+        Data.hp -= f;
+        immunityTimer = 1;
+        canTakeDamage = false;
+        transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
+    }
+
+    public void MoveToCheckpoint()
+    {
+        if (checkpoint == null)
+            transform.position = startPos;
+        transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z); ;
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Checkpoint")
             checkpoint = other.transform;
-    }
-
-    public void TakeDamage(int f)
-    {
-        Data.hp -= f;
     }
 
     void LightAttack()
