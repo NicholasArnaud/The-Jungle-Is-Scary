@@ -40,6 +40,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
+        CurrentState = MovementState.NONE;
     }
 
     private void Update()

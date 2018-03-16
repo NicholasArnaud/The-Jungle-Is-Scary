@@ -16,15 +16,17 @@ public class BranchSwingTestBehaviour : MonoBehaviour
         if (swinging)
         {
             sj.connectedBody = null;
-            rb.gameObject.GetComponent<Player_Movement>().speed = 5;
+            rb.gameObject.GetComponent<PlayerController>().Speed.Value = 0;
+            rb.gameObject.GetComponent<Player_Behaviour>().enabled = false;
         }
-            
+
         else
         {
             sj.connectedBody = rb;
-            rb.gameObject.GetComponent<Player_Movement>().speed = 0;
+            rb.gameObject.GetComponent<PlayerController>().Speed.Value = 10;
+            rb.gameObject.GetComponent<Player_Behaviour>().enabled = true;
         }
-            
+
         swinging = !swinging;
     }
 }
