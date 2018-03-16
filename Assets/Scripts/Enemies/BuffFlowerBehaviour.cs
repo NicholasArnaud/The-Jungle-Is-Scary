@@ -28,7 +28,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private float _distanceBetween;
     private bool _inGround = true;
     private bool _activated;
-    
+
     private Animator _animatorController;
     private NavMeshAgent _nav;
     [SerializeField]
@@ -48,10 +48,10 @@ public class BuffFlowerBehaviour : MonoBehaviour
         //must have checks per frame
         Data.Alive = (Data.Health >= 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
-        
+
         //anystate check for being dead 
         _distanceBetween = Vector3.Distance(Data.PlayerGameObject.transform.position, transform.position);
-        _animatorController.SetFloat("Player Dist",_distanceBetween);
+        _animatorController.SetFloat("Player Dist", _distanceBetween);
 
         switch (_currentState)
         {
@@ -131,17 +131,12 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     private void AggressiveStateHandler()
     {
-         var targetPoint = new Vector3(Data.PlayerGameObject.transform.position.x, transform.position.y, Data.PlayerGameObject.transform.position.z) - transform.position;
-        var targetRotation = Quaternion.LookRotation(-targetPoint, Vector3.up);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
-        transform.LookAt(Data.PlayerGameObject.transform.position);
-
         if (!Data.Alive)
         {
             ChangeState(MovementState.DEAD);
             return;
         }
-        
+
         if (_distanceBetween < 10)
         {
             ChangeState(MovementState.CHASING);
@@ -159,8 +154,6 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     private void ChaseStateHandler()
     {
-        transform.LookAt(Data.PlayerGameObject.transform.position);
-
         if (!Data.Alive)
         {
             ChangeState(MovementState.DEAD);
@@ -172,7 +165,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.AGGRESSIVE);
             return;
         }
-         
+
         if (_distanceBetween <= Data.AttackRadius)
         {
             _nav.SetDestination(transform.position);
