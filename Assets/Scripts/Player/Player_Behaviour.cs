@@ -104,7 +104,6 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         {
             Data.lifeGems -= 1;
             Data.hp = 4;
-            MoveToCheckpoint();
         }
 
         if (Data.lifeGems <= 0)
@@ -121,10 +120,8 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
     }
 
-    public void MoveToCheckpoint()
+    public void OnPlayerDied(Object[]args)
     {
-        if (checkpoint == null)
-            transform.position = startPos;
         transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z); ;
     }
 
