@@ -89,18 +89,17 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             comboTimer -= .01f;
 
 
-        if (Data.lives <= 0)
+        if (Data.hp <= 0)
         {
+            Data.lives -= 1;
             transform.position = startPos;
-            giveHealth.Raise();
-            Data.lives = 4;
+            Data.hp = 4;
         }
     }
 
     public void TakeDamage(int f)
     {
         Data.hp -= f;
-        rb.AddForce(new Vector3(0,10,-50));
     }
 
     void LightAttack()

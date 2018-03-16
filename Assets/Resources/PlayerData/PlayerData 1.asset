@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cd48b0b8029224448b5ee5c5ed41616, type: 3}
-  m_Name: PlayerData
+  m_Name: PlayerData 1
   m_EditorClassIdentifier: 
-  hp: 12
-  lives: 0
+  hp: 4
+  lives: 3
   alive: 0
   damage: 0

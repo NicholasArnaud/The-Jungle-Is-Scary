@@ -157,10 +157,6 @@ Prefab:
       value: -0.088609
       objectReference: {fileID: 0}
     - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.6394176
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0.07452075
       objectReference: {fileID: 0}
@@ -168,16 +164,11 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: -0.76009226
       objectReference: {fileID: 0}
-    - target: {fileID: 114209064457562618, guid: 5a72cd6624866ec43bc13dc9e570801f,
-        type: 2}
-      propertyPath: m_Lens.FieldOfView
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
         type: 2}
       propertyPath: Data
       value: 
-      objectReference: {fileID: 11400000, guid: bab9d63a63d0ba4449a591479d9792b9,
+      objectReference: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
