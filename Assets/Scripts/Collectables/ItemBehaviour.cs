@@ -2,20 +2,19 @@
 
 public class ItemBehaviour : MonoBehaviour
 {
-    public GameEvent ReceiveHealth;
-    public GameEventArgs ReceiveGem;
-    
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag != "Player") return;
-        if(gameObject.name.Contains("Health"))
-        {
-            ReceiveHealth.Raise();
-            Destroy(gameObject);
-        }
+    public string ItemIdentifier;
+    public Item item;
+    public GameEventArgs ItemPickedUp;
 
-        if (!gameObject.name.Contains("Gem")) return;
-        ReceiveGem.Raise(gameObject);
-        Destroy(gameObject);
+    public void OnItemPickedUp(UnityEngine.Object[] args)
+    {
+        var sender = args[0] as GameObject;
+        var other = args[1] as GameObject;
+        
+        if (sender == null ||  other == null || sender != gameObject)
+            return;
+
+        other.GetComponent<IContainer>().AddToInventory(item);
+        ItemPickedUp.Raise(gameObject, item);
     }
 }
