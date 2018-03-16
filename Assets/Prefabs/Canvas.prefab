@@ -2165,11 +2165,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114462793714587802}
-        m_MethodName: GainGemFrag
-        m_Mode: 1
+        m_MethodName: IncrementGemText
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 114051868633179574}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2221,6 +2221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ecfc4d70b921e47ad36483604489a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerData: {fileID: 0}
   MenuPanelObject: {fileID: 1951254071718646}
   PausePanelObject: {fileID: 1308692624564126}
   OptionsPanelObject: {fileID: 1147758522350566}
@@ -2234,6 +2235,8 @@ MonoBehaviour:
   SfxVolumeSlider: {fileID: 114385539439359420}
   SfxValue: {fileID: 114775947415006398}
   MusicValue: {fileID: 114690176969389378}
+  GemFragValue: {fileID: 114384199085970220}
+  FullGemValue: {fileID: 114051868633179574}
   FullHeart: {fileID: 21300000, guid: 7d6c41d680293274ca2b7ee351641d3d, type: 3}
   EmptyHeart: {fileID: 21300000, guid: de66c58b1c8952640950aca7146606ae, type: 3}
 --- !u!114 &114463753402129072
