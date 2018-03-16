@@ -21,12 +21,10 @@ public class BuffFlowerBehaviour : MonoBehaviour
     public EnemyDataScriptable Data;
 
     //Specific values to Buff Flower
-    [Range(0, 4)]
-    public float AttackCooldown;
     public float RiseTime;
 
     private const float DeathTimer = 4;
-    private float _secondTimer;
+    private float _risingTimer;
     private float _distanceBetween;
     private bool _inGround = true;
     private bool _activated;
@@ -42,6 +40,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
+        CurrentState = MovementState.NONE;
     }
 
     private void Update()
@@ -98,17 +97,17 @@ public class BuffFlowerBehaviour : MonoBehaviour
             return;
         }
 
-        if (_distanceBetween <= 3)
+        if (_distanceBetween <= 4)
         {
             _activated = true;
         }
 
         if (!_activated) return;
 
-        if (_secondTimer <= 0)
+        if (_risingTimer <= 0)
             _animatorController.SetTrigger("Rising");
-        _secondTimer += Time.deltaTime;
-        _inGround = _secondTimer <= RiseTime + 0.5f;
+        _risingTimer += Time.deltaTime;
+        _inGround = _risingTimer <= (RiseTime + 0.5f);
         if (!_inGround)
             ChangeState(MovementState.PASSIVE);
 
@@ -132,8 +131,10 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     private void AggressiveStateHandler()
     {
-        transform.LookAt(Data.PlayerGameObject.transform
-            .position); //if the enemy doesn't see the player it's not gonna stare at him
+         var targetPoint = new Vector3(Data.PlayerGameObject.transform.position.x, transform.position.y, Data.PlayerGameObject.transform.position.z) - transform.position;
+        var targetRotation = Quaternion.LookRotation(-targetPoint, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+        transform.LookAt(Data.PlayerGameObject.transform.position);
 
         if (!Data.Alive)
         {
@@ -191,7 +192,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             return;
         }
 
-        if (!(_distanceBetween > Data.AttackRadius)) return;
+        if (_distanceBetween < Data.AttackRadius) return;
         ChangeState(MovementState.CHASING);
     }
 
@@ -206,7 +207,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     }
 
 
-    
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, .5f, 0, .5f);
@@ -214,7 +215,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         Gizmos.color = new Color(1, .5f, 0, .5f);
         Gizmos.DrawSphere(transform.position, Data.AttackRadius);
     }
-
+#endif
     private bool EnableBehaviour(Vector3 center, float radius)
     {
         var playerfound = false;
