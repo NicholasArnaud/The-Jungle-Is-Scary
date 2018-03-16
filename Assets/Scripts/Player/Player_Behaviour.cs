@@ -14,7 +14,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         MEDIUM,
         HEAVY,
     }
-
+    private Rigidbody rb;
     public Player_Data Data;
     Vector3 startPos;
     public GameEvent giveHealth;
@@ -23,8 +23,10 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public float comboTimer;
     bool attacked;
     public int clickNum;
+
     public Transform checkpoint;
-    private Rigidbody rb;
+    public float damageTimer = 1;
+    public bool canTakeDamage;
     // Use this for initialization
     void Start()
     {
@@ -64,11 +66,9 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Z))
-            transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z);
-
-        if (Input.GetKeyDown(KeyCode.X))
-            TakeDamage(1);
+        if (canTakeDamage == true)
+            if (Input.GetKeyDown(KeyCode.X))
+                TakeDamage(1);
 
         switch (currentComboState)
         {
@@ -94,13 +94,26 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         if (attacked)
             comboTimer -= .01f;
 
-
         if (Data.hp <= 0)
         {
-            Data.lives -= 1;
-            transform.position = startPos;
+            Data.lifeGems -= 1;
             Data.hp = 4;
+            if (checkpoint == null)
+                transform.position = startPos;
+            transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z); ;
         }
+
+        if (Data.lifeGems <= 0)
+        {
+            transform.position = startPos;
+            Data.lifeGems = 3;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Checkpoint")
+            checkpoint = other.transform;
     }
 
     public void TakeDamage(int f)
@@ -120,11 +133,4 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     {
         Debug.Log("Heavy");
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Checkpoint")
-            checkpoint = other.transform;
-    }
-
 }
