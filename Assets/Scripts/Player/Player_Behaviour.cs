@@ -120,7 +120,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
     }
 
-    public void OnPlayerDied(Object[]args)
+    public void OnPlayerDied(object[]args)
     {
         transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z); ;
     }
