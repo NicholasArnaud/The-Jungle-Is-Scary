@@ -212,17 +212,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 334413046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 25a8a99c8984fa148a696c4803d0d545, type: 2}
-  Sender: {fileID: 0}
+  Event: {fileID: 11400000, guid: c1642e0d3af0e7c4ba9e87c8a1669122, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 334413050}
         m_MethodName: OnPlayerDied
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -231,8 +230,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &334413050 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
@@ -280,15 +279,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.088609
+      value: -0.08860901
       objectReference: {fileID: 0}
     - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.07452075
+      value: -0.07452076
       objectReference: {fileID: 0}
     - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.76009226
+      value: -0.7600923
       objectReference: {fileID: 0}
     - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -313,6 +312,12 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
+        type: 2}
+      propertyPath: playerDied
+      value: 
+      objectReference: {fileID: 11400000, guid: c1642e0d3af0e7c4ba9e87c8a1669122,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
   m_IsPrefabParent: 0
@@ -329,7 +334,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.699028
+      value: 3.53
       objectReference: {fileID: 0}
     - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -508,7 +513,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1604811430}
-  m_LocalRotation: {x: -0.07402997, y: 0.76378536, z: -0.08901945, w: -0.63500166}
+  m_LocalRotation: {x: -0.07402997, y: 0.7637853, z: -0.08901945, w: -0.63500166}
   m_LocalPosition: {x: 22.330269, y: 4.0699997, z: -41.317017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

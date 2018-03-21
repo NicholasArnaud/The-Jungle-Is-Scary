@@ -18,6 +18,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public Player_Data Data;
     Vector3 startPos;
     public GameEvent giveHealth;
+    public GameEvent playerDied;
 
     public ComboState currentComboState;
     public float comboTimer;
@@ -104,6 +105,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         {
             Data.lifeGems -= 1;
             Data.hp = 4;
+            playerDied.Raise();
         }
 
         if (Data.lifeGems <= 0)
@@ -120,15 +122,9 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
     }
 
-    public void OnPlayerDied(object[]args)
+    public void OnPlayerDied()
     {
         transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z); ;
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Checkpoint")
-            checkpoint = other.transform;
     }
 
     void LightAttack()
