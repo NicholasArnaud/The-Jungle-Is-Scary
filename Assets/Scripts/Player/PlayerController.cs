@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection;
     private CharacterController controller;
     public Vector3 targetDir;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
