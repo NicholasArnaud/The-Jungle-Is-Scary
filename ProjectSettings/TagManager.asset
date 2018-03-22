@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Panel
   - Health
+  - Enemy
+  - Floor
+  - Branch
+  - Item
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
