@@ -17,6 +17,7 @@ public class BranchSwingTestBehaviour : MonoBehaviour
         {
             sj.connectedBody = null;
             rb.useGravity = false;
+            rb.isKinematic = true;
             rb.gameObject.GetComponent<PlayerController>().enabled = true;
             rb.gameObject.GetComponent<Player_Behaviour>().enabled = true;
         }
@@ -25,6 +26,7 @@ public class BranchSwingTestBehaviour : MonoBehaviour
         {
             sj.connectedBody = rb;
             rb.useGravity = true;
+            rb.isKinematic = false;
             rb.gameObject.GetComponent<PlayerController>().enabled = false;
             rb.gameObject.GetComponent<Player_Behaviour>().enabled = false;
         }
