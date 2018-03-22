@@ -14,7 +14,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         MEDIUM,
         HEAVY,
     }
-    private Rigidbody rb;
+
     public Player_Data Data;
     Vector3 startPos;
     public GameEvent giveHealth;
@@ -34,7 +34,6 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         currentComboState = ComboState.NONE;
         startPos = transform.position;
         clickNum = 0;
-        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
