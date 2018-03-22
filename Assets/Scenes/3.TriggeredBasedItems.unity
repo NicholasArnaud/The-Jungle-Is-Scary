@@ -1269,19 +1269,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4100879816921480, guid: fb77a0a780d91b3428f826aff1bffebd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.08228642
+      value: -0.08218951
       objectReference: {fileID: 0}
     - target: {fileID: 4100879816921480, guid: fb77a0a780d91b3428f826aff1bffebd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.6988794
+      value: 0.6988906
       objectReference: {fileID: 0}
     - target: {fileID: 4100879816921480, guid: fb77a0a780d91b3428f826aff1bffebd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.08146425
+      value: -0.081368536
       objectReference: {fileID: 0}
     - target: {fileID: 4100879816921480, guid: fb77a0a780d91b3428f826aff1bffebd, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.7058046
+      value: -0.7058159
       objectReference: {fileID: 0}
     - target: {fileID: 4100879816921480, guid: fb77a0a780d91b3428f826aff1bffebd, type: 2}
       propertyPath: m_RootOrder
@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemIdentifier: 
-  item: {fileID: 11400000, guid: 5df774542f8ef654aa68605394e10bca, type: 2}
+  item: {fileID: 0}
   ItemPickedUp: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
 --- !u!114 &267697068
 MonoBehaviour:
@@ -2640,8 +2640,8 @@ GameObject:
   - component: {fileID: 467876604}
   - component: {fileID: 467876603}
   - component: {fileID: 467876602}
-  - component: {fileID: 467876606}
   - component: {fileID: 467876605}
+  - component: {fileID: 467876606}
   - component: {fileID: 467876607}
   - component: {fileID: 467876600}
   - component: {fileID: 467876601}
@@ -3279,7 +3279,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 542775630}
-  m_LocalRotation: {x: -0.08228642, y: 0.6988794, z: -0.08146425, w: -0.7058046}
+  m_LocalRotation: {x: -0.08218951, y: 0.6988906, z: -0.081368536, w: -0.7058159}
   m_LocalPosition: {x: 4.6672606, y: 2.4, z: 1.9069828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
