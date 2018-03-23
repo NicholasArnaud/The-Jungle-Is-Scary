@@ -28,6 +28,9 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public Transform checkpoint;
     public float immunityTimer = 1;
     public bool canTakeDamage;
+
+    private IDamageable _damageableImplementation;
+
     // Use this for initialization
     void Start()
     {
@@ -113,9 +116,9 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             Data.lifeGems = 3;
         }
     }
-    public void TakeDamage(int f)
+    public  void TakeDamage(int d)
     {
-        Data.hp -= f;
+        Data.hp -= d;
         immunityTimer = 1;
         canTakeDamage = false;
         transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
