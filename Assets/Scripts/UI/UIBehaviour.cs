@@ -6,6 +6,7 @@ public class UIBehaviour : MonoBehaviour
 {
     #region Variables
 
+    public Player_Data PlayerData;
     public GameObject MenuPanelObject;
     public GameObject PausePanelObject;
     public GameObject OptionsPanelObject;
@@ -16,6 +17,8 @@ public class UIBehaviour : MonoBehaviour
     public Slider SfxVolumeSlider;
     public Text SfxValue;
     public Text MusicValue;
+    public Text GemFragValue;
+    public Text FullGemValue;
     public Sprite FullHeart;
     public Sprite EmptyHeart;
     private int _curHealth;
@@ -32,6 +35,8 @@ public class UIBehaviour : MonoBehaviour
         _curHealth = HealthBar.Length;
         MenuPanelObject.SetActive(true);
         _activePanelObject = MenuPanelObject;
+        GemFragValue.text = PlayerData.gemFragments.ToString();
+        FullGemValue.text = PlayerData.lifeGems.ToString();
     }
 
     void Update()
@@ -142,37 +147,13 @@ public class UIBehaviour : MonoBehaviour
     #region UpdatingGems
     public void GainGemFrag(Object[] args)
     {
-        var gemTexts = HudPanelObject.GetComponentsInChildren<Text>();
-        var indexvalue = 0;
-
-        if (args[0].name.Contains("GemFrag"))
+        if (int.Parse(GemFragValue.text) >= 99)
         {
-            if (gemTexts[0].name.Contains("GemFrag"))
-                indexvalue = 0;
-
-            if (int.Parse(gemTexts[indexvalue].text) >= 99)
-            {
-                gemTexts[indexvalue].text = "0";
-                IncrementGemText(gemTexts[indexvalue == 0 ? 1 : 0]);
-            }
-            else
-                IncrementGemText(gemTexts[indexvalue]);
+            GemFragValue.text = "0";
+            IncrementGemText(FullGemValue);
         }
-
-        else if (args[0].name.Contains("Gem"))
-        {
-
-            if (gemTexts[0].name.Contains("GemFrag"))
-                indexvalue = 1;
-
-            if (int.Parse(gemTexts[indexvalue].text) >= 99)
-            {
-                gemTexts[indexvalue].text = "0";
-                IncrementGemText(gemTexts[indexvalue == 0 ? 1 : 0]);
-            }
-            else
-                IncrementGemText(gemTexts[indexvalue]);
-        }
+        else if(int.Parse(FullGemValue.text) >= 3)
+            IncrementGemText(GemFragValue);
     }
 
 
