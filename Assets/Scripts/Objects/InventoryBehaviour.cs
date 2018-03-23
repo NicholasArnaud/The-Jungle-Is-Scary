@@ -20,18 +20,13 @@ public class InventoryBehaviour : MonoBehaviour, IContainer
         var scroll = Input.GetAxis("Mouse ScrollWheel");
         Debug.Log(scroll);
         CycleItems(scroll);
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            var w = currentItem as Weapon;
-            if (w != null)
-                w.Shoot();
-        }
+        
 
     }
     public void AddToInventory(Item gem)
     {
         items.Add(gem);
+        
     }
 
     public void RemoveFromInventory(Item gem)
