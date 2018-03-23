@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 574b748cd0bb41e48afe309e711a87df
-timeCreated: 1521838757
+timeCreated: 1521843537
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -230,6 +230,78 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
+    - boneName: Chest
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Shoulder.L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Upper arm.L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lower arm.L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand.L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Shoulder.R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Upper arm.R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lower arm.R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand.R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
     skeleton:
     - name: Knuckles(Clone)
       parentName: 
@@ -258,8 +330,8 @@ ModelImporter:
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: Neck
       parentName: Chest
-      position: {x: -0, y: 0.005480217, z: -3.0575045e-10}
-      rotation: {x: -0.11386029, y: 0, z: -0, w: 0.9934968}
+      position: {x: 0, y: 0.005480213, z: 0}
+      rotation: {x: -0.11386035, y: -0, z: -0, w: 0.9934968}
       scale: {x: 1, y: 1, z: 1}
     - name: Head
       parentName: Neck
@@ -274,7 +346,7 @@ ModelImporter:
     - name: Shoulder.L
       parentName: Neck
       position: {x: -0.0077698785, y: 0.004893019, z: 0.0024228024}
-      rotation: {x: -0.16247046, y: -0.16247037, z: 0.6881885, w: 0.68818843}
+      rotation: {x: -0.14168109, y: -0.13659918, z: 0.68243116, w: 0.7039566}
       scale: {x: 1, y: 1, z: 1}
     - name: Upper arm.L
       parentName: Shoulder.L
@@ -299,7 +371,7 @@ ModelImporter:
     - name: Shoulder.R
       parentName: Neck
       position: {x: 0.0077698785, y: 0.004893019, z: 0.0024228024}
-      rotation: {x: 0.6881885, y: 0.6881885, z: -0.16247033, w: -0.16247031}
+      rotation: {x: 0.6824312, y: 0.70395654, z: -0.14168112, w: -0.13659932}
       scale: {x: 1, y: 1, z: 0.9999999}
     - name: Upper arm.R
       parentName: Shoulder.R
