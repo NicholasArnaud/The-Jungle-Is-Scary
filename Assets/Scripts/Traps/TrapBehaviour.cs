@@ -6,7 +6,7 @@ public class TrapBehaviour : MonoBehaviour {
 
     public GameEvent HitPlayer;
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
             HitPlayer.Raise();

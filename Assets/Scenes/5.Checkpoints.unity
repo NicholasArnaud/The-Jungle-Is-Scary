@@ -199,45 +199,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &334413046 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1225964931601918, guid: 5a72cd6624866ec43bc13dc9e570801f,
-    type: 2}
-  m_PrefabInternal: {fileID: 922104700}
---- !u!114 &334413047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 334413046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: c1642e0d3af0e7c4ba9e87c8a1669122, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 334413050}
-        m_MethodName: OnPlayerDied
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &334413050 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-    type: 2}
-  m_PrefabInternal: {fileID: 922104700}
-  m_Script: {fileID: 11500000, guid: 16c6ffda447b5a14baeba87f06a99bf7, type: 3}
 --- !u!1001 &922104700
 Prefab:
   m_ObjectHideFlags: 0
@@ -279,45 +240,21 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.08860901
+      value: -0.088609
       objectReference: {fileID: 0}
     - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.07452076
+      value: -0.07452075
       objectReference: {fileID: 0}
     - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.7600923
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.3999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 5.842512
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -1.0148618
+      value: -0.76009226
       objectReference: {fileID: 0}
     - target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
         type: 2}
-      propertyPath: Data
-      value: 
-      objectReference: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d,
-        type: 2}
-    - target: {fileID: 114603843826530524, guid: 5a72cd6624866ec43bc13dc9e570801f,
-        type: 2}
-      propertyPath: m_Enabled
+      propertyPath: clickNum
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-        type: 2}
-      propertyPath: playerDied
-      value: 
-      objectReference: {fileID: 11400000, guid: c1642e0d3af0e7c4ba9e87c8a1669122,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
   m_IsPrefabParent: 0
@@ -513,7 +450,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1604811430}
-  m_LocalRotation: {x: -0.07402997, y: 0.7637853, z: -0.08901945, w: -0.63500166}
+  m_LocalRotation: {x: -0.07402997, y: 0.76378536, z: -0.08901945, w: -0.63500166}
   m_LocalPosition: {x: 22.330269, y: 4.0699997, z: -41.317017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

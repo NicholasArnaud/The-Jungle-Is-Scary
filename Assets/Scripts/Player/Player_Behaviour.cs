@@ -16,7 +16,6 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     }
 
     public Player_Data Data;
-    Vector3 startPos;
     public GameEvent giveHealth;
     public GameEvent playerDied;
 
@@ -25,17 +24,30 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     bool attacked;
     public int clickNum;
 
+    private Transform startPos;
     public Transform checkpoint;
     public float immunityTimer = 1;
     public bool canTakeDamage;
 
-    private IDamageable _damageableImplementation;
+    public Transform StartPos
+    {
+        get
+        {
+            return startPos;
+        }
+
+        set
+        {
+            startPos = value;
+        }
+    }
 
     // Use this for initialization
     void Start()
     {
         currentComboState = ComboState.NONE;
-        startPos = transform.position;
+        StartPos = transform;
+        checkpoint = StartPos;
         clickNum = 0;
     }
 
@@ -112,7 +124,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
 
         if (Data.lifeGems <= 0)
         {
-            transform.position = startPos;
+            transform.position = StartPos.position;
             Data.lifeGems = 3;
         }
     }
