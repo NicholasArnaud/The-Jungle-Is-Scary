@@ -137,6 +137,9 @@ GameObject:
   - component: {fileID: 95414519111709018}
   - component: {fileID: 114805741136429474}
   - component: {fileID: 143897531241739794}
+  - component: {fileID: 114156941600963280}
+  - component: {fileID: 114321856928546354}
+  - component: {fileID: 114670663704591638}
   m_Layer: 0
   m_Name: M_Sapo_001
   m_TagString: Player
@@ -1866,7 +1869,7 @@ Animator:
   m_GameObject: {fileID: 1112419472757732}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 01a0eae278f43a446aa5b7a80ad5ead3, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1874,6 +1877,66 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114156941600963280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112419472757732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f445e28c5df6345b84d9ea86ac4e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
+  items: []
+  currentItem: {fileID: 0}
+  currentItemIndex: 0
+--- !u!114 &114321856928546354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112419472757732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc4bab8f2f77f54285935c7a07c17f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
+  gems: []
+  ItemAddedToInventory: {fileID: 0}
+  ItemRemovedFromInventory: {fileID: 0}
+  ItemSwappedAroundInInventory: {fileID: 0}
+--- !u!114 &114670663704591638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112419472757732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1112419472757732}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114805741136429474
 MonoBehaviour:
   m_ObjectHideFlags: 1
