@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6562042}
   - component: {fileID: 6562041}
-  - component: {fileID: 6562040}
   - component: {fileID: 6562039}
   - component: {fileID: 6562043}
   m_Layer: 0
@@ -166,19 +165,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &6562040
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 6562038}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &6562041
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -245,9 +231,7 @@ GameObject:
   - component: {fileID: 267710558}
   - component: {fileID: 267710557}
   - component: {fileID: 267710556}
-  - component: {fileID: 267710559}
   - component: {fileID: 267710560}
-  - component: {fileID: 267710561}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -309,7 +293,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 267710554}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.6
@@ -321,35 +305,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 267710554}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &267710559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 267710554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-          type: 2}
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &267710560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,18 +317,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPlayer: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
---- !u!65 &267710561
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 267710554}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 1.4551915e-11, z: -0.00000025331974}
 --- !u!1 &290009888
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,9 +329,7 @@ GameObject:
   - component: {fileID: 290009892}
   - component: {fileID: 290009891}
   - component: {fileID: 290009890}
-  - component: {fileID: 290009895}
   - component: {fileID: 290009894}
-  - component: {fileID: 290009896}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -494,9 +435,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 290009888}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.6
+  m_Radius: 0.7
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -518,48 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864b8acb50f7f594a9a1a057d736c6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPlayer: {fileID: 0}
---- !u!114 &290009895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 290009888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-          type: 2}
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!135 &290009896
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 290009888}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.0000002
-  m_Center: {x: -0.0000008940697, y: 5.293956e-23, z: 0.0000075399876}
+  HitPlayer: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
 --- !u!1 &605857359
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,8 +554,6 @@ GameObject:
   - component: {fileID: 929244053}
   - component: {fileID: 929244057}
   - component: {fileID: 929244058}
-  - component: {fileID: 929244059}
-  - component: {fileID: 929244060}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -704,9 +602,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 929244052}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -786,47 +684,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPlayer: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
---- !u!114 &929244059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 929244052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-          type: 2}
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!65 &929244060
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 929244052}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0000004, y: 2.0000005, z: 1.0000002}
-  m_Center: {x: 0.00000029802322, y: 0.0000009536743, z: -0.0000077188015}
 --- !u!1 &945046590
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,9 +696,7 @@ GameObject:
   - component: {fileID: 945046594}
   - component: {fileID: 945046593}
   - component: {fileID: 945046592}
-  - component: {fileID: 945046597}
   - component: {fileID: 945046596}
-  - component: {fileID: 945046598}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -947,9 +802,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 945046590}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.6
+  m_Radius: 0.7
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -971,48 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864b8acb50f7f594a9a1a057d736c6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPlayer: {fileID: 0}
---- !u!114 &945046597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 945046590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-          type: 2}
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!135 &945046598
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 945046590}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.0000002
-  m_Center: {x: 0.00000005960466, y: 5.293956e-23, z: 0.0000075399876}
+  HitPlayer: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
 --- !u!1 &999921732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,9 +839,7 @@ GameObject:
   - component: {fileID: 999921736}
   - component: {fileID: 999921735}
   - component: {fileID: 999921734}
-  - component: {fileID: 999921739}
   - component: {fileID: 999921738}
-  - component: {fileID: 999921740}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
@@ -1133,9 +945,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 999921732}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.6
+  m_Radius: 0.7
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1157,48 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864b8acb50f7f594a9a1a057d736c6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPlayer: {fileID: 0}
---- !u!114 &999921739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 999921732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-          type: 2}
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!135 &999921740
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 999921732}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.0000002
-  m_Center: {x: 0.0000019669533, y: 5.293956e-23, z: 0.0000075399876}
+  HitPlayer: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
 --- !u!1 &1208226408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,8 +983,6 @@ GameObject:
   - component: {fileID: 1208226410}
   - component: {fileID: 1208226409}
   - component: {fileID: 1208226414}
-  - component: {fileID: 1208226415}
-  - component: {fileID: 1208226416}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
@@ -1306,9 +1075,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1208226408}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1344,47 +1113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPlayer: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
---- !u!114 &1208226415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1208226408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-          type: 2}
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!65 &1208226416
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1208226408}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0000004, y: 2.0000005, z: 1.0000002}
-  m_Center: {x: 0.00000005960466, y: 0.0000009536743, z: -0.0000077188015}
 --- !u!1 &1322352637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,10 +1151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1383611197}
   - component: {fileID: 1383611200}
-  - component: {fileID: 1383611199}
   - component: {fileID: 1383611198}
-  - component: {fileID: 1383611201}
-  - component: {fileID: 1383611202}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -1481,19 +1206,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &1383611199
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1383611196}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1383611200
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1501,12 +1213,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1383611196}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1383611201
+--- !u!1 &1538652614 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1225964931601918, guid: 5a72cd6624866ec43bc13dc9e570801f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1776196342}
+--- !u!114 &1538652615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1383611196}
+  m_GameObject: {fileID: 1538652614}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
@@ -1516,7 +1233,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1538652618}
         m_MethodName: TakeDamage
         m_Mode: 3
         m_Arguments:
@@ -1529,18 +1246,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1383611202
+--- !u!114 &1538652618 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1383611196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 864b8acb50f7f594a9a1a057d736c6de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitPlayer: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
+  m_PrefabParentObject: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1776196342}
+  m_Script: {fileID: 11500000, guid: 16c6ffda447b5a14baeba87f06a99bf7, type: 3}
 --- !u!1 &1621120616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,8 +1265,6 @@ GameObject:
   - component: {fileID: 1621120618}
   - component: {fileID: 1621120617}
   - component: {fileID: 1621120622}
-  - component: {fileID: 1621120623}
-  - component: {fileID: 1621120624}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -1648,9 +1357,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1621120616}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1686,47 +1395,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPlayer: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
---- !u!114 &1621120623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1621120616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-          type: 2}
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!65 &1621120624
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1621120616}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0000004, y: 2.0000005, z: 1.0000002}
-  m_Center: {x: -0.0000008940697, y: 0.0000009536743, z: -0.0000077188015}
 --- !u!1 &1653036472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,9 +1683,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114480388036754136, guid: 5a72cd6624866ec43bc13dc9e570801f,
+        type: 2}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4185259392228072, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -19.29
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 4185259392228072, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2025,7 +1698,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4185259392228072, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 11.42
+      value: -1.724
       objectReference: {fileID: 0}
     - target: {fileID: 4185259392228072, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2045,6 +1718,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4185259392228072, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
+        type: 2}
+      propertyPath: canTakeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
+        type: 2}
+      propertyPath: immunityTimer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114480388036754136, guid: 5a72cd6624866ec43bc13dc9e570801f,
+        type: 2}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114480388036754136, guid: 5a72cd6624866ec43bc13dc9e570801f,
+        type: 2}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []

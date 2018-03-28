@@ -113,7 +113,9 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             immunityTimer -= .015f;
 
         if (immunityTimer <= 0)
+        {
             canTakeDamage = true;
+        }
 
         if (Data.hp <= 0)
         {
@@ -128,13 +130,17 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             Data.lifeGems = 3;
         }
     }
-    public  void TakeDamage(int d)
+
+    public void TakeDamage(int d)
     {
-        Data.hp -= d;
-        immunityTimer = 1;
-        canTakeDamage = false;
-        transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
-    }
+        if (canTakeDamage)
+        {
+            Data.hp -= d;
+            immunityTimer = 1;
+            canTakeDamage = false;
+            transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
+        }    
+}
 
     public void OnPlayerDied()
     {
