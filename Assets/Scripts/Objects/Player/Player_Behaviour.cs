@@ -97,7 +97,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
                 TakeDamage(1);
 
         if (canTakeDamage == false)
-            immunityTimer -= .015f;
+            immunityTimer -= .03f;
 
         if (immunityTimer <= 0)
         {
