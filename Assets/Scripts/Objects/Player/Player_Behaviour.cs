@@ -29,25 +29,12 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public float immunityTimer = 1;
     public bool canTakeDamage;
 
-    public Transform StartPos
-    {
-        get
-        {
-            return startPos;
-        }
-
-        set
-        {
-            startPos = value;
-        }
-    }
-
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         currentComboState = ComboState.NONE;
-        StartPos = transform;
-        checkpoint = StartPos;
+        startPos = transform;
+        checkpoint = startPos;
         clickNum = 0;
     }
 
@@ -126,7 +113,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
 
         if (Data.lifeGems <= 0)
         {
-            transform.position = StartPos.position;
+            transform.position = startPos.position;
             Data.lifeGems = 3;
         }
     }

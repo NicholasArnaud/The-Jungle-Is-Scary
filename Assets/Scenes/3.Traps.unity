@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 605857362}
   - component: {fileID: 605857361}
   - component: {fileID: 605857360}
+  - component: {fileID: 605857364}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -508,11 +509,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 70
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -534,13 +535,43 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 605857359}
-  m_LocalRotation: {x: 0.08753052, y: -0, z: -0, w: 0.9961619}
-  m_LocalPosition: {x: -0.32, y: 3.48, z: -6.19}
+  m_LocalRotation: {x: -0.07402997, y: 0.7637853, z: -0.08901945, w: -0.63500166}
+  m_LocalPosition: {x: 6.1602697, y: 2.1699996, z: -0.64101434}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 10.043, y: 0, z: 0}
+--- !u!114 &605857364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 605857359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &929244052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,45 +1244,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1383611196}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1538652614 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1225964931601918, guid: 5a72cd6624866ec43bc13dc9e570801f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1776196342}
---- !u!114 &1538652615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1538652614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1538652618}
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1538652618 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1776196342}
-  m_Script: {fileID: 11500000, guid: 16c6ffda447b5a14baeba87f06a99bf7, type: 3}
 --- !u!1 &1621120616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,7 +1530,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704385384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27, y: 2.7, z: 17.869999}
+  m_LocalPosition: {x: -25.77, y: 2.7, z: 17.869999}
   m_LocalScale: {x: 6.2451015, y: 6.62, z: 1}
   m_Children:
   - {fileID: 945046591}
@@ -1683,11 +1675,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114480388036754136, guid: 5a72cd6624866ec43bc13dc9e570801f,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4185259392228072, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.33
@@ -1720,25 +1707,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-        type: 2}
-      propertyPath: canTakeDamage
-      value: 1
+    - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.08860901
       objectReference: {fileID: 0}
-    - target: {fileID: 114480705078535786, guid: 5a72cd6624866ec43bc13dc9e570801f,
-        type: 2}
-      propertyPath: immunityTimer
-      value: 0
+    - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.07452076
       objectReference: {fileID: 0}
-    - target: {fileID: 114480388036754136, guid: 5a72cd6624866ec43bc13dc9e570801f,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+    - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.7600923
       objectReference: {fileID: 0}
-    - target: {fileID: 114480388036754136, guid: 5a72cd6624866ec43bc13dc9e570801f,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
+    - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.842513
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.3999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769583389776126, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.0148617
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a72cd6624866ec43bc13dc9e570801f, type: 2}

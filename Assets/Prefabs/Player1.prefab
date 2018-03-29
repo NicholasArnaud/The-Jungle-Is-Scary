@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114603843826530524}
   - component: {fileID: 54170555054373422}
   - component: {fileID: 114480388036754136}
+  - component: {fileID: 114788426486479184}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -75,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1225964931601918}
   m_LocalRotation: {x: -0, y: -0.17688726, z: -0, w: 0.9842311}
-  m_LocalPosition: {x: 16.5, y: 2.67, z: -1068.4}
+  m_LocalPosition: {x: 0.33, y: 0.77, z: -1.724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4769583389776126}
@@ -271,8 +272,8 @@ MonoBehaviour:
   comboTimer: 5
   clickNum: 0
   checkpoint: {fileID: 0}
-  immunityTimer: 1
-  canTakeDamage: 0
+  immunityTimer: 0
+  canTakeDamage: 1
 --- !u!114 &114603843826530524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -327,6 +328,34 @@ MonoBehaviour:
   m_PitchDamping: 0
   m_YawDamping: 0
   m_RollDamping: 0
+--- !u!114 &114788426486479184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225964931601918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114480705078535786}
+        m_MethodName: TakeDamage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!143 &143575690331328828
 CharacterController:
   m_ObjectHideFlags: 1
