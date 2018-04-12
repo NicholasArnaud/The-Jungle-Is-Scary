@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GLOBALS : MonoBehaviour {
+public class GLOBALS {
 
     public interface IState
     {
