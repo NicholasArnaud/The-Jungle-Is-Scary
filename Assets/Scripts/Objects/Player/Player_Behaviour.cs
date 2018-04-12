@@ -23,7 +23,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public float comboTimer;
     bool attacked;
     public int clickNum;
-
+   
     private Transform startPos;
     public Transform checkpoint;
     public float immunityTimer = 1;
@@ -33,7 +33,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public void Start()
     {
         currentComboState = ComboState.NONE;
-        startPos = transform;
+        startPos = new GameObject().transform;
         checkpoint = startPos;
         clickNum = 0;
     }
