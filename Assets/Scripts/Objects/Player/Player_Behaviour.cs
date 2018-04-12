@@ -14,26 +14,28 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         MEDIUM,
         HEAVY,
     }
-    private Rigidbody rb;
+
     public Player_Data Data;
-    Vector3 startPos;
     public GameEvent giveHealth;
+    public GameEvent playerDied;
 
     public ComboState currentComboState;
     public float comboTimer;
     bool attacked;
     public int clickNum;
 
+    private Transform startPos;
     public Transform checkpoint;
-    public float damageTimer = 1;
+    public float immunityTimer = 1;
     public bool canTakeDamage;
+
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         currentComboState = ComboState.NONE;
-        startPos = transform.position;
+        startPos = transform;
+        checkpoint = startPos;
         clickNum = 0;
-        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -66,10 +68,6 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             }
         }
 
-        if (canTakeDamage == true)
-            if (Input.GetKeyDown(KeyCode.X))
-                TakeDamage(1);
-
         switch (currentComboState)
         {
             case ComboState.LIGHT:
@@ -94,31 +92,46 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         if (attacked)
             comboTimer -= .01f;
 
+        if (canTakeDamage == true)
+            if (Input.GetKeyDown(KeyCode.X))
+                TakeDamage(1);
+
+        if (canTakeDamage == false)
+            immunityTimer -= .03f;
+
+        if (immunityTimer <= 0)
+        {
+            canTakeDamage = true;
+        }
+
         if (Data.hp <= 0)
         {
             Data.lifeGems -= 1;
             Data.hp = 4;
-            if (checkpoint == null)
-                transform.position = startPos;
-            transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z); ;
+            playerDied.Raise();
         }
 
         if (Data.lifeGems <= 0)
         {
-            transform.position = startPos;
+            transform.position = startPos.position;
             Data.lifeGems = 3;
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    public void TakeDamage(int d)
     {
-        if (other.tag == "Checkpoint")
-            checkpoint = other.transform;
-    }
+        if (canTakeDamage)
+        {
+            Data.hp -= d;
+            immunityTimer = 1;
+            canTakeDamage = false;
+            transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
+        }    
+}
 
-    public void TakeDamage(int f)
+    public void OnPlayerDied()
     {
-        Data.hp -= f;
+        transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z); ;
     }
 
     void LightAttack()
