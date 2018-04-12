@@ -121,7 +121,7 @@ public class MeduimPunchState : GLOBALS.IState
 public class HeavyPunchState : GLOBALS.IState
 {
     public float TTL = 2;
-
+    
     public void OnEnter()
     {
         Debug.Log("ENTER HEAVY PUNCH");
