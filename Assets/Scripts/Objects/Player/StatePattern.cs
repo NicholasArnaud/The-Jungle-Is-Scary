@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public static class PlayerInput
 {
     public static bool A { get; set; }
@@ -28,37 +29,9 @@ public static class PlayerInput
         }
     }
 }
-public interface IState
-{
-    void OnEnter();
-    void UpdateState(IContext context);
-    void OnExit();
-}
-
-public interface IContext
-{
-    void ChangeState(IState next);
-}
 
 [System.Serializable]
-public class PlayerContext : IContext
-{
-    public IState Current = new IdleState();
-    public void ChangeState(IState next)
-    {
-        Current.OnExit();
-        Current = next;
-        Current.OnEnter();
-    }
-
-    public void UpdateContext()
-    {
-        Current.UpdateState(this);
-    }
-}
-
-[System.Serializable]
-public class IdleState : IState
+public class IdleState : GLOBALS.IState
 {
     public float TTL = 3.0f;
 
@@ -72,7 +45,7 @@ public class IdleState : IState
         UnityEngine.Debug.Log("Exit State" + this.ToString());
     }
 
-    public void UpdateState(IContext context)
+    public void UpdateState(GLOBALS.IContext context)
     {
         if (TTL <= 0)
         {
@@ -89,7 +62,7 @@ public class IdleState : IState
     }
 }
 
-public class LightPunchState : IState
+public class LightPunchState : GLOBALS.IState
 {
     public float TTL = 2;
     public void OnEnter()
@@ -102,7 +75,7 @@ public class LightPunchState : IState
         Debug.Log("EXIT LIGHT PUNCH");
     }
 
-    public void UpdateState(IContext context)
+    public void UpdateState(GLOBALS.IContext context)
     {
         if (TTL <= 0)
             context.ChangeState(new IdleState());
@@ -117,7 +90,7 @@ public class LightPunchState : IState
     }
 }
 
-public class MeduimPunchState : IState
+public class MeduimPunchState : GLOBALS.IState
 {
     public float TTL = 2;
     public void OnEnter()
@@ -125,7 +98,7 @@ public class MeduimPunchState : IState
         Debug.Log("ENTER MEDUIM PUNCH");
     }
 
-    public void UpdateState(IContext context)
+    public void UpdateState(GLOBALS.IContext context)
     {
         if (TTL <= 0)
             context.ChangeState(new IdleState());
@@ -145,7 +118,7 @@ public class MeduimPunchState : IState
     }
 }
 
-public class HeavyPunchState : IState
+public class HeavyPunchState : GLOBALS.IState
 {
     public float TTL = 2;
 
@@ -154,7 +127,7 @@ public class HeavyPunchState : IState
         Debug.Log("ENTER HEAVY PUNCH");
     }
 
-    public void UpdateState(IContext context)
+    public void UpdateState(GLOBALS.IContext context)
     {
         if (TTL <= 0)
             context.ChangeState(new IdleState());
