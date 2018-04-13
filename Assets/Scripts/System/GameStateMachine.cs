@@ -51,4 +51,9 @@ public class GameStateMachine : MonoBehaviour
     {
         Gamecontext.UpdateContext();
     }
+
+    public void ContinueGameScene()
+    {
+       Gamecontext.SetPauseState();
+    }
 }

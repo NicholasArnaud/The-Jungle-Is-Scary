@@ -35,6 +35,11 @@ public class GameContext : ScriptableObject, GLOBALS.GLOBALS.IContext
     {
         GameStarted = !GameStarted;
     }
+
+    public void SetPauseState()
+    {
+        PauseButtonClicked = !PauseButtonClicked;
+    }
 }
 
 public class GameStartState : GLOBALS.GLOBALS.IState

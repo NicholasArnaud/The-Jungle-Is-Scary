@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 580603724}
   - component: {fileID: 580603726}
   - component: {fileID: 580603727}
+  - component: {fileID: 580603728}
   m_Layer: 0
   m_Name: SystemController
   m_TagString: Untagged
@@ -204,6 +205,34 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 580603724}
         m_MethodName: ExitGameScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &580603728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 580603723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: bea53e94f35892240aa31ec7a1db5c05, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 580603724}
+        m_MethodName: ContinueGameScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -188,7 +188,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 7819218}
-  m_LocalRotation: {x: 0.058268543, y: 0.8919281, z: -0.12036226, w: 0.43195128}
+  m_LocalRotation: {x: 0.058215402, y: 0.8919427, z: -0.12025254, w: 0.43195906}
   m_LocalPosition: {x: 109.19983, y: 1.4599998, z: -88.32872}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -871,51 +871,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4433873173725154, guid: dd5061628b4b360419a063967578489b,
     type: 2}
   m_PrefabInternal: {fileID: 108850372}
---- !u!1 &115672764 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1155854392354474, guid: 31cd7912c7ec9b2439f28ce7b74aec74,
-    type: 2}
-  m_PrefabInternal: {fileID: 277447508}
---- !u!114 &115672767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 115672764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 8cf525e2d988f7948907e292c6e46938, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 115672768}
-        m_MethodName: UpdateMainMusicAudio
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &115672768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 115672764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ac0ea232ba6274eb98f7dae1967f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MusicSlider: {fileID: 0}
 --- !u!1001 &118146887
 Prefab:
   m_ObjectHideFlags: 0
@@ -984,19 +939,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4100879816921480, guid: fb77a0a780d91b3428f826aff1bffebd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.058268543
+      value: 0.058215402
       objectReference: {fileID: 0}
     - target: {fileID: 4100879816921480, guid: fb77a0a780d91b3428f826aff1bffebd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.8919281
+      value: 0.8919427
       objectReference: {fileID: 0}
     - target: {fileID: 4100879816921480, guid: fb77a0a780d91b3428f826aff1bffebd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.12036226
+      value: -0.12025254
       objectReference: {fileID: 0}
     - target: {fileID: 4100879816921480, guid: fb77a0a780d91b3428f826aff1bffebd, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.43195128
+      value: 0.43195906
       objectReference: {fileID: 0}
     - target: {fileID: 4100879816921480, guid: fb77a0a780d91b3428f826aff1bffebd, type: 2}
       propertyPath: m_RootOrder
@@ -1858,6 +1813,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114929539423372564, guid: 31cd7912c7ec9b2439f28ce7b74aec74,
+        type: 2}
+      propertyPath: MusicSlider
+      value: 
+      objectReference: {fileID: 1509506655}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31cd7912c7ec9b2439f28ce7b74aec74, type: 2}
   m_IsPrefabParent: 0
@@ -16006,6 +15966,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4433873173725154, guid: dd5061628b4b360419a063967578489b,
     type: 2}
   m_PrefabInternal: {fileID: 1484819225}
+--- !u!114 &1509506655 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114366305637693456, guid: 26edddf15595d8b489ce12006ad73d3b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1813999883}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1524160047
 Prefab:
   m_ObjectHideFlags: 0
@@ -17732,9 +17698,19 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114462793714587802, guid: 26edddf15595d8b489ce12006ad73d3b,
+        type: 2}
+      propertyPath: StartUpPanelObject
+      value: 
+      objectReference: {fileID: 1813999884}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26edddf15595d8b489ce12006ad73d3b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1813999884 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1367004539387402, guid: 26edddf15595d8b489ce12006ad73d3b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1813999883}
 --- !u!1001 &1814591909
 Prefab:
   m_ObjectHideFlags: 0

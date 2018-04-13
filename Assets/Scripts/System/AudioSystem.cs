@@ -12,7 +12,6 @@ public class AudioSystem : MonoBehaviour
     {
         MainAudioSource = GetComponent<AudioSource>();
     }
-
     public void UpdateMainMusicAudio()
     {
         MainAudioSource.volume = MusicSlider.value * 1 / 100;
