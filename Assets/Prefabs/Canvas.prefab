@@ -2243,6 +2243,8 @@ MonoBehaviour:
   PausePanelObject: {fileID: 1308692624564126}
   OptionsPanelObject: {fileID: 1147758522350566}
   HudPanelObject: {fileID: 1367004539387402}
+  StartUpPanelObject: {fileID: 1951254071718646}
+  GameSceneName: 5.NavmeshGreyBox
   HealthBar:
   - {fileID: 1746092374374672}
   - {fileID: 1868615309665270}
