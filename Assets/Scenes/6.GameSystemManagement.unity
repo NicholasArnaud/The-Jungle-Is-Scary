@@ -145,7 +145,7 @@ MonoBehaviour:
   StartUpSceneName: 1.UserInterface
   LoadingSceneName: 7.LoadingScene
   InGameSceneName: 5.NavmeshGreyBox
-  Gamecontext: {fileID: 0}
+  Gamecontext: {fileID: 11400000, guid: c3652b6a146c27f40a4edf6c0024fe5b, type: 2}
 --- !u!4 &580603725
 Transform:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null

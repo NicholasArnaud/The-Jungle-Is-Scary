@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +26,7 @@ public class GameStateMachine : MonoBehaviour
         if (_loaded) return;
         _loaded = true;
         SceneManager.LoadScene(LoadingSceneName);
+        Gamecontext.SetGameStarted();
         StartCoroutine(LoadNewScene());
     }
 
@@ -43,5 +45,10 @@ public class GameStateMachine : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    void Update()
+    {
+        Gamecontext.UpdateContext();
     }
 }

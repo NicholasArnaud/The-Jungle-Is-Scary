@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "GameContext")]
 public class GameContext : ScriptableObject, GLOBALS.GLOBALS.IContext
@@ -8,10 +7,12 @@ public class GameContext : ScriptableObject, GLOBALS.GLOBALS.IContext
     public string CurrentStateName;
 
     public static bool PauseButtonClicked { get; set; }
+
     public static bool GameStarted { get; set; }
     private void OnEnable()
     {
         _current = new GameStartState();
+        _current.OnEnter();
     }
     /// <summary>
     /// this should not be called by anyone but the states that funnel through here
@@ -29,13 +30,18 @@ public class GameContext : ScriptableObject, GLOBALS.GLOBALS.IContext
     {
         _current.UpdateState(this);
     }
+
+    public void SetGameStarted()
+    {
+        GameStarted = !GameStarted;
+    }
 }
 
 public class GameStartState : GLOBALS.GLOBALS.IState
 {
     public void OnEnter()
     {
-        Debug.Log("enter " + ToString());
+        Debug.Log("Enter: " + ToString());
     }
 
     public void UpdateState(GLOBALS.GLOBALS.IContext context)
@@ -56,14 +62,24 @@ public class GameRunningState : GLOBALS.GLOBALS.IState
     public void OnEnter()
     {
         Debug.Log("enter " + ToString());
+        Time.timeScale = 1;
     }
 
     public void UpdateState(GLOBALS.GLOBALS.IContext context)
     {
         //Change to the previous state or next state here if a condition is met
+        if (Input.GetKeyDown(KeyCode.Escape))
+            GameContext.PauseButtonClicked = !GameContext.PauseButtonClicked;
+        if (GameContext.PauseButtonClicked)
+        {
+            context.ChangeState(new GamePausedState());
+        }
     }
 
-    public void OnExit() { }
+    public void OnExit()
+    {
+
+    }
 }
 
 public class GamePausedState : GLOBALS.GLOBALS.IState
@@ -77,6 +93,8 @@ public class GamePausedState : GLOBALS.GLOBALS.IState
     public void UpdateState(GLOBALS.GLOBALS.IContext context)
     {
         //Change to the previous state or next state here if a condition is met
+        if (Input.GetKeyDown(KeyCode.Escape))
+            GameContext.PauseButtonClicked = !GameContext.PauseButtonClicked;
         if (!GameContext.PauseButtonClicked)
         {
             context.ChangeState(new GameRunningState());
