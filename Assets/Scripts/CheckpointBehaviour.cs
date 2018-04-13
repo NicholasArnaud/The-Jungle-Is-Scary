@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckpointBehaviour : MonoBehaviour
 {
-
+    
 
     public Transform spawnTransform;
     public void OnCheckpointCrossed(Object[]args)
