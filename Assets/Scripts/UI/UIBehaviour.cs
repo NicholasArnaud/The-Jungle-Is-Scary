@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -11,7 +14,9 @@ public class UIBehaviour : MonoBehaviour
     public GameObject PausePanelObject;
     public GameObject OptionsPanelObject;
     public GameObject HudPanelObject;
+    public GameObject StartUpPanelObject;
 
+    public String GameSceneName;
     public GameObject[] HealthBar;
     public Slider MusicVolumeSlider;
     public Slider SfxVolumeSlider;
@@ -33,7 +38,7 @@ public class UIBehaviour : MonoBehaviour
         _panels = new List<GameObject> { HudPanelObject, MenuPanelObject, OptionsPanelObject, PausePanelObject };
         _panels.ForEach(x => x.SetActive(false));
         _curHealth = HealthBar.Length;
-        MenuPanelObject.SetActive(true);
+        StartUpPanelObject.SetActive(true);
         _activePanelObject = MenuPanelObject;
         GemFragValue.text = PlayerData.gemFragments.ToString();
         FullGemValue.text = PlayerData.lifeGems.ToString();
@@ -74,7 +79,8 @@ public class UIBehaviour : MonoBehaviour
         CheckForActivePanel();
         _activePanelObject.SetActive(false);
         _prevPanelObject = _activePanelObject;
-        HudPanelObject.SetActive(true);
+        if (GameSceneName == SceneManager.GetActiveScene().name)
+            HudPanelObject.SetActive(true);
     }
 
     public void OptionButtonTrigger()
@@ -152,7 +158,7 @@ public class UIBehaviour : MonoBehaviour
             GemFragValue.text = "0";
             IncrementGemText(FullGemValue);
         }
-        else if(int.Parse(FullGemValue.text) >= 3)
+        else if (int.Parse(FullGemValue.text) >= 3)
             IncrementGemText(GemFragValue);
     }
 
