@@ -69,7 +69,10 @@ namespace GLOBALS
         public void UpdateState(GLOBALS.IContext context)
         {
             if (TTL <= 0)
-                context.ChangeState(new IdleState());
+            {
+                context.ChangeState(new IdleState());               
+            }
+                
             else
             {
                 if (PlayerInput.MEDIUMPUNCH)
@@ -138,6 +141,5 @@ namespace GLOBALS
             Debug.Log("EXIT HEAVY PUNCH");
         }
     }
-
 }
 
