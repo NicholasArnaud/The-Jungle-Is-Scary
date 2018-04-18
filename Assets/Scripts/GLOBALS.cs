@@ -5,9 +5,9 @@
 
         public interface IState
         {
-            void OnEnter();
+            void OnEnter(IContext context);
             void UpdateState(IContext context);
-            void OnExit();
+            void OnExit(IContext context);
         }
 
         public interface IContext
@@ -23,9 +23,9 @@
             public IState Current;
             public void ChangeState(IState next)
             {
-                Current.OnExit();
+                Current.OnExit(this);
                 Current = next;
-                Current.OnEnter();
+                Current.OnEnter(this);
             }
 
             public void UpdateContext()
@@ -40,9 +40,9 @@
             public IState Current;
             public void ChangeState(IState next)
             {
-                Current.OnExit();
+                Current.OnExit(this);
                 Current = next;
-                Current.OnEnter();
+                Current.OnEnter(this);
             }
 
             public void UpdateContext()
