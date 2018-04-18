@@ -17,13 +17,13 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.02
+  m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 3.4
+  m_AmbientIntensity: 5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: d07d2172e76d3fa429e80a14d2ae3616, type: 2}
@@ -72,7 +72,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 0
+    m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
@@ -359,7 +359,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1112419472757732, guid: f207b4233e0bbf24db71c22a38ff1f53, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f207b4233e0bbf24db71c22a38ff1f53, type: 2}
@@ -402,6 +402,10 @@ Prefab:
     - target: {fileID: 4410413759438908, guid: 66f1879ec19bce143a56dd4fef5730de, type: 2}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1826867751045144, guid: 66f1879ec19bce143a56dd4fef5730de, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66f1879ec19bce143a56dd4fef5730de, type: 2}
@@ -464,7 +468,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: 3
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -481,13 +485,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 765471662}
-  m_LocalRotation: {x: -0.0922165, y: 0.09733049, z: 0.0021313548, w: 0.9909684}
-  m_LocalPosition: {x: -3.89, y: 3, z: -16.15}
+  m_LocalRotation: {x: -0.09149153, y: 0.20014018, z: 0.0117362775, w: 0.9754156}
+  m_LocalPosition: {x: -2.25, y: 0.87, z: -7.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -10.555, y: 11.293, z: -0.8}
+  m_LocalEulerAnglesHint: {x: -10.555, y: 23.264002, z: -0.8}
 --- !u!114 &765471667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,7 +519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!182 &901082622
 WindZone:
   m_ObjectHideFlags: 0
@@ -649,6 +653,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1895865425521838, guid: a93d3409c2b91dc40898810892d1c181, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198535301760707118, guid: a93d3409c2b91dc40898810892d1c181,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 198535301760707118, guid: a93d3409c2b91dc40898810892d1c181,
+        type: 2}
+      propertyPath: LightsModule.enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
