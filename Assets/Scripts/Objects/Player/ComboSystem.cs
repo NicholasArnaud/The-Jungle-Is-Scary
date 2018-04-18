@@ -12,8 +12,7 @@ namespace GLOBALS
         private List<GLOBALS.IState> combo1;
         private List<GLOBALS.IState> combo2;
         private List<GLOBALS.IState> combo3;
-
-        public List<GLOBALS.IState> activeCombo;
+        private int index = 0;
 
         public float inputTimer = 0;
 
@@ -37,38 +36,48 @@ namespace GLOBALS
         // Update is called once per frame
         void Update()
         {
-            if (activeCombo == null && Input.GetKey(KeyCode.Space))
+            if (pC.combos == null && Input.GetKey(KeyCode.Space))
             {
                 inputTimer += Time.deltaTime;
             }
+
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 SetCombo(inputTimer);
                 inputTimer = 0;
             }
 
+            if (pC.combos != null && Input.GetKeyDown(KeyCode.Space))
+            {
+                pC.ChangeState(pC.combos[index += 1]);
+            }
+
+            if (index >= pC.combos.Count)
+            {
+                pC.ChangeState(new IdleState());
+                pC.combos = null;
+                index = 0;
+            }
         }
 
         public void SetCombo(float time)
         {
             if (time >= 2)
             {
-                activeCombo = combo2;
-                pC.Current = combo2[0];
+                pC.combos = combo2;
             }
             else if (time >= 4)
             {
-                activeCombo = combo3;
+                pC.combos = combo3;
             }
             else
             {
-                activeCombo = combo1;
+                pC.combos = combo1;
             }
+            pC.ChangeState(pC.combos[0]);
         }
 
 
 
     }
-
-
 }
