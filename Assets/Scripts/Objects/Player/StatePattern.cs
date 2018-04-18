@@ -121,7 +121,7 @@ public class HeavyPunchState : GLOBALS.IState
             context.ChangeState(new IdleState());
         else
         {
-            ((GLOBALS.PlayerContext) context).combos
+            
             if (PlayerInput.LIGHTPUNCH)
             {
                 context.ChangeState(new LightPunchState());

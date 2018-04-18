@@ -14,6 +14,7 @@ public class ComboSystem : MonoBehaviour
     public List<GLOBALS.IState> activeCombo;
 
     public float inputTimer = 0;
+
 	// Use this for initialization
 	void Start () {
 		pC = new GLOBALS.PlayerContext();
@@ -33,35 +34,31 @@ public class ComboSystem : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-
 	    if (Input.GetKey(KeyCode.Space))
 	    {
-	        inputTimer += Time.deltaTime;
-	        if (Input.GetKeyUp(KeyCode.Space))
-	        {
-	            if (inputTimer >= 2)
-	            {
-	                activeCombo = combo2;                    
-	            }
-	            else if(inputTimer >= 4)
-	            {
-	                activeCombo = combo3;
-	            }
-	            else
-	            {
-	                activeCombo = combo1;
-	            }
-	        }
-            SetCombo(activeCombo);
-            pC.UpdateContext();
+	        inputTimer += Time.deltaTime;            
         }
-        pC.Current.UpdateState(pC);
-
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            SetCombo(inputTimer);
+        }
+            
     }
 
-    public void SetCombo(List<GLOBALS.IState> combo)
+    public void SetCombo(float time)
     {
-         pC.ChangeState(combo[0]);
+        if (time >= 2)
+        {
+            activeCombo = combo2;
+        }
+        else if (time >= 4)
+        {
+            activeCombo = combo3;
+        }
+        else
+        {
+            activeCombo = combo1;
+        }
     }
 
 }
