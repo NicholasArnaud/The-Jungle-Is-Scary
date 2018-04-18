@@ -34,13 +34,14 @@ public class ComboSystem : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (Input.GetKey(KeyCode.Space))
+	    if (activeCombo == null && Input.GetKey(KeyCode.Space))
 	    {
 	        inputTimer += Time.deltaTime;            
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             SetCombo(inputTimer);
+            inputTimer = 0;
         }
             
     }
@@ -50,6 +51,7 @@ public class ComboSystem : MonoBehaviour
         if (time >= 2)
         {
             activeCombo = combo2;
+            pC.Current = combo2[0];
         }
         else if (time >= 4)
         {
@@ -60,5 +62,7 @@ public class ComboSystem : MonoBehaviour
             activeCombo = combo1;
         }
     }
+
+
 
 }
