@@ -57,6 +57,7 @@ namespace GLOBALS
             {
                 pC.ChangeState(pC.combos[index += 1]);
             }
+            pC.Current.UpdateState(pC);
 
             if (pC.Current == pC.combos[2])
             {
