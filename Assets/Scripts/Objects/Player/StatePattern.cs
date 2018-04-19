@@ -39,12 +39,12 @@ namespace GLOBALS
 
         public void OnEnter(GLOBALS.IContext context)
         {
-            throw new NotImplementedException();
+            Debug.Log("ENTER IDLE");
         }
 
         public void OnExit(GLOBALS.IContext context)
         {
-            throw new NotImplementedException();
+            Debug.Log("EXIT IDLE");
         }
 
         public void UpdateState(GLOBALS.IContext context)
@@ -72,7 +72,6 @@ namespace GLOBALS
             {
                 context.ChangeState(new IdleState());
             }
-
             else
             {
                 if (PlayerInput.MEDIUMPUNCH)

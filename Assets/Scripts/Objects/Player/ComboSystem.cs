@@ -19,7 +19,13 @@ namespace GLOBALS
         // Use this for initialization
         void Start()
         {
+            combo1 = new List<GLOBALS.IState>();
+            combo2 = new List<GLOBALS.IState>();
+            combo3 = new List<GLOBALS.IState>();
+
             pC = new GLOBALS.PlayerContext();
+            pC.Current = new IdleState();
+
             combo1.Add(new LightPunchState());
             combo1.Add(new MeduimPunchState());
             combo1.Add(new HeavyPunchState());
@@ -41,7 +47,7 @@ namespace GLOBALS
                 inputTimer += Time.deltaTime;
             }
 
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (pC.combos == null && Input.GetKeyUp(KeyCode.Space))
             {
                 SetCombo(inputTimer);
                 inputTimer = 0;
@@ -52,7 +58,7 @@ namespace GLOBALS
                 pC.ChangeState(pC.combos[index += 1]);
             }
 
-            if (index >= pC.combos.Count)
+            if (pC.Current == pC.combos[2])
             {
                 pC.ChangeState(new IdleState());
                 pC.combos = null;
@@ -64,7 +70,7 @@ namespace GLOBALS
         {
             if (time >= 2)
             {
-                pC.combos = combo2;
+                pC.combos = combo2;                
             }
             else if (time >= 4)
             {
@@ -76,8 +82,5 @@ namespace GLOBALS
             }
             pC.ChangeState(pC.combos[0]);
         }
-
-
-
     }
 }
