@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -218,5 +219,18 @@ public class BuffFlowerBehaviour : MonoBehaviour
         if (collidedObjects.Contains(playercollider))
             playerfound = true;
         return playerfound;
+    }
+
+    //Animation controller
+    public void PlayAnimation(GameObject particleObject)
+    {
+        particleObject.GetComponent<ParticleSystem>().Play();
+        StartCoroutine(DisableAnimation(particleObject.GetComponent<ParticleSystem>()));
+    }
+
+    private static IEnumerator DisableAnimation(ParticleSystem particle)
+    {
+        yield return new WaitForSeconds(2);
+        particle.Stop();
     }
 }
