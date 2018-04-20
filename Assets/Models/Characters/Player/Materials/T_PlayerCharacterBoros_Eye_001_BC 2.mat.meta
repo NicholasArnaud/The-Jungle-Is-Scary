@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: d9be51dd0a6f14c46a1d7b6d4e8f88e3
+timeCreated: 1521816311
+=======
 guid: c327439d0d27df54d9cea4418f079a52
 timeCreated: 1523543345
+>>>>>>> refs/remotes/NicholasArnaud/master
 licenseType: Pro
 NativeFormatImporter:
   userData: 
