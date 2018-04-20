@@ -12,7 +12,7 @@ public class GameContext : ScriptableObject, GLOBALS.GLOBALS.IContext
     private void OnEnable()
     {
         _current = new GameStartState();
-        _current.OnEnter();
+        _current.OnEnter(this);
     }
     /// <summary>
     /// this should not be called by anyone but the states that funnel through here
@@ -20,10 +20,10 @@ public class GameContext : ScriptableObject, GLOBALS.GLOBALS.IContext
     /// <param name="next"></param>
     public void ChangeState(GLOBALS.GLOBALS.IState next)
     {
-        _current.OnExit();
+        _current.OnExit(this);
         _current = next;
         CurrentStateName = _current.ToString();
-        _current.OnEnter();
+        _current.OnEnter(this);
     }
 
     public void UpdateContext()
@@ -44,7 +44,7 @@ public class GameContext : ScriptableObject, GLOBALS.GLOBALS.IContext
 
 public class GameStartState : GLOBALS.GLOBALS.IState
 {
-    public void OnEnter()
+    public void OnEnter(GLOBALS.GLOBALS.IContext context)
     {
         Debug.Log("Enter: " + ToString());
     }
@@ -58,13 +58,13 @@ public class GameStartState : GLOBALS.GLOBALS.IState
         }
     }
 
-    public void OnExit() { }
+    public void OnExit(GLOBALS.GLOBALS.IContext context) { }
 }
 
 public class GameRunningState : GLOBALS.GLOBALS.IState
 {
 
-    public void OnEnter()
+    public void OnEnter(GLOBALS.GLOBALS.IContext context)
     {
         Debug.Log("enter " + ToString());
         Time.timeScale = 1;
@@ -81,7 +81,7 @@ public class GameRunningState : GLOBALS.GLOBALS.IState
         }
     }
 
-    public void OnExit()
+    public void OnExit(GLOBALS.GLOBALS.IContext context)
     {
 
     }
@@ -89,7 +89,7 @@ public class GameRunningState : GLOBALS.GLOBALS.IState
 
 public class GamePausedState : GLOBALS.GLOBALS.IState
 {
-    public void OnEnter()
+    public void OnEnter(GLOBALS.GLOBALS.IContext context)
     {
         Debug.Log("enter " + ToString());
         Time.timeScale = 0;
@@ -106,7 +106,7 @@ public class GamePausedState : GLOBALS.GLOBALS.IState
         }
     }
 
-    public void OnExit()
+    public void OnExit(GLOBALS.GLOBALS.IContext context)
     {
         Time.timeScale = 1;
     }

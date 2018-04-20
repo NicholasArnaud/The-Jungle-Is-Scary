@@ -37,8 +37,13 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
+<<<<<<< HEAD
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+=======
   m_Sun: {fileID: 94514456}
   m_IndirectSpecularColor: {r: 0.44039944, g: 0.4889844, b: 0.5691454, a: 1}
+>>>>>>> refs/remotes/NicholasArnaud/master
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,6 +118,8 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
+=======
 --- !u!1 &41003218
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +191,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> refs/remotes/NicholasArnaud/master
 --- !u!1 &94514455
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +237,11 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+<<<<<<< HEAD
+  m_Lightmapping: 4
+=======
   m_Lightmapping: 1
+>>>>>>> refs/remotes/NicholasArnaud/master
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
@@ -242,12 +254,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 94514455}
-  m_LocalRotation: {x: 0.7311876, y: -0.36958864, z: 0.34124762, w: 0.46078098}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+<<<<<<< HEAD
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+=======
   m_LocalEulerAnglesHint: {x: 112.16901, y: -24.826996, z: 36.793}
 --- !u!1 &402399663
 GameObject:
@@ -360,6 +375,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f207b4233e0bbf24db71c22a38ff1f53, type: 2}
   m_IsPrefabParent: 0
+>>>>>>> refs/remotes/NicholasArnaud/master
 --- !u!1 &765471662
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,29 +450,106 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 765471662}
+<<<<<<< HEAD
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+=======
   m_LocalRotation: {x: 0.019591972, y: 0.120463096, z: -0.0058453674, w: 0.9925073}
   m_LocalPosition: {x: -3.43, y: 5.91, z: -15.87}
+>>>>>>> refs/remotes/NicholasArnaud/master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+<<<<<<< HEAD
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &878288504
+=======
   m_LocalEulerAnglesHint: {x: 2.3100002, y: 13.833, z: -0.395}
 --- !u!1 &901082621
+>>>>>>> refs/remotes/NicholasArnaud/master
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
+  - component: {fileID: 878288508}
+  - component: {fileID: 878288507}
+  - component: {fileID: 878288506}
+  - component: {fileID: 878288505}
+  m_Layer: 0
+  m_Name: Plane
+=======
   - component: {fileID: 901082623}
   - component: {fileID: 901082622}
   m_Layer: 0
   m_Name: WindZone
+>>>>>>> refs/remotes/NicholasArnaud/master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
+--- !u!23 &878288505
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 878288504}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &878288506
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 878288504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &878288507
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 878288504}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &878288508
+=======
 --- !u!182 &901082622
 WindZone:
   m_ObjectHideFlags: 0
@@ -471,16 +564,25 @@ WindZone:
   m_WindPulseMagnitude: 0.1
   m_WindPulseFrequency: 0.01
 --- !u!4 &901082623
+>>>>>>> refs/remotes/NicholasArnaud/master
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 878288504}
+=======
   m_GameObject: {fileID: 901082621}
+>>>>>>> refs/remotes/NicholasArnaud/master
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1141954751
@@ -525,6 +627,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2403d43939f58c44c8951d0e34fa639e, type: 2}
   m_IsPrefabParent: 0
+>>>>>>> refs/remotes/NicholasArnaud/master
 --- !u!1001 &1317081975
 Prefab:
   m_ObjectHideFlags: 0
@@ -562,6 +665,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4803486239577058, guid: a93d3409c2b91dc40898810892d1c181, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+      value: 3
+=======
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 198535301760707118, guid: a93d3409c2b91dc40898810892d1c181,
@@ -578,6 +684,7 @@ Prefab:
         type: 2}
       propertyPath: InitialModule.startSize.scalar
       value: 0.1
+>>>>>>> refs/remotes/NicholasArnaud/master
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a93d3409c2b91dc40898810892d1c181, type: 2}
