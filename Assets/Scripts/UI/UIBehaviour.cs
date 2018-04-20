@@ -1,21 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class UIBehaviour : MonoBehaviour
 {
     #region Variables
 
+    public Player_Data PlayerData;
     public GameObject MenuPanelObject;
     public GameObject PausePanelObject;
     public GameObject OptionsPanelObject;
     public GameObject HudPanelObject;
+    public GameObject StartUpPanelObject;
 
+    public String GameSceneName;
     public GameObject[] HealthBar;
     public Slider MusicVolumeSlider;
     public Slider SfxVolumeSlider;
     public Text SfxValue;
     public Text MusicValue;
+    public Text GemFragValue;
+    public Text FullGemValue;
     public Sprite FullHeart;
     public Sprite EmptyHeart;
     private int _curHealth;
@@ -30,8 +38,10 @@ public class UIBehaviour : MonoBehaviour
         _panels = new List<GameObject> { HudPanelObject, MenuPanelObject, OptionsPanelObject, PausePanelObject };
         _panels.ForEach(x => x.SetActive(false));
         _curHealth = HealthBar.Length;
-        MenuPanelObject.SetActive(true);
+        StartUpPanelObject.SetActive(true);
         _activePanelObject = MenuPanelObject;
+        GemFragValue.text = PlayerData.gemFragments.ToString();
+        FullGemValue.text = PlayerData.lifeGems.ToString();
     }
 
     void Update()
@@ -69,7 +79,8 @@ public class UIBehaviour : MonoBehaviour
         CheckForActivePanel();
         _activePanelObject.SetActive(false);
         _prevPanelObject = _activePanelObject;
-        HudPanelObject.SetActive(true);
+        if (GameSceneName == SceneManager.GetActiveScene().name)
+            HudPanelObject.SetActive(true);
     }
 
     public void OptionButtonTrigger()
@@ -142,37 +153,13 @@ public class UIBehaviour : MonoBehaviour
     #region UpdatingGems
     public void GainGemFrag(Object[] args)
     {
-        var gemTexts = HudPanelObject.GetComponentsInChildren<Text>();
-        var indexvalue = 0;
-
-        if (args[0].name.Contains("GemFrag"))
+        if (int.Parse(GemFragValue.text) >= 99)
         {
-            if (gemTexts[0].name.Contains("GemFrag"))
-                indexvalue = 0;
-
-            if (int.Parse(gemTexts[indexvalue].text) >= 99)
-            {
-                gemTexts[indexvalue].text = "0";
-                IncrementGemText(gemTexts[indexvalue == 0 ? 1 : 0]);
-            }
-            else
-                IncrementGemText(gemTexts[indexvalue]);
+            GemFragValue.text = "0";
+            IncrementGemText(FullGemValue);
         }
-
-        else if (args[0].name.Contains("Gem"))
-        {
-
-            if (gemTexts[0].name.Contains("GemFrag"))
-                indexvalue = 1;
-
-            if (int.Parse(gemTexts[indexvalue].text) >= 99)
-            {
-                gemTexts[indexvalue].text = "0";
-                IncrementGemText(gemTexts[indexvalue == 0 ? 1 : 0]);
-            }
-            else
-                IncrementGemText(gemTexts[indexvalue]);
-        }
+        else if (int.Parse(FullGemValue.text) >= 3)
+            IncrementGemText(GemFragValue);
     }
 
 

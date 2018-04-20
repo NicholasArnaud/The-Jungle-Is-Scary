@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class AxeSwing : MonoBehaviour
 {
+
     public float timer = 0;
     public AnimationCurve ac;
     public float duration = 5;
     public float value;
     public bool flip = false;
+  
     void Start()
     {
         timer = 0;
@@ -26,6 +28,5 @@ public class AxeSwing : MonoBehaviour
             value *= -1;
         transform.Rotate(Vector3.up, value);
         timer += Time.deltaTime;
-    }
-
+    }  
 }

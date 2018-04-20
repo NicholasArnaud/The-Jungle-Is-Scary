@@ -401,6 +401,8 @@ GameObject:
   - component: {fileID: 224279851342427044}
   - component: {fileID: 222637899643152570}
   - component: {fileID: 114384199085970220}
+  - component: {fileID: 114206278953119466}
+  - component: {fileID: 114573178131986988}
   m_Layer: 5
   m_Name: GemFragText
   m_TagString: Untagged
@@ -535,6 +537,8 @@ GameObject:
   - component: {fileID: 224166658394713426}
   - component: {fileID: 222082214430601014}
   - component: {fileID: 114051868633179574}
+  - component: {fileID: 114919688368057296}
+  - component: {fileID: 114914078866104066}
   m_Layer: 5
   m_Name: GemText
   m_TagString: Untagged
@@ -1527,6 +1531,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114206278953119466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308854407246850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751c13ab438e3994fadaa5d160ad3772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gem: {fileID: 11400000, guid: 6ff1d55471ea244449e420ea1269096e, type: 2}
+  count: 0
 --- !u!114 &114229947902461124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2165,11 +2182,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114462793714587802}
-        m_MethodName: GainGemFrag
-        m_Mode: 1
+        m_MethodName: IncrementGemText
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 114051868633179574}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2221,10 +2238,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ecfc4d70b921e47ad36483604489a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
   MenuPanelObject: {fileID: 1951254071718646}
   PausePanelObject: {fileID: 1308692624564126}
   OptionsPanelObject: {fileID: 1147758522350566}
   HudPanelObject: {fileID: 1367004539387402}
+  StartUpPanelObject: {fileID: 1951254071718646}
+  GameSceneName: 5.NavmeshGreyBox
   HealthBar:
   - {fileID: 1746092374374672}
   - {fileID: 1868615309665270}
@@ -2234,6 +2254,8 @@ MonoBehaviour:
   SfxVolumeSlider: {fileID: 114385539439359420}
   SfxValue: {fileID: 114775947415006398}
   MusicValue: {fileID: 114690176969389378}
+  GemFragValue: {fileID: 114384199085970220}
+  FullGemValue: {fileID: 114051868633179574}
   FullHeart: {fileID: 21300000, guid: 7d6c41d680293274ca2b7ee351641d3d, type: 3}
   EmptyHeart: {fileID: 21300000, guid: de66c58b1c8952640950aca7146606ae, type: 3}
 --- !u!114 &114463753402129072
@@ -2495,6 +2517,35 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114573178131986988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308854407246850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114206278953119466}
+        m_MethodName: OnGemPickedUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114574523998015282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3188,6 +3239,48 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114914078866104066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1449778459654288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114919688368057296}
+        m_MethodName: OnGemPickedUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &114919688368057296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1449778459654288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751c13ab438e3994fadaa5d160ad3772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gem: {fileID: 11400000, guid: f6ff3716f9b62fc4285967097ea1bb6b, type: 2}
+  count: 0
 --- !u!114 &114922725487998672
 MonoBehaviour:
   m_ObjectHideFlags: 1
