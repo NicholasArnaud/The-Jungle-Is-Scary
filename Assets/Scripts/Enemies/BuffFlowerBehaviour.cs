@@ -226,8 +226,12 @@ public class BuffFlowerBehaviour : MonoBehaviour
     //Animation/Particle controller
     public void PlayAnimation()
     {
-        var pO = GetComponentInChildren<ParticleSystem>();
-        pO.Play();
-        ParticleTimer.Execute(this, pO.Stop);
+        var pO = GetComponentsInChildren<ParticleSystem>();
+        foreach (var system in pO)
+        {
+            system.Play();
+            ParticleTimer.Execute(this, system.Stop);
+        }
+        
     }
 }
