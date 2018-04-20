@@ -1,35 +1,54 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GLOBALS {
-
-    public interface IState
+﻿namespace GLOBALS
+{
+    public class GLOBALS
     {
-        void OnEnter();
-        void UpdateState(IContext context);
-        void OnExit();
-    }
 
-    public interface IContext
-    {
-        void ChangeState(IState next);
-    }
-
-    [System.Serializable]
-    public class PlayerContext : IContext
-    {
-        public IState Current;
-        public void ChangeState(IState next)
+        public interface IState
         {
-            Current.OnExit();
-            Current = next;
-            Current.OnEnter();
+            void OnEnter(IContext context);
+            void UpdateState(IContext context);
+            void OnExit(IContext context);
         }
 
-        public void UpdateContext()
+        public interface IContext
         {
-            Current.UpdateState(this);
+            void ChangeState(IState next);
+        }
+
+
+
+        [System.Serializable]
+        public class PlayerContext : IContext
+        {
+            public IState Current;
+            public void ChangeState(IState next)
+            {
+                Current.OnExit(this);
+                Current = next;
+                Current.OnEnter(this);
+            }
+
+            public void UpdateContext()
+            {
+                Current.UpdateState(this);
+            }
+        }
+
+        [System.Serializable]
+        public class GameContext : IContext
+        {
+            public IState Current;
+            public void ChangeState(IState next)
+            {
+                Current.OnExit(this);
+                Current = next;
+                Current.OnEnter(this);
+            }
+
+            public void UpdateContext()
+            {
+                Current.UpdateState(this);
+            }
         }
     }
 }
