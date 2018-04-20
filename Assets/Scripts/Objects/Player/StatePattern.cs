@@ -1,175 +1,144 @@
+using System;
 using UnityEngine;
 
-public static class PlayerInput
+namespace GLOBALS
 {
-    public static bool A { get; set; }
-    public static bool B { get; set; }
-    public static bool X { get; set; }
-    public static bool Y { get; set; }
-    public static bool LIGHTPUNCH
+    public static class PlayerInput
     {
-        get
+        public static bool A { get; set; }
+        public static bool B { get; set; }
+        public static bool X { get; set; }
+        public static bool Y { get; set; }
+        public static bool LIGHTPUNCH
         {
-            return Input.GetKeyDown(KeyCode.Z);
-        }
-    }
-    public static bool MEDIUMPUNCH
-    {
-        get
-        {
-            return Input.GetKeyDown(KeyCode.X);
-        }
-    }
-    public static bool HEAVYPUNCH
-    {
-        get
-        {
-            return Input.GetKeyDown(KeyCode.C);
-        }
-    }
-}
-public interface IState
-{
-    void OnEnter();
-    void UpdateState(IContext context);
-    void OnExit();
-}
-
-public interface IContext
-{
-    void ChangeState(IState next);
-}
-
-[System.Serializable]
-public class PlayerContext : IContext
-{
-    public IState Current = new IdleState();
-    public void ChangeState(IState next)
-    {
-        Current.OnExit();
-        Current = next;
-        Current.OnEnter();
-    }
-
-    public void UpdateContext()
-    {
-        Current.UpdateState(this);
-    }
-}
-
-[System.Serializable]
-public class IdleState : IState
-{
-    public float TTL = 3.0f;
-
-    public void OnEnter()
-    {
-        UnityEngine.Debug.Log("Enter State" + this.ToString());
-    }
-
-    public void OnExit()
-    {
-        UnityEngine.Debug.Log("Exit State" + this.ToString());
-    }
-
-    public void UpdateState(IContext context)
-    {
-        if (TTL <= 0)
-        {
-            context.ChangeState(new IdleState());
-        }
-        else
-        {
-            if (PlayerInput.LIGHTPUNCH)
+            get
             {
-                context.ChangeState(new LightPunchState());
+                return Input.GetKeyDown(KeyCode.Z);
             }
         }
-        TTL -= UnityEngine.Time.deltaTime;
-    }
-}
-
-public class LightPunchState : IState
-{
-    public float TTL = 2;
-    public void OnEnter()
-    {
-        Debug.Log("ENTER LIGHT PUNCH");
-    }
-
-    public void OnExit()
-    {
-        Debug.Log("EXIT LIGHT PUNCH");
-    }
-
-    public void UpdateState(IContext context)
-    {
-        if (TTL <= 0)
-            context.ChangeState(new IdleState());
-        else
+        public static bool MEDIUMPUNCH
         {
-            if (PlayerInput.MEDIUMPUNCH)
+            get
             {
-                context.ChangeState(new LightPunchState());
+                return Input.GetKeyDown(KeyCode.X);
             }
         }
-        TTL -= UnityEngine.Time.deltaTime;
-    }
-}
-
-public class MeduimPunchState : IState
-{
-    public float TTL = 2;
-    public void OnEnter()
-    {
-        Debug.Log("ENTER MEDUIM PUNCH");
-    }
-
-    public void UpdateState(IContext context)
-    {
-        if (TTL <= 0)
-            context.ChangeState(new IdleState());
-        else
+        public static bool HEAVYPUNCH
         {
-            if (PlayerInput.HEAVYPUNCH)
+            get
             {
-                context.ChangeState(new LightPunchState());
+                return Input.GetKeyDown(KeyCode.C);
             }
         }
-        TTL -= UnityEngine.Time.deltaTime;
     }
 
-    public void OnExit()
+    [System.Serializable]
+    public class IdleState : GLOBALS.IState
     {
-        Debug.Log("EXIT MEDIUM PUNCH");
-    }
-}
+        public float TTL = 3.0f;
 
-public class HeavyPunchState : IState
-{
-    public float TTL = 2;
-
-    public void OnEnter()
-    {
-        Debug.Log("ENTER HEAVY PUNCH");
-    }
-
-    public void UpdateState(IContext context)
-    {
-        if (TTL <= 0)
-            context.ChangeState(new IdleState());
-        else
+        public void OnEnter(GLOBALS.IContext context)
         {
-            if (PlayerInput.LIGHTPUNCH)
-            {
-                context.ChangeState(new LightPunchState());
-            }
+            Debug.Log("ENTER IDLE");
         }
-        TTL -= UnityEngine.Time.deltaTime;
+
+        public void OnExit(GLOBALS.IContext context)
+        {
+            Debug.Log("EXIT IDLE");
+        }
+
+        public void UpdateState(GLOBALS.IContext context)
+        {
+
+        }
     }
 
-    public void OnExit()
+    public class LightPunchState : GLOBALS.IState
     {
-        Debug.Log("EXIT HEAVY PUNCH");
+        public float TTL = 3.0f;
+        public void OnEnter(GLOBALS.IContext context)
+        {
+            Debug.Log("ENTER LIGHT PUNCH");
+        }
+
+        public void OnExit(GLOBALS.IContext context)
+        {
+            Debug.Log("EXIT LIGHT PUNCH");
+        }
+
+        public void UpdateState(GLOBALS.IContext context)
+        {
+            if (TTL <= 0)
+            {
+                context.ChangeState(new IdleState());
+            }
+            else
+            {
+                if (PlayerInput.MEDIUMPUNCH)
+                {
+                    context.ChangeState(new LightPunchState());
+                }
+            }
+            TTL -= UnityEngine.Time.deltaTime;
+        }
+    }
+
+    public class MeduimPunchState : GLOBALS.IState
+    {
+        public float TTL = 3.0f;
+        public void OnEnter(GLOBALS.IContext context)
+        {
+            Debug.Log("ENTER MEDUIM PUNCH");
+        }
+
+        public void UpdateState(GLOBALS.IContext context)
+        {
+            if (TTL <= 0)
+                context.ChangeState(new IdleState());
+            else
+            {
+                if (PlayerInput.HEAVYPUNCH)
+                {
+                    context.ChangeState(new LightPunchState());
+                }
+            }
+            TTL -= UnityEngine.Time.deltaTime;
+        }
+
+        public void OnExit(GLOBALS.IContext context)
+        {
+            Debug.Log("EXIT MEDIUM PUNCH");
+        }
+    }
+
+    public class HeavyPunchState : GLOBALS.IState
+    {
+        public float TTL = 3.0f;
+
+        public void OnEnter(GLOBALS.IContext context)
+        {
+            Debug.Log("ENTER HEAVY PUNCH");
+        }
+
+        public void UpdateState(GLOBALS.IContext context)
+        {
+            if (TTL <= 0)
+                context.ChangeState(new IdleState());
+            else
+            {
+
+                if (PlayerInput.LIGHTPUNCH)
+                {
+                    context.ChangeState(new LightPunchState());
+                }
+            }
+            TTL -= Time.deltaTime;
+        }
+
+        public void OnExit(GLOBALS.IContext context)
+        {
+            Debug.Log("EXIT HEAVY PUNCH");
+        }
     }
 }
+

@@ -1,4 +1,8 @@
-﻿namespace GLOBALS
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace GLOBALS
 {
     public class GLOBALS
     {
@@ -21,6 +25,7 @@
         public class PlayerContext : IContext
         {
             public IState Current;
+            public List<GLOBALS.IState> combos;
             public void ChangeState(IState next)
             {
                 Current.OnExit(this);
@@ -52,3 +57,4 @@
         }
     }
 }
+
