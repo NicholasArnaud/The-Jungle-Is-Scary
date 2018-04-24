@@ -5,8 +5,12 @@ using UnityEngine;
 public class CheckpointBehaviour : MonoBehaviour
 {
 
-    public GameObject wall;
+    public GameObject wallPrefab;
     public Transform spawnTransform;
+    public void Start()
+    {
+        wallPrefab.SetActive(false);
+    }
     public void OnCheckpointCrossed(Object[]args)
     {
         
@@ -15,8 +19,16 @@ public class CheckpointBehaviour : MonoBehaviour
             return;
         var other = args[1] as GameObject;
         other.GetComponent<Player_Behaviour>().checkpoint = spawnTransform;
-        
+        CreateWall();
         Debug.Log("Checkpoint Crossed");
     }
 
+    public void CreateWall()
+    {
+        wallPrefab.SetActive(true);
+    }
+    public void RemoveWall()
+    {
+        wallPrefab.SetActive(false);
+    }
 }
