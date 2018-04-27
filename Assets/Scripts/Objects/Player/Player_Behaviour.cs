@@ -127,7 +127,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             canTakeDamage = false;
             transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
         }    
-}
+    }
 
     public void OnPlayerDied()
     {
