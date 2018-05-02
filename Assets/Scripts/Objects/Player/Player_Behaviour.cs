@@ -14,6 +14,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         HEAVY
     }
 
+    private Animation a;
     public Player_Data Data;
     public GameEvent giveHealth;
     public GameEvent playerDied;
