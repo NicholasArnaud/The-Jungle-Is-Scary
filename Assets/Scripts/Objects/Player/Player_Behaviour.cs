@@ -11,8 +11,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     {
         NONE,
         LIGHT,
-        MEDIUM,
-        HEAVY,
+        HEAVY
     }
 
     public Player_Data Data;
@@ -53,12 +52,8 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
                     comboTimer = 2;
                     break;
                 case 2:
-                    currentComboState = ComboState.MEDIUM;
-                    comboTimer = 2;
-                    break;
-                case 3:
                     currentComboState = ComboState.HEAVY;
-                    clickNum = 0;
+                    comboTimer = 2;
                     break;
                 default:
                     currentComboState = ComboState.NONE;
@@ -72,9 +67,6 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         {
             case ComboState.LIGHT:
                 LightAttack();
-                break;
-            case ComboState.MEDIUM:
-                MediumAtack();
                 break;
             case ComboState.HEAVY:
                 HeavyAttack();
@@ -125,7 +117,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             Data.hp -= d;
             immunityTimer = 1;
             canTakeDamage = false;
-            transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
+            transform.position = transform.position + Vector3.right* 50 * Time.deltaTime;
         }    
     }
 
@@ -137,10 +129,6 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     void LightAttack()
     {
         Debug.Log("Light");
-    }
-    void MediumAtack()
-    {
-        Debug.Log("Medium");
     }
     void HeavyAttack()
     {
