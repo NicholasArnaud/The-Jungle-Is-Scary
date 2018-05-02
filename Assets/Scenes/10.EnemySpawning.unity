@@ -486,6 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1480901997542942, guid: 12938d34772e1bb438783825d98fb158, type: 2}
+  EnemiesDead: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
   SpawnStartDist: 5
   SpawningEnabled: 0
   SpawnPoint: {fileID: 885381186}

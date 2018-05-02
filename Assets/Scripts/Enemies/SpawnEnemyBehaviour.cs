@@ -6,6 +6,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
 {
     public GameObject Enemy;
     private GameObject _playerObject;
+    public GameEvent EnemiesDead;
     private float _distanceFromPlayer;
     public int SpawnStartDist;
     public bool SpawningEnabled;
@@ -68,6 +69,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
         if (enemydeathcount >= MaxEnemies)
         {
             //Raise Event
+            EnemiesDead.Raise();
         }
     }
 }
