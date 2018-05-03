@@ -19,8 +19,6 @@ namespace GLOBALS
             void ChangeState(IState next);
         }
 
-
-
         [System.Serializable]
         public class PlayerContext : IContext
         {
