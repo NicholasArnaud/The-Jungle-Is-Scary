@@ -77,6 +77,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
         {
             //Raise Event
             EnemiesDead.Raise();
+            Debug.Log("Eneies dead event Raised");
         }
     }
 }
