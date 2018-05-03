@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: 01a0eae278f43a446aa5b7a80ad5ead3
+timeCreated: 1521732089
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Boot_Cuff_L
+    100002: Boot_Cuff_R
+    100004: Boot_Cuffs
+    100006: Eye_Ball_L
+    100008: Eye_Ball_R
+    100010: Eye_Lid_L
+    100012: Eye_Lid_R
+    100014: Eye_Pupil_L
+    100016: Eye_Pupil_R
+    100018: HairTuft1
+    100020: HairTuft2
+    100022: HairTuft3
+    100024: HairTuft4
+    100026: HairTuft5
+    100028: HairTuft6
+    100030: HairTuft7
+    100032: HairTuft8
+    100034: HairTuft9
+    100036: //RootNode
+    100038: Sapo_Belt
+    100040: Sapo_Body
+    100042: Sapo_Eyes
+    100044: Sapo_Gloves_L
+    100046: Sapo_Gloves_R
+    100048: Sapo_Hair
+    100050: Sapo_Headband
+    100052: Sapo_Headpiece
+    100054: Sapo_Shirt
+    400000: Boot_Cuff_L
+    400002: Boot_Cuff_R
+    400004: Boot_Cuffs
+    400006: Eye_Ball_L
+    400008: Eye_Ball_R
+    400010: Eye_Lid_L
+    400012: Eye_Lid_R
+    400014: Eye_Pupil_L
+    400016: Eye_Pupil_R
+    400018: HairTuft1
+    400020: HairTuft2
+    400022: HairTuft3
+    400024: HairTuft4
+    400026: HairTuft5
+    400028: HairTuft6
+    400030: HairTuft7
+    400032: HairTuft8
+    400034: HairTuft9
+    400036: //RootNode
+    400038: Sapo_Belt
+    400040: Sapo_Body
+    400042: Sapo_Eyes
+    400044: Sapo_Gloves_L
+    400046: Sapo_Gloves_R
+    400048: Sapo_Hair
+    400050: Sapo_Headband
+    400052: Sapo_Headpiece
+    400054: Sapo_Shirt
+    2100000: Sapo_Texture
+    2100002: Eye_Lid1
+    2300000: Boot_Cuff_L
+    2300002: Boot_Cuff_R
+    2300004: Eye_Ball_L
+    2300006: Eye_Ball_R
+    2300008: Eye_Lid_L
+    2300010: Eye_Lid_R
+    2300012: Eye_Pupil_L
+    2300014: Eye_Pupil_R
+    2300016: HairTuft1
+    2300018: HairTuft2
+    2300020: HairTuft3
+    2300022: HairTuft4
+    2300024: HairTuft5
+    2300026: HairTuft6
+    2300028: HairTuft7
+    2300030: HairTuft8
+    2300032: HairTuft9
+    2300034: Sapo_Belt
+    2300036: Sapo_Body
+    2300038: Sapo_Gloves_L
+    2300040: Sapo_Gloves_R
+    2300042: Sapo_Headband
+    2300044: Sapo_Headpiece
+    2300046: Sapo_Shirt
+    3300000: Boot_Cuff_L
+    3300002: Boot_Cuff_R
+    3300004: Eye_Ball_L
+    3300006: Eye_Ball_R
+    3300008: Eye_Lid_L
+    3300010: Eye_Lid_R
+    3300012: Eye_Pupil_L
+    3300014: Eye_Pupil_R
+    3300016: HairTuft1
+    3300018: HairTuft2
+    3300020: HairTuft3
+    3300022: HairTuft4
+    3300024: HairTuft5
+    3300026: HairTuft6
+    3300028: HairTuft7
+    3300030: HairTuft8
+    3300032: HairTuft9
+    3300034: Sapo_Belt
+    3300036: Sapo_Body
+    3300038: Sapo_Gloves_L
+    3300040: Sapo_Gloves_R
+    3300042: Sapo_Headband
+    3300044: Sapo_Headpiece
+    3300046: Sapo_Shirt
+    4300000: Sapo_Headband
+    4300002: Sapo_Headpiece
+    4300004: Sapo_Belt
+    4300006: Sapo_Gloves_L
+    4300008: Sapo_Gloves_R
+    4300010: Sapo_Shirt
+    4300012: Eye_Lid_R
+    4300014: Eye_Lid_L
+    4300016: Eye_Ball_R
+    4300018: Eye_Pupil_R
+    4300020: Eye_Ball_L
+    4300022: Eye_Pupil_L
+    4300024: HairTuft6
+    4300026: HairTuft2
+    4300028: HairTuft7
+    4300030: HairTuft9
+    4300032: HairTuft3
+    4300034: HairTuft8
+    4300036: HairTuft5
+    4300038: HairTuft1
+    4300040: HairTuft4
+    4300042: Boot_Cuff_L
+    4300044: Boot_Cuff_R
+    4300046: Sapo_Body
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftLowerLeg' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Sapo_Eyes
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Eye_Pupil_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Eye_Pupil_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Eye_Ball_R
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: M_Sapo_01(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Boot_Cuffs
+      parentName: M_Sapo_01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Boot_Cuff_L
+      parentName: Boot_Cuffs
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Boot_Cuff_R
+      parentName: Boot_Cuffs
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sapo_Belt
+      parentName: M_Sapo_01(Clone)
+      position: {x: -0, y: 0.8610367, z: 0.011435902}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sapo_Body
+      parentName: M_Sapo_01(Clone)
+      position: {x: 0.0035164913, y: 0.73136383, z: -0.0035434177}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sapo_Eyes
+      parentName: M_Sapo_01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye_Ball_L
+      parentName: Sapo_Eyes
+      position: {x: -0.04011214, y: 1.3275785, z: 0.067055546}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye_Ball_R
+      parentName: Sapo_Eyes
+      position: {x: 0.04011214, y: 1.3275785, z: 0.067055546}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye_Lid_L
+      parentName: Sapo_Eyes
+      position: {x: -0.04011214, y: 1.3275785, z: 0.06885098}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye_Lid_R
+      parentName: Sapo_Eyes
+      position: {x: 0.04011214, y: 1.3275785, z: 0.06885098}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye_Pupil_L
+      parentName: Sapo_Eyes
+      position: {x: -0.04011214, y: 1.3275785, z: 0.067526646}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye_Pupil_R
+      parentName: Sapo_Eyes
+      position: {x: 0.04011214, y: 1.3275785, z: 0.067526646}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sapo_Gloves_L
+      parentName: M_Sapo_01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sapo_Gloves_R
+      parentName: M_Sapo_01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sapo_Hair
+      parentName: M_Sapo_01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HairTuft1
+      parentName: Sapo_Hair
+      position: {x: -0, y: 1.4376106, z: 0.032036033}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HairTuft2
+      parentName: Sapo_Hair
+      position: {x: 0.07198053, y: 1.4547372, z: 0.008049354}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HairTuft3
+      parentName: Sapo_Hair
+      position: {x: -0.06659856, y: 1.4151207, z: -0.019496981}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HairTuft4
+      parentName: Sapo_Hair
+      position: {x: 0.025865631, y: 1.458037, z: -0.05063522}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HairTuft5
+      parentName: Sapo_Hair
+      position: {x: -0.026375052, y: 1.4002376, z: -0.0743616}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HairTuft6
+      parentName: Sapo_Hair
+      position: {x: 0.028391484, y: 1.3898302, z: -0.07270172}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HairTuft7
+      parentName: Sapo_Hair
+      position: {x: -0, y: 1.3248338, z: -0.07810649}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HairTuft8
+      parentName: Sapo_Hair
+      position: {x: -0, y: 1.2795781, z: -0.048004292}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HairTuft9
+      parentName: Sapo_Hair
+      position: {x: 0.055440247, y: 1.4112653, z: 0.10358675}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sapo_Headband
+      parentName: M_Sapo_01(Clone)
+      position: {x: -0.00010056851, y: 1.3601681, z: -0.012983025}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sapo_Headpiece
+      parentName: M_Sapo_01(Clone)
+      position: {x: -0, y: 1.3756795, z: 0.082504526}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sapo_Shirt
+      parentName: M_Sapo_01(Clone)
+      position: {x: -0, y: 0.9249046, z: -0.00006108338}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
