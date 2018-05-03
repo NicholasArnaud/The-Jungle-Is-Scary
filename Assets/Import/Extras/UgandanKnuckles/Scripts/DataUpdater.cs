@@ -20,8 +20,10 @@ public class DataUpdater : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void ReduceHealth()
+    public void ReduceHealth(Object[] args)
     {
-        Data.Health--;
+        var obj = args[1] as GameObject;
+        if(obj == this.gameObject)
+            Data.Health--;
     }
 }
