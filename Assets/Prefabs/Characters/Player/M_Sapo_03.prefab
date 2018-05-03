@@ -765,8 +765,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4967983245031950}
   - component: {fileID: 137951519453928396}
-  - component: {fileID: 65694730868186638}
-  - component: {fileID: 114356498781146968}
   m_Layer: 0
   m_Name: Boros_Body
   m_TagString: Untagged
@@ -1935,6 +1933,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4944492151166724}
+  - component: {fileID: 65082944430277604}
   m_Layer: 0
   m_Name: Sapo
   m_TagString: Untagged
@@ -2313,6 +2312,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4483732855704588}
+  - component: {fileID: 65074838730754458}
+  - component: {fileID: 114675370227266550}
   m_Layer: 0
   m_Name: l_BorosHandle_01_01SHJnt
   m_TagString: Untagged
@@ -5192,18 +5193,30 @@ Transform:
   m_Father: {fileID: 4460249148318652}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65694730868186638
+--- !u!65 &65074838730754458
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1318008873544414}
+  m_GameObject: {fileID: 1891404630719888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.13, z: 0.11}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65082944430277604
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1791913162795836}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.33324748, y: 1.6168313, z: 0.9178963}
-  m_Center: {x: 0.036840245, y: 0.8983228, z: -0.098166764}
+  m_Size: {x: 0.1125535, y: 0.21645147, z: 0.046532486}
+  m_Center: {x: -0.008909456, y: 0.10899577, z: -0.0018954158}
 --- !u!95 &95065472750303186
 Animator:
   serializedVersion: 3
@@ -5326,18 +5339,6 @@ MonoBehaviour:
   checkpoint: {fileID: 0}
   immunityTimer: 0
   canTakeDamage: 1
---- !u!114 &114356498781146968
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1318008873544414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
 --- !u!114 &114572478073130346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5369,6 +5370,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114675370227266550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1891404630719888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
 --- !u!114 &114688976948666254
 MonoBehaviour:
   m_ObjectHideFlags: 1
