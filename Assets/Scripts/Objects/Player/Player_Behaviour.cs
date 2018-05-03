@@ -118,8 +118,12 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             Data.hp -= d;
             immunityTimer = 1;
             canTakeDamage = false;
-            transform.position = transform.position + Vector3.right* 50 * Time.deltaTime;
         }    
+    }
+
+    public void Knockback()
+    {
+        transform.position = transform.position + Vector3.right * 50 * Time.deltaTime;
     }
 
     public void OnPlayerDied()
