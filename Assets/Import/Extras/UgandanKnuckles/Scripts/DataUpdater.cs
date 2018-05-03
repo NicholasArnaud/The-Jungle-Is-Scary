@@ -16,6 +16,8 @@ public class DataUpdater : MonoBehaviour
     void Update()
     {
         Data.Alive = (Data.Health > 0);
+        if(!Data.Alive)
+            Destroy(gameObject);
     }
 
     public void ReduceHealth()

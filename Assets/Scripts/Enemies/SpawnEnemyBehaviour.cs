@@ -5,17 +5,21 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class SpawnEnemyBehaviour : MonoBehaviour
 {
     public GameObject Enemy;
-    private GameObject _playerObject;
+    public ScriptableObject EnemyData;
     public GameEvent EnemiesDead;
-    private float _distanceFromPlayer;
-    public int SpawnStartDist;
+    public int StartSpawnDist;
     public bool SpawningEnabled;
     public Transform SpawnPoint;
     public int MaxEnemies;
-    private List<GameObject> _enemyList;
-    private int _enemiesSpawned;
     public int CooldownTime;
+
+    private List<GameObject> _enemyList;
+    private GameObject _playerObject;
+    private float _distanceFromPlayer;
+    private int _enemiesSpawned;
     private float _spawnCooldown;
+    private int _enemydeathcount;
+
     // Use this for initialization
     void Start()
     {
@@ -30,15 +34,17 @@ public class SpawnEnemyBehaviour : MonoBehaviour
         if (!SpawningEnabled)
         {
             _distanceFromPlayer = Vector3.Distance(_playerObject.transform.position, transform.position);
-            if (_distanceFromPlayer <= SpawnStartDist)
+            if (_distanceFromPlayer <= StartSpawnDist)
                 SpawningEnabled = true;
             return;
         }
         EnemyCheck();
         _spawnCooldown += Time.deltaTime;
-        if (!(_spawnCooldown >= CooldownTime) || _enemiesSpawned > MaxEnemies) return;
+        if (!(_spawnCooldown >= CooldownTime) || _enemiesSpawned >= MaxEnemies) return;
         _spawnCooldown = 0;
-        _enemyList.Add(Instantiate(Enemy, SpawnPoint));
+        var spawnedEnemy = Instantiate(Enemy, SpawnPoint);
+        spawnedEnemy.GetComponent<DataUpdater>().Data = Instantiate(EnemyData) as EnemyDataScriptable;
+        _enemyList.Add(spawnedEnemy);
         _enemiesSpawned++;
 
     }
@@ -58,15 +64,16 @@ public class SpawnEnemyBehaviour : MonoBehaviour
 
     private void EnemyCheck()
     {
-        var enemydeathcount = 0;
-        foreach (var o in _enemyList)
+        if(_enemyList.Count <= 1)
+            return;
+        for (var i = _enemyList.Count - 1; i > -1; i--)
         {
-            if (o.GetComponent<EnemyDataScriptable>().Alive)
-                return;
-            enemydeathcount++;
+            if (_enemyList[i] != null) continue;
+            _enemyList.RemoveAt(i);
+            _enemydeathcount++;
         }
 
-        if (enemydeathcount >= MaxEnemies)
+        if (_enemydeathcount >= MaxEnemies)
         {
             //Raise Event
             EnemiesDead.Raise();
