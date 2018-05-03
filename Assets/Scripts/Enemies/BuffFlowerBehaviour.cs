@@ -49,7 +49,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private void Update()
     {
         //must have checks per frame
-        Data.Alive = (Data.Health >= 0);
+        Data.Alive = (Data.Health > 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
 
         //anystate check for being dead 
@@ -187,7 +187,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.DEAD);
             return;
         }
-
+        
         if (_distanceBetween < Data.AttackRadius) return;
         ChangeState(MovementState.CHASING);
     }
