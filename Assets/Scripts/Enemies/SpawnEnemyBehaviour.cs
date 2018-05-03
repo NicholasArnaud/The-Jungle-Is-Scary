@@ -64,7 +64,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
 
     private void EnemyCheck()
     {
-        if(_enemyList.Count <= 1)
+        if(_enemyList.Count <= 0)
             return;
         for (var i = _enemyList.Count - 1; i > -1; i--)
         {
