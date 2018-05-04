@@ -934,7 +934,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &249019107
 Prefab:
@@ -993,6 +993,11 @@ Prefab:
     - target: {fileID: 1583997222021412, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
       propertyPath: m_Name
       value: Enemy Spawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110855406642286, guid: bc7b800acf75eca4e975c6003e149ede,
+        type: 2}
+      propertyPath: SpawningEnabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
@@ -2008,7 +2013,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
@@ -2447,15 +2452,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4421563776021984, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -75.3
+      value: -76.747
       objectReference: {fileID: 0}
     - target: {fileID: 4421563776021984, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.49
+      value: -0.678
       objectReference: {fileID: 0}
     - target: {fileID: 4421563776021984, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 39
+      value: 39.948
       objectReference: {fileID: 0}
     - target: {fileID: 4421563776021984, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2476,21 +2481,6 @@ Prefab:
     - target: {fileID: 4421563776021984, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
       propertyPath: m_RootOrder
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114110855406642286, guid: bc7b800acf75eca4e975c6003e149ede,
-        type: 2}
-      propertyPath: StartSpawnDist
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114110855406642286, guid: bc7b800acf75eca4e975c6003e149ede,
-        type: 2}
-      propertyPath: MaxEnemies
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114110855406642286, guid: bc7b800acf75eca4e975c6003e149ede,
-        type: 2}
-      propertyPath: CooldownTime
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
@@ -13688,6 +13678,11 @@ Prefab:
       propertyPath: m_Name
       value: Enemy Spawner (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114110855406642286, guid: bc7b800acf75eca4e975c6003e149ede,
+        type: 2}
+      propertyPath: SpawningEnabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
   m_IsPrefabParent: 0
@@ -15344,7 +15339,7 @@ Prefab:
       objectReference: {fileID: 502363402}
     - target: {fileID: 4978569730490848, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.9999998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
@@ -16438,7 +16433,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785593033}
   m_LocalRotation: {x: -0.075818986, y: 0.71601444, z: -0.07871482, w: -0.68947726}
-  m_LocalPosition: {x: 3.6975527, y: 1.2969999, z: 0.9753008}
+  m_LocalPosition: {x: 3.6975527, y: 1.2969998, z: 0.9753008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16730,6 +16725,11 @@ Prefab:
     - target: {fileID: 1583997222021412, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
       propertyPath: m_Name
       value: Enemy Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110855406642286, guid: bc7b800acf75eca4e975c6003e149ede,
+        type: 2}
+      propertyPath: SpawningEnabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
