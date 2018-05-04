@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b13de7a5f08f7341b35afd37ddecfb0, type: 3}
   m_Name: SunnyParticleTimer
   m_EditorClassIdentifier: 
-  seconds: 2
+  seconds: 2.5
