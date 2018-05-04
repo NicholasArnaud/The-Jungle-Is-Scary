@@ -1223,12 +1223,12 @@ GameObject:
   - component: {fileID: 4460249148318652}
   - component: {fileID: 95065472750303186}
   - component: {fileID: 143691804425560310}
-  - component: {fileID: 114688976948666254}
-  - component: {fileID: 114327758430691788}
   - component: {fileID: 114572478073130346}
-  - component: {fileID: 114157242753530970}
+  - component: {fileID: 114327758430691788}
   - component: {fileID: 114115452040908184}
   - component: {fileID: 114903184736569936}
+  - component: {fileID: 114157242753530970}
+  - component: {fileID: 114688976948666254}
   m_Layer: 0
   m_Name: M_Sapo_03
   m_TagString: Player
@@ -2776,7 +2776,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1264605914282254}
-  m_LocalRotation: {x: 0.42553353, y: 0.20166753, z: 0.42741695, w: 0.77172923}
+  m_LocalRotation: {x: 0.42553356, y: 0.20166755, z: 0.42741698, w: 0.7717293}
   m_LocalPosition: {x: -0.0737476, y: 0.005211079, z: -0.024176387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4575,7 +4575,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1961871363538360}
-  m_LocalRotation: {x: 0.42553353, y: 0.20166753, z: 0.42741695, w: 0.77172923}
+  m_LocalRotation: {x: 0.42553356, y: 0.20166755, z: 0.42741698, w: 0.7717293}
   m_LocalPosition: {x: 0.0737476, y: -0.005211079, z: 0.024176387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5426,7 +5426,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114327758430691788}
         m_MethodName: OnPlayerDied
         m_Mode: 1
         m_Arguments:
