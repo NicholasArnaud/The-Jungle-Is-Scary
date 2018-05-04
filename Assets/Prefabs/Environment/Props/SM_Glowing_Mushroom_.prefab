@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4434614704255468}
   - component: {fileID: 95222118640598350}
   m_Layer: 0
-  m_Name: New Prefab
+  m_Name: SM_Glowing_Mushroom_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
