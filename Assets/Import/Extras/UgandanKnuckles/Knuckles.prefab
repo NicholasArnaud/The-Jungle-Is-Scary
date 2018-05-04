@@ -193,9 +193,8 @@ GameObject:
   - component: {fileID: 114354540973385600}
   - component: {fileID: 114231087503736892}
   - component: {fileID: 136404167697543106}
-  - component: {fileID: 114463442336367688}
-  - component: {fileID: 65916900659194804}
-  - component: {fileID: 114925106018427880}
+  - component: {fileID: 114393955634090560}
+  - component: {fileID: 114899000872804332}
   m_Layer: 0
   m_Name: Knuckles
   m_TagString: Enemy
@@ -480,7 +479,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1480901997542942}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7615347, y: -0.84614146, z: 2.8178113}
+  m_LocalPosition: {x: 0.5634129, y: 5.7644663, z: 3.2771473}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4538244527144576}
@@ -879,18 +878,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65916900659194804
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1480901997542942}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.31, y: 3.4, z: 2.23}
-  m_Center: {x: 0, y: 2.3, z: 0}
 --- !u!95 &95038485998949054
 Animator:
   serializedVersion: 3
@@ -961,7 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 2458e586242c6b8478dd3be7cad5eba3, type: 2}
---- !u!114 &114463442336367688
+--- !u!114 &114393955634090560
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -973,7 +960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
+  Sender: {fileID: 1480901997542942}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -1010,7 +997,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 1
---- !u!114 &114925106018427880
+--- !u!114 &114899000872804332
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1018,13 +1005,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1480901997542942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9771ac07a176c1248a3c3e28d28d5bff, type: 3}
+  m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
-  onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: c82f85e0248b52e4b80b1ae7d1865bf3, type: 2}
+  m_OnPlayerDamaged: {fileID: 11400000, guid: ae447ff4f5d88d74db60cf8d9f6e39c7, type: 2}
 --- !u!136 &136404167697543106
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1033,11 +1017,11 @@ CapsuleCollider:
   m_GameObject: {fileID: 1480901997542942}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 1.23
-  m_Height: 5.66
+  m_Enabled: 1
+  m_Radius: 1.76
+  m_Height: 5.24
   m_Direction: 1
-  m_Center: {x: 0, y: 2.23, z: 0}
+  m_Center: {x: 0, y: 2.57, z: -0.11}
 --- !u!136 &136620006390534770
 CapsuleCollider:
   m_ObjectHideFlags: 1

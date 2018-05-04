@@ -240,27 +240,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4978569730490848, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.9999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 114723723323257150, guid: 8fc89911c9e52e049a47a86a7aab2909,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 614577569}
-    - target: {fileID: 114723723323257150, guid: 8fc89911c9e52e049a47a86a7aab2909,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TakeDamage
-      objectReference: {fileID: 0}
-    - target: {fileID: 114688976948666254, guid: 8fc89911c9e52e049a47a86a7aab2909,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 614577569}
-    - target: {fileID: 114688976948666254, guid: 8fc89911c9e52e049a47a86a7aab2909,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPlayerDied
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
@@ -330,12 +310,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &614577569 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114327758430691788, guid: 8fc89911c9e52e049a47a86a7aab2909,
-    type: 2}
-  m_PrefabInternal: {fileID: 183271035}
-  m_Script: {fileID: 11500000, guid: 16c6ffda447b5a14baeba87f06a99bf7, type: 3}
 --- !u!1001 &1271398913
 Prefab:
   m_ObjectHideFlags: 0
@@ -349,7 +323,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4421563776021984, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.5
+      value: 0.496
       objectReference: {fileID: 0}
     - target: {fileID: 4421563776021984, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
       propertyPath: m_LocalPosition.z
@@ -373,6 +347,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4421563776021984, guid: bc7b800acf75eca4e975c6003e149ede, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110855406642286, guid: bc7b800acf75eca4e975c6003e149ede,
+        type: 2}
+      propertyPath: MaxEnemies
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -454,7 +433,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1554630397}
   m_LocalRotation: {x: -0.075818986, y: 0.71601444, z: -0.07871482, w: -0.68947726}
-  m_LocalPosition: {x: 4.1898394, y: 1.9999999, z: 1.391705}
+  m_LocalPosition: {x: 4.1898394, y: 2, z: 1.391705}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -1223,7 +1223,6 @@ GameObject:
   - component: {fileID: 4460249148318652}
   - component: {fileID: 95065472750303186}
   - component: {fileID: 143691804425560310}
-  - component: {fileID: 114723723323257150}
   - component: {fileID: 114688976948666254}
   - component: {fileID: 114327758430691788}
   - component: {fileID: 114572478073130346}
@@ -1934,6 +1933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4944492151166724}
   - component: {fileID: 65082944430277604}
+  - component: {fileID: 114104127369234922}
   m_Layer: 0
   m_Name: Sapo
   m_TagString: Untagged
@@ -3730,7 +3730,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1448436701386198}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.7918396, y: -0.703, z: 0.8056946}
+  m_LocalPosition: {x: -0.29955316, y: -2.7136045e-17, z: 1.2220988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4526677585522906}
@@ -5186,7 +5186,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1757946893096726}
   m_LocalRotation: {x: -0.1092719, y: 0.018764643, z: -0.0020476615, w: -0.9938327}
-  m_LocalPosition: {x: 0.16960575, y: 2, z: -4.4893928}
+  m_LocalPosition: {x: 0.16960575, y: 1.9999999, z: -4.4893928}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4670255364913868}
@@ -5253,6 +5253,35 @@ MonoBehaviour:
   m_PitchDamping: 0
   m_YawDamping: 0
   m_RollDamping: 0
+--- !u!114 &114104127369234922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1791913162795836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ae447ff4f5d88d74db60cf8d9f6e39c7, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114327758430691788}
+        m_MethodName: TakeDamage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114115452040908184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5397,37 +5426,9 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114327758430691788}
         m_MethodName: OnPlayerDied
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &114723723323257150
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448436701386198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6e0519fff160e0441af6eb5f2c3a137c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: TakeDamage
-        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

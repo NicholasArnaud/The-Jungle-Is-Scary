@@ -118,6 +118,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             Data.hp -= d;
             immunityTimer = 1;
             canTakeDamage = false;
+            Knockback();
         }    
     }
 
