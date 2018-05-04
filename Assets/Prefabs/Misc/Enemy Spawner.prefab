@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 114110855406642286}
   m_Layer: 0
   m_Name: Enemy Spawner
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583997222021412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -76.747, y: -0.678, z: 39.948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4040968643075282}
@@ -81,10 +81,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1646721176092056, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
-  EnemyData: {fileID: 11400000, guid: 3a190a4ccf761764d94ac06350662264, type: 2}
+  EnemyData: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
   EnemiesDead: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
   StartSpawnDist: 15
   SpawningEnabled: 0
   SpawnPoint: {fileID: 4040968643075282}
-  MaxEnemies: 5
+  MaxEnemies: 1
   CooldownTime: 1
