@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyData",menuName = "Data")]
 public class EnemyDataScriptable : ScriptableObject
 {
-    [HideInInspector]
     public GameObject PlayerGameObject;
     public bool FoundPlayer;
     public int Health;

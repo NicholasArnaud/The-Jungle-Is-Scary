@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class SpawnEnemyBehaviour : MonoBehaviour
 {
     public GameObject Enemy;
-    public ScriptableObject EnemyData;
+    public EnemyDataScriptable EnemyData;
     public GameEvent EnemiesDead;
     public int StartSpawnDist;
     public bool SpawningEnabled;
@@ -14,7 +14,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
     public int CooldownTime;
 
     private List<GameObject> _enemyList;
-    private GameObject _playerObject;
+    private GameObject _playerGameObject;
     private float _distanceFromPlayer;
     private int _enemiesSpawned;
     private float _spawnCooldown;
@@ -23,8 +23,8 @@ public class SpawnEnemyBehaviour : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        FindPlayer();
-        Enemy.GetComponent<AICharacterControl>().SetTarget(_playerObject.transform);
+        _playerGameObject = EnemyData.PlayerGameObject;
+        if (EnemyData != null) Enemy.GetComponent<AICharacterControl>().SetTarget(_playerGameObject.transform);
         _enemyList = new List<GameObject>();
     }
 
@@ -33,7 +33,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
     {
         if (!SpawningEnabled)
         {
-            _distanceFromPlayer = Vector3.Distance(_playerObject.transform.position, transform.position);
+            _distanceFromPlayer = Vector3.Distance(_playerGameObject.transform.position, transform.position);
             if (_distanceFromPlayer <= StartSpawnDist)
                 SpawningEnabled = true;
             return;
@@ -43,28 +43,15 @@ public class SpawnEnemyBehaviour : MonoBehaviour
         if (!(_spawnCooldown >= CooldownTime) || _enemiesSpawned >= MaxEnemies) return;
         _spawnCooldown = 0;
         var spawnedEnemy = Instantiate(Enemy, SpawnPoint);
-        spawnedEnemy.GetComponent<DataUpdater>().Data = Instantiate(EnemyData) as EnemyDataScriptable;
+        spawnedEnemy.GetComponent<DataUpdater>().Data = Instantiate(EnemyData);
         _enemyList.Add(spawnedEnemy);
         _enemiesSpawned++;
 
     }
 
-    private void FindPlayer()
-    {
-        var gameobjects = FindObjectsOfType<GameObject>();
-
-        foreach (var t in gameobjects)
-        {
-            if (t.tag == "Player")
-            {
-                _playerObject = t;
-            }
-        }
-    }
-
     private void EnemyCheck()
     {
-        if(_enemyList.Count <= 1)
+        if(_enemyList.Count <= 0)
             return;
         for (var i = _enemyList.Count - 1; i > -1; i--)
         {
@@ -73,11 +60,9 @@ public class SpawnEnemyBehaviour : MonoBehaviour
             _enemydeathcount++;
         }
 
-        if (_enemydeathcount >= MaxEnemies)
-        {
-            //Raise Event
-            EnemiesDead.Raise();
-            Debug.Log("Eneies dead event Raised");
-        }
+        if (_enemydeathcount < MaxEnemies) return;
+        //Raise Event
+        EnemiesDead.Raise();
+        Debug.Log("Eneies dead event Raised");
     }
 }
