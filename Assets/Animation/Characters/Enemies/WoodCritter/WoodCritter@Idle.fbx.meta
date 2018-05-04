@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: fc4a6d3c59bcadd48bee834f42e9dc11
-timeCreated: 1525448483
+guid: 4bd06760ed50e68489b9bfa57b01da87
+timeCreated: 1525455707
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -177,6 +177,7 @@ ModelImporter:
     4300026: WoodCritter_Body
     4300028: WoodCritter_Head
     4300030: WoodCritter_Neck
+    7400000: Take 001
     9500000: //RootNode
     13700000: WoodCritter_Body
     13700002: WoodCritter_Branch
@@ -250,7 +251,7 @@ ModelImporter:
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 2
     human: []
@@ -267,7 +268,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: fc4a6d3c59bcadd48bee834f42e9dc11,
+    type: 3}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
