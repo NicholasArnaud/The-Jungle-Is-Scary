@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6338b5e8f734e943bcc87b80aeae4f1, type: 3}
+  m_Name: KnucklesEnemyData
+  m_EditorClassIdentifier: 
+  PlayerGameObject: {fileID: 1273342543379802, guid: dd5061628b4b360419a063967578489b,
+    type: 2}
+  FoundPlayer: 1
+  Health: 4
+  Alive: 1
+  DetectionRadius: 30
+  AttackRadius: 1
