@@ -62,14 +62,13 @@ GameObject:
   - component: {fileID: 65244800293566002}
   - component: {fileID: 23375521435726352}
   - component: {fileID: 114690833537013052}
-  - component: {fileID: 114010008746882376}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4200029059291866
 Transform:
   m_ObjectHideFlags: 1
@@ -105,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938864246286126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.4, y: 0, z: -0.077}
+  m_LocalPosition: {x: 85.8, y: 0, z: -0.109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4200029059291866}
@@ -258,18 +257,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114010008746882376
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1938864246286126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec488768547f541479533cf9b927faa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnemiesDead: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
 --- !u!114 &114040279429263798
 MonoBehaviour:
   m_ObjectHideFlags: 1
