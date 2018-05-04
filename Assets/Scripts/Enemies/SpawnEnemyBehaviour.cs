@@ -23,7 +23,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _playerGameObject = EnemyData.PlayerGameObject;
+        FindPlayer();
         if (EnemyData != null) Enemy.GetComponent<AICharacterControl>().SetTarget(_playerGameObject.transform);
         _enemyList = new List<GameObject>();
     }
@@ -44,6 +44,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
         _spawnCooldown = 0;
         var spawnedEnemy = Instantiate(Enemy, SpawnPoint);
         spawnedEnemy.GetComponent<DataUpdater>().Data = Instantiate(EnemyData);
+        spawnedEnemy.GetComponent<DataUpdater>().Data.PlayerGameObject = _playerGameObject;
         _enemyList.Add(spawnedEnemy);
         _enemiesSpawned++;
 
@@ -64,5 +65,10 @@ public class SpawnEnemyBehaviour : MonoBehaviour
         //Raise Event
         EnemiesDead.Raise();
         Debug.Log("Eneies dead event Raised");
+    }
+
+    private void FindPlayer()
+    {
+        _playerGameObject = GameObject.FindGameObjectWithTag("Player");
     }
 }
