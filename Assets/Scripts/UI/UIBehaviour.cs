@@ -45,15 +45,23 @@ public class UIBehaviour : MonoBehaviour
         CheckForActivePanel();
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
-            if (HudPanelObject.activeSelf)
+            if (OptionsPanelObject.activeSelf)
+            {
+                OptionsPanelObject.SetActive(false);
+                HudPanelObject.SetActive(true);
+            }
+
+            else if (HudPanelObject.activeSelf)
             {
                 HudPanelObject.SetActive(false);
                 PausePanelObject.SetActive(true);
+                Time.timeScale = 0;
             }
             else if (PausePanelObject.activeSelf)
             {
                 PausePanelObject.SetActive(false);
                 HudPanelObject.SetActive(true);
+                Time.timeScale = 1;
             }
         }
     }
@@ -73,6 +81,7 @@ public class UIBehaviour : MonoBehaviour
     public void PlayButtonTrigger()
     {
         CheckForActivePanel();
+        Time.timeScale = 1;
         _activePanelObject.SetActive(false);
         _prevPanelObject = _activePanelObject;
         HudPanelObject.SetActive(true);
@@ -97,6 +106,7 @@ public class UIBehaviour : MonoBehaviour
     public void ResumeButtonTrigger()
     {
         CheckForActivePanel();
+        Time.timeScale = 1;
         _activePanelObject.SetActive(false);
         _prevPanelObject = _activePanelObject;
         HudPanelObject.SetActive(true);
@@ -105,6 +115,7 @@ public class UIBehaviour : MonoBehaviour
     public void QuitButtonTrigger()
     {
         CheckForActivePanel();
+        Time.timeScale = 1;
         if (_activePanelObject == PausePanelObject)
         {
             _activePanelObject.SetActive(false);

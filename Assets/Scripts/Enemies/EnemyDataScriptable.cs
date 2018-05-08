@@ -1,5 +1,4 @@
-﻿using UnityEditor.Animations;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyData",menuName = "EnemyData")]
 public class EnemyDataScriptable : ScriptableObject
