@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
@@ -15,8 +13,6 @@ public class UIBehaviour : MonoBehaviour
     public GameObject OptionsPanelObject;
     public GameObject HudPanelObject;
     public GameObject StartUpPanelObject;
-
-    public String GameSceneName;
     public GameObject[] HealthBar;
     public Slider MusicVolumeSlider;
     public Slider SfxVolumeSlider;
@@ -47,7 +43,7 @@ public class UIBehaviour : MonoBehaviour
     void Update()
     {
         CheckForActivePanel();
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             if (HudPanelObject.activeSelf)
             {
@@ -79,8 +75,7 @@ public class UIBehaviour : MonoBehaviour
         CheckForActivePanel();
         _activePanelObject.SetActive(false);
         _prevPanelObject = _activePanelObject;
-        if (GameSceneName == SceneManager.GetActiveScene().name)
-            HudPanelObject.SetActive(true);
+        HudPanelObject.SetActive(true);
     }
 
     public void OptionButtonTrigger()

@@ -73,7 +73,7 @@ public class GameRunningState : GLOBALS.GLOBALS.IState
     public void UpdateState(GLOBALS.GLOBALS.IContext context)
     {
         //Change to the previous state or next state here if a condition is met
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
             GameContext.PauseButtonClicked = !GameContext.PauseButtonClicked;
         if (GameContext.PauseButtonClicked)
         {
@@ -98,7 +98,7 @@ public class GamePausedState : GLOBALS.GLOBALS.IState
     public void UpdateState(GLOBALS.GLOBALS.IContext context)
     {
         //Change to the previous state or next state here if a condition is met
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
             GameContext.PauseButtonClicked = !GameContext.PauseButtonClicked;
         if (!GameContext.PauseButtonClicked)
         {

@@ -1,18 +1,12 @@
 fileFormatVersion: 2
 guid: c6338b5e8f734e943bcc87b80aeae4f1
-timeCreated: 1520357999
-licenseType: Free
+timeCreated: 1525462423
+licenseType: Pro
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - PlayerGameObject: {fileID: 1273342543379802, guid: dd5061628b4b360419a063967578489b,
-      type: 2}
-  - AnimatorController: {instanceID: 0}
-  - IdleAnimation: {instanceID: 0}
-  - ChasingAnimation: {instanceID: 0}
-  - DeathAnimation: {instanceID: 0}
-  - CurrentAnimation: {instanceID: 0}
+  - PlayerGameObject: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
