@@ -395,6 +395,7 @@ ModelImporter:
     4300066: Boros_HipModel
     7400000: Take 001
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Boot_Cuff_L
     13700002: Boot_Cuff_R
     13700004: Boros_Body
@@ -500,10 +501,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
