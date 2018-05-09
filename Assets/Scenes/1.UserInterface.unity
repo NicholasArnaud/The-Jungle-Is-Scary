@@ -210,41 +210,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114514708578769532, guid: 1d71e1347f897d641a10d50aae9c5767,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114158323750701062, guid: 1d71e1347f897d641a10d50aae9c5767,
+    - target: {fileID: 114387015799789264, guid: 1d71e1347f897d641a10d50aae9c5767,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1897199502}
-    - target: {fileID: 114005648675008876, guid: 1d71e1347f897d641a10d50aae9c5767,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1897199502}
-    - target: {fileID: 114005648675008876, guid: 1d71e1347f897d641a10d50aae9c5767,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 114304912657860248, guid: 1d71e1347f897d641a10d50aae9c5767,
         type: 2}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1897199502}
-    - target: {fileID: 114387015799789264, guid: 1d71e1347f897d641a10d50aae9c5767,
+    - target: {fileID: 114005648675008876, guid: 1d71e1347f897d641a10d50aae9c5767,
+        type: 2}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1897199502}
+    - target: {fileID: 114158323750701062, guid: 1d71e1347f897d641a10d50aae9c5767,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1897199502}
-    - target: {fileID: 114387015799789264, guid: 1d71e1347f897d641a10d50aae9c5767,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 224006898307028738, guid: 1d71e1347f897d641a10d50aae9c5767,
         type: 2}
       propertyPath: m_AnchorMax.x
@@ -266,31 +251,6 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224544113776353636, guid: 1d71e1347f897d641a10d50aae9c5767,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224815873419237228, guid: 1d71e1347f897d641a10d50aae9c5767,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224815873419237228, guid: 1d71e1347f897d641a10d50aae9c5767,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224596369532225736, guid: 1d71e1347f897d641a10d50aae9c5767,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224596369532225736, guid: 1d71e1347f897d641a10d50aae9c5767,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224596369532225736, guid: 1d71e1347f897d641a10d50aae9c5767,
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -298,6 +258,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d71e1347f897d641a10d50aae9c5767, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &401795877 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1817108264344982, guid: 1d71e1347f897d641a10d50aae9c5767,
+    type: 2}
+  m_PrefabInternal: {fileID: 401795876}
 --- !u!1 &470342809
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 401795877}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &1897199503
