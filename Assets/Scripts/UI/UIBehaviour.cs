@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
@@ -15,8 +13,6 @@ public class UIBehaviour : MonoBehaviour
     public GameObject OptionsPanelObject;
     public GameObject HudPanelObject;
     public GameObject StartUpPanelObject;
-
-    public String GameSceneName;
     public GameObject[] HealthBar;
     public Slider MusicVolumeSlider;
     public Slider SfxVolumeSlider;
@@ -47,17 +43,25 @@ public class UIBehaviour : MonoBehaviour
     void Update()
     {
         CheckForActivePanel();
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
-            if (HudPanelObject.activeSelf)
+            if (OptionsPanelObject.activeSelf)
+            {
+                OptionsPanelObject.SetActive(false);
+                HudPanelObject.SetActive(true);
+            }
+
+            else if (HudPanelObject.activeSelf)
             {
                 HudPanelObject.SetActive(false);
                 PausePanelObject.SetActive(true);
+                Time.timeScale = 0;
             }
             else if (PausePanelObject.activeSelf)
             {
                 PausePanelObject.SetActive(false);
                 HudPanelObject.SetActive(true);
+                Time.timeScale = 1;
             }
         }
     }
@@ -77,10 +81,10 @@ public class UIBehaviour : MonoBehaviour
     public void PlayButtonTrigger()
     {
         CheckForActivePanel();
+        Time.timeScale = 1;
         _activePanelObject.SetActive(false);
         _prevPanelObject = _activePanelObject;
-        if (GameSceneName == SceneManager.GetActiveScene().name)
-            HudPanelObject.SetActive(true);
+        HudPanelObject.SetActive(true);
     }
 
     public void OptionButtonTrigger()
@@ -102,6 +106,7 @@ public class UIBehaviour : MonoBehaviour
     public void ResumeButtonTrigger()
     {
         CheckForActivePanel();
+        Time.timeScale = 1;
         _activePanelObject.SetActive(false);
         _prevPanelObject = _activePanelObject;
         HudPanelObject.SetActive(true);
@@ -110,6 +115,7 @@ public class UIBehaviour : MonoBehaviour
     public void QuitButtonTrigger()
     {
         CheckForActivePanel();
+        Time.timeScale = 1;
         if (_activePanelObject == PausePanelObject)
         {
             _activePanelObject.SetActive(false);
