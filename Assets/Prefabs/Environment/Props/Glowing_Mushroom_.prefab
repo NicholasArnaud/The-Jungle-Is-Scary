@@ -97,8 +97,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4434614704255468}
   - component: {fileID: 95222118640598350}
+  - component: {fileID: 136549561332040316}
   m_Layer: 0
-  m_Name: SM_Glowing_Mushroom_
+  m_Name: Glowing_Mushroom_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,3 +246,16 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!136 &136549561332040316
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1935396340588694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.72
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
