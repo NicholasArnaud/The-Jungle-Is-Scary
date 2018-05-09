@@ -22,12 +22,18 @@ public class UIBehaviour : MonoBehaviour
     public Text FullGemValue;
     public Sprite FullHeart;
     public Sprite EmptyHeart;
+    public FloatVariable SavedMusicVolume;
     private int _curHealth;
     private GameObject _prevPanelObject;
     private GameObject _activePanelObject;
     private List<GameObject> _panels;
 
     #endregion
+    void Awake()
+    {
+        MusicVolumeSlider.value = SavedMusicVolume.Value * 100;
+        MusicValue.text = MusicVolumeSlider.value.ToString();
+    }
 
     void Start()
     {
@@ -39,10 +45,11 @@ public class UIBehaviour : MonoBehaviour
         GemFragValue.text = PlayerData.gemFragments.ToString();
         FullGemValue.text = PlayerData.lifeGems.ToString();
     }
-
     void Update()
     {
         CheckForActivePanel();
+        
+            
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             if (OptionsPanelObject.activeSelf)
@@ -70,8 +77,8 @@ public class UIBehaviour : MonoBehaviour
     public void MusicVolumeUpdate()
     {
         MusicValue.text = MusicVolumeSlider.value.ToString();
+        SavedMusicVolume.Value = MusicVolumeSlider.value * 1 / 100;
     }
-
     public void SfxVolumeUpdate()
     {
         SfxValue.text = SfxVolumeSlider.value.ToString();
