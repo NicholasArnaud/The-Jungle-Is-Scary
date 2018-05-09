@@ -41,9 +41,6 @@ public class PlayerController : MonoBehaviour
 
             var h = Input.GetAxis(Horizontal.Value);
             var v = Input.GetAxis(Vertical.Value);
-            anim.SetFloat("Speed", h);
-            anim.SetFloat("Speed", v);
-
 
             var forward = Camera.main.transform.TransformDirection(Vector3.forward);
             forward.y = 0;
@@ -62,7 +59,7 @@ public class PlayerController : MonoBehaviour
                 
 
             moveDirection = targetDir;
-
+            anim.SetFloat("Speed", moveDirection.magnitude);
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move((moveDirection * Speed.Value) * Time.deltaTime);
