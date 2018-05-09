@@ -1229,6 +1229,8 @@ GameObject:
   - component: {fileID: 114903184736569936}
   - component: {fileID: 114157242753530970}
   - component: {fileID: 114688976948666254}
+  - component: {fileID: 111039298723835038}
+  - component: {fileID: 114288901714130042}
   m_Layer: 0
   m_Name: M_Sapo_03
   m_TagString: Player
@@ -3730,7 +3732,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1448436701386198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 156.72789, y: -1.2510002, z: -137.718}
+  m_LocalPosition: {x: 42.5, y: 5.4, z: -42.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4526677585522906}
@@ -5186,7 +5188,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1757946893096726}
   m_LocalRotation: {x: -0.1092719, y: 0.018764643, z: -0.0020476615, w: -0.9938327}
-  m_LocalPosition: {x: 0.16960144, y: 1.9999999, z: -4.489395}
+  m_LocalPosition: {x: 0.16960144, y: 2, z: -4.4893913}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4670255364913868}
@@ -5226,7 +5228,7 @@ Animator:
   m_GameObject: {fileID: 1448436701386198}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f4ad0cdeed13f3f41bc22693d363546b, type: 3}
-  m_Controller: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2ee37f2d02394fe46a768bb3db7806ce, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -5234,6 +5236,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &111039298723835038
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448436701386198}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: e6a91abb8c8b28944836a6d03351be37, type: 3}
+  - {fileID: 7400000, guid: e6a91abb8c8b28944836a6d03351be37, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114099529905505080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5348,6 +5366,22 @@ MonoBehaviour:
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
   m_BiasY: 0
+--- !u!114 &114288901714130042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448436701386198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24adf026088fa854394338d91662af8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 111039298723835038}
+  lightTimer: 0
+  heavyTimer: 0
+  lightReady: 1
+  heavyReady: 1
 --- !u!114 &114327758430691788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5362,9 +5396,6 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
   giveHealth: {fileID: 11400000, guid: df2960321231daa498fb3bcf3f72b286, type: 2}
   playerDied: {fileID: 11400000, guid: c1642e0d3af0e7c4ba9e87c8a1669122, type: 2}
-  currentComboState: 0
-  comboTimer: 5
-  clickNum: 0
   checkpoint: {fileID: 0}
   immunityTimer: 0
   canTakeDamage: 1
@@ -5379,6 +5410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a850539e273944244bed339589502f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 95065472750303186}
   position: {fileID: 11400000, guid: d3e3a90572bf3bb41929b100367a0620, type: 2}
   Horizontal: {fileID: 11400000, guid: a263a7ee669360e428ed1e1c0bb7a45c, type: 2}
   Vertical: {fileID: 11400000, guid: 28577c5505b44794f9f4f26492a382d4, type: 2}

@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
 
-    public Animation lightAttack;
-    public Animation heavyAttack;
+    public Animation anim;
     public float lightTimer;
     public float heavyTimer;
     public bool lightReady;
@@ -19,9 +18,8 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                lightAttack.Play();
-                lightAttack.Rewind();
-                lightAttack.Play("Idle");
+                anim.Play("HeavyAttack");
+                anim.Rewind("HeavyAttack");
                 lightReady = false;
             }
         }
@@ -31,7 +29,7 @@ public class PlayerAttack : MonoBehaviour
             lightTimer += Time.deltaTime;
         }
 
-        if (lightTimer >= lightAttack["HeavyAttack"].length)
+        if (lightTimer >= anim["HeavyAttack"].length)
         {
             
             //lightAttack.Rewind();         
@@ -44,8 +42,8 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                heavyAttack.Play();
-                heavyAttack.Rewind();
+                anim.Play("HeavyAttack");
+                anim.Rewind("HeavyAttack");
                 heavyReady = false;
             }
         }
@@ -55,7 +53,7 @@ public class PlayerAttack : MonoBehaviour
             heavyTimer += Time.deltaTime;
         }
 
-        if (heavyTimer >= heavyAttack["HeavyAttack"].length + 2)
+        if (heavyTimer >= anim["HeavyAttack"].length + 2)
         {
             heavyTimer = 0;
             heavyReady = true;

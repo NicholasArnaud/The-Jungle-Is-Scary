@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     /// 4. when a room is completed player will press a button to unlock room
     /// </summary>
 
+    public Animator anim;
     public Vector3Variable position;
     public StringVariable Horizontal;
     public StringVariable Vertical;
@@ -34,13 +35,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
- 
+
         if (controller.isGrounded)
         {
 
             var h = Input.GetAxis(Horizontal.Value);
             var v = Input.GetAxis(Vertical.Value);
-            
+            anim.SetFloat("Speed", h);
+            anim.SetFloat("Speed", v);
+
+
             var forward = Camera.main.transform.TransformDirection(Vector3.forward);
             forward.y = 0;
             forward = forward.normalized;
@@ -57,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
         }
         moveDirection.y -= gravity * Time.deltaTime;
-        controller.Move((moveDirection * Speed.Value)* Time.deltaTime);
+        controller.Move((moveDirection * Speed.Value) * Time.deltaTime);
 
         _currentSpeed.Value = controller.velocity.magnitude;
     }
