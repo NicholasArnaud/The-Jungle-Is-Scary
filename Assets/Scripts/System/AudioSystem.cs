@@ -1,12 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class AudioSystem : MonoBehaviour
 {
-    public Slider MusicSlider;
-    private AudioSource MainAudioSource;
+    public FloatVariable SavedVolume;
+    public AudioSource MainAudioSource;
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -14,6 +18,11 @@ public class AudioSystem : MonoBehaviour
     }
     public void UpdateMainMusicAudio()
     {
-        MainAudioSource.volume = MusicSlider.value * 1 / 100;
+        var vol = SavedVolume.Value;
+        MainAudioSource.volume = vol;
+    }
+    public void SaveVolume()
+    {
+        SavedVolume.Value = MainAudioSource.volume;
     }
 }
