@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,11 +34,13 @@ public class GameStateMachine : MonoBehaviour
         if (SceneManager.GetActiveScene().name == InGameSceneName)
         {
             SceneManager.LoadScene(StartUpSceneName, LoadSceneMode.Single);
+            _loaded = false;
         }
     }
 
     public IEnumerator LoadNewScene()
     {
+        yield return new WaitForSeconds(1);
         var async = SceneManager.LoadSceneAsync(InGameSceneName);
         while (!async.isDone)
         {
