@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -236,87 +236,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4460249148318652, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
       propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 95065472750303186, guid: 8fc89911c9e52e049a47a86a7aab2909,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2ee37f2d02394fe46a768bb3db7806ce, type: 2}
-    - target: {fileID: 4978569730490848, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4978569730490848, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -4.4893913
-      objectReference: {fileID: 0}
-    - target: {fileID: 95065472750303186, guid: 8fc89911c9e52e049a47a86a7aab2909,
-        type: 2}
-      propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed by
-        Humanoid clips.\n\tTransform 'ROOTSHJnt'\n\tTransform 'l_Arm_ShoulderSHJnt'\n\tTransform
-        'l_Leg_KneeSHJnt'\n\tTransform 'r_Arm_ElbowSHJnt'\n\tTransform 'l_Arm_ElbowSHJnt'\n\tTransform
-        'r_Leg_HipSHJnt'\n\tTransform 'r_Arm_WristSHJnt'\n\tTransform 'l_Arm_WristSHJnt'\n\tTransform
-        'r_Arm_ClavicleSHJnt'\n\tTransform 'r_Leg_KneeSHJnt'\n\tand more ...\n\tFrom
-        animation clip 'Run'"
-      objectReference: {fileID: 0}
-    - target: {fileID: 114572478073130346, guid: 8fc89911c9e52e049a47a86a7aab2909,
-        type: 2}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 508256125}
-    - target: {fileID: 95065472750303186, guid: 8fc89911c9e52e049a47a86a7aab2909,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &508256116 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909,
-    type: 2}
-  m_PrefabInternal: {fileID: 508256115}
---- !u!114 &508256117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 508256116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24adf026088fa854394338d91662af8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 508256118}
-  lightTimer: 0
-  heavyTimer: 0
-  lightReady: 1
-  heavyReady: 1
---- !u!111 &508256118
-Animation:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 508256116}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: e6a91abb8c8b28944836a6d03351be37, type: 3}
-  - {fileID: 7400000, guid: e6a91abb8c8b28944836a6d03351be37, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!95 &508256125 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95065472750303186, guid: 8fc89911c9e52e049a47a86a7aab2909,
-    type: 2}
-  m_PrefabInternal: {fileID: 508256115}
 --- !u!1001 &669497247
 Prefab:
   m_ObjectHideFlags: 0
@@ -540,50 +464,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &1241839330
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -5.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 10.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200029059291866, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 23755018874377886, guid: d8aac4e5169643f4caa0400469636b8c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d8aac4e5169643f4caa0400469636b8c, type: 2}
-  m_IsPrefabParent: 0

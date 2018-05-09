@@ -1229,8 +1229,8 @@ GameObject:
   - component: {fileID: 114903184736569936}
   - component: {fileID: 114157242753530970}
   - component: {fileID: 114688976948666254}
-  - component: {fileID: 111039298723835038}
   - component: {fileID: 114288901714130042}
+  - component: {fileID: 111637644241562222}
   m_Layer: 0
   m_Name: M_Sapo_03
   m_TagString: Player
@@ -5236,7 +5236,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!111 &111039298723835038
+--- !u!111 &111637644241562222
 Animation:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -5377,7 +5377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24adf026088fa854394338d91662af8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 111039298723835038}
+  anim: {fileID: 95065472750303186}
   lightTimer: 0
   heavyTimer: 0
   lightReady: 1

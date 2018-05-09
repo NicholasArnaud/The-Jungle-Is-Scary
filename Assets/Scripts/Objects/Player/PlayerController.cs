@@ -55,7 +55,11 @@ public class PlayerController : MonoBehaviour
             if (targetDir.magnitude > 0)
                 transform.rotation = Quaternion.LookRotation(targetDir);
             if (Input.GetButton("Jump"))
+            {
                 targetDir.y = _jumpForce.Value;
+                anim.SetTrigger("Jump");
+            }
+                
 
             moveDirection = targetDir;
 
