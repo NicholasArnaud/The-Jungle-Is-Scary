@@ -20,6 +20,8 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.X))
             {
                 lightAttack.Play();
+                lightAttack.Rewind();
+                lightAttack.Play("Idle");
                 lightReady = false;
             }
         }
@@ -43,6 +45,7 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.C))
             {
                 heavyAttack.Play();
+                heavyAttack.Rewind();
                 heavyReady = false;
             }
         }
@@ -52,10 +55,9 @@ public class PlayerAttack : MonoBehaviour
             heavyTimer += Time.deltaTime;
         }
 
-        if (heavyTimer >= heavyAttack["HeavyAttack"].length)
+        if (heavyTimer >= heavyAttack["HeavyAttack"].length + 2)
         {
             heavyTimer = 0;
-            heavyAttack.Rewind();         
             heavyReady = true;
         }
     }
