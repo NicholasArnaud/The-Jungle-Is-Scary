@@ -1737,7 +1737,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273342543379802}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 58.25717, y: -1.3905325, z: -17.112747}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4862616065809814}
@@ -2613,6 +2613,8 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: e2ad0e9c10274184686f951d2ce4fe38, type: 2}
   RiseTime: 2
   ParticleTimer: {fileID: 11400000, guid: 93c1647fb88c43d4dbe49ec6e5ae1785, type: 2}
+  walkSpeed: 3
+  runSpeed: 6
   _currentState: 0
 --- !u!114 &114651003387863872
 MonoBehaviour:
@@ -2851,7 +2853,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.5
+  m_Speed: 7
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120

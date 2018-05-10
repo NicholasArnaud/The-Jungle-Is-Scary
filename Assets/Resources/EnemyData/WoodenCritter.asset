@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6338b5e8f734e943bcc87b80aeae4f1, type: 3}
   m_Name: WoodenCritter
   m_EditorClassIdentifier: 
-  PlayerGameObject: {fileID: 0}
+  PlayerGameObject: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909,
+    type: 2}
   FoundPlayer: 0
-  Health: 0
-  Alive: 0
-  DetectionRadius: 0
-  AttackRadius: 0
+  Health: 4
+  Alive: 1
+  DetectionRadius: 30
+  AttackRadius: 2

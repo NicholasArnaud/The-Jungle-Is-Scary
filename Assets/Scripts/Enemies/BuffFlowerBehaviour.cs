@@ -24,7 +24,8 @@ public class BuffFlowerBehaviour : MonoBehaviour
     //Specific values to Buff Flower
     public float RiseTime;
     public TimerObject ParticleTimer;
-    //private int _playerAttackStateHash = Animator.StringToHash("Base Layer.Ground Pound");
+    public float walkSpeed;
+    public float runSpeed;
     private const float DeathTimer = 4;
     private float _risingTimer;
     private float _distanceBetween;
@@ -151,7 +152,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.PASSIVE);
             return;
         }
-        _nav.speed = 1.5f;
+        _nav.speed = walkSpeed;
         _nav.SetDestination(Data.PlayerGameObject.transform.position);
     }
 
@@ -176,7 +177,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             return;
         }
 
-        _nav.speed = 4.0f;
+        _nav.speed = runSpeed;
         _nav.SetDestination(Data.PlayerGameObject.transform.position);
     }
 
