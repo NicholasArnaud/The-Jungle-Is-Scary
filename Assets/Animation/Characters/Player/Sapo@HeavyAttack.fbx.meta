@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e6a91abb8c8b28944836a6d03351be37
-timeCreated: 1525475078
+timeCreated: 1525818442
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -432,7 +432,7 @@ ModelImporter:
     13700066: Sapo_Shirt
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
