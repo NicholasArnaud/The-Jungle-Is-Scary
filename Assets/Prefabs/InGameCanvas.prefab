@@ -3703,8 +3703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: f368f44b931057749b051470ea13612b, type: 2}
-  Sender: {fileID: 1078658023737426, guid: 00c88ba3bb90b674f9f1427217d6b0ba, type: 2}
+  Event: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
+  Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
