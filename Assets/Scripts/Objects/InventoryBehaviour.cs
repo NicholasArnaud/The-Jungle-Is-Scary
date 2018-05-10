@@ -18,7 +18,6 @@ public class InventoryBehaviour : MonoBehaviour, IContainer
     {
 
         var scroll = Input.GetAxis("Mouse ScrollWheel");
-        Debug.Log(scroll);
         CycleItems(scroll);
         
 

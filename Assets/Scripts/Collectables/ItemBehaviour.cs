@@ -13,8 +13,7 @@ public class ItemBehaviour : MonoBehaviour
         
         if (sender == null ||  other == null || sender != gameObject)
             return;
-
-        other.GetComponent<IContainer>().AddToInventory(item);
+        
         ItemPickedUp.Raise(gameObject, item);
     }
 }
