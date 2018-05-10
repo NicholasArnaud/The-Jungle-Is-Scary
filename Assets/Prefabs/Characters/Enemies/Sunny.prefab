@@ -2614,7 +2614,7 @@ MonoBehaviour:
   RiseTime: 2
   ParticleTimer: {fileID: 11400000, guid: 93c1647fb88c43d4dbe49ec6e5ae1785, type: 2}
   walkSpeed: 3
-  runSpeed: 6
+  runSpeed: 5
   _currentState: 0
 --- !u!114 &114651003387863872
 MonoBehaviour:
@@ -2853,7 +2853,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 2
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120

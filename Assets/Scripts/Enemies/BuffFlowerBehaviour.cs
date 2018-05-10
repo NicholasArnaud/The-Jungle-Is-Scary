@@ -130,6 +130,8 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.AGGRESSIVE);
             return;
         }
+
+        _nav.speed = 0;
         _nav.SetDestination(transform.position);
     }
 
