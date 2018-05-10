@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 95945290095203028}
   - component: {fileID: 65005130213411448}
   - component: {fileID: 114371200950633238}
-  - component: {fileID: 114372789006488590}
   - component: {fileID: 114771984824040030}
+  - component: {fileID: 114372789006488590}
   m_Layer: 0
   m_Name: Full Gem
   m_TagString: Item
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 1011626574557314}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -191,6 +191,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1011626574557314}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: c3f691b94394bc241a11d39409c613f8, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
