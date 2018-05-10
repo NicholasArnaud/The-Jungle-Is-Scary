@@ -11,6 +11,7 @@ TagManager:
   - Branch
   - Item
   - Checkpoint
+  - MusicSlider
   layers:
   - Default
   - TransparentFX

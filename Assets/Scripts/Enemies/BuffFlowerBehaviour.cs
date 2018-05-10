@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -22,13 +23,15 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     //Specific values to Buff Flower
     public float RiseTime;
-
+    public TimerObject ParticleTimer;
+    //private int _playerAttackStateHash = Animator.StringToHash("Base Layer.Ground Pound");
     private const float DeathTimer = 4;
     private float _risingTimer;
     private float _distanceBetween;
     private bool _inGround = true;
     private bool _activated;
 
+    
     private Animator _animatorController;
     private NavMeshAgent _nav;
     [SerializeField]
@@ -46,7 +49,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private void Update()
     {
         //must have checks per frame
-        Data.Alive = (Data.Health >= 0);
+        Data.Alive = (Data.Health > 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
 
         //anystate check for being dead 
@@ -184,7 +187,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.DEAD);
             return;
         }
-
+        
         if (_distanceBetween < Data.AttackRadius) return;
         ChangeState(MovementState.CHASING);
     }
@@ -218,5 +221,17 @@ public class BuffFlowerBehaviour : MonoBehaviour
         if (collidedObjects.Contains(playercollider))
             playerfound = true;
         return playerfound;
+    }
+
+    //Animation/Particle controller
+    public void PlayAnimation()
+    {
+        var pO = GetComponentsInChildren<ParticleSystem>();
+        foreach (var system in pO)
+        {
+            system.Play();
+            ParticleTimer.Execute(this, system.Stop);
+        }
+        
     }
 }

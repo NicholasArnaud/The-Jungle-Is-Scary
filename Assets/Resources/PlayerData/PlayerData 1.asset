@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: PlayerData 1
   m_EditorClassIdentifier: 
   hp: 4
-  lives: 3
+  lifeGems: 3
+  gemFragments: 0
   alive: 0
   damage: 0
