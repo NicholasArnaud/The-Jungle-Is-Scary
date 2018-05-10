@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 427dcb7596a597549905bb32fa02255c
+timeCreated: 1525984678
+licenseType: Pro
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - OnAnimationAttackStart: {fileID: 11400000, guid: 7ff8b1f6b2f4ec34aa3b0046a4adaeea,
+      type: 2}
+  - OnAnimationAttackEnd: {fileID: 11400000, guid: e993ad14ce34fc54a9fa7ed0d522652f,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

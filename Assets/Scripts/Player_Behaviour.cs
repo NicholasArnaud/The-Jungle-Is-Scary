@@ -23,6 +23,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         checkpoint = startPos;
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -60,7 +61,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
 
     public void Knockback()
     {
-        transform.position = transform.position + Vector3.right * 50 * Time.deltaTime;
+        transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
     }
 
     public void OnPlayerDied()
