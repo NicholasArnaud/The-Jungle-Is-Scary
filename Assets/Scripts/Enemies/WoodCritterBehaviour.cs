@@ -48,7 +48,9 @@ public class WoodCritterBehaviour : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        OnWoodCritterEndAttack();
+        Data = Instantiate<EnemyDataScriptable>(Data);
+        GetComponent<DataUpdater>().Data = Data;
+        hitBoxes.ForEach(hb=>hb.enabled = false);
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
@@ -59,6 +61,11 @@ public class WoodCritterBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Data.Health < 1)
+        {
+            ChangeState(MovementState.DEAD);
+        }
+            
         //must have checks per frame
         Data.Alive = (Data.Health > 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
@@ -215,8 +222,7 @@ public class WoodCritterBehaviour : MonoBehaviour
         if (Data.Alive)
             return;
         _nav.enabled = false;
-        _animatorController.SetBool("Alive", false);
-        Destroy(gameObject, DeathTimer);
+        _animatorController.SetBool("Alive", false); 
     }
 
     public MovementState CurrentState

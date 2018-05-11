@@ -55,13 +55,17 @@ public class BuffFlowerBehaviour : MonoBehaviour
     public void OnSunnyStartAttack()
     {
 
+        if (Data.Health < 1)
+            return;
         _nav.SetDestination(transform.position);
         _animatorController.applyRootMotion = false;
         hitBoxes.ForEach(hb => hb.enabled = true);
     }
     public void OnSunnyEndAttack()
     {
-        _nav.SetDestination(Data.PlayerGameObject.transform.position);
+        if (Data.Health < 1)
+            return;
+            _nav.SetDestination(Data.PlayerGameObject.transform.position);
 
         _animatorController.applyRootMotion = true;
         hitBoxes.ForEach(hb => hb.enabled = false);
@@ -211,7 +215,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.ATTACKING);
             return;
         }
-        
+
         _nav.SetDestination(Data.PlayerGameObject.transform.position);
     }
 
@@ -233,8 +237,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             return;
         _nav.enabled = false;
         _animatorController.SetBool("Alive", false);
-
-        Destroy(gameObject, DeathTimer);
+         
     }
 
 
@@ -297,7 +300,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     {
         AOEAttack.enabled = true;
         _nav.speed = 0;
-        AOEparticles.ForEach(x=>x.Play());
+        AOEparticles.ForEach(x => x.Play());
         StartCoroutine(AOELastingEffect());
     }
 

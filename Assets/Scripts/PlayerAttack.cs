@@ -23,13 +23,15 @@ public class PlayerAttack : MonoBehaviour
     public float heavyTimer;
     public bool lightReady;
     public bool heavyReady;
+    public float cooldownLight = 1;
+    public float cooldownHeavy = 3;
 
     // Update is called once per frame
     void Update()
     {
         if (lightReady)
         {
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetButtonDown("Fire2"))
             {
                 anim.SetTrigger("Light Attack");
                 lightReady = false;
@@ -41,7 +43,7 @@ public class PlayerAttack : MonoBehaviour
             lightTimer += Time.deltaTime;
         }
 
-        if (lightTimer >= 1)
+        if (lightTimer >= cooldownLight)
         {        
             lightReady = true;
             lightTimer = 0;
@@ -50,7 +52,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (heavyReady)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetButtonDown("Fire1"))
             {
                 anim.SetTrigger("Heavy Attack");
                 heavyReady = false;
@@ -62,7 +64,7 @@ public class PlayerAttack : MonoBehaviour
             heavyTimer += Time.deltaTime;
         }
 
-        if (heavyTimer >= 3)
+        if (heavyTimer >= cooldownHeavy)
         {
             heavyTimer = 0;
             heavyReady = true;
