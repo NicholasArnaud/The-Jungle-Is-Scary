@@ -14,7 +14,7 @@ MonoBehaviour:
   PlayerGameObject: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909,
     type: 2}
   FoundPlayer: 0
-  Health: 4
+  Health: 14
   Alive: 1
   DetectionRadius: 30
   AttackRadius: 2
