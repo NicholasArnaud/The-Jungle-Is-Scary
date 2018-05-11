@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.12107873, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ec52b3ef2cf284694dbc006604768f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartUpSceneName: 1.UserInterface
+  StartUpSceneName: 13.MainMenuScene
   LoadingSceneName: 7.LoadingScene
   InGameSceneName: 5.NavmeshGreyBox
   Gamecontext: {fileID: 11400000, guid: c3652b6a146c27f40a4edf6c0024fe5b, type: 2}
