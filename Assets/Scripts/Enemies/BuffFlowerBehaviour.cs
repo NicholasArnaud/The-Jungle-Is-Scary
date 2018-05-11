@@ -24,7 +24,8 @@ public class BuffFlowerBehaviour : MonoBehaviour
     //Specific values to Buff Flower
     public float RiseTime;
     public TimerObject ParticleTimer;
-    //private int _playerAttackStateHash = Animator.StringToHash("Base Layer.Ground Pound");
+    public float walkSpeed;
+    public float runSpeed;
     private const float DeathTimer = 4;
     private float _risingTimer;
     private float _distanceBetween;
@@ -48,6 +49,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     private void Update()
     {
+        VariableNavSpeedOnAnimation();
         //must have checks per frame
         Data.Alive = (Data.Health > 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
@@ -129,6 +131,8 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.AGGRESSIVE);
             return;
         }
+
+        _nav.speed = 0;
         _nav.SetDestination(transform.position);
     }
 
@@ -151,7 +155,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.PASSIVE);
             return;
         }
-        _nav.speed = 1.5f;
+        _nav.speed = walkSpeed;
         _nav.SetDestination(Data.PlayerGameObject.transform.position);
     }
 
@@ -176,7 +180,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             return;
         }
 
-        _nav.speed = 4.0f;
+        _nav.speed = runSpeed;
         _nav.SetDestination(Data.PlayerGameObject.transform.position);
     }
 
@@ -233,5 +237,27 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ParticleTimer.Execute(this, system.Stop);
         }
         
+    }
+
+    public void VariableNavSpeedOnAnimation()
+    {
+        if (CurrentState.Equals(MovementState.ATTACKING))
+        {
+            _nav.speed = 0.1f;
+        }
+        if (CurrentState.Equals(MovementState.CHASING))
+        {
+            _nav.speed = runSpeed;
+        }
+
+        if (CurrentState.Equals(MovementState.AGGRESSIVE))
+        {
+            _nav.speed = walkSpeed;
+        }
+
+        if (CurrentState.Equals(MovementState.PASSIVE))
+        {
+            _nav.speed = 0;
+        }
     }
 }
