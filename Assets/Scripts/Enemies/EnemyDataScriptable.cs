@@ -1,10 +1,8 @@
-﻿using UnityEditor.Animations;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemyData",menuName = "Data")]
+[CreateAssetMenu(fileName = "EnemyData",menuName = "EnemyData")]
 public class EnemyDataScriptable : ScriptableObject
 {
-    [HideInInspector]
     public GameObject PlayerGameObject;
     public bool FoundPlayer;
     public int Health;

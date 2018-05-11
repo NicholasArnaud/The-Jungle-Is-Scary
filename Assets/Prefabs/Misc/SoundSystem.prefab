@@ -161,4 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ac0ea232ba6274eb98f7dae1967f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicSlider: {fileID: 0}
+  canvas: {fileID: 223856059434971468, guid: 1d71e1347f897d641a10d50aae9c5767, type: 2}
+  SavedVolume: {fileID: 11400000, guid: 56847ece8b6689d408c2e43719373549, type: 2}
+  MainAudioSource: {fileID: 82206625275728534}
