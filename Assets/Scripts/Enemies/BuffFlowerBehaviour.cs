@@ -49,6 +49,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     private void Update()
     {
+        VariableNavSpeedOnAnimation();
         //must have checks per frame
         Data.Alive = (Data.Health > 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
@@ -236,5 +237,27 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ParticleTimer.Execute(this, system.Stop);
         }
         
+    }
+
+    public void VariableNavSpeedOnAnimation()
+    {
+        if (CurrentState.Equals(MovementState.ATTACKING))
+        {
+            _nav.speed = 0.1f;
+        }
+        if (CurrentState.Equals(MovementState.CHASING))
+        {
+            _nav.speed = runSpeed;
+        }
+
+        if (CurrentState.Equals(MovementState.AGGRESSIVE))
+        {
+            _nav.speed = walkSpeed;
+        }
+
+        if (CurrentState.Equals(MovementState.PASSIVE))
+        {
+            _nav.speed = 0;
+        }
     }
 }
