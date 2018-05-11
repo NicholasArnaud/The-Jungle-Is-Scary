@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -18,10 +19,36 @@ public class WoodCritterBehaviour : MonoBehaviour
     public float _distanceBetween;
     private Animator _animatorController;
     private NavMeshAgent _nav;
+    public List<BoxCollider> hitBoxes;
 
+    public void OnWoodCritterStartAttack()
+    {
+        hitBoxes.ForEach(hb => hb.enabled = true);
+    }
+
+    public void WoodCritterAttack(string value)
+    {
+        switch (value)
+        {
+            case "start":
+                OnWoodCritterStartAttack();
+                break;
+            case "end":
+                OnWoodCritterEndAttack();
+                break;
+            default:
+                Debug.Log("nope");
+                break;
+        }
+    }
+    public void OnWoodCritterEndAttack()
+    {
+        hitBoxes.ForEach(hb => hb.enabled = false);
+    }
     // Use this for initialization
     void Start()
     {
+        OnWoodCritterEndAttack();
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();

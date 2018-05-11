@@ -1845,6 +1845,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 176355422}
   m_Mesh: {fileID: 4300046, guid: 50f091fc61220cc47b973e35677bcad0, type: 3}
+--- !u!1 &204243707 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1145670774017936, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1690675748}
+--- !u!65 &204243710 stripped
+BoxCollider:
+  m_PrefabParentObject: {fileID: 65201250508682056, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1690675748}
+--- !u!54 &204243711
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204243707}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &207335358
 GameObject:
   m_ObjectHideFlags: 0
@@ -4837,6 +4862,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01384365, y: 0.010210566, z: 0.01933515}
   m_Center: {x: -0.00058608106, y: 0.000020004343, z: -0.0011578202}
+--- !u!114 &531236599 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114021230602673346, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1690675748}
+  m_Script: {fileID: 11500000, guid: 63965ea2d0171b74395d80feaf633adc, type: 3}
+--- !u!4 &531236603 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4397091365608368, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1690675748}
 --- !u!1 &534933740
 GameObject:
   m_ObjectHideFlags: 0
@@ -5162,6 +5198,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.007999546, y: 0.03139053, z: 0.00835504}
   m_Center: {x: 0, y: 0.00000011920929, z: 0}
+--- !u!1 &603578305 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1021065588541184, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1690675748}
+--- !u!65 &603578308 stripped
+BoxCollider:
+  m_PrefabParentObject: {fileID: 65177659475044564, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1690675748}
+--- !u!54 &603578309
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 603578305}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &615030820
 GameObject:
   m_ObjectHideFlags: 0
@@ -10596,6 +10657,92 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 7e08bf16cd3440c438997396c5fd70c2, type: 3}
   m_PrefabInternal: {fileID: 1224473727}
+--- !u!1 &1227687248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1227687249}
+  - component: {fileID: 1227687251}
+  - component: {fileID: 1227687250}
+  m_Layer: 0
+  m_Name: '[Listener]ATTACKDISABLECOLLIDERS'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1227687249
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1227687248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 531236603}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1227687250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1227687248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 2a16de4f4ea82f04db62b1dfdf8bb5d4, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 531236599}
+        m_MethodName: OnWoodCritterEndAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1227687251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1227687248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f237a21c35dc71543b96fcd219dedd79, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 531236599}
+        m_MethodName: OnWoodCritterStartAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1236860149
 GameObject:
   m_ObjectHideFlags: 0
@@ -14430,6 +14577,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114021230602673346, guid: e8959b4d4bd6dae49aea5230400f923e,
+        type: 2}
+      propertyPath: hitBoxes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4397091365608368, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 56.263397
@@ -14462,7 +14614,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 65201250508682056, guid: e8959b4d4bd6dae49aea5230400f923e,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65177659475044564, guid: e8959b4d4bd6dae49aea5230400f923e,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021230602673346, guid: e8959b4d4bd6dae49aea5230400f923e,
+        type: 2}
+      propertyPath: hitBoxes.Array.data[0]
+      value: 
+      objectReference: {fileID: 204243710}
+    - target: {fileID: 114021230602673346, guid: e8959b4d4bd6dae49aea5230400f923e,
+        type: 2}
+      propertyPath: hitBoxes.Array.data[1]
+      value: 
+      objectReference: {fileID: 603578308}
+    m_RemovedComponents:
+    - {fileID: 114301403148178204, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1694888736
