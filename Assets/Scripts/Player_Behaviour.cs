@@ -11,7 +11,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public Player_Data Data;
     public GameEvent giveHealth;
     public GameEvent playerDied;
-   
+    public Animation anim;
     private Transform startPos;
     public Transform checkpoint;
     public float immunityTimer = 1;
@@ -62,6 +62,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
 
     public void Knockback()
     {
+        anim.Play();
         transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
     }
 

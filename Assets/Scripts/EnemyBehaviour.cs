@@ -6,7 +6,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     public GameEventArgs m_OnPlayerDamaged;
 
-    public void OnCollisionEnter(Collision other)
+    public void OnTriggerEnter(Collider other)
     {
         m_OnPlayerDamaged.Raise(this, other.gameObject);
     }
