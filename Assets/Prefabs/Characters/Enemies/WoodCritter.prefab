@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4672285199669110}
   - component: {fileID: 65177659475044564}
   - component: {fileID: 114945282442830368}
+  - component: {fileID: 54614064927754632}
   m_Layer: 0
   m_Name: r_Arm_WristSHJnt
   m_TagString: Untagged
@@ -237,6 +238,7 @@ GameObject:
   - component: {fileID: 4345182743796812}
   - component: {fileID: 65201250508682056}
   - component: {fileID: 114050191065409298}
+  - component: {fileID: 54321040223646048}
   m_Layer: 0
   m_Name: l_Arm_WristSHJnt
   m_TagString: Untagged
@@ -775,6 +777,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1614580289188062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4877321561893900}
+  - component: {fileID: 114857851886301982}
+  - component: {fileID: 114763955028578074}
+  m_Layer: 0
+  m_Name: '[Listener]ATTACKDISABLECOLLIDERS'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1625774115036914
 GameObject:
   m_ObjectHideFlags: 1
@@ -849,7 +868,6 @@ GameObject:
   - component: {fileID: 114021230602673346}
   - component: {fileID: 114684540536389800}
   - component: {fileID: 114806491326226490}
-  - component: {fileID: 114301403148178204}
   - component: {fileID: 54981066954331378}
   - component: {fileID: 114600858683017988}
   m_Layer: 0
@@ -1598,6 +1616,7 @@ Transform:
   m_Children:
   - {fileID: 4868136668118156}
   - {fileID: 4265930895128660}
+  - {fileID: 4877321561893900}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2162,6 +2181,19 @@ Transform:
   m_Father: {fileID: 4265930895128660}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 33.793003}
+--- !u!4 &4877321561893900
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614580289188062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4397091365608368}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4887796307146484
 Transform:
   m_ObjectHideFlags: 1
@@ -2272,6 +2304,36 @@ Transform:
   m_Father: {fileID: 4265930895128660}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54321040223646048
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145670774017936}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54614064927754632
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021065588541184}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!54 &54981066954331378
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -2294,7 +2356,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021065588541184}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.44678038, y: 0.09187292, z: 0.18173027}
@@ -2306,7 +2368,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1145670774017936}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.4474969, y: 0.08325994, z: 0.20242319}
@@ -2358,24 +2420,15 @@ MonoBehaviour:
   runSpeed: 4
   Data: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
   _distanceBetween: 0
+  hitBoxes:
+  - {fileID: 65201250508682056}
+  - {fileID: 65177659475044564}
 --- !u!114 &114050191065409298
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1145670774017936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OnPlayerDamaged: {fileID: 11400000, guid: ae447ff4f5d88d74db60cf8d9f6e39c7, type: 2}
---- !u!114 &114301403148178204
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1646721176092056}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
@@ -2451,6 +2504,34 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114763955028578074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614580289188062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 2a16de4f4ea82f04db62b1dfdf8bb5d4, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114021230602673346}
+        m_MethodName: OnWoodCritterEndAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114806491326226490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2463,6 +2544,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
+--- !u!114 &114857851886301982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614580289188062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f237a21c35dc71543b96fcd219dedd79, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114021230602673346}
+        m_MethodName: OnWoodCritterStartAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114945282442830368
 MonoBehaviour:
   m_ObjectHideFlags: 1
