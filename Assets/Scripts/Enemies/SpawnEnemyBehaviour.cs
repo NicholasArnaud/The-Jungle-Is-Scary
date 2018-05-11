@@ -24,7 +24,6 @@ public class SpawnEnemyBehaviour : MonoBehaviour
     void Start()
     {
         FindPlayer();
-        if (EnemyData != null) Enemy.GetComponent<AICharacterControl>().SetTarget(_playerGameObject.transform);
         _enemyList = new List<GameObject>();
     }
 
@@ -42,7 +41,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
         _spawnCooldown += Time.deltaTime;
         if (!(_spawnCooldown >= CooldownTime) || _enemiesSpawned >= MaxEnemies) return;
         _spawnCooldown = 0;
-        var spawnedEnemy = Instantiate(Enemy, SpawnPoint);
+        var spawnedEnemy = Instantiate(Enemy, SpawnPoint, false);
         spawnedEnemy.GetComponent<DataUpdater>().Data = Instantiate(EnemyData);
         spawnedEnemy.GetComponent<DataUpdater>().Data.PlayerGameObject = _playerGameObject;
         _enemyList.Add(spawnedEnemy);
