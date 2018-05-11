@@ -563,6 +563,7 @@ GameObject:
   - component: {fileID: 195069430395871220}
   - component: {fileID: 114604895052264514}
   - component: {fileID: 114291445510350786}
+  - component: {fileID: 136101817448737696}
   m_Layer: 0
   m_Name: Sunny
   m_TagString: Enemy
@@ -1767,9 +1768,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273342543379802}
-  m_LocalRotation: {x: -0, y: -0.9635442, z: -0, w: -0.26754954}
-  m_LocalPosition: {x: 81.52675, y: -1.3905325, z: -39.23958}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4862616065809814}
   - {fileID: 4551500934317552}
@@ -1778,7 +1779,7 @@ Transform:
   - {fileID: 4009752796495504}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4453414899032194
 Transform:
   m_ObjectHideFlags: 1
@@ -2642,6 +2643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: e2ad0e9c10274184686f951d2ce4fe38, type: 2}
+  anim: {fileID: 0}
 --- !u!114 &114423346945479298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2665,8 +2667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 3e3ccd2a938f72d4c8d2fdb9872de9c5, type: 2}
-  Sender: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
+  Event: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
+  Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -2770,6 +2772,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136101817448737696
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273342543379802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.56
+  m_Height: 3.16
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.86, z: 0}
 --- !u!137 &137233310571315004
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection;
     private CharacterController controller;
     public Vector3 targetDir;
-
+    
+    public bool ATTACKING { get; set; }
+    
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -35,7 +37,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
+        if (ATTACKING)
+            return;
         if (controller.isGrounded)
         {
 
