@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Player_Behaviour : MonoBehaviour, IDamageable
@@ -43,7 +44,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
 
         if (Data.lifeGems <= 0)
         {
-            transform.position = startPos.position;
+            SceneManager.LoadScene("13.MainMenuScene");
             Data.lifeGems = 3;
         }
     }
