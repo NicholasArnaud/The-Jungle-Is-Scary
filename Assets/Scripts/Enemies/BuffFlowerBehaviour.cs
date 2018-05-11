@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -24,14 +25,18 @@ public class BuffFlowerBehaviour : MonoBehaviour
     //Specific values to Buff Flower
     public float RiseTime;
     public TimerObject ParticleTimer;
-    //private int _playerAttackStateHash = Animator.StringToHash("Base Layer.Ground Pound");
+    public float walkSpeed;
+    public float runSpeed;
+    public List<ParticleSystem> AOEparticles;
+    public List<BoxCollider> hitBoxes;
+    public SphereCollider AOEAttack;
     private const float DeathTimer = 4;
     private float _risingTimer;
     private float _distanceBetween;
     private bool _inGround = true;
     private bool _activated;
 
-    
+
     private Animator _animatorController;
     private NavMeshAgent _nav;
     [SerializeField]
@@ -46,6 +51,36 @@ public class BuffFlowerBehaviour : MonoBehaviour
         CurrentState = MovementState.NONE;
     }
 
+
+    public void OnSunnyStartAttack()
+    {
+
+        _nav.SetDestination(transform.position);
+        _animatorController.applyRootMotion = false;
+        hitBoxes.ForEach(hb => hb.enabled = true);
+    }
+    public void OnSunnyEndAttack()
+    {
+        _nav.SetDestination(Data.PlayerGameObject.transform.position);
+
+        _animatorController.applyRootMotion = true;
+        hitBoxes.ForEach(hb => hb.enabled = false);
+    }
+    public void SunnyAttack(string value)
+    {
+        switch (value)
+        {
+            case "start":
+                OnSunnyStartAttack();
+                break;
+            case "end":
+                OnSunnyEndAttack();
+                break;
+            default:
+                Debug.Log("nope");
+                break;
+        }
+    }
     private void Update()
     {
         //must have checks per frame
@@ -129,6 +164,8 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.AGGRESSIVE);
             return;
         }
+
+        _nav.speed = 0;
         _nav.SetDestination(transform.position);
     }
 
@@ -151,7 +188,6 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.PASSIVE);
             return;
         }
-        _nav.speed = 1.5f;
         _nav.SetDestination(Data.PlayerGameObject.transform.position);
     }
 
@@ -175,8 +211,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.ATTACKING);
             return;
         }
-
-        _nav.speed = 4.0f;
+        
         _nav.SetDestination(Data.PlayerGameObject.transform.position);
     }
 
@@ -187,7 +222,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.DEAD);
             return;
         }
-        
+
         if (_distanceBetween < Data.AttackRadius) return;
         ChangeState(MovementState.CHASING);
     }
@@ -232,6 +267,45 @@ public class BuffFlowerBehaviour : MonoBehaviour
             system.Play();
             ParticleTimer.Execute(this, system.Stop);
         }
-        
+
+    }
+
+    public void VariableNavSpeedOnAnimation(float value)
+    {
+        _nav.speed = value;
+    }
+
+    public void SetNavSpeedWhenNotAttacking()
+    {
+        if (CurrentState.Equals(MovementState.CHASING))
+        {
+            _nav.speed = runSpeed;
+        }
+
+        if (CurrentState.Equals(MovementState.AGGRESSIVE))
+        {
+            _nav.speed = walkSpeed;
+        }
+
+        if (CurrentState.Equals(MovementState.PASSIVE))
+        {
+            _nav.speed = 0;
+        }
+    }
+
+    public void AOEAttackEffect()
+    {
+        AOEAttack.enabled = true;
+        _nav.speed = 0;
+        AOEparticles.ForEach(x=>x.Play());
+        StartCoroutine(AOELastingEffect());
+    }
+
+    public IEnumerator AOELastingEffect()
+    {
+        _nav.speed = 0;
+        yield return new WaitForSeconds(1);
+        AOEAttack.enabled = false;
+        SetNavSpeedWhenNotAttacking();
     }
 }

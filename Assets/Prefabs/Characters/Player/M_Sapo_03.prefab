@@ -5314,10 +5314,9 @@ Animation:
   m_GameObject: {fileID: 1448436701386198}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: a8d5d191fd64db949963c8486fc1f2c4, type: 3}
   m_Animations:
-  - {fileID: 7400000, guid: e6a91abb8c8b28944836a6d03351be37, type: 3}
-  - {fileID: 7400000, guid: e6a91abb8c8b28944836a6d03351be37, type: 3}
+  - {fileID: 7400000, guid: a8d5d191fd64db949963c8486fc1f2c4, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -5419,7 +5418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114288901714130042
@@ -5460,6 +5459,7 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
   giveHealth: {fileID: 11400000, guid: df2960321231daa498fb3bcf3f72b286, type: 2}
   playerDied: {fileID: 11400000, guid: c1642e0d3af0e7c4ba9e87c8a1669122, type: 2}
+  anim: {fileID: 111637644241562222}
   checkpoint: {fileID: 0}
   immunityTimer: 0
   canTakeDamage: 1
@@ -5474,7 +5474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114362740653971360
@@ -5488,7 +5488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114461885605980020
@@ -5502,7 +5502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114528885131429830
@@ -5517,7 +5517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: ae447ff4f5d88d74db60cf8d9f6e39c7, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 65464316190593746}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -5545,7 +5545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114572478073130346
@@ -5608,7 +5608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114618520110274404
@@ -5633,7 +5633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114688976948666254
@@ -5675,7 +5675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114754093056899370
@@ -5717,7 +5717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114783810761365904
@@ -5731,7 +5731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114903184736569936
@@ -5785,7 +5785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!114 &114986638922389250
@@ -5799,7 +5799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e64d2908b2334cb70dcb1e053daf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnEnemyDamaged: {fileID: 0}
+  m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
 --- !u!135 &135003754258395428
