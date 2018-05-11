@@ -1,5 +1,4 @@
-﻿using UnityEditor.Graphs;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WeaponBehaviour : MonoBehaviour
 {
