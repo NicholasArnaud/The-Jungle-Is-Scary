@@ -59,8 +59,10 @@ public class SpawnEnemyBehaviour : MonoBehaviour
     public void onEnemyDied(Object[] args)
     {
         var sender = args[0] as GameObject;
-        if (_enemyList.Contains(sender))
-            numdeaths++;
+        if (!_enemyList.Contains(sender))
+            return;
+
+        numdeaths++;
 
         deathstillrestart = numdeaths - _enemyList.Count;
         if (deathstillrestart <= 0)
