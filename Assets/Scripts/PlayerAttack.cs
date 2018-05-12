@@ -26,6 +26,10 @@ public class PlayerAttack : MonoBehaviour
     public float cooldownLight = 1;
     public float cooldownHeavy = 3;
 
+    void Start()
+    {
+        OnAnimationSwingEnd();
+    }
     // Update is called once per frame
     void Update()
     {

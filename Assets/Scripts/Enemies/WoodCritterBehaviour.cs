@@ -6,6 +6,13 @@ using UnityEngine.AI;
 
 public class WoodCritterBehaviour : MonoBehaviour
 {
+    public GameEventArgs ENEMY_DIED
+    {
+        get
+        {
+            return Resources.Load<GameEventArgs>("ENEMYDIED"); 
+        }
+    }
     [SerializeField]
     private MovementState _currentState = MovementState.NONE;
 
@@ -50,7 +57,7 @@ public class WoodCritterBehaviour : MonoBehaviour
     {
         Data = Instantiate<EnemyDataScriptable>(Data);
         GetComponent<DataUpdater>().Data = Data;
-        hitBoxes.ForEach(hb=>hb.enabled = false);
+        hitBoxes.ForEach(hb => hb.enabled = false);
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
@@ -65,7 +72,7 @@ public class WoodCritterBehaviour : MonoBehaviour
         {
             ChangeState(MovementState.DEAD);
         }
-            
+
         //must have checks per frame
         Data.Alive = (Data.Health > 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
@@ -79,7 +86,7 @@ public class WoodCritterBehaviour : MonoBehaviour
             _animatorController.SetBool("Chase", true);
             _animatorController.SetTrigger("Attack");
         }
-            
+
         else if (_distanceBetween <= DistToChase)
         {
             _animatorController.SetBool("Idle", true);
@@ -92,14 +99,14 @@ public class WoodCritterBehaviour : MonoBehaviour
             _animatorController.SetBool("Idle", true);
             _animatorController.SetBool("Walk", true);
             _animatorController.SetBool("Chase", false);
-        }   
+        }
         else
         {
             _animatorController.SetBool("Idle", true);
             _animatorController.SetBool("Walk", false);
             _animatorController.SetBool("Chase", false);
         }
-            
+
 
         switch (_currentState)
         {
@@ -178,7 +185,7 @@ public class WoodCritterBehaviour : MonoBehaviour
         _nav.speed = walkSpeed;
         _nav.SetDestination(Data.PlayerGameObject.transform.position);
     }
-    
+
     private void ChaseStateHandler()
     {
         if (!Data.Alive)
@@ -217,12 +224,19 @@ public class WoodCritterBehaviour : MonoBehaviour
         ChangeState(MovementState.CHASING);
     }
 
+    private bool oneshot = false;
     private void DeathStateHandler()
     {
         if (Data.Alive)
             return;
         _nav.enabled = false;
-        _animatorController.SetBool("Alive", false); 
+        _animatorController.SetBool("Alive", false);
+        if (!oneshot)
+        {
+            ENEMY_DIED.Raise(gameObject);
+            oneshot = true;
+        }
+            
     }
 
     public MovementState CurrentState
