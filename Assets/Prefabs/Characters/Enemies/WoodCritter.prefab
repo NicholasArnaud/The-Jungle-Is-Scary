@@ -868,7 +868,6 @@ GameObject:
   - component: {fileID: 114684540536389800}
   - component: {fileID: 114806491326226490}
   - component: {fileID: 54981066954331378}
-  - component: {fileID: 136928135332051258}
   - component: {fileID: 65492647997841396}
   m_Layer: 0
   m_Name: WoodCritter
@@ -1206,6 +1205,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4265930895128660}
+  - component: {fileID: 136779921281052792}
   m_Layer: 0
   m_Name: WoodCritter_Group
   m_TagString: Untagged
@@ -2556,19 +2556,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OnPlayerDamaged: {fileID: 11400000, guid: ae447ff4f5d88d74db60cf8d9f6e39c7, type: 2}
---- !u!136 &136928135332051258
+--- !u!136 &136779921281052792
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1646721176092056}
+  m_GameObject: {fileID: 1989172371061900}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.19974136
-  m_Height: 1.5011607
+  m_Radius: 0.22261128
+  m_Height: 1.6062322
   m_Direction: 1
-  m_Center: {x: 0.0036315918, y: 0.8023241, z: 0}
+  m_Center: {x: 0.0013771653, y: 0.7785795, z: 0.04442662}
 --- !u!137 &137053767970827174
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

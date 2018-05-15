@@ -84,12 +84,19 @@ MonoBehaviour:
   Enemy: {fileID: 1646721176092056, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
   EnemyData: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
   EnemiesDead: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
+  ENEMIESDEADARGS: {fileID: 0}
   StartSpawnDist: 15
   SpawningEnabled: 0
   SpawnPoint: {fileID: 4040968643075282}
   MaxEnemies: 5
-  CooldownTime: 1
+  CooldownTime: 3
+  deathstillrestart: 0
   numdeaths: 0
+  WaitResponse:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114287168181054796
 MonoBehaviour:
   m_ObjectHideFlags: 1
