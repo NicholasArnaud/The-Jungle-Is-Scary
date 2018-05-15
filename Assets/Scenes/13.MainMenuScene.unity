@@ -4448,7 +4448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
-  anim: {fileID: 0}
+  anim: {fileID: 722747585}
 --- !u!114 &722747581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12085,6 +12085,10 @@ Prefab:
     - target: {fileID: 4560782485863810, guid: 31cd7912c7ec9b2439f28ce7b74aec74, type: 2}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155854392354474, guid: 31cd7912c7ec9b2439f28ce7b74aec74, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31cd7912c7ec9b2439f28ce7b74aec74, type: 2}
