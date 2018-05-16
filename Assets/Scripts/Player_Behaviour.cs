@@ -62,7 +62,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
 
     public void Knockback()
     {
-        anim.Play();
+        anim.Play("DamageGround");
         transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
     }
 
