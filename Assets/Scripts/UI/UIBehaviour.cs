@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
+using UnityEngine.SceneManagement;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -22,12 +23,18 @@ public class UIBehaviour : MonoBehaviour
     public Text FullGemValue;
     public Sprite FullHeart;
     public Sprite EmptyHeart;
+    public FloatVariable SavedMusicVolume;
     private int _curHealth;
     private GameObject _prevPanelObject;
     private GameObject _activePanelObject;
     private List<GameObject> _panels;
 
     #endregion
+    void Awake()
+    {
+        MusicVolumeSlider.value = SavedMusicVolume.Value * 100;
+        MusicValue.text = MusicVolumeSlider.value.ToString();
+    }
 
     void Start()
     {
@@ -39,21 +46,30 @@ public class UIBehaviour : MonoBehaviour
         GemFragValue.text = PlayerData.gemFragments.ToString();
         FullGemValue.text = PlayerData.lifeGems.ToString();
     }
-
     void Update()
     {
         CheckForActivePanel();
+        
+            
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
-            if (HudPanelObject.activeSelf)
+            if (OptionsPanelObject.activeSelf)
+            {
+                OptionsPanelObject.SetActive(false);
+                HudPanelObject.SetActive(true);
+            }
+
+            else if (HudPanelObject.activeSelf)
             {
                 HudPanelObject.SetActive(false);
                 PausePanelObject.SetActive(true);
+                Time.timeScale = 0;
             }
             else if (PausePanelObject.activeSelf)
             {
                 PausePanelObject.SetActive(false);
                 HudPanelObject.SetActive(true);
+                Time.timeScale = 1;
             }
         }
     }
@@ -62,8 +78,8 @@ public class UIBehaviour : MonoBehaviour
     public void MusicVolumeUpdate()
     {
         MusicValue.text = MusicVolumeSlider.value.ToString();
+        SavedMusicVolume.Value = MusicVolumeSlider.value * 1 / 100;
     }
-
     public void SfxVolumeUpdate()
     {
         SfxValue.text = SfxVolumeSlider.value.ToString();
@@ -73,6 +89,7 @@ public class UIBehaviour : MonoBehaviour
     public void PlayButtonTrigger()
     {
         CheckForActivePanel();
+        Time.timeScale = 1;
         _activePanelObject.SetActive(false);
         _prevPanelObject = _activePanelObject;
         HudPanelObject.SetActive(true);
@@ -97,6 +114,7 @@ public class UIBehaviour : MonoBehaviour
     public void ResumeButtonTrigger()
     {
         CheckForActivePanel();
+        Time.timeScale = 1;
         _activePanelObject.SetActive(false);
         _prevPanelObject = _activePanelObject;
         HudPanelObject.SetActive(true);
@@ -105,6 +123,7 @@ public class UIBehaviour : MonoBehaviour
     public void QuitButtonTrigger()
     {
         CheckForActivePanel();
+        Time.timeScale = 1;
         if (_activePanelObject == PausePanelObject)
         {
             _activePanelObject.SetActive(false);
@@ -134,6 +153,16 @@ public class UIBehaviour : MonoBehaviour
             _curHealth--;
             HealthBar[_curHealth].GetComponent<Image>().sprite = EmptyHeart;
         }
+
+        if (int.Parse(FullGemValue.text) <= 0 || _curHealth > 0) return;
+        foreach (var o in HealthBar)
+        {
+            o.GetComponent<Image>().sprite = FullHeart;
+        }
+
+        var decrementFullGem = int.Parse(FullGemValue.text) - 1;
+        FullGemValue.text = decrementFullGem.ToString();
+        _curHealth = 4;
     }
 
     public void HealedHealthTrigger()
