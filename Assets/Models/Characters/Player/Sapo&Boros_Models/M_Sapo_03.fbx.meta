@@ -430,12 +430,32 @@ ModelImporter:
     13700062: Sapo_Headpiece
     13700064: Sapo_MainBody
     13700066: Sapo_Shirt
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BorosTesting2_lambert8SG1
+    second: {fileID: 2100000, guid: 878930e044242c6429e9fed4b8ca17ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boros_HipVersion
+    second: {fileID: 2100000, guid: 3a28b232a92cea04fa4a6856faaf19bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye_Lid1
+    second: {fileID: 2100000, guid: 57ad170d8be13e04e9d2833ea934678f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sapo_Texture
+    second: {fileID: 2100000, guid: 2d0d409953f6aed4ea98fbf4570497db, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -482,7 +502,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 0

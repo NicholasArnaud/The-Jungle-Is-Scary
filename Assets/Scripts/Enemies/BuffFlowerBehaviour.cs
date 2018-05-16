@@ -21,7 +21,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
 {
     //General enemy variables located within scriptable
     public EnemyDataScriptable Data;
-
+     
     //Specific values to Buff Flower
     public float RiseTime;
     public TimerObject ParticleTimer;
@@ -35,7 +35,13 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private float _distanceBetween;
     private bool _inGround = true;
     private bool _activated;
-
+    public GameEventArgs ENEMY_DIED
+    {
+        get
+        {
+            return Resources.Load<GameEventArgs>("ENEMYDIED");
+        }
+    }
 
     private Animator _animatorController;
     private NavMeshAgent _nav;
@@ -45,6 +51,8 @@ public class BuffFlowerBehaviour : MonoBehaviour
 
     private void Start()
     {
+        Data = Instantiate(Data);
+        GetComponent<DataUpdater>().Data = Data;
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
@@ -55,13 +63,17 @@ public class BuffFlowerBehaviour : MonoBehaviour
     public void OnSunnyStartAttack()
     {
 
+        if (Data.Health < 1)
+            return;
         _nav.SetDestination(transform.position);
         _animatorController.applyRootMotion = false;
         hitBoxes.ForEach(hb => hb.enabled = true);
     }
     public void OnSunnyEndAttack()
     {
-        _nav.SetDestination(Data.PlayerGameObject.transform.position);
+        if (Data.Health < 1)
+            return;
+            _nav.SetDestination(Data.PlayerGameObject.transform.position);
 
         _animatorController.applyRootMotion = true;
         hitBoxes.ForEach(hb => hb.enabled = false);
@@ -83,6 +95,10 @@ public class BuffFlowerBehaviour : MonoBehaviour
     }
     private void Update()
     {
+        if (Data.Health < 1)
+        {
+            ChangeState(MovementState.DEAD);
+        }
         //must have checks per frame
         Data.Alive = (Data.Health > 0);
         Data.FoundPlayer = EnableBehaviour(transform.position, Data.DetectionRadius);
@@ -211,7 +227,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
             ChangeState(MovementState.ATTACKING);
             return;
         }
-        
+
         _nav.SetDestination(Data.PlayerGameObject.transform.position);
     }
 
@@ -227,14 +243,20 @@ public class BuffFlowerBehaviour : MonoBehaviour
         ChangeState(MovementState.CHASING);
     }
 
+    private bool oneshot = true;
     private void DeathStateHandler()
     {
         if (Data.Alive)
             return;
         _nav.enabled = false;
         _animatorController.SetBool("Alive", false);
-
-        Destroy(gameObject, DeathTimer);
+        if (oneshot)
+        {
+            oneshot = false;
+            ENEMY_DIED.Raise(gameObject);
+        }
+        
+         
     }
 
 
@@ -297,7 +319,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     {
         AOEAttack.enabled = true;
         _nav.speed = 0;
-        AOEparticles.ForEach(x=>x.Play());
+        AOEparticles.ForEach(x => x.Play());
         StartCoroutine(AOELastingEffect());
     }
 
