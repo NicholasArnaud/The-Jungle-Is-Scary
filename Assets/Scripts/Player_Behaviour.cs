@@ -64,6 +64,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     {
         anim.Play("DamageGround");
         transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
+        anim.Play("DamageGround");
     }
 
     public void OnPlayerDied()
