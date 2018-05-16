@@ -45,7 +45,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
         _spawnCooldown += Time.deltaTime;
         if (!(_spawnCooldown >= CooldownTime) || _enemiesSpawned >= MaxEnemies) return;
         _spawnCooldown = 0;
-        var spawnedEnemy = Instantiate(Enemy, SpawnPoint.transform.position, Quaternion.identity);
+        var spawnedEnemy = Instantiate(Enemy, SpawnPoint.transform.position,SpawnPoint.transform.rotation);
 
         spawnedEnemy.GetComponent<DataUpdater>().Data = Instantiate(EnemyData);
         spawnedEnemy.GetComponent<DataUpdater>().Data.PlayerGameObject = _playerGameObject;

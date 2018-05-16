@@ -252,7 +252,7 @@ public class WoodCritterBehaviour : MonoBehaviour
         var playerfound = false;
         var hitColliders = Physics.OverlapSphere(center, radius);
         var collidedObjects = hitColliders.ToList();
-        var playercollider = Data.PlayerGameObject.GetComponent<Collider>();
+        var playercollider = Data.PlayerGameObject.GetComponentInChildren<Collider>();
         if (collidedObjects.Contains(playercollider))
             playerfound = true;
         return playerfound;
