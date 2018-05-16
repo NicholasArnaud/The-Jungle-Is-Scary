@@ -5768,6 +5768,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4434614704255468, guid: 4ec06351f5fa6c947966d20d417eb7eb,
     type: 2}
   m_PrefabInternal: {fileID: 656297983}
+--- !u!1 &657171004 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1782174496541364, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1868817228}
+--- !u!65 &657171006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657171004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: -0.3, y: 0, z: 0}
+--- !u!114 &657171007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657171004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4539a24adca8b674c98308f777df2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &689254437
 Prefab:
   m_ObjectHideFlags: 0
@@ -11393,13 +11421,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1367020853}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.2640086, y: 0.7077057, z: -0.33000854, w: 0.56616837}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 102.68, z: 0}
 --- !u!1 &1370566862
 GameObject:
   m_ObjectHideFlags: 0
@@ -12741,6 +12769,11 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: -0.99195254
       objectReference: {fileID: 0}
+    - target: {fileID: 143691804425560310, guid: 8fc89911c9e52e049a47a86a7aab2909,
+        type: 2}
+      propertyPath: m_StepOffset
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
   m_IsPrefabParent: 0
@@ -13452,6 +13485,24 @@ Transform:
   m_PrefabParentObject: {fileID: 4434614704255468, guid: 4ec06351f5fa6c947966d20d417eb7eb,
     type: 2}
   m_PrefabInternal: {fileID: 1610362403}
+--- !u!1 &1610568504 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1372932839218904, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1868817228}
+--- !u!136 &1610568506
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1610568504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.22261128
+  m_Height: 1.6062322
+  m_Direction: 0
+  m_Center: {x: -0.27, y: 0, z: 0}
 --- !u!1001 &1624323913
 Prefab:
   m_ObjectHideFlags: 0
@@ -15352,7 +15403,8 @@ Prefab:
       propertyPath: m_Name
       value: WoodCritter
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 136779921281052792, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1871993457 stripped
