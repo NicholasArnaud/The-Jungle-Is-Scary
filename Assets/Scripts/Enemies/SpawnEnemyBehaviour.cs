@@ -64,7 +64,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
 
         numdeaths++;
 
-        deathstillrestart = numdeaths - _enemyList.Count;
+        deathstillrestart = MaxEnemies - numdeaths;
         if (deathstillrestart <= 0)
         {
             EnemiesDead.Raise();
