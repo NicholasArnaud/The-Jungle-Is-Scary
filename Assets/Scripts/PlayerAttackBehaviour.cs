@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttackBehaviour : MonoBehaviour
 {
     public List<GameObject> ELONGATEDBOROS;
     public List<GameObject> HandleBoros;
@@ -18,6 +18,7 @@ public class PlayerAttack : MonoBehaviour
         ELONGATEDBOROS.ForEach(x => x.SetActive(false));
         HandleBoros.ForEach(x => x.SetActive(true));
     }
+
     public Animator anim;
     public float lightTimer;
     public float heavyTimer;
@@ -30,6 +31,7 @@ public class PlayerAttack : MonoBehaviour
     {
         OnAnimationSwingEnd();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -48,7 +50,7 @@ public class PlayerAttack : MonoBehaviour
         }
 
         if (lightTimer >= cooldownLight)
-        {        
+        {
             lightReady = true;
             lightTimer = 0;
         }
