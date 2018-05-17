@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player_Behaviour : MonoBehaviour, IDamageable
+
+public class Player_Behaviour : MonoBehaviour
 {
+
     public Player_Data Data;
     public GameEvent giveHealth;
     public GameEvent playerDied;
@@ -14,12 +16,17 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public Transform checkpoint;
     public float immunityTimer = 1;
     public bool canTakeDamage;
+
+    // Use this for initialization
     public void Start()
     {
         startPos = new GameObject().transform;
         checkpoint = startPos;
     }
-    void Update()
+
+
+    // Update is called once per frame
+    void ReggieUpdate()
     {
         
         if (canTakeDamage == false)
@@ -28,34 +35,27 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         if (immunityTimer <= 0)      
             canTakeDamage = true;
         
-        if (Data.hp <= 0)
+        if (Data.Hp <= 0)
         {
-            Data.lifeGems -= 1;
-            Data.hp = 4;
+            Data.LifeGems -= 1;
+            Data.Hp = 4;
             playerDied.Raise();
         }
 
-        if (Data.lifeGems <= 0)
+        if (Data.LifeGems <= 0)
         {
             SceneManager.LoadScene("13.MainMenuScene");
-            Data.lifeGems = 3;
+            Data.LifeGems = 3;
         }
     }
-    public void TakeDamage(int d)
-    {
-        if (canTakeDamage)
-        {
-            Data.hp -= d;
-            immunityTimer = 1;
-            canTakeDamage = false;
-            Knockback();
-            anim.Play();
-        }    
-    }
+
+
     public void Knockback()
     {
+        anim.Play();
         transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
     }
+
     public void OnPlayerDied()
     {
         transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z); ;

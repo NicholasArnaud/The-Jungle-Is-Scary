@@ -12,7 +12,7 @@ public class PlayerEventUpdater : MonoBehaviour, IContainer
     {
         Debug.Log("gem added");
         gems.Add(gem);
-        PlayerData.hp += gem.value;
+        PlayerData.Hp += gem.value;
     }
 
     public void RemoveFromInventory(Item gem)
