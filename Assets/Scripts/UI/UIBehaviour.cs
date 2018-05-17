@@ -148,29 +148,24 @@ public class UIBehaviour : MonoBehaviour
     #region UpdatingHealth
     public void DamageHealthTrigger()
     {
-        if (_curHealth > 0)
+        if (PlayerData.hp > 0)
         {
-            _curHealth--;
-            HealthBar[_curHealth].GetComponent<Image>().sprite = EmptyHeart;
+            HealthBar[PlayerData.hp].GetComponent<Image>().sprite = EmptyHeart;
         }
 
-        if (int.Parse(FullGemValue.text) <= 0 || _curHealth > 0) return;
+        if (PlayerData.lifeGems <= 0 || PlayerData.hp > 0) return;
         foreach (var o in HealthBar)
         {
             o.GetComponent<Image>().sprite = FullHeart;
         }
-
-        var decrementFullGem = int.Parse(FullGemValue.text) - 1;
-        FullGemValue.text = decrementFullGem.ToString();
-        _curHealth = 4;
+        FullGemValue.text = (PlayerData.lifeGems -1).ToString();
     }
 
     public void HealedHealthTrigger()
     {
-        if (_curHealth > 0 && _curHealth < HealthBar.Length)
+        if (PlayerData.hp > 0 && PlayerData.hp < HealthBar.Length)
         {
-            _curHealth++;
-            HealthBar[_curHealth - 1].GetComponent<Image>().sprite = FullHeart;
+            HealthBar[PlayerData.hp - 1].GetComponent<Image>().sprite = FullHeart;
         }
     }
     #endregion
