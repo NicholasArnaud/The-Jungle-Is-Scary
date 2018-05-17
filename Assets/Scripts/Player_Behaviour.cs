@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class Player_Behaviour : MonoBehaviour, IDamageable
+public class Player_Behaviour : MonoBehaviour
 {
 
     public Player_Data Data;
@@ -26,7 +26,7 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
 
 
     // Update is called once per frame
-    void Update()
+    void ReggieUpdate()
     {
         
         if (canTakeDamage == false)
@@ -35,30 +35,20 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
         if (immunityTimer <= 0)      
             canTakeDamage = true;
         
-        if (Data.hp <= 0)
+        if (Data.Hp <= 0)
         {
-            Data.lifeGems -= 1;
-            Data.hp = 4;
+            Data.LifeGems -= 1;
+            Data.Hp = 4;
             playerDied.Raise();
         }
 
-        if (Data.lifeGems <= 0)
+        if (Data.LifeGems <= 0)
         {
             SceneManager.LoadScene("13.MainMenuScene");
-            Data.lifeGems = 3;
+            Data.LifeGems = 3;
         }
     }
 
-    public void TakeDamage(int d)
-    {
-        if (canTakeDamage)
-        {
-            Data.hp -= d;
-            immunityTimer = 1;
-            canTakeDamage = false;
-            Knockback();
-        }    
-    }
 
     public void Knockback()
     {

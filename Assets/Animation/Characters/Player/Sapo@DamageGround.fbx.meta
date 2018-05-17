@@ -359,6 +359,74 @@ ModelImporter:
     2100002: Eye_Lid1
     2100004: BorosTesting2_lambert8SG1
     2100006: Boros_HipVersion
+    2300000: Boot_Cuff_L
+    2300002: Boot_Cuff_R
+    2300004: Boros_Body
+    2300006: Boros_FangsBottom
+    2300008: Boros_FangsTop
+    2300010: Boros_HandleGuard1
+    2300012: Boros_HandleGuard2
+    2300014: Boros_HipModel
+    2300016: Boros_Pupil_L
+    2300018: Boros_Pupil_R
+    2300020: Eye_Ball_L
+    2300022: Eye_Ball_R
+    2300024: Eye_Lid_L
+    2300026: Eye_Lid_R
+    2300028: Eye_Pupil_L
+    2300030: Eye_Pupil_R
+    2300032: HairTuft1
+    2300034: HairTuft2
+    2300036: HairTuft3
+    2300038: HairTuft4
+    2300040: HairTuft5
+    2300042: HairTuft6
+    2300044: HairTuft7
+    2300046: HairTuft8
+    2300048: HairTuft9
+    2300050: polySurface462
+    2300052: polySurface465
+    2300054: Sapo_Belt
+    2300056: Sapo_Gloves_L
+    2300058: Sapo_Gloves_R
+    2300060: Sapo_Headband
+    2300062: Sapo_Headpiece
+    2300064: Sapo_MainBody
+    2300066: Sapo_Shirt
+    3300000: Boot_Cuff_L
+    3300002: Boot_Cuff_R
+    3300004: Boros_Body
+    3300006: Boros_FangsBottom
+    3300008: Boros_FangsTop
+    3300010: Boros_HandleGuard1
+    3300012: Boros_HandleGuard2
+    3300014: Boros_HipModel
+    3300016: Boros_Pupil_L
+    3300018: Boros_Pupil_R
+    3300020: Eye_Ball_L
+    3300022: Eye_Ball_R
+    3300024: Eye_Lid_L
+    3300026: Eye_Lid_R
+    3300028: Eye_Pupil_L
+    3300030: Eye_Pupil_R
+    3300032: HairTuft1
+    3300034: HairTuft2
+    3300036: HairTuft3
+    3300038: HairTuft4
+    3300040: HairTuft5
+    3300042: HairTuft6
+    3300044: HairTuft7
+    3300046: HairTuft8
+    3300048: HairTuft9
+    3300050: polySurface462
+    3300052: polySurface465
+    3300054: Sapo_Belt
+    3300056: Sapo_Gloves_L
+    3300058: Sapo_Gloves_R
+    3300060: Sapo_Headband
+    3300062: Sapo_Headpiece
+    3300064: Sapo_MainBody
+    3300066: Sapo_Shirt
     4300000: Sapo_Headband
     4300002: Sapo_MainBody
     4300004: Sapo_Headpiece

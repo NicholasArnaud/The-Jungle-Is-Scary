@@ -4,29 +4,36 @@ using UnityEngine.UI;
 using Object = UnityEngine.Object;
 using UnityEngine.SceneManagement;
 
-public class UIBehaviour : MonoBehaviour
+public class UIBehaviour : MonoBehaviour, IPlayerDataChangeHandler
 {
     #region Variables
 
     public Player_Data PlayerData;
+
+    [Header("Panels")]
     public GameObject MenuPanelObject;
     public GameObject PausePanelObject;
     public GameObject OptionsPanelObject;
     public GameObject HudPanelObject;
     public GameObject StartUpPanelObject;
     public GameObject[] HealthBar;
+
+    [Header("Sliders")]
     public Slider MusicVolumeSlider;
     public Slider SfxVolumeSlider;
+
+    [Header("Text")]
     public Text SfxValue;
     public Text MusicValue;
-    public Text GemFragValue;
-    public Text FullGemValue;
-    public Sprite FullHeart;
-    public Sprite EmptyHeart;
+    public Text GemFragments;
+    public Text LifeGems;
+    public Sprite HealthPieceFull;
+    public Sprite HealthPieceEmpty;
+
     public FloatVariable SavedMusicVolume;
-    private int _curHealth;
     private GameObject _prevPanelObject;
     private GameObject _activePanelObject;
+
     private List<GameObject> _panels;
 
     #endregion
@@ -40,17 +47,16 @@ public class UIBehaviour : MonoBehaviour
     {
         _panels = new List<GameObject> { HudPanelObject, MenuPanelObject, OptionsPanelObject, PausePanelObject };
         _panels.ForEach(x => x.SetActive(false));
-        _curHealth = HealthBar.Length;
         StartUpPanelObject.SetActive(true);
         _activePanelObject = MenuPanelObject;
-        GemFragValue.text = PlayerData.gemFragments.ToString();
-        FullGemValue.text = PlayerData.lifeGems.ToString();
+        GemFragments.text = PlayerData.GemFragments.ToString();
+        LifeGems.text = PlayerData.LifeGems.ToString();
     }
     void Update()
     {
         CheckForActivePanel();
-        
-            
+
+
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             if (OptionsPanelObject.activeSelf)
@@ -148,42 +154,50 @@ public class UIBehaviour : MonoBehaviour
     #region UpdatingHealth
     public void DamageHealthTrigger()
     {
-        if (_curHealth > 0)
-        {
-            _curHealth--;
-            HealthBar[_curHealth].GetComponent<Image>().sprite = EmptyHeart;
-        }
-
-        if (int.Parse(FullGemValue.text) <= 0 || _curHealth > 0) return;
         foreach (var o in HealthBar)
         {
-            o.GetComponent<Image>().sprite = FullHeart;
+            o.GetComponent<Image>().sprite = HealthPieceEmpty;
         }
 
-        var decrementFullGem = int.Parse(FullGemValue.text) - 1;
-        FullGemValue.text = decrementFullGem.ToString();
-        _curHealth = 4;
+        LifeGems.text = (PlayerData.LifeGems - 1).ToString();
+
+        if (PlayerData.Hp >= 0)
+        {
+            for (var i = 0; i < PlayerData.Hp; i++)
+            {
+                HealthBar[i].GetComponent<Image>().sprite = HealthPieceFull;
+            }
+        }
+    }
+
+    public void RefillHealthTrigger()
+    {
+        if (PlayerData.LifeGems <= 0)
+            return;
+        foreach (var o in HealthBar)
+        {
+            o.GetComponent<Image>().sprite = HealthPieceFull;
+        }
     }
 
     public void HealedHealthTrigger()
     {
-        if (_curHealth > 0 && _curHealth < HealthBar.Length)
+        if (PlayerData.Hp > 0 && PlayerData.Hp < HealthBar.Length)
         {
-            _curHealth++;
-            HealthBar[_curHealth - 1].GetComponent<Image>().sprite = FullHeart;
+            HealthBar[PlayerData.Hp - 1].GetComponent<Image>().sprite = HealthPieceFull;
         }
     }
     #endregion
     #region UpdatingGems
     public void GainGemFrag(Object[] args)
     {
-        if (int.Parse(GemFragValue.text) >= 99)
+        if (int.Parse(GemFragments.text) >= 99)
         {
-            GemFragValue.text = "0";
-            IncrementGemText(FullGemValue);
+            GemFragments.text = "0";
+            IncrementGemText(LifeGems);
         }
-        else if (int.Parse(FullGemValue.text) >= 3)
-            IncrementGemText(GemFragValue);
+        else if (int.Parse(LifeGems.text) >= 3)
+            IncrementGemText(GemFragments);
     }
 
 
@@ -192,4 +206,19 @@ public class UIBehaviour : MonoBehaviour
         textToUpdate.text = (int.Parse(textToUpdate.text) + 1).ToString();
     }
     #endregion
+
+    public void OnPlayerDataChanged(Object[] args)
+    {
+        var sender = args[0] as Player_Data;
+        GemFragments.text = sender.GemFragments.ToString();
+        LifeGems.text = sender.LifeGems.ToString();
+        foreach (var healthSegment in HealthBar)
+            healthSegment.GetComponent<Image>().sprite = HealthPieceEmpty;
+
+        for (var i = 0; i < sender.Hp; i++)
+        {
+            HealthBar[i].GetComponent<Image>().sprite = HealthPieceFull;
+        }
+
+    }
 }
