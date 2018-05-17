@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class Player_Behaviour : MonoBehaviour, IDamageable
 {
-
     public Player_Data Data;
     public GameEvent giveHealth;
     public GameEvent playerDied;
@@ -16,16 +14,11 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
     public Transform checkpoint;
     public float immunityTimer = 1;
     public bool canTakeDamage;
-
-    // Use this for initialization
     public void Start()
     {
         startPos = new GameObject().transform;
         checkpoint = startPos;
     }
-
-
-    // Update is called once per frame
     void Update()
     {
         
@@ -48,7 +41,6 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             Data.lifeGems = 3;
         }
     }
-
     public void TakeDamage(int d)
     {
         if (canTakeDamage)
@@ -57,16 +49,13 @@ public class Player_Behaviour : MonoBehaviour, IDamageable
             immunityTimer = 1;
             canTakeDamage = false;
             Knockback();
+            anim.Play();
         }    
     }
-
     public void Knockback()
     {
-        anim.Play("DamageGround");
         transform.position = transform.position + Vector3.back * 50 * Time.deltaTime;
-        anim.Play("DamageGround");
     }
-
     public void OnPlayerDied()
     {
         transform.position = new Vector3(checkpoint.position.x, 2.5f, checkpoint.position.z); ;
