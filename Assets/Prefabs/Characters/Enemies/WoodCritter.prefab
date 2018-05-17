@@ -35,8 +35,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4672285199669110}
   - component: {fileID: 65177659475044564}
-  - component: {fileID: 114945282442830368}
   - component: {fileID: 54614064927754632}
+  - component: {fileID: 114971869040442448}
+  - component: {fileID: 114379558072885974}
   m_Layer: 0
   m_Name: r_Arm_WristSHJnt
   m_TagString: Untagged
@@ -237,8 +238,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4345182743796812}
   - component: {fileID: 65201250508682056}
-  - component: {fileID: 114050191065409298}
   - component: {fileID: 54734861570230974}
+  - component: {fileID: 114540533142399240}
+  - component: {fileID: 114123054031098356}
   m_Layer: 0
   m_Name: l_Arm_WristSHJnt
   m_TagString: Untagged
@@ -482,6 +484,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4868136668118156}
+  - component: {fileID: 136605639530444404}
   m_Layer: 0
   m_Name: ROOTSHJnt
   m_TagString: Untagged
@@ -945,6 +948,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4061369563480784}
+  - component: {fileID: 65841228870520224}
+  - component: {fileID: 114535519055242546}
   m_Layer: 0
   m_Name: Head_TopSHJnt
   m_TagString: Untagged
@@ -1205,7 +1210,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4265930895128660}
-  - component: {fileID: 136779921281052792}
   m_Layer: 0
   m_Name: WoodCritter_Group
   m_TagString: Untagged
@@ -1611,7 +1615,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1646721176092056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 155.06198, y: -1.3905325, z: -140.1905}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4868136668118156}
@@ -2385,6 +2389,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3769455, y: 1.2240832, z: 0.19960785}
   m_Center: {x: 0.017780304, y: 0.8408171, z: -0.0041484833}
+--- !u!65 &65841228870520224
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1782174496541364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: -0.3, y: 0, z: 0}
 --- !u!95 &95462257034782292
 Animator:
   serializedVersion: 3
@@ -2423,7 +2439,7 @@ MonoBehaviour:
   hitBoxes:
   - {fileID: 65201250508682056}
   - {fileID: 65177659475044564}
---- !u!114 &114050191065409298
+--- !u!114 &114123054031098356
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2434,7 +2450,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnPlayerDamaged: {fileID: 11400000, guid: ae447ff4f5d88d74db60cf8d9f6e39c7, type: 2}
+--- !u!114 &114379558072885974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021065588541184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114535519055242546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1782174496541364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4539a24adca8b674c98308f777df2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114540533142399240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145670774017936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19df7dacbfd13e64db9b821ce4d67a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageAmount: 1
 --- !u!114 &114684540536389800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2544,7 +2593,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114945282442830368
+--- !u!114 &114971869040442448
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2552,23 +2601,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1021065588541184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 19df7dacbfd13e64db9b821ce4d67a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnPlayerDamaged: {fileID: 11400000, guid: ae447ff4f5d88d74db60cf8d9f6e39c7, type: 2}
---- !u!136 &136779921281052792
+  DamageAmount: 1
+--- !u!136 &136605639530444404
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1989172371061900}
+  m_GameObject: {fileID: 1372932839218904}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.22261128
   m_Height: 1.6062322
-  m_Direction: 1
-  m_Center: {x: 0.0013771653, y: 0.7785795, z: 0.04442662}
+  m_Direction: 0
+  m_Center: {x: -0.27, y: 0, z: 0}
 --- !u!137 &137053767970827174
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -3402,7 +3451,7 @@ NavMeshAgent:
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 250
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
