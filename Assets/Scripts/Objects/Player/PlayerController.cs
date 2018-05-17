@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     public FloatVariable _currentSpeed;
     public FloatVariable _jumpForce;
     public float gravity = 20.0F;
-    private Rigidbody rb;
     private Vector3 moveDirection;
     private CharacterController controller;
     public Vector3 targetDir;
@@ -32,7 +31,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
