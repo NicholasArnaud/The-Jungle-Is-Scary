@@ -1158,6 +1158,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4160397895821608}
+  - component: {fileID: 65855238228034120}
+  - component: {fileID: 114215795126111356}
   m_Layer: 0
   m_Name: Head_TopSHJnt
   m_TagString: Untagged
@@ -1769,7 +1771,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273342543379802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 46.959167, y: -2.2728567, z: 0.6336212}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4862616065809814}
@@ -2562,6 +2564,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.71665597, y: 0.17273295, z: 0.31951368}
   m_Center: {x: 0.08, y: 0.01444978, z: 0.01192562}
+--- !u!65 &65855238228034120
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1852210872871604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!65 &65955837669778398
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2619,6 +2633,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114215795126111356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1852210872871604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4539a24adca8b674c98308f777df2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114263707778899968
 MonoBehaviour:
   m_ObjectHideFlags: 1

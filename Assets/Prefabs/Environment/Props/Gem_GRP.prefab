@@ -58,7 +58,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4163732369285086}
-  - component: {fileID: 114812288605064130}
   m_Layer: 0
   m_Name: Gem_GRP
   m_TagString: Untagged
@@ -89,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1473079356778516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 85.5, y: 0.92524767, z: -89.6}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4751788646741412}
@@ -274,7 +273,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114812288605064130}
+      - m_Target: {fileID: 0}
         m_MethodName: OnItemPickedUp
         m_Mode: 0
         m_Arguments:
@@ -322,20 +321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemIdentifier: 
   item: {fileID: 11400000, guid: 6ff1d55471ea244449e420ea1269096e, type: 2}
-  ItemPickedUp: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
---- !u!114 &114812288605064130
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1473079356778516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96544394dfb3f234d96ac25a707deb58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemIdentifier: 
-  item: {fileID: 11400000, guid: f6ff3716f9b62fc4285967097ea1bb6b, type: 2}
   ItemPickedUp: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
 --- !u!198 &198236262335606596
 ParticleSystem:
