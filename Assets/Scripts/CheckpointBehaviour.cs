@@ -18,9 +18,4 @@ public class CheckpointBehaviour : MonoBehaviour
         other.GetComponent<Player_Behaviour>().checkpoint = spawnTransform;
         Debug.Log("Checkpoint Crossed");
     }
-
-    public void CreateWall()
-    {
-        go = Instantiate(wallPrefab, transform);
-    }
 }

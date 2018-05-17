@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
+using UnityEngine.SceneManagement;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -152,6 +153,16 @@ public class UIBehaviour : MonoBehaviour
             _curHealth--;
             HealthBar[_curHealth].GetComponent<Image>().sprite = EmptyHeart;
         }
+
+        if (int.Parse(FullGemValue.text) <= 0 || _curHealth > 0) return;
+        foreach (var o in HealthBar)
+        {
+            o.GetComponent<Image>().sprite = FullHeart;
+        }
+
+        var decrementFullGem = int.Parse(FullGemValue.text) - 1;
+        FullGemValue.text = decrementFullGem.ToString();
+        _curHealth = 4;
     }
 
     public void HealedHealthTrigger()

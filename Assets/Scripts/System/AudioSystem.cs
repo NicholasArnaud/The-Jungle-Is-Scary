@@ -4,10 +4,15 @@ using System.Collections.Generic;
 
 public class AudioSystem : MonoBehaviour
 {
+    public static AudioSystem instance = null;
     public FloatVariable SavedVolume;
     public AudioSource MainAudioSource;
     void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else if(instance !=this)
+            Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }
 
