@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4601630851669148}
   - component: {fileID: 114528885131429830}
   - component: {fileID: 136088546163929182}
+  - component: {fileID: 136033870363789976}
   m_Layer: 0
   m_Name: Sapo
   m_TagString: Untagged
@@ -1052,16 +1053,13 @@ GameObject:
   - component: {fileID: 4460249148318652}
   - component: {fileID: 95065472750303186}
   - component: {fileID: 143691804425560310}
+  - component: {fileID: 114876388365118262}
   - component: {fileID: 114572478073130346}
-  - component: {fileID: 114327758430691788}
-  - component: {fileID: 114115452040908184}
-  - component: {fileID: 114903184736569936}
-  - component: {fileID: 114157242753530970}
-  - component: {fileID: 114688976948666254}
   - component: {fileID: 114288901714130042}
-  - component: {fileID: 111637644241562222}
   - component: {fileID: 114754093056899370}
   - component: {fileID: 114577321656252938}
+  - component: {fileID: 114913980496059454}
+  - component: {fileID: 114345125543890316}
   m_Layer: 0
   m_Name: M_Sapo_03
   m_TagString: Player
@@ -5294,21 +5292,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!111 &111637644241562222
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448436701386198}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a8d5d191fd64db949963c8486fc1f2c4, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: a8d5d191fd64db949963c8486fc1f2c4, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &114099529905505080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5328,49 +5311,6 @@ MonoBehaviour:
   m_PitchDamping: 0
   m_YawDamping: 0
   m_RollDamping: 0
---- !u!114 &114115452040908184
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448436701386198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc4bab8f2f77f54285935c7a07c17f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerData: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
-  gems: []
---- !u!114 &114157242753530970
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448436701386198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
-  Sender: {fileID: 0}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114903184736569936}
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 6ff1d55471ea244449e420ea1269096e,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &114159061837286334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5435,24 +5375,6 @@ MonoBehaviour:
   heavyReady: 1
   cooldownLight: 1
   cooldownHeavy: 1
---- !u!114 &114327758430691788
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448436701386198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16c6ffda447b5a14baeba87f06a99bf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
-  giveHealth: {fileID: 11400000, guid: df2960321231daa498fb3bcf3f72b286, type: 2}
-  playerDied: {fileID: 11400000, guid: c1642e0d3af0e7c4ba9e87c8a1669122, type: 2}
-  anim: {fileID: 111637644241562222}
-  checkpoint: {fileID: 0}
-  immunityTimer: 0
-  canTakeDamage: 1
 --- !u!114 &114328316193720756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5467,6 +5389,79 @@ MonoBehaviour:
   m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
+--- !u!114 &114345125543890316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448436701386198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
+  Sender: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114913980496059454}
+        m_MethodName: OnPlayerDied
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114572478073130346}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114288901714130042}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114876388365118262}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114362740653971360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5511,7 +5506,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114327758430691788}
+      - m_Target: {fileID: 0}
         m_MethodName: TakeDamage
         m_Mode: 3
         m_Arguments:
@@ -5637,34 +5632,6 @@ MonoBehaviour:
   m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
---- !u!114 &114688976948666254
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448436701386198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: c1642e0d3af0e7c4ba9e87c8a1669122, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114327758430691788}
-        m_MethodName: OnPlayerDied
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114722604673210610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5746,7 +5713,7 @@ MonoBehaviour:
   m_OnEnemyDamaged: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
   hitTimer: 2
   hitEnemy: 0
---- !u!114 &114903184736569936
+--- !u!114 &114876388365118262
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -5754,13 +5721,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1448436701386198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f445e28c5df6345b84d9ea86ac4e83, type: 3}
+  m_Script: {fileID: 11500000, guid: ffe07eaa02512e84286896a17fe3c070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerDamagedEvent: {fileID: 11400000, guid: b85016a7277adf14b876defad86563de, type: 2}
+  PlayerDiedEvent: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
   PlayerData: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
-  items: []
-  currentItem: {fileID: 0}
-  currentItemIndex: 0
 --- !u!114 &114904772286969762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5786,6 +5752,33 @@ MonoBehaviour:
     FarClipPlane: 5000
     Dutch: 0
   m_ComponentOwner: {fileID: 4670255364913868}
+--- !u!114 &114913980496059454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448436701386198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae5a49a133d2f84dac0a56cf53df628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 95065472750303186}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Death
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114924634751992164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5958,6 +5951,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136033870363789976
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005564714826872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.03
+  m_Height: 0.3
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!136 &136088546163929182
 CapsuleCollider:
   m_ObjectHideFlags: 1
