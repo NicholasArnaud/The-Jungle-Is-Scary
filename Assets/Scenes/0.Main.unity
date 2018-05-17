@@ -263,8 +263,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 7819218}
-  m_LocalRotation: {x: -0.09900093, y: 0.69472903, z: -0.05517184, w: -0.7102862}
-  m_LocalPosition: {x: 174.78906, y: 0.8399997, z: -138.8595}
+  m_LocalRotation: {x: 0.05486997, y: -0.965205, z: 0.099168554, w: 0.23565686}
+  m_LocalPosition: {x: 165.8937, y: 3.874, z: -134.41916}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -403,7 +403,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 778178da7db5feb479045b003546869f, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &509826807 stripped
@@ -507,6 +508,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114372789006488590, guid: 778178da7db5feb479045b003546869f,
+        type: 2}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 778178da7db5feb479045b003546869f, type: 2}
   m_IsPrefabParent: 0
@@ -582,11 +588,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 680152603}
     m_Modifications:
-    - target: {fileID: 114073376951987804, guid: 00c88ba3bb90b674f9f1427217d6b0ba,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4683714768776794, guid: 00c88ba3bb90b674f9f1427217d6b0ba, type: 2}
       propertyPath: m_LocalPosition.x
       value: 97.93
@@ -617,27 +618,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4683714768776794, guid: 00c88ba3bb90b674f9f1427217d6b0ba, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114073376951987804, guid: 00c88ba3bb90b674f9f1427217d6b0ba,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: f368f44b931057749b051470ea13612b,
-        type: 2}
-    - target: {fileID: 114073376951987804, guid: 00c88ba3bb90b674f9f1427217d6b0ba,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Raise
-      objectReference: {fileID: 0}
-    - target: {fileID: 114073376951987804, guid: 00c88ba3bb90b674f9f1427217d6b0ba,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114073376951987804, guid: 00c88ba3bb90b674f9f1427217d6b0ba,
-        type: 2}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1496,7 +1476,7 @@ GameObject:
   - component: {fileID: 1999155135}
   - component: {fileID: 1999155134}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
