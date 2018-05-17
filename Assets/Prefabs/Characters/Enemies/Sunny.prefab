@@ -80,8 +80,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4861336998730208}
   - component: {fileID: 135065721076521236}
-  - component: {fileID: 114263707778899968}
   - component: {fileID: 54129501704067476}
+  - component: {fileID: 114543654962264960}
+  - component: {fileID: 114160997153777262}
   m_Layer: 0
   m_Name: AOEGroundSlam
   m_TagString: Untagged
@@ -341,7 +342,8 @@ GameObject:
   - component: {fileID: 4506408697360984}
   - component: {fileID: 65526394952729258}
   - component: {fileID: 54896864777999200}
-  - component: {fileID: 114874921761272116}
+  - component: {fileID: 114953164423464984}
+  - component: {fileID: 114340968281734534}
   m_Layer: 0
   m_Name: L_ArmDamageCollider
   m_TagString: Untagged
@@ -989,8 +991,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4004116872475444}
   - component: {fileID: 65241281531299574}
-  - component: {fileID: 114423346945479298}
   - component: {fileID: 54047818436375372}
+  - component: {fileID: 114673988348608526}
+  - component: {fileID: 114811328148315496}
   m_Layer: 0
   m_Name: R_ArmDamageCollider
   m_TagString: Untagged
@@ -2574,8 +2577,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Size: {x: 0.4, y: 0.86, z: 0.8}
+  m_Center: {x: -0.16261277, y: 0.15000033, z: 0.000000023487624}
 --- !u!65 &65955837669778398
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2633,6 +2636,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114160997153777262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1053689573461062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114215795126111356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2644,18 +2658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539a24adca8b674c98308f777df2114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114263707778899968
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1053689573461062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OnPlayerDamaged: {fileID: 11400000, guid: ae447ff4f5d88d74db60cf8d9f6e39c7, type: 2}
 --- !u!114 &114291445510350786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2669,18 +2671,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: e2ad0e9c10274184686f951d2ce4fe38, type: 2}
   anim: {fileID: 95689535985386846}
---- !u!114 &114423346945479298
+--- !u!114 &114340968281734534
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1700665366249144}
+  m_GameObject: {fileID: 1143315110863442}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnPlayerDamaged: {fileID: 11400000, guid: ae447ff4f5d88d74db60cf8d9f6e39c7, type: 2}
+--- !u!114 &114543654962264960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1053689573461062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19df7dacbfd13e64db9b821ce4d67a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageAmount: 1
 --- !u!114 &114604895052264514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2745,18 +2758,29 @@ MonoBehaviour:
   - {fileID: 65241281531299574}
   AOEAttack: {fileID: 135065721076521236}
   _currentState: 4
---- !u!114 &114874921761272116
+--- !u!114 &114673988348608526
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1143315110863442}
+  m_GameObject: {fileID: 1700665366249144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19df7dacbfd13e64db9b821ce4d67a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageAmount: 1
+--- !u!114 &114811328148315496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1700665366249144}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OnPlayerDamaged: {fileID: 11400000, guid: ae447ff4f5d88d74db60cf8d9f6e39c7, type: 2}
 --- !u!114 &114895720577997448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2785,6 +2809,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114953164423464984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143315110863442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19df7dacbfd13e64db9b821ce4d67a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageAmount: 1
 --- !u!135 &135065721076521236
 SphereCollider:
   m_ObjectHideFlags: 1

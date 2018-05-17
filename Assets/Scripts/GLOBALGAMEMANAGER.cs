@@ -10,6 +10,10 @@ public class GLOBALGAMEMANAGER : ScriptableObject {
         SceneManager.LoadScene(num, LoadSceneMode.Single);
     }
 
+    public void Print(string value)
+    {
+        Debug.Log(value);
+    }
     public void LoadSceneAdditive(int num)
     {
         SceneManager.LoadScene(num, LoadSceneMode.Additive);
