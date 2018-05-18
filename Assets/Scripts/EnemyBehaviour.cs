@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DamagerBehaviour))]
 public class EnemyBehaviour : MonoBehaviour
 {
-
-    public GameEventArgs m_OnPlayerDamaged;
-
     public void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
             return;
-        m_OnPlayerDamaged.Raise(this, other.gameObject);
+        var damager = GetComponent<IDamager>();
+        var defender = other.GetComponent<IDamageable>();
+        damager.DoDamage(defender);
     }
 }

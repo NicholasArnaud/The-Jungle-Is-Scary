@@ -726,6 +726,7 @@ GameObject:
   - component: {fileID: 114989664727058190}
   - component: {fileID: 114675543112819960}
   - component: {fileID: 114121923791352006}
+  - component: {fileID: 114129999045052784}
   m_Layer: 5
   m_Name: InGameCanvas
   m_TagString: Untagged
@@ -877,6 +878,7 @@ GameObject:
   - component: {fileID: 114981837848486492}
   - component: {fileID: 114484038126323770}
   - component: {fileID: 114295298898843640}
+  - component: {fileID: 114259196163838134}
   m_Layer: 0
   m_Name: UIListeners
   m_TagString: Untagged
@@ -1441,11 +1443,40 @@ MonoBehaviour:
   SfxVolumeSlider: {fileID: 114052296324822818}
   SfxValue: {fileID: 114088256311034562}
   MusicValue: {fileID: 114116926300787116}
-  GemFragValue: {fileID: 114134285618615626}
-  FullGemValue: {fileID: 114779546258885788}
-  FullHeart: {fileID: 21300000, guid: 7d6c41d680293274ca2b7ee351641d3d, type: 3}
-  EmptyHeart: {fileID: 21300000, guid: de66c58b1c8952640950aca7146606ae, type: 3}
+  GemFragments: {fileID: 114134285618615626}
+  LifeGems: {fileID: 114779546258885788}
+  HealthPieceFull: {fileID: 21300000, guid: 7d6c41d680293274ca2b7ee351641d3d, type: 3}
+  HealthPieceEmpty: {fileID: 21300000, guid: de66c58b1c8952640950aca7146606ae, type: 3}
   SavedMusicVolume: {fileID: 11400000, guid: 56847ece8b6689d408c2e43719373549, type: 2}
+--- !u!114 &114129999045052784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1676193252105620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c7d0cae6844b2b34fb2afb62e59bf198, type: 2}
+  Sender: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114121923791352006}
+        m_MethodName: OnPlayerDataChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114132885653313370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1738,6 +1769,34 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114259196163838134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794617954386706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c1642e0d3af0e7c4ba9e87c8a1669122, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114121923791352006}
+        m_MethodName: RefillHealthTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114261811048293042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3806,7 +3865,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1600, y: 900}
