@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   DataChanged: {fileID: 11400000, guid: c7d0cae6844b2b34fb2afb62e59bf198, type: 2}
-  _health: 0
+  _health: 4
   _alive: 0
   _damage: 0
-  _lifeGems: 0
+  _lifeGems: 3
   _gemFragments: 0
