@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryBehaviour : MonoBehaviour, IContainer
 {
-    public Player_Data PlayerData;
+    public PlayerData PlayerData;
     public List<Item> items = new List<Item>();
     public Item currentItem;
     public int currentItemIndex;

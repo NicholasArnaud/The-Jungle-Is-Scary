@@ -10,9 +10,7 @@ public class DataUpdater : MonoBehaviour
     void Start()
     {
         anim = GetComponentInParent<Animator>();
-        
         Data.Alive = true;
-        Data.Health = 4;
     }
     
     public void ReduceHealth(Object[] args)
@@ -20,7 +18,8 @@ public class DataUpdater : MonoBehaviour
         var obj = args[1] as GameObject;
         
         if (obj == this.gameObject)
-            Data.Health--;
+            Data.Health-= 1;
+        anim.SetTrigger("Damaged");
         Data.Alive = (Data.Health > 0);
         if (Data.Health < 1 && anim != null)
             anim.SetTrigger("dead");

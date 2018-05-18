@@ -63,7 +63,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583997222021412}
   m_LocalRotation: {x: -0, y: 0.8637938, z: -0, w: -0.5038455}
-  m_LocalPosition: {x: -16.91777, y: -21.6029, z: 12.4326935}
+  m_LocalPosition: {x: 126.13881, y: -0.7362987, z: -146.02483}
   m_LocalScale: {x: 1, y: 33.8491, z: 51.00562}
   m_Children:
   - {fileID: 4040968643075282}
@@ -84,7 +84,7 @@ MonoBehaviour:
   Enemy: {fileID: 1646721176092056, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
   EnemyData: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
   EnemiesDead: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
-  ENEMIESDEADARGS: {fileID: 0}
+  ENEMIESDEADARGS: {fileID: 11400000, guid: bafa9de1ed1cff842ab3c164285bfd77, type: 2}
   StartSpawnDist: 15
   SpawningEnabled: 0
   SpawnPoint: {fileID: 4040968643075282}

@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd48b0b8029224448b5ee5c5ed41616, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  PlayerDataChanged: {fileID: 11400000, guid: c7d0cae6844b2b34fb2afb62e59bf198, type: 2}
-  _hp: 4
-  _lifeGems: 0
+  DataChanged: {fileID: 11400000, guid: c7d0cae6844b2b34fb2afb62e59bf198, type: 2}
+  _health: 0
   _alive: 0
   _damage: 0
+  _lifeGems: 0
   _gemFragments: 0

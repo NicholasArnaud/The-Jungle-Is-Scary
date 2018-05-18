@@ -10,7 +10,7 @@ public class WoodCritterBehaviour : MonoBehaviour
     {
         get
         {
-            return Resources.Load<GameEventArgs>("ENEMYDIED"); 
+            return Resources.Load<GameEventArgs>("ENEMYDIED");
         }
     }
     [SerializeField]
@@ -56,9 +56,13 @@ public class WoodCritterBehaviour : MonoBehaviour
     void Start()
     {
         Data = Instantiate<EnemyDataScriptable>(Data);
-        GetComponent<DataUpdater>().Data = Data;
-        hitBoxes.ForEach(hb => hb.enabled = false);
+        Data.name += GetInstanceID().ToString();
+        GLOBALGAMEMANAGER.SetSendersToInstantiatedClone(data: Data, go: gameObject);
+
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
+
+        hitBoxes.ForEach(hb => hb.enabled = false);
+
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
         CurrentState = MovementState.NONE;
@@ -138,7 +142,6 @@ public class WoodCritterBehaviour : MonoBehaviour
         CurrentState = state;
     }
 
-
     private void NoneStateHandler()
     {
         if (!Data.Alive)
@@ -148,6 +151,7 @@ public class WoodCritterBehaviour : MonoBehaviour
         }
         ChangeState(MovementState.PASSIVE);
     }
+
     private void PassiveStateHandler()
     {
         if (!Data.Alive)
@@ -229,14 +233,7 @@ public class WoodCritterBehaviour : MonoBehaviour
     {
         if (Data.Alive)
             return;
-        _nav.enabled = false;
-        _animatorController.SetBool("Alive", false);
-        if (!oneshot)
-        {
-            ENEMY_DIED.Raise(gameObject);
-            oneshot = true;
-        }
-            
+        _nav.enabled = false; 
     }
 
     public MovementState CurrentState
@@ -244,8 +241,6 @@ public class WoodCritterBehaviour : MonoBehaviour
         get { return _currentState; }
         set { _currentState = value; }
     }
-
-
 
     private bool EnableBehaviour(Vector3 center, float radius)
     {

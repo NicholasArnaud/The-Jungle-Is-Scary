@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class DamageableBehaviour : MonoBehaviour, IDamageable
 {
-    public GameEventArgs PlayerDamagedEvent;
-    public GameEventArgs PlayerDiedEvent;
-    public Player_Data PlayerData;
+    public GameEventArgs DamagedEvent;
+    public GameEventArgs DeathEvent;
+    public DataScriptable Data;
     private float immunityTimer = 0;
 
     void Update()
@@ -20,15 +20,15 @@ public class DamageableBehaviour : MonoBehaviour, IDamageable
     {
         if (immunityTimer > 0) return;
 
-        if (PlayerData.Hp <= 0)
+        if (Data.Health <= 0)
             return;
 
-        var newhp = PlayerData.Hp - damage;
-        PlayerData.Hp = Mathf.Clamp(newhp, 0, 4);//assign new HP    
-        PlayerDamagedEvent.Raise(PlayerData);
+        var newhp = Data.Health - damage;
+        Data.Health = Mathf.Clamp(newhp, 0, 4);//assign new HP    
+        DamagedEvent.Raise(Data);
 
-        if (PlayerData.Hp < 1)
-            PlayerDiedEvent.Raise(PlayerData);
+        if (Data.Health < 1)
+            DeathEvent.Raise(Data);
 
         immunityTimer = 1;
     }
