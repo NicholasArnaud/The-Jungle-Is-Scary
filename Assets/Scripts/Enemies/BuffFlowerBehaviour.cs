@@ -48,7 +48,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
         Data.name += GetInstanceID().ToString();
         GLOBALGAMEMANAGER.SetSendersToInstantiatedClone(data: Data, go: gameObject);
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
-
+        GetComponent<DamageableBehaviour>().Data = Data;
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
         CurrentState = MovementState.NONE;

@@ -55,11 +55,11 @@ public class WoodCritterBehaviour : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Data = Instantiate<EnemyDataScriptable>(Data);
+        Data = Instantiate(Data);
         Data.name += GetInstanceID().ToString();
         GLOBALGAMEMANAGER.SetSendersToInstantiatedClone(data: Data, go: gameObject);
-
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
+        GetComponent<DamageableBehaviour>().Data = Data;
 
         hitBoxes.ForEach(hb => hb.enabled = false);
 
