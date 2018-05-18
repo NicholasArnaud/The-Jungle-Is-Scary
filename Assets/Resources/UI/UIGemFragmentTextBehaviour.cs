@@ -13,7 +13,7 @@ public class UIGemFragmentTextBehaviour : MonoBehaviour,IPlayerDataChangeHandler
 {
     public void OnPlayerDataChanged(Object[] args)
     {
-        var sender = args[0] as Player_Data;
+        var sender = args[0] as PlayerData;
         if (sender == null)
             return;
         GetComponent<Text>().text = sender.GemFragments.ToString();
