@@ -11,9 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6338b5e8f734e943bcc87b80aeae4f1, type: 3}
   m_Name: SunnyEnemyData
   m_EditorClassIdentifier: 
+  DataChanged: {fileID: 11400000, guid: c7d0cae6844b2b34fb2afb62e59bf198, type: 2}
+  _health: 0
+  _alive: 0
+  _damage: 0
   PlayerGameObject: {fileID: 100166, guid: f4ad0cdeed13f3f41bc22693d363546b, type: 3}
   FoundPlayer: 1
-  Health: 6
-  Alive: 1
   DetectionRadius: 15
   AttackRadius: 2
