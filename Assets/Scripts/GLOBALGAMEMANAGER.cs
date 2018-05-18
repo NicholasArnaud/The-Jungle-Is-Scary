@@ -15,7 +15,7 @@ public class GLOBALGAMEMANAGER : ScriptableObject
     {
         foreach (var gameEventArgsListener in go.GetComponents<GameEventArgsListener>())
         {
-            if (gameEventArgsListener.Sender.GetType() == typeof(DataScriptable))
+            if (gameEventArgsListener.Sender.GetType() == typeof(EnemyDataScriptable) || gameEventArgsListener.Sender.GetType() == typeof(DataScriptable))
                 gameEventArgsListener.Sender = data;
         }
     }
