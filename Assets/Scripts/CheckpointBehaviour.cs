@@ -1,21 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// this is the checkpoint behaviour physics listener
+/// </summary>
+[RequireComponent(typeof (PhysicsTriggerListener))]
 public class CheckpointBehaviour : MonoBehaviour
 {
-
+    public GameEventArgs OnChekpointCrossed;
     public GameObject wallPrefab;
     public Transform spawnTransform;
-    GameObject go;
 
-    public void OnCheckpointCrossed(Object[]args)
+    public void OnCheckpointTriggerEnter(Object[]args)
     {
         var sender = args[0] as GameObject;
         if(sender != gameObject)
             return;
-        var other = args[1] as GameObject;
-        other.GetComponent<Player_Behaviour>().checkpoint = spawnTransform;
-        Debug.Log("Checkpoint Crossed");
+        OnChekpointCrossed.Raise(gameObject);
     }
 }
