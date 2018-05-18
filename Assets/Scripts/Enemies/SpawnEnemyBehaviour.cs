@@ -6,8 +6,8 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class SpawnEnemyBehaviour : MonoBehaviour
 {
     public GameObject Enemy;
-    public EnemyDataScriptable EnemyData;
     public GameEvent EnemiesDead;
+    public EnemyDataScriptable EnemyData;
     public GameEventArgs ENEMIESDEADARGS;
     public int StartSpawnDist;
     public bool SpawningEnabled;
@@ -46,9 +46,13 @@ public class SpawnEnemyBehaviour : MonoBehaviour
         if (!(_spawnCooldown >= CooldownTime) || _enemiesSpawned >= MaxEnemies) return;
         _spawnCooldown = 0;
         var spawnedEnemy = Instantiate(Enemy, SpawnPoint.transform.position,SpawnPoint.transform.rotation);
-
-        spawnedEnemy.GetComponent<DataUpdater>().Data = Instantiate(EnemyData);
-        spawnedEnemy.GetComponent<DataUpdater>().Data.PlayerGameObject = _playerGameObject;
+        var newEnemyData = Instantiate(EnemyData);
+        spawnedEnemy.GetComponent<DamageableEnemyBehaviour>().EnemyData = newEnemyData;
+        spawnedEnemy.GetComponent<WoodCritterBehaviour>().Data = newEnemyData;
+        foreach (var gameEventArgsListener in spawnedEnemy.GetComponents<GameEventArgsListener>())
+        {
+            gameEventArgsListener.Sender = newEnemyData;
+        }
         _enemyList.Add(spawnedEnemy);
         deathstillrestart = _enemyList.Count;
         _enemiesSpawned++;

@@ -56,7 +56,6 @@ public class WoodCritterBehaviour : MonoBehaviour
     void Start()
     {
         Data = Instantiate<EnemyDataScriptable>(Data);
-        GetComponent<DataUpdater>().Data = Data;
         hitBoxes.ForEach(hb => hb.enabled = false);
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
         _animatorController = GetComponent<Animator>();
@@ -230,7 +229,6 @@ public class WoodCritterBehaviour : MonoBehaviour
         if (Data.Alive)
             return;
         _nav.enabled = false;
-        _animatorController.SetBool("Alive", false);
         if (!oneshot)
         {
             ENEMY_DIED.Raise(gameObject);
