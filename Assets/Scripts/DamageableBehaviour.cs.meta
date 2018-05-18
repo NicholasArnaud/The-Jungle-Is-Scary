@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: ffe07eaa02512e84286896a17fe3c070
-timeCreated: 1526586438
+timeCreated: 1526672560
 licenseType: Pro
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - DamagedEvent: {fileID: 11400000, guid: b85016a7277adf14b876defad86563de, type: 2}
+  - DeathEvent: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
+  - Data: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

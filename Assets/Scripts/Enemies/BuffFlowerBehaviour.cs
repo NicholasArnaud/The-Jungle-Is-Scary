@@ -35,14 +35,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private float _distanceBetween;
     private bool _inGround = true;
     private bool _activated;
-    public GameEventArgs ENEMY_DIED
-    {
-        get
-        {
-            return Resources.Load<GameEventArgs>("ENEMYDIED");
-        }
-    }
-
+  
     private Animator _animatorController;
     private NavMeshAgent _nav;
     [SerializeField]
@@ -52,7 +45,10 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private void Start()
     {
         Data = Instantiate(Data);
+        Data.name += GetInstanceID().ToString();
+        GLOBALGAMEMANAGER.SetSendersToInstantiatedClone(data: Data, go: gameObject);
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
+
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
         CurrentState = MovementState.NONE;
@@ -242,32 +238,16 @@ public class BuffFlowerBehaviour : MonoBehaviour
         ChangeState(MovementState.CHASING);
     }
 
-    private bool oneshot = true;
+    
     private void DeathStateHandler()
     {
         if (Data.Alive)
             return;
-        _nav.enabled = false;
-        _animatorController.SetBool("Alive", false);
-        if (oneshot)
-        {
-            oneshot = false;
-            ENEMY_DIED.Raise(gameObject);
-        }
-        
-         
+        _nav.enabled = false; 
     }
 
 
-#if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(0, .5f, 0, .5f);
-        Gizmos.DrawSphere(transform.position, Data.DetectionRadius);
-        Gizmos.color = new Color(1, .5f, 0, .5f);
-        Gizmos.DrawSphere(transform.position, Data.AttackRadius);
-    }
-#endif
+
     private bool EnableBehaviour(Vector3 center, float radius)
     {
         var playerfound = false;
@@ -329,4 +309,14 @@ public class BuffFlowerBehaviour : MonoBehaviour
         AOEAttack.enabled = false;
         SetNavSpeedWhenNotAttacking();
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, .5f, 0, .5f);
+        Gizmos.DrawSphere(transform.position, Data.DetectionRadius);
+        Gizmos.color = new Color(1, .5f, 0, .5f);
+        Gizmos.DrawSphere(transform.position, Data.AttackRadius);
+    }
+#endif
 }

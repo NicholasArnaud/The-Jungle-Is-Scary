@@ -866,13 +866,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4397091365608368}
   - component: {fileID: 95462257034782292}
-  - component: {fileID: 195960716250989372}
-  - component: {fileID: 114021230602673346}
-  - component: {fileID: 114684540536389800}
   - component: {fileID: 54981066954331378}
   - component: {fileID: 65492647997841396}
+  - component: {fileID: 195960716250989372}
+  - component: {fileID: 114021230602673346}
   - component: {fileID: 114672276665504460}
   - component: {fileID: 114516605121034978}
+  - component: {fileID: 114684540536389800}
   m_Layer: 0
   m_Name: WoodCritter
   m_TagString: Enemy
@@ -2473,7 +2473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 9410028dc8d257d44bcdde8f4f44209b, type: 2}
+  Event: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
   Sender: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
   Response:
     m_PersistentCalls:
@@ -2547,9 +2547,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8d174766ea7fb4e83f83cc61dc0acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyDamagedEvent: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
-  EnemyDiedEvent: {fileID: 11400000, guid: 9410028dc8d257d44bcdde8f4f44209b, type: 2}
-  EnemyData: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
+  DamagedEvent: {fileID: 11400000, guid: b85016a7277adf14b876defad86563de, type: 2}
+  DeathEvent: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
+  Data: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
 --- !u!114 &114684540536389800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2561,7 +2561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: c2d9432fec1d5f4478438e0e1cb61321, type: 2}
+  Event: {fileID: 11400000, guid: b85016a7277adf14b876defad86563de, type: 2}
   Sender: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
   Response:
     m_PersistentCalls:

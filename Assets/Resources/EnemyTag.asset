@@ -8,6 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512b87aa6a8de48488551a7c91f12c5f, type: 3}
-  m_Name: DamagedEnemy
+  m_Script: {fileID: 11500000, guid: 2383003dbb7b09045a8fa8613c92bb70, type: 3}
+  m_Name: EnemyTag
   m_EditorClassIdentifier: 
+  Value: Enemy

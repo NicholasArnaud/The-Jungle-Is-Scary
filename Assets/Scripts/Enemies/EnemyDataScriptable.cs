@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyData",menuName = "EnemyData")]
-public class EnemyDataScriptable : ScriptableObject
+public class EnemyDataScriptable : DataScriptable
 {
     public GameObject PlayerGameObject;
     public bool FoundPlayer;
-    public int Health;
-    public bool Alive;
     [Range(1, 30)]
     public float DetectionRadius;
 
