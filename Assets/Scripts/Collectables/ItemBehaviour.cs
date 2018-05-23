@@ -16,4 +16,9 @@ public class ItemBehaviour : MonoBehaviour
         
         ItemPickedUp.Raise(gameObject, item);
     }
+    
+    public void Destory()
+    {
+        Destroy(gameObject);
+    }
 }

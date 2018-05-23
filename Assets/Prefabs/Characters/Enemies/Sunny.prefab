@@ -3008,6 +3008,9 @@ MonoBehaviour:
   - {fileID: 65526394952729258}
   - {fileID: 65241281531299574}
   AOEAttack: {fileID: 135065721076521236}
+  PossibleItemDrop:
+  - {fileID: 1473079356778516, guid: 778178da7db5feb479045b003546869f, type: 2}
+  - {fileID: 1524928976281996, guid: 00c88ba3bb90b674f9f1427217d6b0ba, type: 2}
   _currentState: 0
 --- !u!114 &114673988348608526
 MonoBehaviour:
@@ -3097,8 +3100,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 114640382279880566}
-        m_MethodName: set_enabled
-        m_Mode: 6
+        m_MethodName: ItemDrop
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
