@@ -35,7 +35,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private float _distanceBetween;
     private bool _inGround = true;
     private bool _activated;
-  
+    public List<GameObject> PossibleItemDrop;
     private Animator _animatorController;
     private NavMeshAgent _nav;
     [SerializeField]
@@ -308,6 +308,34 @@ public class BuffFlowerBehaviour : MonoBehaviour
         yield return new WaitForSeconds(1);
         AOEAttack.enabled = false;
         SetNavSpeedWhenNotAttacking();
+    }
+
+    public void ItemDrop()
+    {
+        var indexOfList = 0;
+        var luck = UnityEngine.Random.Range(0.0f,1.0f);
+        List<GameObject> SpawnedItems = new List<GameObject>();
+        if (luck >=0.7f)
+            foreach(GameObject x in PossibleItemDrop)
+            {
+                indexOfList++;
+                if(indexOfList >= 0.5f *PossibleItemDrop.Count)
+                {
+                    Instantiate(x,transform.position,transform.rotation);
+                    SpawnedItems.Add(x);
+                }
+            }
+        else
+            foreach (GameObject x in PossibleItemDrop)
+            {
+                indexOfList++;
+                if (indexOfList <= 0.5f * PossibleItemDrop.Count)
+                {
+                    Instantiate(x, transform.position, transform.rotation);
+                    SpawnedItems.Add(x);
+                }
+            }
+        //return SpawnedItems;
     }
 
 #if UNITY_EDITOR
