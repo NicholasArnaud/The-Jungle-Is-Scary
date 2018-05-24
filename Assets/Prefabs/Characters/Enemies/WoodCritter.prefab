@@ -38,9 +38,11 @@ GameObject:
   - component: {fileID: 54614064927754632}
   - component: {fileID: 114971869040442448}
   - component: {fileID: 114379558072885974}
+  - component: {fileID: 114760923126328576}
+  - component: {fileID: 114885714864865742}
   m_Layer: 0
   m_Name: r_Arm_WristSHJnt
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,9 +243,11 @@ GameObject:
   - component: {fileID: 54734861570230974}
   - component: {fileID: 114540533142399240}
   - component: {fileID: 114123054031098356}
+  - component: {fileID: 114824775790630382}
+  - component: {fileID: 114278401941430598}
   m_Layer: 0
   m_Name: l_Arm_WristSHJnt
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -870,9 +874,9 @@ GameObject:
   - component: {fileID: 65492647997841396}
   - component: {fileID: 195960716250989372}
   - component: {fileID: 114021230602673346}
-  - component: {fileID: 114672276665504460}
   - component: {fileID: 114516605121034978}
   - component: {fileID: 114684540536389800}
+  - component: {fileID: 114975391408491498}
   m_Layer: 0
   m_Name: WoodCritter
   m_TagString: Enemy
@@ -2436,6 +2440,9 @@ MonoBehaviour:
   walkSpeed: 1
   runSpeed: 4
   Data: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
+  PossibleItemDrop:
+  - {fileID: 1473079356778516, guid: 778178da7db5feb479045b003546869f, type: 2}
+  - {fileID: 1524928976281996, guid: 00c88ba3bb90b674f9f1427217d6b0ba, type: 2}
   _distanceBetween: 0
   hitBoxes:
   - {fileID: 65201250508682056}
@@ -2451,6 +2458,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a0243442634e14d9fbe7ff59d159c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114278401941430598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145670774017936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9771ac07a176c1248a3c3e28d28d5bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
+  onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
+  onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
+  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
 --- !u!114 &114379558072885974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2501,8 +2523,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 114021230602673346}
-        m_MethodName: set_enabled
-        m_Mode: 6
+        m_MethodName: ItemDrop
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2536,20 +2558,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageAmount: 1
---- !u!114 &114672276665504460
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1646721176092056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d8d174766ea7fb4e83f83cc61dc0acc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamagedEvent: {fileID: 11400000, guid: b85016a7277adf14b876defad86563de, type: 2}
-  DeathEvent: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
-  Data: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
 --- !u!114 &114684540536389800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2579,6 +2587,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114760923126328576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021065588541184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9771ac07a176c1248a3c3e28d28d5bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
+  onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
+  onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
+  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
 --- !u!114 &114763955028578074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2607,6 +2630,35 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114824775790630382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145670774017936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
+  Sender: {fileID: 1646721176092056}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114123054031098356}
+        m_MethodName: OnPhysicsTriggerListenerTriggerEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114857851886301982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2635,6 +2687,35 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114885714864865742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021065588541184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
+  Sender: {fileID: 1646721176092056}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114379558072885974}
+        m_MethodName: OnPhysicsTriggerListenerTriggerEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114971869040442448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2647,6 +2728,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageAmount: 1
+--- !u!114 &114975391408491498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646721176092056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe07eaa02512e84286896a17fe3c070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamagedEvent: {fileID: 11400000, guid: b85016a7277adf14b876defad86563de, type: 2}
+  DeathEvent: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
+  Data: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
 --- !u!136 &136605639530444404
 CapsuleCollider:
   m_ObjectHideFlags: 1

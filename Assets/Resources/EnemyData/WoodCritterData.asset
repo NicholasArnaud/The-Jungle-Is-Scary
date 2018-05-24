@@ -19,4 +19,4 @@ MonoBehaviour:
     type: 2}
   FoundPlayer: 0
   DetectionRadius: 30
-  AttackRadius: 2
+  AttackRadius: 1.2

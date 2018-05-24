@@ -22,7 +22,7 @@ public class WoodCritterBehaviour : MonoBehaviour
     public float runSpeed;
     public EnemyDataScriptable Data;
     private const float DeathTimer = 4;
-
+    public List<GameObject> PossibleItemDrop;
     public float _distanceBetween;
     private Animator _animatorController;
     private NavMeshAgent _nav;
@@ -233,9 +233,14 @@ public class WoodCritterBehaviour : MonoBehaviour
     {
         if (Data.Alive)
             return;
-        _nav.enabled = false; 
+        _nav.enabled = false;
     }
-
+    public void ItemDrop()
+    {
+        var luck = UnityEngine.Random.Range(0.0f, 1.0f);
+        Instantiate(luck <= 0.9f ? PossibleItemDrop[PossibleItemDrop.Count - 1] : PossibleItemDrop[0],
+            transform.position, transform.rotation);
+    }
     public MovementState CurrentState
     {
         get { return _currentState; }
