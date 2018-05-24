@@ -29,7 +29,7 @@ public class BuffFlowerBehaviour : MonoBehaviour
     public float runSpeed;
     public List<ParticleSystem> AOEparticles;
     public List<BoxCollider> hitBoxes;
-    public SphereCollider AOEAttack;
+    public BoxCollider AOEAttack;
     private const float DeathTimer = 4;
     private float _risingTimer;
     private float _distanceBetween;

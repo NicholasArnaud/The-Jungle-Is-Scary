@@ -12,8 +12,8 @@ public class EnemyBehaviour : MonoBehaviour
         if (sender == null || other == null)//if either of these isn't what we think they are then drop
             return;
 
-        var damager = sender.GetComponent<IDamager>();//set the attacker
-        var defender = other.GetComponent<IDamageable>();//set the defender
+        var damager = sender.GetComponentInParent<IDamager>();//set the attacker
+        var defender = other.GetComponentInParent<IDamageable>();//set the defender
         damager.DoDamage(defender);//do the damage
     }
 }
