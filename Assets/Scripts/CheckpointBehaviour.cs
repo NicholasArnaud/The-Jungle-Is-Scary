@@ -16,6 +16,7 @@ public class CheckpointBehaviour : MonoBehaviour
         var sender = args[0] as GameObject;
         if(sender != gameObject)
             return;
+        FindObjectOfType<TeleportPlayerBehaviour>().checkpoint = spawnTransform;
         OnChekpointCrossed.Raise(gameObject);
     }
 }
