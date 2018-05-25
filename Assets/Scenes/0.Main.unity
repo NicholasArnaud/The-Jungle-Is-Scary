@@ -268,7 +268,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 7819218}
-  m_LocalRotation: {x: 0.05486997, y: -0.965205, z: 0.099168554, w: 0.23565686}
+  m_LocalRotation: {x: 0.05486997, y: -0.9652051, z: 0.099168554, w: 0.23565689}
   m_LocalPosition: {x: 165.8937, y: 3.874, z: -134.41916}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -652,6 +652,40 @@ Transform:
   m_Father: {fileID: 1366865265}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &167885264 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1292756943101744, guid: 5f6345ecfa8922b42a745ab3cea55968,
+    type: 2}
+  m_PrefabInternal: {fileID: 1855122905}
+--- !u!114 &167885267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 167885264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1724622866}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &193470041
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +843,40 @@ Transform:
   m_Father: {fileID: 669349557}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &279512953 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1972469375131520, guid: 5f6345ecfa8922b42a745ab3cea55968,
+    type: 2}
+  m_PrefabInternal: {fileID: 1855122905}
+--- !u!114 &279512956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279512953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1724622866}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &292961984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1238,40 @@ Transform:
   m_Father: {fileID: 1824713148}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &412537125 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1414164122363456, guid: 5f6345ecfa8922b42a745ab3cea55968,
+    type: 2}
+  m_PrefabInternal: {fileID: 1855122905}
+--- !u!114 &412537128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412537125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 412537125}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &418495015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,7 +1482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 454456439}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -1411,7 +1513,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &454456446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1572,7 +1674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 467767739}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -1603,7 +1705,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &467767746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2213,7 +2315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 594830312}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -2244,7 +2346,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &594830319
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2465,7 +2567,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 640552478}
-  m_LocalRotation: {x: -0.11086823, y: 0.05643581, z: 0.023523383, w: -0.9919526}
+  m_LocalRotation: {x: -0.11086822, y: 0.0564358, z: 0.02352338, w: -0.99195254}
   m_LocalPosition: {x: 0.5393114, y: 2, z: -4.4601097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2829,6 +2931,40 @@ Transform:
   m_Father: {fileID: 1712542445}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &704304501 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1556423352031026, guid: 5f6345ecfa8922b42a745ab3cea55968,
+    type: 2}
+  m_PrefabInternal: {fileID: 1855122905}
+--- !u!114 &704304504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 704304501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1724622866}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &705509796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3591,10 +3727,12 @@ GameObject:
   - component: {fileID: 1597287911}
   - component: {fileID: 904219565}
   - component: {fileID: 904219564}
+  - component: {fileID: 904219561}
+  - component: {fileID: 904219569}
   - component: {fileID: 904219563}
   - component: {fileID: 904219562}
   - component: {fileID: 904219560}
-  - component: {fileID: 904219561}
+  - component: {fileID: 904219570}
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Player
@@ -3663,6 +3801,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 904219569}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &904219561
@@ -3689,6 +3838,22 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Death
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  DamagedResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 904219567}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Damaged
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -3874,6 +4039,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904219569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904219559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2464b952df7790d4c9deb274050fbfca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint: {fileID: 0}
+--- !u!114 &904219570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904219559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b85016a7277adf14b876defad86563de, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 904219561}
+        m_MethodName: OnPlayerDamaged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &905723157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4615,7 +4821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 1091065066}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -4646,7 +4852,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &1091065073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4746,7 +4952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 1093762131}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -4777,7 +4983,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &1093762138
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5851,7 +6057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 1343674435}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -5882,7 +6088,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &1343674442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5982,7 +6188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 1350408839}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -6013,7 +6219,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &1350408846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6123,6 +6329,40 @@ Transform:
   m_Father: {fileID: 907598130}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1380022553 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1572478719292986, guid: 5f6345ecfa8922b42a745ab3cea55968,
+    type: 2}
+  m_PrefabInternal: {fileID: 1855122905}
+--- !u!114 &1380022556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380022553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1380022553}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &1387838147
 GameObject:
   m_ObjectHideFlags: 0
@@ -6241,7 +6481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 1396341167}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -6272,7 +6512,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &1396341174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6810,6 +7050,40 @@ Transform:
   m_Father: {fileID: 1610255804}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1566481188 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1657042433674968, guid: 5f6345ecfa8922b42a745ab3cea55968,
+    type: 2}
+  m_PrefabInternal: {fileID: 1855122905}
+--- !u!114 &1566481191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1566481188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1724622866}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &1578236170
 GameObject:
   m_ObjectHideFlags: 0
@@ -7562,6 +7836,40 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0068455637, y: -0.00031391904, z: -0.00012634695}
     m_Extent: {x: 0.03020982, y: 0.056388363, z: 0.056395646}
   m_DirtyAABB: 0
+--- !u!1 &1724622866 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1498085148782632, guid: 5f6345ecfa8922b42a745ab3cea55968,
+    type: 2}
+  m_PrefabInternal: {fileID: 1855122905}
+--- !u!114 &1724622867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724622866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1724622866}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &1734003350
 GameObject:
   m_ObjectHideFlags: 0
@@ -8554,7 +8862,32 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40,
         type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 114813401015437778, guid: 5f6345ecfa8922b42a745ab3cea55968,
+        type: 2}
+      propertyPath: AllEnemiesDead
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40,
+        type: 2}
+    - target: {fileID: 114796480978909474, guid: 5f6345ecfa8922b42a745ab3cea55968,
+        type: 2}
+      propertyPath: AllEnemiesDead
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40,
+        type: 2}
+    - target: {fileID: 114562936515937540, guid: 5f6345ecfa8922b42a745ab3cea55968,
+        type: 2}
+      propertyPath: AllEnemiesDead
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 114350250395663714, guid: 5f6345ecfa8922b42a745ab3cea55968, type: 2}
+    - {fileID: 114966530832468960, guid: 5f6345ecfa8922b42a745ab3cea55968, type: 2}
+    - {fileID: 114706584767469258, guid: 5f6345ecfa8922b42a745ab3cea55968, type: 2}
+    - {fileID: 114929760545668418, guid: 5f6345ecfa8922b42a745ab3cea55968, type: 2}
+    - {fileID: 114617682089757758, guid: 5f6345ecfa8922b42a745ab3cea55968, type: 2}
+    - {fileID: 114880908722086012, guid: 5f6345ecfa8922b42a745ab3cea55968, type: 2}
+    - {fileID: 114160508087039886, guid: 5f6345ecfa8922b42a745ab3cea55968, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5f6345ecfa8922b42a745ab3cea55968, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1864502583
@@ -9188,7 +9521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 2067242835}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -9219,7 +9552,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &2067242842
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9319,7 +9652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 2068500209}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -9350,7 +9683,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &2068500216
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9608,7 +9941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 2099539792}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -9639,7 +9972,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &2099539799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9739,7 +10072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
-  Sender: {fileID: 0}
+  Sender: {fileID: 2104356509}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -9770,7 +10103,7 @@ MonoBehaviour:
   onEnter: {fileID: 11400000, guid: d1cfffcdcb871154e8a0557f2a8ff6a5, type: 2}
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
-  ListenerTag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  ListenerTag: {fileID: 11400000, guid: f7213f63f36fc0e45bdbcb2423211785, type: 2}
 --- !u!65 &2104356516
 BoxCollider:
   m_ObjectHideFlags: 0
