@@ -10,7 +10,7 @@ public class WoodCritterBehaviour : MonoBehaviour
     {
         get
         {
-            return Resources.Load<GameEventArgs>("ENEMYDIED"); 
+            return Resources.Load<GameEventArgs>("ENEMYDIED");
         }
     }
     [SerializeField]
@@ -22,7 +22,7 @@ public class WoodCritterBehaviour : MonoBehaviour
     public float runSpeed;
     public EnemyDataScriptable Data;
     private const float DeathTimer = 4;
-
+    public List<GameObject> PossibleItemDrop;
     public float _distanceBetween;
     private Animator _animatorController;
     private NavMeshAgent _nav;
@@ -55,10 +55,14 @@ public class WoodCritterBehaviour : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Data = Instantiate<EnemyDataScriptable>(Data);
-        GetComponent<DataUpdater>().Data = Data;
-        hitBoxes.ForEach(hb => hb.enabled = false);
+        Data = Instantiate(Data);
+        Data.name += GetInstanceID().ToString();
+        GLOBALGAMEMANAGER.SetSendersToInstantiatedClone(data: Data, go: gameObject);
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
+        GetComponent<DamageableBehaviour>().Data = Data;
+
+        hitBoxes.ForEach(hb => hb.enabled = false);
+
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
         CurrentState = MovementState.NONE;
@@ -138,7 +142,6 @@ public class WoodCritterBehaviour : MonoBehaviour
         CurrentState = state;
     }
 
-
     private void NoneStateHandler()
     {
         if (!Data.Alive)
@@ -148,6 +151,7 @@ public class WoodCritterBehaviour : MonoBehaviour
         }
         ChangeState(MovementState.PASSIVE);
     }
+
     private void PassiveStateHandler()
     {
         if (!Data.Alive)
@@ -230,22 +234,18 @@ public class WoodCritterBehaviour : MonoBehaviour
         if (Data.Alive)
             return;
         _nav.enabled = false;
-        _animatorController.SetBool("Alive", false);
-        if (!oneshot)
-        {
-            ENEMY_DIED.Raise(gameObject);
-            oneshot = true;
-        }
-            
     }
-
+    public void ItemDrop()
+    {
+        var luck = UnityEngine.Random.Range(0.0f, 1.0f);
+        Instantiate(luck <= 0.9f ? PossibleItemDrop[PossibleItemDrop.Count - 1] : PossibleItemDrop[0],
+            transform.position, transform.rotation);
+    }
     public MovementState CurrentState
     {
         get { return _currentState; }
         set { _currentState = value; }
     }
-
-
 
     private bool EnableBehaviour(Vector3 center, float radius)
     {

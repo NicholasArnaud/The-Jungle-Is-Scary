@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Player_Behaviour : MonoBehaviour
 {
 
-    public Player_Data Data;
+    public PlayerData Data;
     public GameEvent giveHealth;
     public GameEvent playerDied;
     public Animation anim;
@@ -35,10 +35,10 @@ public class Player_Behaviour : MonoBehaviour
         if (immunityTimer <= 0)      
             canTakeDamage = true;
         
-        if (Data.Hp <= 0)
+        if (Data.Health <= 0)
         {
             Data.LifeGems -= 1;
-            Data.Hp = 4;
+            Data.Health = 4;
             playerDied.Raise();
         }
 

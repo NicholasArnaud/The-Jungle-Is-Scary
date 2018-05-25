@@ -8,7 +8,7 @@ public class UIBehaviour : MonoBehaviour, IPlayerDataChangeHandler
 {
     #region Variables
 
-    public Player_Data PlayerData;
+    public PlayerData PlayerData;
 
     [Header("Panels")]
     public GameObject MenuPanelObject;
@@ -161,9 +161,9 @@ public class UIBehaviour : MonoBehaviour, IPlayerDataChangeHandler
 
         LifeGems.text = (PlayerData.LifeGems - 1).ToString();
 
-        if (PlayerData.Hp >= 0)
+        if (PlayerData.Health >= 0)
         {
-            for (var i = 0; i < PlayerData.Hp; i++)
+            for (var i = 0; i < PlayerData.Health; i++)
             {
                 HealthBar[i].GetComponent<Image>().sprite = HealthPieceFull;
             }
@@ -182,9 +182,9 @@ public class UIBehaviour : MonoBehaviour, IPlayerDataChangeHandler
 
     public void HealedHealthTrigger()
     {
-        if (PlayerData.Hp > 0 && PlayerData.Hp < HealthBar.Length)
+        if (PlayerData.Health > 0 && PlayerData.Health < HealthBar.Length)
         {
-            HealthBar[PlayerData.Hp - 1].GetComponent<Image>().sprite = HealthPieceFull;
+            HealthBar[PlayerData.Health - 1].GetComponent<Image>().sprite = HealthPieceFull;
         }
     }
     #endregion
@@ -209,13 +209,15 @@ public class UIBehaviour : MonoBehaviour, IPlayerDataChangeHandler
 
     public void OnPlayerDataChanged(Object[] args)
     {
-        var sender = args[0] as Player_Data;
+        var sender = args[0] as PlayerData;
+        if (sender == null)
+            return;
         GemFragments.text = sender.GemFragments.ToString();
         LifeGems.text = sender.LifeGems.ToString();
         foreach (var healthSegment in HealthBar)
             healthSegment.GetComponent<Image>().sprite = HealthPieceEmpty;
 
-        for (var i = 0; i < sender.Hp; i++)
+        for (var i = 0; i < sender.Health; i++)
         {
             HealthBar[i].GetComponent<Image>().sprite = HealthPieceFull;
         }

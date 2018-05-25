@@ -29,20 +29,13 @@ public class BuffFlowerBehaviour : MonoBehaviour
     public float runSpeed;
     public List<ParticleSystem> AOEparticles;
     public List<BoxCollider> hitBoxes;
-    public SphereCollider AOEAttack;
+    public BoxCollider AOEAttack;
     private const float DeathTimer = 4;
     private float _risingTimer;
     private float _distanceBetween;
     private bool _inGround = true;
     private bool _activated;
-    public GameEventArgs ENEMY_DIED
-    {
-        get
-        {
-            return Resources.Load<GameEventArgs>("ENEMYDIED");
-        }
-    }
-
+    public List<GameObject> PossibleItemDrop;
     private Animator _animatorController;
     private NavMeshAgent _nav;
     [SerializeField]
@@ -52,8 +45,10 @@ public class BuffFlowerBehaviour : MonoBehaviour
     private void Start()
     {
         Data = Instantiate(Data);
-        GetComponent<DataUpdater>().Data = Data;
+        Data.name += GetInstanceID().ToString();
+        GLOBALGAMEMANAGER.SetSendersToInstantiatedClone(data: Data, go: gameObject);
         Data.PlayerGameObject = GameObject.FindWithTag("Player");
+        GetComponent<DamageableBehaviour>().Data = Data;
         _animatorController = GetComponent<Animator>();
         _nav = GetComponent<NavMeshAgent>();
         CurrentState = MovementState.NONE;
@@ -243,32 +238,16 @@ public class BuffFlowerBehaviour : MonoBehaviour
         ChangeState(MovementState.CHASING);
     }
 
-    private bool oneshot = true;
+    
     private void DeathStateHandler()
     {
         if (Data.Alive)
             return;
-        _nav.enabled = false;
-        _animatorController.SetBool("Alive", false);
-        if (oneshot)
-        {
-            oneshot = false;
-            ENEMY_DIED.Raise(gameObject);
-        }
-        
-         
+        _nav.enabled = false; 
     }
 
 
-#if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(0, .5f, 0, .5f);
-        Gizmos.DrawSphere(transform.position, Data.DetectionRadius);
-        Gizmos.color = new Color(1, .5f, 0, .5f);
-        Gizmos.DrawSphere(transform.position, Data.AttackRadius);
-    }
-#endif
+
     private bool EnableBehaviour(Vector3 center, float radius)
     {
         var playerfound = false;
@@ -330,4 +309,42 @@ public class BuffFlowerBehaviour : MonoBehaviour
         AOEAttack.enabled = false;
         SetNavSpeedWhenNotAttacking();
     }
+
+    public void ItemDrop()
+    {
+        var indexOfList = 0;
+        var luck = UnityEngine.Random.Range(0.0f,1.0f);
+        List<GameObject> SpawnedItems = new List<GameObject>();
+        if (luck >=0.7f)
+            foreach(GameObject x in PossibleItemDrop)
+            {
+                indexOfList++;
+                if(indexOfList >= 0.5f *PossibleItemDrop.Count)
+                {
+                    Instantiate(x,transform.position,transform.rotation);
+                    SpawnedItems.Add(x);
+                }
+            }
+        else
+            foreach (GameObject x in PossibleItemDrop)
+            {
+                indexOfList++;
+                if (indexOfList <= 0.5f * PossibleItemDrop.Count)
+                {
+                    Instantiate(x, transform.position, transform.rotation);
+                    SpawnedItems.Add(x);
+                }
+            }
+        //return SpawnedItems;
+    }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, .5f, 0, .5f);
+        Gizmos.DrawSphere(transform.position, Data.DetectionRadius);
+        Gizmos.color = new Color(1, .5f, 0, .5f);
+        Gizmos.DrawSphere(transform.position, Data.AttackRadius);
+    }
+#endif
 }

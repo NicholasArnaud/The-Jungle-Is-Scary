@@ -18244,7 +18244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 9410028dc8d257d44bcdde8f4f44209b, type: 2}
+  Event: {fileID: 0}
   Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
@@ -18301,6 +18301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4443bd71e0ee2974b82585c7b096e813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnChekpointCrossed: {fileID: 0}
   wallPrefab: {fileID: 1186534974758250, guid: e79281e8fe0b5604c995217ad8fef49d, type: 2}
   spawnTransform: {fileID: 4923872886353852}
 --- !u!114 &114251329419361922
@@ -18314,6 +18315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4443bd71e0ee2974b82585c7b096e813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnChekpointCrossed: {fileID: 0}
   wallPrefab: {fileID: 1186534974758250, guid: e79281e8fe0b5604c995217ad8fef49d, type: 2}
   spawnTransform: {fileID: 4097298045107106}
 --- !u!114 &114264965845645854
@@ -18354,17 +18356,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95e6ae7cf0bc7742be887f573288d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 1273342543379802, guid: dd5061628b4b360419a063967578489b, type: 2}
-  EnemyData: {fileID: 11400000, guid: e2ad0e9c10274184686f951d2ce4fe38, type: 2}
-  EnemiesDead: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
-  ENEMIESDEADARGS: {fileID: 11400000, guid: bafa9de1ed1cff842ab3c164285bfd77, type: 2}
-  StartSpawnDist: 15
-  SpawningEnabled: 0
-  SpawnPoint: {fileID: 4382614753729254}
-  MaxEnemies: 1
-  CooldownTime: 3
-  deathstillrestart: 0
-  numdeaths: 0
+  _enemyList: []
+  _playerGameObject: {fileID: 0}
+  EnemyDataScriptable: {fileID: 0}
+  EnemyPrefab: {fileID: 0}
+  AllEnemiesDead: {fileID: 0}
   WaitResponse:
     m_PersistentCalls:
       m_Calls:
@@ -18381,6 +18377,16 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  SpawnPoint: {fileID: 4382614753729254}
+  StartSpawnDist: 15
+  SpawningEnabled: 0
+  _spawnCooldown: 0
+  MaxEnemies: 1
+  CooldownTime: 3
+  _distanceFromPlayer: 0
+  deathstillrestart: 0
+  _enemiesSpawned: 0
+  numdeaths: 0
 --- !u!114 &114332285276706572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18580,7 +18586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 9410028dc8d257d44bcdde8f4f44209b, type: 2}
+  Event: {fileID: 0}
   Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
@@ -18667,22 +18673,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95e6ae7cf0bc7742be887f573288d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 1646721176092056, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
-  EnemyData: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
-  EnemiesDead: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
-  ENEMIESDEADARGS: {fileID: 11400000, guid: bafa9de1ed1cff842ab3c164285bfd77, type: 2}
-  StartSpawnDist: 15
-  SpawningEnabled: 0
-  SpawnPoint: {fileID: 4430473487617468}
-  MaxEnemies: 5
-  CooldownTime: 3
-  deathstillrestart: 0
-  numdeaths: 0
+  _enemyList: []
+  _playerGameObject: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909,
+    type: 2}
+  EnemyDataScriptable: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf,
+    type: 2}
+  EnemyPrefab: {fileID: 1646721176092056, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  AllEnemiesDead: {fileID: 0}
   WaitResponse:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  SpawnPoint: {fileID: 4430473487617468}
+  StartSpawnDist: 15
+  SpawningEnabled: 0
+  _spawnCooldown: 0
+  MaxEnemies: 5
+  CooldownTime: 3
+  _distanceFromPlayer: 0
+  deathstillrestart: 0
+  _enemiesSpawned: 0
+  numdeaths: 0
 --- !u!114 &114617682089757758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18765,6 +18778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4443bd71e0ee2974b82585c7b096e813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnChekpointCrossed: {fileID: 0}
   wallPrefab: {fileID: 1186534974758250, guid: e79281e8fe0b5604c995217ad8fef49d, type: 2}
   spawnTransform: {fileID: 4842370268512234}
 --- !u!114 &114747646351740724
@@ -18894,22 +18908,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95e6ae7cf0bc7742be887f573288d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 1646721176092056, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
-  EnemyData: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
-  EnemiesDead: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
-  ENEMIESDEADARGS: {fileID: 11400000, guid: bafa9de1ed1cff842ab3c164285bfd77, type: 2}
-  StartSpawnDist: 15
-  SpawningEnabled: 0
-  SpawnPoint: {fileID: 4510686607735780}
-  MaxEnemies: 5
-  CooldownTime: 3
-  deathstillrestart: 0
-  numdeaths: 0
+  _enemyList: []
+  _playerGameObject: {fileID: 0}
+  EnemyDataScriptable: {fileID: 0}
+  EnemyPrefab: {fileID: 0}
+  AllEnemiesDead: {fileID: 0}
   WaitResponse:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  SpawnPoint: {fileID: 4510686607735780}
+  StartSpawnDist: 15
+  SpawningEnabled: 0
+  _spawnCooldown: 0
+  MaxEnemies: 5
+  CooldownTime: 3
+  _distanceFromPlayer: 0
+  deathstillrestart: 0
+  _enemiesSpawned: 0
+  numdeaths: 0
 --- !u!114 &114798728566146224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18963,6 +18981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4443bd71e0ee2974b82585c7b096e813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnChekpointCrossed: {fileID: 0}
   wallPrefab: {fileID: 1186534974758250, guid: e79281e8fe0b5604c995217ad8fef49d, type: 2}
   spawnTransform: {fileID: 4892357825620220}
 --- !u!114 &114804911582478544
@@ -19003,22 +19022,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95e6ae7cf0bc7742be887f573288d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 1646721176092056, guid: e8959b4d4bd6dae49aea5230400f923e, type: 2}
-  EnemyData: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf, type: 2}
-  EnemiesDead: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
-  ENEMIESDEADARGS: {fileID: 11400000, guid: bafa9de1ed1cff842ab3c164285bfd77, type: 2}
-  StartSpawnDist: 15
-  SpawningEnabled: 0
-  SpawnPoint: {fileID: 4285223852601192}
-  MaxEnemies: 5
-  CooldownTime: 3
-  deathstillrestart: 0
-  numdeaths: 0
+  _enemyList: []
+  _playerGameObject: {fileID: 0}
+  EnemyDataScriptable: {fileID: 0}
+  EnemyPrefab: {fileID: 0}
+  AllEnemiesDead: {fileID: 0}
   WaitResponse:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  SpawnPoint: {fileID: 4285223852601192}
+  StartSpawnDist: 15
+  SpawningEnabled: 0
+  _spawnCooldown: 0
+  MaxEnemies: 5
+  CooldownTime: 3
+  _distanceFromPlayer: 0
+  deathstillrestart: 0
+  _enemiesSpawned: 0
+  numdeaths: 0
 --- !u!114 &114819386353231722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19030,7 +19053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 9410028dc8d257d44bcdde8f4f44209b, type: 2}
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
   Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
@@ -19059,7 +19082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: bafa9de1ed1cff842ab3c164285bfd77, type: 2}
+  Event: {fileID: 0}
   Sender: {fileID: 1427216270895802}
   Response:
     m_PersistentCalls:
@@ -19215,7 +19238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 9410028dc8d257d44bcdde8f4f44209b, type: 2}
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
   Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
