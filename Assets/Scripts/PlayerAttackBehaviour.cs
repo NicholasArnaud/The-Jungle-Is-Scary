@@ -37,7 +37,7 @@ public class PlayerAttackBehaviour : MonoBehaviour
     {
         if (lightReady)
         {
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 anim.SetTrigger("Light Attack");
                 lightReady = false;
@@ -58,7 +58,7 @@ public class PlayerAttackBehaviour : MonoBehaviour
 
         if (heavyReady)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire2"))
             {
                 anim.SetTrigger("Heavy Attack");
                 heavyReady = false;

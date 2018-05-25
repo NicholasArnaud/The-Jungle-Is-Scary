@@ -9,9 +9,15 @@ using UnityEngine;
 public class PlayerAnimationBehaviour : MonoBehaviour, IPlayerDiedHandler
 {
     public UnityEngine.Events.UnityEvent DeathResponse;
+    public UnityEngine.Events.UnityEvent DamagedResponse;
      
     public void OnPlayerDied(Object[] args)
     {
         DeathResponse.Invoke();
+    }
+
+    public void OnPlayerDamaged(Object[] args)
+    {
+        DamagedResponse.Invoke();
     }
 }
