@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class TeleportPlayerBehaviour : MonoBehaviour
 {
-
+    public StringVariable playertag;
+    public GameObject PlayerRef;
     public Transform checkpoint;
 
+    void OnEnable()
+    {
+        PlayerRef = GameObject.FindGameObjectWithTag(playertag.Value);
+    }
     public void TeleportPlayer()
     {
-        transform.position = checkpoint.position;
+        PlayerRef.transform.position = checkpoint.position;
     }
 
     /// <summary>
