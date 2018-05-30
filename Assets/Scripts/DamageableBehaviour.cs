@@ -28,8 +28,25 @@ public class DamageableBehaviour : MonoBehaviour, IDamageable
         DamagedEvent.Raise(Data);
 
         if (Data.Health < 1)
+        {
+            PlayerDied();
             DeathEvent.Raise(Data);
-
+        }
         immunityTimer = 1;
+    }
+
+    void PlayerDied()
+    {
+        if (!(Data is PlayerData))
+            return;
+        var playerData = (PlayerData) Data;
+        if(playerData.LifeGems >=0)
+            playerData.LifeGems -= 1;
+        else
+        {
+            return;
+        }
+        playerData.Health = 4;
+        playerData.Alive = true;
     }
 }

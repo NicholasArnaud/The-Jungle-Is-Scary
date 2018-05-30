@@ -151,61 +151,6 @@ public class UIBehaviour : MonoBehaviour, IPlayerDataChangeHandler
         }
     }
     #endregion
-    #region UpdatingHealth
-    public void DamageHealthTrigger()
-    {
-        foreach (var o in HealthBar)
-        {
-            o.GetComponent<Image>().sprite = HealthPieceEmpty;
-        }
-
-        LifeGems.text = (PlayerData.LifeGems - 1).ToString();
-
-        if (PlayerData.Health >= 0)
-        {
-            for (var i = 0; i < PlayerData.Health; i++)
-            {
-                HealthBar[i].GetComponent<Image>().sprite = HealthPieceFull;
-            }
-        }
-    }
-
-    public void RefillHealthTrigger()
-    {
-        if (PlayerData.LifeGems <= 0)
-            return;
-        foreach (var o in HealthBar)
-        {
-            o.GetComponent<Image>().sprite = HealthPieceFull;
-        }
-    }
-
-    public void HealedHealthTrigger()
-    {
-        if (PlayerData.Health > 0 && PlayerData.Health < HealthBar.Length)
-        {
-            HealthBar[PlayerData.Health - 1].GetComponent<Image>().sprite = HealthPieceFull;
-        }
-    }
-    #endregion
-    #region UpdatingGems
-    public void GainGemFrag(Object[] args)
-    {
-        if (int.Parse(GemFragments.text) >= 99)
-        {
-            GemFragments.text = "0";
-            IncrementGemText(LifeGems);
-        }
-        else if (int.Parse(LifeGems.text) >= 3)
-            IncrementGemText(GemFragments);
-    }
-
-
-    public void IncrementGemText(Text textToUpdate)
-    {
-        textToUpdate.text = (int.Parse(textToUpdate.text) + 1).ToString();
-    }
-    #endregion
 
     public void OnPlayerDataChanged(Object[] args)
     {

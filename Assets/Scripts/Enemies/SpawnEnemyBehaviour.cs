@@ -55,8 +55,6 @@ public class SpawnEnemyBehaviour : MonoBehaviour
 
         var spawnedEnemy = Instantiate(EnemyPrefab, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
 
-        GLOBALGAMEMANAGER.SetSendersToInstantiatedClone(gameObject, spawnedEnemy.GetComponent<DamageableBehaviour>().Data);
-
         _enemyList.Add(spawnedEnemy);
         deathstillrestart = _enemyList.Count;
 
