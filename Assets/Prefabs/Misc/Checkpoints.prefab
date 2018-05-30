@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 4536615625368662}
   m_Layer: 0
   m_Name: First Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 4005782581031288}
   m_Layer: 0
   m_Name: Thrid Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1370,8 +1370,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4507672857090384}
-  - component: {fileID: 114929760545668418}
   - component: {fileID: 114799398451212356}
+  - component: {fileID: 114139362284145052}
   m_Layer: 0
   m_Name: SpikeWall_2 (1)
   m_TagString: Untagged
@@ -1493,6 +1493,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4544294899126038}
+  - component: {fileID: 114067478787760386}
   m_Layer: 0
   m_Name: Checkpoints
   m_TagString: Untagged
@@ -1627,7 +1628,7 @@ GameObject:
   - component: {fileID: 4101701745100078}
   m_Layer: 0
   m_Name: Fourth Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1894,8 +1895,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4373786044336784}
-  - component: {fileID: 114350250395663714}
   - component: {fileID: 114264965845645854}
+  - component: {fileID: 114237012879721874}
   m_Layer: 0
   m_Name: SpikeWall_1
   m_TagString: Untagged
@@ -2338,8 +2339,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4585844450634336}
-  - component: {fileID: 114966530832468960}
   - component: {fileID: 114507399137699622}
+  - component: {fileID: 114606866112258724}
   m_Layer: 0
   m_Name: SpikeWall_2 (4)
   m_TagString: Untagged
@@ -2788,8 +2789,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4365400667280712}
-  - component: {fileID: 114617682089757758}
   - component: {fileID: 114927445801457158}
+  - component: {fileID: 114722626822598170}
   m_Layer: 0
   m_Name: SpikeWall_2 (2)
   m_TagString: Untagged
@@ -2805,8 +2806,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4735045019630302}
-  - component: {fileID: 114160508087039886}
   - component: {fileID: 114748536051686422}
+  - component: {fileID: 114964314373792382}
   m_Layer: 0
   m_Name: SpikeWall_3 (1)
   m_TagString: Untagged
@@ -3269,8 +3270,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4340858120132866}
-  - component: {fileID: 114880908722086012}
   - component: {fileID: 114804911582478544}
+  - component: {fileID: 114583213061930684}
   m_Layer: 0
   m_Name: SpikeWall_2 (5)
   m_TagString: Untagged
@@ -3411,7 +3412,7 @@ GameObject:
   - component: {fileID: 4610847506349318}
   m_Layer: 0
   m_Name: Second Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4869,8 +4870,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4559905069924468}
-  - component: {fileID: 114706584767469258}
   - component: {fileID: 114023270853859850}
+  - component: {fileID: 114118798674703158}
   m_Layer: 0
   m_Name: SpikeWall_2 (3)
   m_TagString: Untagged
@@ -6996,7 +6997,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427216270895802}
   m_LocalRotation: {x: -0, y: 0.99828106, z: -0, w: 0.05860846}
-  m_LocalPosition: {x: -253.76187, y: -21, z: 250.81921}
+  m_LocalPosition: {x: -247.94, y: -21, z: 243.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4382614753729254}
@@ -18072,7 +18073,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114722388218071922}
-        m_MethodName: OnCheckpointCrossed
+        m_MethodName: OnCheckpointTriggerEnter
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18217,6 +18218,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114067478787760386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311732046683648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2464b952df7790d4c9deb274050fbfca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playertag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
+  PlayerRef: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
+  checkpoint: {fileID: 4122720473036514, guid: 6205ab4754b1e9749ab0728d8928fe62, type: 2}
+  PlayerRespawnEvent: {fileID: 11400000, guid: afce9fe207b387f4a97ddb8f195b47f5, type: 2}
 --- !u!114 &114095134533325942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18244,7 +18260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 0}
+  Event: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
   Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
@@ -18262,22 +18278,23 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114160508087039886
+--- !u!114 &114118798674703158
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1572478719292986}
+  m_GameObject: {fileID: 1972469375131520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1572478719292986}
+      - m_Target: {fileID: 1498085148782632}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -18288,8 +18305,66 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &114139362284145052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292756943101744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1498085148782632}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &114237012879721874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414164122363456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1414164122363456}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114248792035758468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18358,9 +18433,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyList: []
   _playerGameObject: {fileID: 0}
-  EnemyDataScriptable: {fileID: 0}
-  EnemyPrefab: {fileID: 0}
-  AllEnemiesDead: {fileID: 0}
+  EnemyPrefab: {fileID: 1273342543379802, guid: dd5061628b4b360419a063967578489b,
+    type: 2}
+  AllEnemiesDead: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
   WaitResponse:
     m_PersistentCalls:
       m_Calls:
@@ -18418,34 +18493,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1352380970788984}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &114350250395663714
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1414164122363456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1414164122363456}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -18586,7 +18633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 0}
+  Event: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
   Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
@@ -18676,11 +18723,9 @@ MonoBehaviour:
   _enemyList: []
   _playerGameObject: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909,
     type: 2}
-  EnemyDataScriptable: {fileID: 11400000, guid: 7db8e84059d7e094c9dc3250ecebe3cf,
-    type: 2}
   EnemyPrefab: {fileID: 1646721176092056, guid: e8959b4d4bd6dae49aea5230400f923e,
     type: 2}
-  AllEnemiesDead: {fileID: 0}
+  AllEnemiesDead: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
   WaitResponse:
     m_PersistentCalls:
       m_Calls: []
@@ -18696,22 +18741,23 @@ MonoBehaviour:
   deathstillrestart: 0
   _enemiesSpawned: 0
   numdeaths: 0
---- !u!114 &114617682089757758
+--- !u!114 &114583213061930684
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1556423352031026}
+  m_GameObject: {fileID: 1657042433674968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1556423352031026}
+      - m_Target: {fileID: 1498085148782632}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -18722,8 +18768,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &114606866112258724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1498085148782632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1498085148782632}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114702229896573946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18739,34 +18814,6 @@ MonoBehaviour:
   onExit: {fileID: 11400000, guid: 7845ff5f11af9a441b0be05d8c72becb, type: 2}
   onStay: {fileID: 11400000, guid: ecd9a37805adf0641aff3e64f45f82f0, type: 2}
   ListenerTag: {fileID: 11400000, guid: c82f85e0248b52e4b80b1ae7d1865bf3, type: 2}
---- !u!114 &114706584767469258
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1972469375131520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1972469375131520}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114722388218071922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18778,9 +18825,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4443bd71e0ee2974b82585c7b096e813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnChekpointCrossed: {fileID: 0}
+  OnChekpointCrossed: {fileID: 11400000, guid: 8cb50fce256c4f043af60bd9311591c6, type: 2}
   wallPrefab: {fileID: 1186534974758250, guid: e79281e8fe0b5604c995217ad8fef49d, type: 2}
   spawnTransform: {fileID: 4842370268512234}
+--- !u!114 &114722626822598170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1556423352031026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1498085148782632}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114747646351740724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18895,6 +18971,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1556423352031026}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1972469375131520}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1498085148782632}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1657042433674968}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &114796480978909474
@@ -18909,10 +19029,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyList: []
-  _playerGameObject: {fileID: 0}
-  EnemyDataScriptable: {fileID: 0}
-  EnemyPrefab: {fileID: 0}
-  AllEnemiesDead: {fileID: 0}
+  _playerGameObject: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909,
+    type: 2}
+  EnemyPrefab: {fileID: 1646721176092056, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  AllEnemiesDead: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
   WaitResponse:
     m_PersistentCalls:
       m_Calls: []
@@ -19023,10 +19144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyList: []
-  _playerGameObject: {fileID: 0}
-  EnemyDataScriptable: {fileID: 0}
-  EnemyPrefab: {fileID: 0}
-  AllEnemiesDead: {fileID: 0}
+  _playerGameObject: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909,
+    type: 2}
+  EnemyPrefab: {fileID: 1646721176092056, guid: e8959b4d4bd6dae49aea5230400f923e,
+    type: 2}
+  AllEnemiesDead: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
   WaitResponse:
     m_PersistentCalls:
       m_Calls: []
@@ -19053,7 +19175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Event: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
   Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
@@ -19082,7 +19204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 0}
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
   Sender: {fileID: 1427216270895802}
   Response:
     m_PersistentCalls:
@@ -19100,34 +19222,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114880908722086012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1657042433674968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1657042433674968}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114889374533748682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19171,22 +19265,23 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114929760545668418
+--- !u!114 &114964314373792382
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1292756943101744}
+  m_GameObject: {fileID: 1572478719292986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
+  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Sender: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1292756943101744}
+      - m_Target: {fileID: 1572478719292986}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -19197,36 +19292,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &114966530832468960
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1498085148782632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: edacbf80269bf514cbe5ef294a971cbe, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1498085148782632}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114978419952684012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19238,7 +19305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 8b7de9cb6cdbf0f49b8c4507afd3fc40, type: 2}
+  Event: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
   Sender: {fileID: 0}
   Response:
     m_PersistentCalls:

@@ -7,6 +7,7 @@ public class TeleportPlayerBehaviour : MonoBehaviour
     public StringVariable playertag;
     public GameObject PlayerRef;
     public Transform checkpoint;
+    public GameEvent PlayerRespawnEvent;
 
     void OnEnable()
     {
@@ -15,6 +16,7 @@ public class TeleportPlayerBehaviour : MonoBehaviour
     public void TeleportPlayer()
     {
         PlayerRef.transform.position = checkpoint.position;
+        PlayerRespawnEvent.Raise();
     }
 
     /// <summary>

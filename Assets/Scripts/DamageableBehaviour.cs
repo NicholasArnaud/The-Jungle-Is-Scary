@@ -39,8 +39,8 @@ public class DamageableBehaviour : MonoBehaviour, IDamageable
     {
         if (!(Data is PlayerData))
             return;
-        var playerData = (PlayerData) Data;
-        if(playerData.LifeGems >=0)
+        var playerData = (PlayerData)Data;
+        if (playerData.LifeGems > 0)
             playerData.LifeGems -= 1;
         else
         {
