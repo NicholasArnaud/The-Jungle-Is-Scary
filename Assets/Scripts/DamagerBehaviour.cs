@@ -8,6 +8,8 @@ public class DamagerBehaviour : MonoBehaviour, IDamager
     public int DamageAmount = 1;
     public void DoDamage(IDamageable defender)
     {
+        if (defender == GetComponent<IDamageable>())
+            return;
         defender.TakeDamage(DamageAmount);
     }
  
