@@ -1133,6 +1133,7 @@ GameObject:
   - component: {fileID: 114345125543890316}
   - component: {fileID: 114015084264824524}
   - component: {fileID: 114929828938616790}
+  - component: {fileID: 114758437735869738}
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Player
@@ -5245,8 +5246,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1757946893096726}
-  m_LocalRotation: {x: -0.11086823, y: 0.05643581, z: 0.02352338, w: -0.9919526}
-  m_LocalPosition: {x: 0.5392988, y: 1.9999998, z: -4.4601183}
+  m_LocalRotation: {x: -0.11086822, y: 0.0564358, z: 0.023523375, w: -0.99195254}
+  m_LocalPosition: {x: 0.5392988, y: 1.9999995, z: -4.4601183}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4670255364913868}
@@ -6159,8 +6160,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114067478787760386, guid: 5f6345ecfa8922b42a745ab3cea55968,
-          type: 2}
+      - m_Target: {fileID: 0}
         m_MethodName: TeleportPlayer
         m_Mode: 1
         m_Arguments:
@@ -6632,6 +6632,35 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114758437735869738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448436701386198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84acd50ce40ea8e41a3a0aa8df1f69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
+  Sender: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: OnPlayerDataChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114762594390506548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6735,6 +6764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamagedEvent: {fileID: 11400000, guid: b85016a7277adf14b876defad86563de, type: 2}
   DeathEvent: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
+  PlayerDiedWOGems: {fileID: 11400000, guid: c1642e0d3af0e7c4ba9e87c8a1669122, type: 2}
   Data: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
 --- !u!114 &114904772286969762
 MonoBehaviour:
