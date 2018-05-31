@@ -327,6 +327,8 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: f6ff3716f9b62fc4285967097ea1bb6b, type: 2}
   ItemPickedUp: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
   playerData: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
+  fullGem: {fileID: 11400000, guid: f6ff3716f9b62fc4285967097ea1bb6b, type: 2}
+  fragGem: {fileID: 11400000, guid: 6ff1d55471ea244449e420ea1269096e, type: 2}
 --- !u!198 &198236262335606596
 ParticleSystem:
   m_ObjectHideFlags: 1

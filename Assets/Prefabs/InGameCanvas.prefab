@@ -872,8 +872,6 @@ GameObject:
   - component: {fileID: 114379180374891622}
   - component: {fileID: 114387097768587098}
   - component: {fileID: 114434788098282770}
-  - component: {fileID: 114071885646612350}
-  - component: {fileID: 114831993795543720}
   - component: {fileID: 114981837848486492}
   - component: {fileID: 114484038126323770}
   - component: {fileID: 114295298898843640}
@@ -1267,34 +1265,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Music
---- !u!114 &114071885646612350
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1794617954386706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: df2960321231daa498fb3bcf3f72b286, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114121923791352006}
-        m_MethodName: HealedHealthTrigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114088256311034562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1609,8 +1579,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114121923791352006}
-        m_MethodName: RefillHealthTrigger
-        m_Mode: 1
+        m_MethodName: OnPlayerDataChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1932,8 +1902,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114121923791352006}
-        m_MethodName: DamageHealthTrigger
-        m_Mode: 1
+        m_MethodName: OnPlayerDataChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3421,34 +3391,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114831993795543720
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1794617954386706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e1e2a6a5cb55044aaccf0402e8a063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: c3f691b94394bc241a11d39409c613f8, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114121923791352006}
-        m_MethodName: IncrementGemText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 114779546258885788}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114832009905678556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3759,7 +3701,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114121923791352006}
-        m_MethodName: GainGemFrag
+        m_MethodName: OnPlayerDataChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

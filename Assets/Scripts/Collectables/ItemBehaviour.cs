@@ -5,11 +5,10 @@ public class ItemBehaviour : MonoBehaviour
     public Item item;
     public GameEventArgs ItemPickedUp;
     public PlayerData playerData;
-
+    public Gem fullGem;
+    public Gem fragGem;
     public void OnItemPickedUp(UnityEngine.Object[] args)
     {
-        var fullGem = new Gem();
-        var fragGem = new Gem();
         fullGem.value = 4;
         fragGem.value = 1;
         var sender = args[0] as GameObject;

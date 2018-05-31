@@ -152,19 +152,15 @@ public class UIBehaviour : MonoBehaviour, IPlayerDataChangeHandler
     }
     #endregion
 
-    
+
     public void OnPlayerDataChanged(Object[] args)
     {
         var sender = args[0] as PlayerData;
         if (sender == null)
-        {
-            var gemsender = args[0] as GameObject;
-            if (gemsender == null || !gemsender.GetComponent<ItemBehaviour>()) return;
-            GemFragments.text = PlayerData.GemFragments.ToString();
-            LifeGems.text = PlayerData.LifeGems.ToString();
             return;
-        }
-            
+
+        GemFragments.text = PlayerData.GemFragments.ToString();
+        LifeGems.text = PlayerData.LifeGems.ToString();
         foreach (var healthSegment in HealthBar)
             healthSegment.GetComponent<Image>().sprite = HealthPieceEmpty;
 

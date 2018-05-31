@@ -114,7 +114,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: eac5f4f8d00a8814f932632d059e5d40, type: 2}
---- !u!1001 &1381190047
+--- !u!1001 &825448360
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -160,4 +160,4 @@ Prefab:
 Light:
   m_PrefabParentObject: {fileID: 108656121912788478, guid: c84bd85f5d7d0b446b43c26d5f632e08,
     type: 2}
-  m_PrefabInternal: {fileID: 1381190047}
+  m_PrefabInternal: {fileID: 825448360}

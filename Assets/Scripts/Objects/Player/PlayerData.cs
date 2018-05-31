@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Data", menuName = "Data")]
 public class PlayerData : DataScriptable
@@ -26,5 +24,13 @@ public class PlayerData : DataScriptable
             _gemFragments = value;
             DataChanged.Raise(this);
         }
+    }
+
+    public void ResetValues()
+    {
+        LifeGems = 4;
+        GemFragments = 0;
+        Health = 4;
+        Alive = true;
     }
 }

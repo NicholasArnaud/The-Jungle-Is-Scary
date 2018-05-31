@@ -42,12 +42,14 @@ public class DamageableBehaviour : MonoBehaviour, IDamageable
             return;
         var playerData = (PlayerData)Data;
         if (playerData.LifeGems > 0)
-            playerData.LifeGems -= 1;
-        else
         {
-            PlayerDiedWOGems.Raise();
-            return;
-        }
+            playerData.LifeGems -= 1;
+            if(playerData.LifeGems <= 0)
+            {
+                PlayerDiedWOGems.Raise();
+                return;
+            }
+        }    
         playerData.Health = 4;
         playerData.Alive = true;
     }

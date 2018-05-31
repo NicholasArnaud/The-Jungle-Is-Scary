@@ -18127,6 +18127,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: c7d0cae6844b2b34fb2afb62e59bf198, type: 2}
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &114015402329440602
@@ -18230,7 +18241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playertag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
-  PlayerRef: {fileID: 1448436701386198, guid: 8fc89911c9e52e049a47a86a7aab2909, type: 2}
+  PlayerRef: {fileID: 0}
   checkpoint: {fileID: 4122720473036514, guid: 6205ab4754b1e9749ab0728d8928fe62, type: 2}
   PlayerRespawnEvent: {fileID: 11400000, guid: afce9fe207b387f4a97ddb8f195b47f5, type: 2}
 --- !u!114 &114095134533325942
