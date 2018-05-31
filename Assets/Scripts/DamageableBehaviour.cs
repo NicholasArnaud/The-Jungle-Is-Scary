@@ -7,6 +7,7 @@ public class DamageableBehaviour : MonoBehaviour, IDamageable
 {
     public GameEventArgs DamagedEvent;
     public GameEventArgs DeathEvent;
+    public GameEvent PlayerDiedWOGems;
     public DataScriptable Data;
     private float immunityTimer = 0;
 
@@ -44,6 +45,7 @@ public class DamageableBehaviour : MonoBehaviour, IDamageable
             playerData.LifeGems -= 1;
         else
         {
+            PlayerDiedWOGems.Raise();
             return;
         }
         playerData.Health = 4;

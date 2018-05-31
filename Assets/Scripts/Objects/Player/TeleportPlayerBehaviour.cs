@@ -15,6 +15,7 @@ public class TeleportPlayerBehaviour : MonoBehaviour
     }
     public void TeleportPlayer()
     {
+        if (((PlayerData) PlayerRef.GetComponent<DamageableBehaviour>().Data).LifeGems <= 0) return;
         PlayerRef.transform.position = checkpoint.position;
         PlayerRespawnEvent.Raise();
     }
