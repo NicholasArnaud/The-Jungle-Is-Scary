@@ -300,9 +300,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: c3f691b94394bc241a11d39409c613f8, type: 2}
-        m_MethodName: Raise
-        m_Mode: 1
+      - m_Target: {fileID: 114771984824040030}
+        m_MethodName: OnItemPickedUp
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -324,9 +324,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96544394dfb3f234d96ac25a707deb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemIdentifier: 
-  item: {fileID: 11400000, guid: 6ff1d55471ea244449e420ea1269096e, type: 2}
+  item: {fileID: 11400000, guid: f6ff3716f9b62fc4285967097ea1bb6b, type: 2}
   ItemPickedUp: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
+  playerData: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
 --- !u!198 &198236262335606596
 ParticleSystem:
   m_ObjectHideFlags: 1

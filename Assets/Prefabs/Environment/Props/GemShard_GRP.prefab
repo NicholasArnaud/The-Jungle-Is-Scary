@@ -308,9 +308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96544394dfb3f234d96ac25a707deb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemIdentifier: 
   item: {fileID: 11400000, guid: 6ff1d55471ea244449e420ea1269096e, type: 2}
   ItemPickedUp: {fileID: 11400000, guid: ae9f24aadfe856a49bbdb84c2c02bd4f, type: 2}
+  playerData: {fileID: 11400000, guid: 55a87a7663de0e341a975ec4b6a1246d, type: 2}
 --- !u!198 &198133796215486978
 ParticleSystem:
   m_ObjectHideFlags: 1
