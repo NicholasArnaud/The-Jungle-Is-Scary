@@ -1782,8 +1782,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273342543379802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 134.40102, y: 150.71123, z: -249.64488}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4862616065809814}
   - {fileID: 4551500934317552}
@@ -2735,6 +2735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamagedEvent: {fileID: 11400000, guid: b85016a7277adf14b876defad86563de, type: 2}
   DeathEvent: {fileID: 11400000, guid: 3e5f5cbedd0424b4b8e2fc76b9801a74, type: 2}
+  PlayerDiedWOGems: {fileID: 0}
   Data: {fileID: 11400000, guid: e2ad0e9c10274184686f951d2ce4fe38, type: 2}
 --- !u!114 &114640382279880566
 MonoBehaviour:
