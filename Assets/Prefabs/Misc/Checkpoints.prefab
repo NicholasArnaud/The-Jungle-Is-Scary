@@ -6219,7 +6219,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1997619909679766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.77, y: -0.0502, z: -0.027}
+  m_LocalPosition: {x: 7, y: -0.0502, z: -0.2307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4164904971639108}
@@ -6635,7 +6635,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012821824736964}
   m_LocalRotation: {x: 0, y: -0.32069558, z: 0, w: 0.94718236}
-  m_LocalPosition: {x: 6.3, y: -0.0538, z: -9.74}
+  m_LocalPosition: {x: 16.75, y: -0.0538, z: -26.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4462517480921234}
@@ -7326,7 +7326,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1381974228429146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4, y: -0.077, z: 0}
+  m_LocalPosition: {x: 7.84, y: -0.0409, z: -0.0288}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4317128400714910}
@@ -18157,7 +18157,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114251329419361922}
-        m_MethodName: OnCheckpointCrossed
+        m_MethodName: OnCheckpointTriggerEnter
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18242,7 +18242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playertag: {fileID: 11400000, guid: 2c01af517b6aa4b42b6e988574224db6, type: 2}
   PlayerRef: {fileID: 0}
-  checkpoint: {fileID: 4122720473036514, guid: 6205ab4754b1e9749ab0728d8928fe62, type: 2}
+  checkpoint: {fileID: 0}
   PlayerRespawnEvent: {fileID: 11400000, guid: afce9fe207b387f4a97ddb8f195b47f5, type: 2}
 --- !u!114 &114095134533325942
 MonoBehaviour:
@@ -18387,7 +18387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4443bd71e0ee2974b82585c7b096e813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnChekpointCrossed: {fileID: 0}
+  OnChekpointCrossed: {fileID: 11400000, guid: 8cb50fce256c4f043af60bd9311591c6, type: 2}
   wallPrefab: {fileID: 1186534974758250, guid: e79281e8fe0b5604c995217ad8fef49d, type: 2}
   spawnTransform: {fileID: 4923872886353852}
 --- !u!114 &114251329419361922
@@ -18401,7 +18401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4443bd71e0ee2974b82585c7b096e813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnChekpointCrossed: {fileID: 0}
+  OnChekpointCrossed: {fileID: 11400000, guid: 8cb50fce256c4f043af60bd9311591c6, type: 2}
   wallPrefab: {fileID: 1186534974758250, guid: e79281e8fe0b5604c995217ad8fef49d, type: 2}
   spawnTransform: {fileID: 4097298045107106}
 --- !u!114 &114264965845645854
@@ -18464,7 +18464,7 @@ MonoBehaviour:
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   SpawnPoint: {fileID: 4382614753729254}
-  StartSpawnDist: 15
+  StartSpawnDist: 25
   SpawningEnabled: 0
   _spawnCooldown: 0
   MaxEnemies: 1
@@ -18533,7 +18533,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114799792761522648}
-        m_MethodName: OnCheckpointCrossed
+        m_MethodName: OnCheckpointTriggerEnter
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18743,10 +18743,10 @@ MonoBehaviour:
     m_TypeName: GameEventArgsResponse, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   SpawnPoint: {fileID: 4430473487617468}
-  StartSpawnDist: 15
+  StartSpawnDist: 20
   SpawningEnabled: 0
   _spawnCooldown: 0
-  MaxEnemies: 5
+  MaxEnemies: 3
   CooldownTime: 3
   _distanceFromPlayer: 0
   deathstillrestart: 0
@@ -18939,7 +18939,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114248792035758468}
-        m_MethodName: OnCheckpointCrossed
+        m_MethodName: OnCheckpointTriggerEnter
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19113,7 +19113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4443bd71e0ee2974b82585c7b096e813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnChekpointCrossed: {fileID: 0}
+  OnChekpointCrossed: {fileID: 11400000, guid: 8cb50fce256c4f043af60bd9311591c6, type: 2}
   wallPrefab: {fileID: 1186534974758250, guid: e79281e8fe0b5604c995217ad8fef49d, type: 2}
   spawnTransform: {fileID: 4892357825620220}
 --- !u!114 &114804911582478544
