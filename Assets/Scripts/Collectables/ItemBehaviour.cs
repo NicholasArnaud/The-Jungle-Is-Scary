@@ -13,16 +13,21 @@ public class ItemBehaviour : MonoBehaviour
         fragGem.value = 1;
         var sender = args[0] as GameObject;
         var other = args[1] as GameObject;
-        
-        if (sender == null ||  other == null || sender != gameObject)
+
+        if (sender == null || other == null || sender != gameObject)
             return;
-        if (item.value == fullGem.value)
+        if (item.value == fullGem.value || playerData.GemFragments >= 10)
+        {
             playerData.LifeGems += 1;
-        if (item.value == fragGem.value)
+            if (playerData.GemFragments >= 10)
+                playerData.GemFragments = 0;
+        }
+
+        if (item.value == fragGem.value && playerData.GemFragments < 10)
             playerData.GemFragments += 1;
         ItemPickedUp.Raise(gameObject, item);
     }
-    
+
     public void Destory()
     {
         Destroy(gameObject);
